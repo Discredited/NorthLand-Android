@@ -24,3 +24,19 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//统一管理项目的基本属性
+ext {
+    //android
+    compileSdkVersion = 29
+    buildToolsVersion = '29.0.3'
+    minSdkVersion = 21
+    targetSdkVersion = 29
+    //test
+    junit = '4.13'
+    extRunner = '1.1.1'
+    espressoCore = '3.2.0'
+    //core
+    appcompat = '1.1.0'
+    constraintlayout = '1.1.3'
+}

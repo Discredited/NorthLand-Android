@@ -5,7 +5,11 @@ build
 /.gradle
 /.idea
 /build
+
 /app/build
+
+/style/build
+
 /local.properties
 /gradlew
 /gradlew.bat

@@ -1,0 +1,55 @@
+<resources>
+    <!-- component -->
+    <string name="str_component">Component</string>
+    <!-- Activity -->
+    <string name="str_activity">Activity</string>
+    <string name="activity_desc">Activity生命周期、启动模式和相关属性参数</string>
+
+    <string name="str_service">Service</string>
+    <string name="service_desc">Service服务生命周期，启动方式以及日常使用场景</string>
+
+    <string name="str_broad_cast">BroadCast</string>
+    <string name="broad_cast_desc">BroadCast服务生命周期，启动方式以及日常使用场景</string>
+
+    <string name="str_fragment">Fragment</string>
+    <string name="fragment_desc">Fragment生命周期、切换、属性方法调用</string>
+
+    <string name="str_coordinator">Coordinator</string>
+    <string name="coordinator_desc">关于折叠布局属性设置和Behavior</string>
+
+    <string name="str_recyclerView">RecyclerView</string>
+    <string name="recycler_desc">RecyclerView必知必会</string>
+
+    <string name="str_view_pager_2">ViewPager2</string>
+    <string name="view_pager_2_desc">替换ViewPager的组件</string>
+
+    <!-- Library -->
+    <string name="str_library">Library</string>
+
+
+    <!-- Expand -->
+    <string name="str_expand">Expand</string>
+
+
+    <string name="current_thread_information">当前执行线程：%1$s</string>
+    <string name="handle_service_time">于%1$d年%2$d月%3$d日%4$d时%5$d分获取服务</string>
+    <string name="str_thread_pool">Thread Pool</string>
+    <string name="str_service_test">Service Test</string>
+    <string name="str_rx_java">Rx Java</string>
+    <string name="str_next">next</string>
+
+    <string name="str_display_title">- %s -</string>
+
+
+    <!-- ImageBoxLayout Begin -->
+    <string name="str_column">列数</string>
+    <string name="str_gap">间距</string>
+    <string name="str_radius">圆角</string>
+
+    <string name="image_box_current_images">当前生成了%d张图片</string>
+    <string name="image_box_normal">normal</string>
+    <string name="image_box_square">square</string>
+    <string name="image_box_max_count">Max Limit</string>
+    <string name="image_box_max_cover">Max Cover</string>
+    <!-- ImageBoxLayout End -->
+</resources>
