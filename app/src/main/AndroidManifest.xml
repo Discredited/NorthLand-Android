@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".feature.character.CharacterConfigActivity" />
+        <activity android:name=".feature.character.CharacterInfoActivity" />
     </application>
 
 </manifest>
