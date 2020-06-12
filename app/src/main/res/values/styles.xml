@@ -1,10 +1,23 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 去掉ActionBar -->
+        <item name="windowActionBar">false</item>
+        <!--  ActionBar和windowNoTitle需要组合配置 否则会抛出异常-->
+        <!-- AppCompat does not support the current theme features -->
+        <item name="windowNoTitle">true</item>
+
+        <!-- 沉侵至状态栏  windowTranslucentStatus属性设置以后  状态其他相关设置都会受影响 -->
+        <!-- 比如：statusBarColor颜色设置就会失效 -->
+        <!-- 但是不设置，视图又不能沉侵至状态栏 -->
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--        <item name="android:statusBarColor">@color/color_transparent</item>-->
+        <!-- 窗口背景颜色 -->
+        <item name="android:windowBackground">@color/color_white</item>
+        <!-- actionMode  true-弹出时覆盖部分布局 false-不符盖将原有布局下移 -->
+        <item name="windowActionModeOverlay">false</item>
     </style>
 
 </resources>
