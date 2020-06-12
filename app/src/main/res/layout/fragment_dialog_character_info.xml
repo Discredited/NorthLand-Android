@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_alpha_black"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterAvatar"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_150"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_avatar_lin_fei"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/shape_rect_realm_radius_10" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_30"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar"
+        tools:text="甘柠真" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterRealm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_quality_epic"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterName"
+        tools:text="阿赖耶" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterRace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRealm"
+        tools:text="人族" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterFaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRace"
+        tools:text="清虚天" />
+
+    <Space
+        android:id="@+id/vLineTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCharacterAvatar" />
+
+    <Space
+        android:id="@+id/vLineBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterAttack" />
+
+    <Space
+        android:id="@+id/vLineMiddle"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        app:layout_constraintBottom_toBottomOf="@+id/vLineBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vLineTop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_alpha_black"
+        android:paddingStart="@dimen/dp_2"
+        android:paddingEnd="@dimen/dp_2"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/vLineTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vLineTop"
+        tools:text="基本属性" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterHealth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_health"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
+        tools:text="123456789" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:drawableStart="@drawable/ic_speed"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
+        tools:text="100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterAttack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_attack"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterHealth"
+        tools:text="1234567" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCharacterDefense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:drawableStart="@drawable/ic_defense"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterSpeed"
+        tools:text="1234567" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
