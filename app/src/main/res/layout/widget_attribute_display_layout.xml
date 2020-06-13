@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_bg_alpha_black"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <Space
+        android:id="@+id/vLineTop"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0_1"
+        app:layout_constraintBottom_toBottomOf="@id/tvAttributeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAttributeTitle"
+        app:layout_constraintTop_toTopOf="@id/tvAttributeTitle" />
+
+    <Space
+        android:id="@+id/vLineMiddle"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/vLineBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttributeThree" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        app:layout_constraintBottom_toBottomOf="@id/vLineBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vLineTop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttributeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_alpha_black"
+        android:paddingStart="@dimen/dp_2"
+        android:paddingEnd="@dimen/dp_2"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="基本属性" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttributeOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:contentDescription="@string/str_health"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
+        tools:drawableStart="@drawable/ic_health"
+        tools:text="123456789" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttributeTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:contentDescription="@string/str_speed"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
+        tools:drawableStart="@drawable/ic_speed"
+        tools:text="100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttributeThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:contentDescription="@string/str_attack"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttributeOne"
+        tools:drawableStart="@drawable/ic_attack"
+        tools:text="1234567" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttributeFour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:contentDescription="@string/str_defense"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttributeTwo"
+        tools:drawableStart="@drawable/ic_defense"
+        tools:text="1234567" />
+</merge>

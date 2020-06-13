@@ -1,5 +1,6 @@
 package com.june.northland.feature.character
 
+import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.setDrawable
@@ -14,7 +15,12 @@ class CharacterInfoActivity : BaseActivity() {
 
     override fun initView() {
         tvRealmUpgrade.setOnClickListener {
-            ivCharacter.setDrawable(ColorUtils.getRealmColor(mRealm % 9))
+            ivCharacter.setDrawable(
+                ContextCompat.getColor(
+                    this,
+                    ColorUtils.getRealmColor(mRealm % 9)
+                )
+            )
             mRealm++
         }
     }

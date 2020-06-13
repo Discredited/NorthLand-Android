@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,191 +7,197 @@
     android:background="@color/color_bg_alpha_black"
     android:fitsSystemWindows="true">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterAvatar"
-        android:layout_width="@dimen/dp_150"
-        android:layout_height="@dimen/dp_150"
-        android:layout_marginStart="@dimen/common_margin"
-        android:layout_marginTop="@dimen/common_margin"
-        android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_avatar_lin_fei"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/shape_rect_realm_radius_10" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterName"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_20"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_30"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
-        app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar"
-        tools:text="甘柠真" />
+        android:background="@null">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterRealm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_10"
-        android:textColor="@color/color_quality_epic"
-        android:textSize="@dimen/sp_20"
-        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterName"
-        tools:text="阿赖耶" />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/vCollapsing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="false"
+            app:contentScrim="@color/color_quality_epic"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterRace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRealm"
-        tools:text="人族" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_60"
+                android:paddingBottom="@dimen/dp_10">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterFaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintStart_toStartOf="@+id/tvCharacterName"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRace"
-        tools:text="清虚天" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCharacterAvatar"
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="@dimen/dp_150"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_avatar_lin_fei"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@drawable/shape_rect_realm_radius_10" />
 
-    <Space
-        android:id="@+id/vLineTop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_40"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCharacterAvatar" />
+                <!-- 武器 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCharacterWeapon"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@drawable/shape_rect_white_stroke_radius_5"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_attack"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar" />
 
-    <Space
-        android:id="@+id/vLineBottom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterAttack" />
+                <!-- 防具 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCharacterArmor"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@drawable/shape_rect_white_stroke_radius_5"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_attack"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCharacterAvatar"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <Space
-        android:id="@+id/vLineMiddle"
-        android:layout_width="@dimen/dp_1"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_40"
+                <!-- 鞋子 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCharacterShoes"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@drawable/shape_rect_white_stroke_radius_5"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_attack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
+                    app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar" />
+
+                <!-- 首饰 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCharacterJewelry"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@drawable/shape_rect_white_stroke_radius_5"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_attack"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCharacterAvatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar" />
+
+                <!-- 经验等级 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLevelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_margin"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/str_level"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivCharacterAvatar" />
+
+                <ProgressBar
+                    android:id="@+id/vCharacterExperience"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginEnd="@dimen/common_margin"
+                    android:progress="30"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLevelTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLevelTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvLevelTitle" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCharacterRealm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_margin"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColor="@color/color_quality_epic"
+                    android:textSize="@dimen/sp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLevelTitle"
+                    tools:text="阿赖耶" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/common_margin"
+                    android:background="@color/color_blue"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCharacterRealm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvCharacterRealm"
+                    app:layout_constraintTop_toTopOf="@+id/tvCharacterRealm" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCharacterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp_30"
+                    android:textStyle="bold"
+                    tools:text="甘柠真" />
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRealm">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/common_margin"
-        android:layout_marginEnd="@dimen/common_margin"
-        android:background="@drawable/shape_rect_white_stroke_radius_5"
-        app:layout_constraintBottom_toBottomOf="@+id/vLineBottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/vLineTop" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_20">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/color_bg_alpha_black"
-        android:paddingStart="@dimen/dp_2"
-        android:paddingEnd="@dimen/dp_2"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_12"
-        app:layout_constraintBottom_toBottomOf="@id/vLineTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vLineTop"
-        tools:text="基本属性" />
+            <com.june.northland.feature.character.widget.AttributeDisplayView
+                android:id="@+id/vBasicAttribute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterHealth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_40"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/dp_10"
-        android:drawableStart="@drawable/ic_health"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:lines="1"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
-        tools:text="123456789" />
+            <com.june.northland.feature.character.widget.AttributeDisplayView
+                android:id="@+id/vExtraAttribute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterSpeed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/dp_40"
-        android:drawableStart="@drawable/ic_speed"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:lines="1"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
-        app:layout_constraintTop_toBottomOf="@+id/vLineTop"
-        tools:text="100" />
+            <com.june.northland.feature.character.widget.SkillDisplayView
+                android:id="@+id/vSkillView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterAttack"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_40"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/dp_10"
-        android:drawableStart="@drawable/ic_attack"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:lines="1"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toStartOf="@+id/vLineMiddle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterHealth"
-        tools:text="1234567" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvCharacterDefense"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/dp_40"
-        android:drawableStart="@drawable/ic_defense"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:lines="1"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/vLineMiddle"
-        app:layout_constraintTop_toBottomOf="@+id/tvCharacterSpeed"
-        tools:text="1234567" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.june.northland.feature.character.widget.RelationshipView
+                android:id="@+id/rvRelationship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                tools:itemCount="6"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_relationship"
+                tools:orientation="vertical" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

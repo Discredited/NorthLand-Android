@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="common_margin">@dimen/dp_15</dimen>
+    <dimen name="common_margin">@dimen/dp_10</dimen>
 
     <!-- dp and sp values, must be defind in this file! -->
     <dimen name="dp_m_60">-60dp</dimen>
