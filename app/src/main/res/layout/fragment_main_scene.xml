@@ -30,7 +30,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCharacter"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_100"
+        android:layout_height="@dimen/dp_80"
         android:layout_marginTop="@dimen/dp_10"
         android:clipToPadding="false"
         android:paddingStart="@dimen/common_margin"
