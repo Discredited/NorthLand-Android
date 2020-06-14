@@ -1,12 +1,17 @@
 package com.june.northland.feature.main.ui
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
+import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment
 import com.june.northland.feature.character.CharacterVo
 import com.june.northland.feature.main.MainActivity
@@ -23,7 +28,8 @@ class ScenesFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_main_scene
 
     override fun initView() {
-        mCharacterAdapter.setOnItemClickListener { _, _, _ ->
+        //阵容人物
+        mCharacterAdapter.itemClick { _, _, _ ->
             val characterInfoFragment = CharacterInfoFragment()
             characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
         }
@@ -35,18 +41,29 @@ class ScenesFragment : BaseFragment() {
         rvCharacter.setHasFixedSize(true)
         rvCharacter.addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
 
-        rvMenu.setLinearManager(
-            orientation = RecyclerView.HORIZONTAL
-        )
-        rvMenu.adapter = mMenuAdapter
-        rvMenu.setHasFixedSize(true)
 
+        //剧情关卡
         rvPlot.setLinearManager(
             orientation = RecyclerView.HORIZONTAL
         )
         rvPlot.adapter = mPlotAdapter
         rvPlot.setHasFixedSize(true)
         rvPlot.addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
+        PagerSnapHelper().attachToRecyclerView(rvPlot)
+
+
+        //底部菜单
+        mMenuAdapter.itemClick { _, _, position ->
+            when (position) {
+                0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
+                else -> ToastUtils.showShort("没有这个按钮")
+            }
+        }
+        rvMenu.setLinearManager(
+            orientation = RecyclerView.HORIZONTAL
+        )
+        rvMenu.adapter = mMenuAdapter
+        rvMenu.setHasFixedSize(true)
 
         vPlayerSection.getAvatarView()?.click {
             activity?.let {
@@ -95,7 +112,6 @@ class ScenesFragment : BaseFragment() {
     private fun initMenu() {
         mMenuAdapter.setNewInstance(
             mutableListOf(
-                MenuVo("主页", R.drawable.ic_attack),
                 MenuVo("背包", R.drawable.ic_defense),
                 MenuVo("阵容", R.drawable.ic_health),
                 MenuVo("关卡", R.drawable.ic_speed),

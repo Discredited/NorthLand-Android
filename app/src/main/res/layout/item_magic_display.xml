@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.june.northland.widget.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/color_bg_alpha_black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMagicIcon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/ic_magic_3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMagicName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/color_bg_alpha_black"
+        android:lines="1"
+        android:paddingStart="@dimen/dp_5"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_12"
+        tools:text="身外化身 Lv.25" />
+</com.june.northland.widget.SquareFrameLayout>

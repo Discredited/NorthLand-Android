@@ -4,22 +4,21 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.RecyclerView
 import com.june.northland.base.ext.setGridManager
-import com.june.northland.feature.character.RelationshipAdapter
-import com.june.northland.feature.character.RelationshipVo
+import com.june.northland.feature.character.relationship.RelationshipDisplayAdapter
+import com.june.northland.feature.character.relationship.RelationshipVo
 
-class RelationshipView @JvmOverloads constructor(
+class RelationshipDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : RecyclerView(context, attrs, defStyleAttr) {
 
     private val mAdapter =
-        RelationshipAdapter()
+        RelationshipDisplayAdapter()
 
     override fun onFinishInflate() {
         super.onFinishInflate()
         setGridManager(2)
         adapter = mAdapter
         setHasFixedSize(true)
-        //addItemDecoration(GridItemDecoration(2))
     }
 
     fun setRelationship(relationships: MutableList<RelationshipVo>) {

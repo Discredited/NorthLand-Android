@@ -147,12 +147,19 @@
                     android:id="@+id/tvCharacterName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:gravity="center"
                     android:textColor="@color/color_white"
                     android:textSize="@dimen/sp_30"
                     android:textStyle="bold"
                     tools:text="甘柠真" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHelper"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/common_margin"
+                    android:src="@drawable/ic_help" />
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -170,7 +177,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/dp_20">
+            android:paddingStart="@dimen/common_margin"
+            android:paddingTop="@dimen/common_margin"
+            android:paddingEnd="@dimen/common_margin"
+            android:paddingBottom="@dimen/dp_70">
 
             <com.june.northland.feature.character.widget.AttributeDisplayView
                 android:id="@+id/vBasicAttribute"
@@ -183,21 +193,60 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_20" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/str_talent_skill"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_14" />
+
             <com.june.northland.feature.character.widget.SkillDisplayView
                 android:id="@+id/vSkillView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20" />
+                android:layout_marginTop="@dimen/dp_10" />
 
-            <com.june.northland.feature.character.widget.RelationshipView
-                android:id="@+id/rvRelationship"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/str_magic"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_14" />
+
+            <com.june.northland.feature.character.widget.MagicDisplayView
+                android:id="@+id/vMagicDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/str_relationship"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_14" />
+
+            <com.june.northland.feature.character.widget.RelationshipDisplayView
+                android:id="@+id/vRelationshipDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
                 tools:itemCount="6"
                 tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/item_relationship"
+                tools:listitem="@layout/item_relationship_display"
                 tools:orientation="vertical" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:src="@drawable/ic_close" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

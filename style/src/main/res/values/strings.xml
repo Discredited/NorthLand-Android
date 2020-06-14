@@ -16,5 +16,12 @@
     <string name="str_dodge">闪避</string>
     
     <string name="str_logout">退出登录</string>
+    <string name="str_talent_skill">天赋技能</string>
 
+    <string name="str_magic">秘籍</string>
+    <string name="str_relationship">羁绊</string>
+
+
+    <string name="str_skill_name_and_level">%1$s - Lv.%2$s</string>
+    <string name="title_attribute_explanation">属性说明</string>
 </resources>

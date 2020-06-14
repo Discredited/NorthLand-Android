@@ -4,6 +4,8 @@ import android.graphics.drawable.GradientDrawable
 import android.os.SystemClock
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.june.northland.R
 
 inline fun View.click(debounceTime: Long = 500, crossinline block: (View) -> Unit) {
@@ -36,4 +38,20 @@ fun View.setDrawable(
     shapeDrawable.setStroke(strokeWidth, strokeColor)
     shapeDrawable.cornerRadius = cornerRadius
     background = shapeDrawable
+}
+
+
+inline fun BaseQuickAdapter<*, *>.itemClick(crossinline block: (BaseQuickAdapter<*, *>, View, Int) -> Unit) {
+    this.setOnItemClickListener(object : OnItemClickListener {
+        private var mLastClickTime = 0L
+        override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
+            val currentClickTime = System.currentTimeMillis()
+            if (currentClickTime - mLastClickTime < 1000) {
+                return
+            }
+            mLastClickTime = System.currentTimeMillis()
+
+            block(adapter, view, position)
+        }
+    })
 }

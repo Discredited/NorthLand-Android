@@ -32,5 +32,4 @@
     <color name="color_text_1E2E50">#1E2E50</color>
     <color name="color_text_223253">#223253</color>
     <color name="color_text_A2A8C3">#A2A8C3</color>
-    <string name="str_skill_name_and_level">%1$s · %2$s</string>
 </resources>

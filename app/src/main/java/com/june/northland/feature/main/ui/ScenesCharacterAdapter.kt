@@ -17,7 +17,7 @@ class ScenesCharacterAdapter :
         val realmColor = ContextCompat.getColor(holder.itemView.context, realm)
         holder.itemView.ivCharacter.setDrawable(
             strokeColor = realmColor,
-            strokeWidth = holder.itemView.resources.getDimensionPixelSize(R.dimen.dp_2)
+            strokeWidth = holder.itemView.resources.getDimensionPixelSize(R.dimen.dp_3)
         )
         holder.itemView.ivCharacter.setImageResource(R.drawable.ic_avatar_gan_ning_zhen)
     }
