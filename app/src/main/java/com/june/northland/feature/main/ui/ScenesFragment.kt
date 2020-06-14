@@ -14,6 +14,7 @@ import com.june.northland.base.ext.setLinearManager
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment
 import com.june.northland.feature.character.CharacterVo
+import com.june.northland.feature.lineup.LineUpActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.main.vo.PlotVo
@@ -56,6 +57,7 @@ class ScenesFragment : BaseFragment() {
         mMenuAdapter.itemClick { _, _, position ->
             when (position) {
                 0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
+                1 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 else -> ToastUtils.showShort("没有这个按钮")
             }
         }

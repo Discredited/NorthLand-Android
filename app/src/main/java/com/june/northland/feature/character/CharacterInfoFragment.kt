@@ -5,7 +5,6 @@ import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
-import com.june.northland.base.ext.setDrawable
 import com.june.northland.feature.character.magic.MagicVo
 import com.june.northland.feature.character.relationship.RelationshipVo
 import com.june.northland.utils.ColorUtils
@@ -32,15 +31,6 @@ class CharacterInfoFragment : BaseDialogFragment() {
             getString(R.string.str_extra_attributes)
         )
 
-        ivCharacterWeapon.click {
-        }
-        ivCharacterArmor.click {
-        }
-        ivCharacterShoes.click {
-        }
-        ivCharacterJewelry.click {
-        }
-
         ivClose.click { dismiss() }
         ivHelper.click {
             AttributeExplanationFragment().show(
@@ -59,10 +49,9 @@ class CharacterInfoFragment : BaseDialogFragment() {
         val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getRealmColor(5))
         vCollapsing.setContentScrimColor(realmColor)
 
-        ivCharacterAvatar.setDrawable(strokeColor = realmColor)
+        vCharacterDisplay.setCharacterAndWeapon(realmColor, character)
+
         tvCharacterName.text = character.name
-        tvCharacterRealm.setTextColor(realmColor)
-        tvCharacterRealm.text = "末那"
 
         vCharacterExperience.max = 100
         vCharacterExperience.progress = 30

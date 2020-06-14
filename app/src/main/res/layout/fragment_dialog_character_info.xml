@@ -26,64 +26,15 @@
                 android:paddingTop="@dimen/dp_60"
                 android:paddingBottom="@dimen/dp_10">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCharacterAvatar"
-                    android:layout_width="@dimen/dp_150"
-                    android:layout_height="@dimen/dp_150"
-                    android:padding="@dimen/dp_5"
-                    android:src="@drawable/ic_avatar_lin_fei"
+                <com.june.northland.feature.character.widget.CharacterDisplayView
+                    android:id="@+id/vCharacterDisplay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/common_margin"
+                    android:paddingEnd="@dimen/common_margin"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:background="@drawable/shape_rect_realm_radius_10" />
-
-                <!-- 武器 -->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCharacterWeapon"
-                    android:layout_width="@dimen/dp_60"
-                    android:layout_height="@dimen/dp_60"
-                    android:background="@drawable/shape_rect_white_stroke_radius_5"
-                    android:padding="@dimen/dp_5"
-                    android:src="@drawable/ic_attack"
-                    app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar" />
-
-                <!-- 防具 -->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCharacterArmor"
-                    android:layout_width="@dimen/dp_60"
-                    android:layout_height="@dimen/dp_60"
-                    android:background="@drawable/shape_rect_white_stroke_radius_5"
-                    android:padding="@dimen/dp_5"
-                    android:src="@drawable/ic_attack"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivCharacterAvatar"
-                    app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <!-- 鞋子 -->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCharacterShoes"
-                    android:layout_width="@dimen/dp_60"
-                    android:layout_height="@dimen/dp_60"
-                    android:background="@drawable/shape_rect_white_stroke_radius_5"
-                    android:padding="@dimen/dp_5"
-                    android:src="@drawable/ic_attack"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
-                    app:layout_constraintTop_toTopOf="@+id/ivCharacterAvatar" />
-
-                <!-- 首饰 -->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCharacterJewelry"
-                    android:layout_width="@dimen/dp_60"
-                    android:layout_height="@dimen/dp_60"
-                    android:background="@drawable/shape_rect_white_stroke_radius_5"
-                    android:padding="@dimen/dp_5"
-                    android:src="@drawable/ic_attack"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivCharacterAvatar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <!-- 经验等级 -->
                 <androidx.appcompat.widget.AppCompatTextView
@@ -96,7 +47,7 @@
                     android:textColor="@color/color_white"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivCharacterAvatar" />
+                    app:layout_constraintTop_toBottomOf="@+id/vCharacterDisplay" />
 
                 <ProgressBar
                     android:id="@+id/vCharacterExperience"
@@ -112,28 +63,16 @@
                     app:layout_constraintTop_toTopOf="@+id/tvLevelTitle" />
 
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.june.northland.feature.character.widget.RealmDisplayView
                     android:id="@+id/tvCharacterRealm"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/dp_50"
                     android:layout_marginStart="@dimen/common_margin"
                     android:layout_marginTop="@dimen/dp_10"
                     android:textColor="@color/color_quality_epic"
                     android:textSize="@dimen/sp_20"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvLevelTitle"
-                    tools:text="阿赖耶" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_20"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginEnd="@dimen/common_margin"
-                    android:background="@color/color_blue"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvCharacterRealm"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tvCharacterRealm"
-                    app:layout_constraintTop_toTopOf="@+id/tvCharacterRealm" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvLevelTitle" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.appbar.MaterialToolbar

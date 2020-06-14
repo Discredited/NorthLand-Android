@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_150"
+    tools:background="@color/color_bg_alpha_black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterAvatar"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_150"
+        android:layout_gravity="center"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_avatar_lin_fei"
+        tools:background="@drawable/shape_rect_realm_radius_10" />
+
+    <!-- 武器 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterWeapon"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_attack" />
+
+    <!-- 防具 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterArmor"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_gravity="end"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_attack" />
+
+    <!-- 鞋子 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterShoes"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_gravity="bottom|start"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_attack" />
+
+    <!-- 首饰 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCharacterJewelry"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_gravity="end|bottom"
+        android:background="@drawable/shape_rect_white_stroke_radius_5"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_attack" />
+</FrameLayout>
