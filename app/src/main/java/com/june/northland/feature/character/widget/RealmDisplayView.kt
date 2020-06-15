@@ -1,40 +1,93 @@
 package com.june.northland.feature.character.widget
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.graphics.drawable.toBitmap
 import com.june.northland.R
 
+/**
+ * realm View
+ */
 class RealmDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var mActiveDrawable: Bitmap? = null
-    private var mNegativeDrawable: Bitmap? = null
+    private var mActiveIconRes = R.drawable.ic_rating_yellow
+    private var mNegativeIconRes = R.drawable.ic_rating_gray
+    private var mActiveBitmap: Bitmap? = null
+    private var mNegativeBitmap: Bitmap? = null
+
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var mTextSize = resources.getDimension(R.dimen.sp_20)
+    private var mTextGap = resources.getDimension(R.dimen.dp_15)
+    private var mIconGap = resources.getDimension(R.dimen.dp_5)
 
-    private var mRealm: Int = 8
-    private var mRealmName: String = "身态"
-
-
-    private val mRect = Rect()
+    private var mRealm: Int = 5
+    private var mRealmName: String = ""
 
     init {
-        mActiveDrawable = context.getDrawable(R.drawable.ic_rating_yellow)?.let {
+        val array = context.obtainStyledAttributes(
+            attrs,
+            R.styleable.RealmDisplayView, defStyleAttr,
+            0
+        )
+        try {
+            mRealm = array.getInt(R.styleable.RealmDisplayView_realm_count, 5)
+            mRealmName = array.getString(R.styleable.RealmDisplayView_realm_text) ?: ""
+            mTextSize = array.getDimension(R.styleable.RealmDisplayView_realm_text_size, mTextSize)
+
+            mActiveIconRes = array.getResourceId(
+                R.styleable.RealmDisplayView_realm_active_icon,
+                mActiveIconRes
+            )
+            mNegativeIconRes = array.getResourceId(
+                R.styleable.RealmDisplayView_realm_negative_icon,
+                mNegativeIconRes
+            )
+
+            mTextGap = array.getDimension(
+                R.styleable.RealmDisplayView_realm_text_gap,
+                mTextGap
+            )
+
+            mIconGap = array.getDimension(
+                R.styleable.RealmDisplayView_realm_icon_gap,
+                mIconGap
+            )
+        } finally {
+            array.recycle()
+        }
+
+        mActiveBitmap = context.getDrawable(mActiveIconRes)?.let {
             it.toBitmap(it.intrinsicWidth, it.intrinsicHeight)
         }
-        mNegativeDrawable = context.getDrawable(R.drawable.ic_rating_gray)?.let {
+        mNegativeBitmap = context.getDrawable(mNegativeIconRes)?.let {
             it.toBitmap(it.intrinsicWidth, it.intrinsicHeight)
         }
 
         textPaint.color = Color.parseColor("#FF7700")
-        textPaint.textSize = resources.getDimension(R.dimen.sp_20)
+        textPaint.textSize = mTextSize
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val textWidth = textPaint.measureText(mRealmName).toInt()
+        val textHeight = (textPaint.fontMetrics.bottom - textPaint.fontMetrics.top).toInt()
+        val bitmapWidth = mActiveBitmap?.width ?: textHeight
+        val bitmapHeight = mActiveBitmap?.height ?: textHeight
+
+        val recommendWidth = if (textWidth == 0) {
+            (bitmapWidth * 9) + (mIconGap * 8).toInt()
+        } else {
+            (textWidth + mTextGap + (bitmapWidth * 9) + (mIconGap * 8)).toInt()
+        }
+        val recommendHeight = textHeight.coerceAtLeast(bitmapHeight)
+
+        setMeasuredDimension(recommendWidth, recommendHeight)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -43,19 +96,23 @@ class RealmDisplayView @JvmOverloads constructor(
         val textWidth = textPaint.measureText(mRealmName)
         val textX = 0F
         val textY =
-            (height + textPaint.descent() - textPaint.ascent()) / 2F
+            (height + textPaint.descent() - textPaint.ascent()) / 2F - (textPaint.fontMetrics.ascent - textPaint.fontMetrics.top)
         canvas.drawText(mRealmName, textX, textY, textPaint)
         //图标绘制
-        var left = textWidth
-        val top = (height - (mActiveDrawable?.height ?: 0)) / 2F
+        val iconStart = if (textWidth == 0F) {
+            0F
+        } else {
+            textWidth + mTextGap
+        }
+        val top = (height - (mActiveBitmap?.height ?: 0)) / 2F
 
         for (index in 0 until 9) {
-            left += (mActiveDrawable?.width ?: 0) + 20F
+            val left = iconStart + ((mActiveBitmap?.width ?: 0) + mIconGap) * index
 
             val bitmap = if (index < mRealm) {
-                mActiveDrawable
+                mActiveBitmap
             } else {
-                mNegativeDrawable
+                mNegativeBitmap
             }
             bitmap?.let {
                 canvas.drawBitmap(it, left, top, null)
@@ -64,8 +121,8 @@ class RealmDisplayView @JvmOverloads constructor(
     }
 
     override fun onDetachedFromWindow() {
-        mActiveDrawable = null
-        mNegativeDrawable = null
+        mActiveBitmap = null
+        mNegativeBitmap = null
         super.onDetachedFromWindow()
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RealmDisplayView">
+        <attr name="realm_count" format="integer" />
+        <attr name="realm_text" format="string|reference" />
+        <attr name="realm_text_size" format="dimension" />
+        <attr name="realm_active_icon" format="reference" />
+        <attr name="realm_negative_icon" format="reference" />
+        <attr name="realm_text_gap" format="dimension" />
+        <attr name="realm_icon_gap" format="dimension" />
+    </declare-styleable>
+</resources>
