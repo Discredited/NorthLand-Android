@@ -9,6 +9,7 @@ import com.june.northland.feature.character.magic.MagicVo
 import com.june.northland.feature.character.relationship.RelationshipVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.fragment_dialog_character_info.*
+import kotlinx.android.synthetic.main.view_close_image.*
 
 class CharacterInfoFragment : BaseDialogFragment() {
 

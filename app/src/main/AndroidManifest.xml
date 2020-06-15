@@ -21,6 +21,7 @@
         <activity android:name=".feature.character.CharacterInfoActivity" />
         <activity android:name=".feature.backpack.BackpackActivity" />
         <activity android:name=".feature.lineup.LineUpActivity" />
+        <activity android:name=".feature.practice.PracticeActivity" />
     </application>
 
 </manifest>

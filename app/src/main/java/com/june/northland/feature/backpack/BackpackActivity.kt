@@ -6,6 +6,7 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import kotlinx.android.synthetic.main.activity_backpack.*
+import kotlinx.android.synthetic.main.view_close_image.*
 
 class BackpackActivity : BaseActivity() {
 

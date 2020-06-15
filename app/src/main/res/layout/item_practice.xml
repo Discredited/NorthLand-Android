@@ -3,27 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="wrap_content">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tlCategory"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_56"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/color_pink" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpGoods"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPracticeCover"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,2:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tlCategory"
-        tools:background="@color/color_yellow" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_practice_0" />
 
-    <include layout="@layout/view_close_image" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPracticeName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_bg_alpha_black"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_30"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="妖力 | 道境" />
 </androidx.constraintlayout.widget.ConstraintLayout>

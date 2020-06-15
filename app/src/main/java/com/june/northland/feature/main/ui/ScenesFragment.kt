@@ -18,6 +18,7 @@ import com.june.northland.feature.lineup.LineUpActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.main.vo.PlotVo
+import com.june.northland.feature.practice.PracticeActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
 
 class ScenesFragment : BaseFragment() {
@@ -58,7 +59,8 @@ class ScenesFragment : BaseFragment() {
             when (position) {
                 0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
-                else -> ToastUtils.showShort("没有这个按钮")
+                5 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
+                else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }
         }
         rvMenu.setLinearManager(
@@ -114,11 +116,14 @@ class ScenesFragment : BaseFragment() {
     private fun initMenu() {
         mMenuAdapter.setNewInstance(
             mutableListOf(
-                MenuVo("背包", R.drawable.ic_defense),
-                MenuVo("阵容", R.drawable.ic_health),
-                MenuVo("关卡", R.drawable.ic_speed),
-                MenuVo("竞技场", R.drawable.ic_critical),
-                MenuVo("其他", R.drawable.ic_resister)
+                MenuVo("背包", R.drawable.ic_attack),
+                MenuVo("阵容", R.drawable.ic_defense),
+                MenuVo("关卡", R.drawable.ic_health),
+                MenuVo("竞技场", R.drawable.ic_speed),
+                MenuVo("商店", R.drawable.ic_critical),
+                MenuVo("修炼", R.drawable.ic_resister),
+                MenuVo("工会", R.drawable.ic_hit),
+                MenuVo("好友", R.drawable.ic_dodge)
             )
         )
     }
