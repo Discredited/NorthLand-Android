@@ -14,15 +14,12 @@ class LineUpActivity : BaseActivity() {
 
     override fun initView() {
         add.click {
-            val progress = vExperience.getProgress() + 50
-            vExperience.setProgress(progress)
-        }
-        sub.click {
-            val progress = vExperience.getProgress() - 30
+            val progress = vExperience.getProgress() + 20
             vExperience.setProgress(progress)
         }
     }
 
     override fun loadData() {
+        vExperience.initExperience(0, 0, 20, 20)
     }
 }

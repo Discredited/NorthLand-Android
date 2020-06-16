@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_bg_alpha_black">
@@ -11,10 +12,14 @@
         android:layout_height="@dimen/dp_30"
         android:layout_marginStart="@dimen/common_margin"
         android:layout_marginEnd="@dimen/common_margin"
+        app:exp_progress="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:exp_max_color="@color/color_gray"
+        app:exp_level_size="@dimen/sp_30"
+        tools:exp_progress_color="@color/color_yellow" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/add"
@@ -23,17 +28,6 @@
         android:layout_marginBottom="@dimen/dp_60"
         android:gravity="center"
         android:text="add"
-        android:textColor="@color/color_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/sub"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_56"
-        android:gravity="center"
-        android:text="sub"
         android:textColor="@color/color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

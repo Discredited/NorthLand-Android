@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExperienceView">
+        <attr name="exp_progress" format="integer" />
+        <attr name="exp_max" format="integer" />
+        <attr name="exp_max_color" format="color|reference" />
+        <attr name="exp_progress_color" format="color|reference" />
+        <attr name="exp_separator" format="string|reference" />
+
+        <attr name="exp_level_tag" format="string|reference" />
+        <attr name="exp_level_color" format="color|reference" />
+        <attr name="exp_level_size" format="dimension" />
+        <attr name="exp_level_gap" format="dimension" />
+
+        <attr name="exp_text_color" format="color|reference" />
+        <attr name="exp_text_size" format="dimension" />
+        <attr name="exp_gap" format="dimension" />
+
+        <attr name="exp_stroke_width" format="dimension" />
+        <attr name="exp_stroke_color" format="color|reference" />
+        <attr name="exp_stroke_show" format="boolean" />
+
+        <attr name="exp_radius" format="dimension" />
+    </declare-styleable>
+</resources>
