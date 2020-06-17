@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/common_margin"
+    tools:background="@color/color_bg_alpha_black"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -17,37 +18,33 @@
         tools:src="@drawable/ic_default_skill" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_24"
-        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
-        app:layout_constraintTop_toTopOf="@+id/ivAvatar"
-        tools:text="Lv.10" />
-
-    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:textColor="@color/color_white"
         android:textStyle="bold"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvLevel"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toTopOf="@id/ivAvatar"
         tools:text="沙罗铁树只为自己盛开" />
 
-    <ProgressBar
+    <com.june.northland.feature.character.widget.ExperienceView
         android:id="@+id/vExperience"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_12"
-        android:layout_marginStart="@dimen/dp_10"
-        app:layout_constraintBottom_toBottomOf="@id/tvLevel"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        app:exp_rect_percent="0.75"
+        app:exp_rect_gravity="bottom"
+        app:exp_level_size="@dimen/sp_14"
+        app:exp_text_size="@dimen/sp_10"
+        app:exp_stroke_width="@dimen/dp_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvLevel" />
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:exp_progress="30" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHerb"
@@ -62,7 +59,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvGold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivAvatar"
-        app:layout_constraintTop_toBottomOf="@id/tvLevel"
+        app:layout_constraintTop_toBottomOf="@id/vExperience"
         tools:text="1234567" />
 
     <androidx.appcompat.widget.AppCompatTextView

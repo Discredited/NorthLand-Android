@@ -53,9 +53,7 @@ class CharacterInfoFragment : BaseDialogFragment() {
         vCharacterDisplay.setCharacterAndWeapon(realmColor, character)
 
         tvCharacterName.text = character.name
-
-        vCharacterExperience.max = 100
-        vCharacterExperience.progress = 30
+        vCharacterExperience.initExperience(20, 30, 100, 20)
 
         vBasicAttribute.setAttributeValue("2500", "110", "950", "600")
         vExtraAttribute.setAttributeValue("35", "10", "200", "75")

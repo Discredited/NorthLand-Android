@@ -23,6 +23,7 @@
         <attr name="exp_radius" format="dimension" />
 
         <attr name="exp_rect_percent" format="float" />
+        <attr name="exp_animator_duration" format="integer" />
         <attr name="exp_rect_gravity" format="integer">
             <enum name="center" value="0" />
             <enum name="top" value="1" />

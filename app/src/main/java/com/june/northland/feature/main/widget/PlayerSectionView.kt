@@ -20,9 +20,7 @@ class PlayerSectionView @JvmOverloads constructor(
     fun setPlayerInfo() {
         ivAvatar.setImageResource(R.drawable.ic_avatar_gan_ning_zhen)
         tvName.text = "生命的长河是多迂回"
-        tvLevel.text = "Lv.25"
-        vExperience.max = 100
-        vExperience.progress = 66
+        vExperience.initExperience(5, 30, 100, 20)
 
         tvHerb.text = "999999"
         tvGold.text = "888888"

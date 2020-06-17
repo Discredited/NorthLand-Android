@@ -37,30 +37,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <!-- 经验等级 -->
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvLevelTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <com.june.northland.feature.character.widget.ExperienceView
+                    android:id="@+id/vCharacterExperience"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_20"
                     android:layout_marginStart="@dimen/common_margin"
                     android:layout_marginTop="@dimen/dp_20"
-                    android:text="@string/str_level"
-                    android:textColor="@color/color_white"
-                    android:textSize="@dimen/sp_14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/vCharacterDisplay" />
-
-                <ProgressBar
-                    android:id="@+id/vCharacterExperience"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_16"
-                    android:layout_marginStart="@dimen/dp_15"
                     android:layout_marginEnd="@dimen/common_margin"
-                    android:progress="30"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvLevelTitle"
+                    app:exp_level_size="@dimen/sp_18"
+                    app:exp_radius="@dimen/dp_4"
+                    app:exp_rect_percent="0.9"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tvLevelTitle"
-                    app:layout_constraintTop_toTopOf="@+id/tvLevelTitle" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vCharacterDisplay"
+                    tools:exp_progress="30" />
 
 
                 <com.june.northland.feature.character.widget.RealmDisplayView
@@ -72,7 +62,8 @@
                     android:textColor="@color/color_quality_epic"
                     android:textSize="@dimen/sp_20"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvLevelTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/vCharacterExperience"
+                    tools:realm_text="身态" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.appbar.MaterialToolbar

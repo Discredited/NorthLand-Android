@@ -9,20 +9,19 @@
     <com.june.northland.feature.character.widget.ExperienceView
         android:id="@+id/vExperience"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_80"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_margin"
         android:layout_marginEnd="@dimen/common_margin"
         app:exp_level_size="@dimen/sp_30"
-        app:exp_progress="30"
-        app:exp_radius="@dimen/dp_10"
-        app:exp_rect_gravity="center"
-        app:exp_rect_percent="0.5"
+        app:exp_radius="@dimen/dp_5"
+        app:exp_rect_gravity="top"
         app:exp_stroke_show="true"
         app:exp_stroke_width="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:exp_progress="30"
         tools:exp_max_color="@color/color_purple"
         tools:exp_progress_color="@color/color_pink" />
 
@@ -50,11 +49,28 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="@dimen/dp_100"
+        android:id="@+id/ivImage1"
+        android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
         android:background="@color/color_bg_alpha_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage2"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/color_bg_alpha_black"
+        app:layout_constraintStart_toEndOf="@+id/ivImage1"
+        app:layout_constraintTop_toTopOf="@+id/vExperience" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/color_bg_alpha_black"
+        app:layout_constraintBottom_toBottomOf="@+id/vExperience"
+        app:layout_constraintStart_toEndOf="@+id/ivImage2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.june.northland.feature.character.widget
 
+import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Canvas
@@ -7,6 +8,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
+import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import com.june.northland.R
 
@@ -54,6 +56,8 @@ class ExperienceView @JvmOverloads constructor(
     private var mRectF = RectF()
     private var mRectRadius = resources.getDimension(R.dimen.dp_5)  //圆角
 
+    private var mAnimatorDuration: Int = 1000
+
     init {
         val attribute =
             context.obtainStyledAttributes(attrs, R.styleable.ExperienceView, defStyleAttr, 0)
@@ -91,6 +95,11 @@ class ExperienceView @JvmOverloads constructor(
             isStrokeShow =
                 attribute.getBoolean(R.styleable.ExperienceView_exp_stroke_show, isStrokeShow)
             mRectRadius = attribute.getDimension(R.styleable.ExperienceView_exp_radius, mRectRadius)
+
+            mAnimatorDuration = attribute.getInt(
+                R.styleable.ExperienceView_exp_animator_duration,
+                mAnimatorDuration
+            )
         } finally {
             attribute.recycle()
         }
@@ -146,24 +155,24 @@ class ExperienceView @JvmOverloads constructor(
 
 
     private fun setStrokeRectF(levelTotalWidth: Float) {
+        val strokeGap = mStrokeWidth / 2
         val top = when (mExperienceGravity) {
             //顶部
-            1 -> mStrokeWidth / 2
+            1 -> strokeGap
             //底部
-            2 -> height - mExperienceHeight
+            2 -> height - mExperienceHeight + strokeGap
             //居中
             else -> (height - mExperienceHeight + mStrokeWidth) / 2
         }
         val bottom = when (mExperienceGravity) {
             //顶部显示
-            1 -> mExperienceHeight
+            1 -> mExperienceHeight - strokeGap
             //底部显示
-            2 -> height - mStrokeWidth
+            2 -> height - mStrokeWidth + strokeGap
             //居中显示
             else -> (height + mExperienceHeight - mStrokeWidth) / 2
         }
 
-        val strokeGap = mStrokeWidth / 2
         mRectF.left = levelTotalWidth + strokeGap
         mRectF.top = top
         mRectF.right = width.toFloat() - strokeGap
@@ -181,9 +190,9 @@ class ExperienceView @JvmOverloads constructor(
                 else -> (height - mExperienceHeight) / 2 + mStrokeWidth
             }
 
-            mRectF.left = levelTotalWidth + mStrokeWidth
+            mRectF.left = levelTotalWidth + mStrokeWidth * 0.8F
             mRectF.top = top
-            mRectF.right = width.toFloat() - mStrokeWidth
+            mRectF.right = width.toFloat() - mStrokeWidth * 0.8F
             mRectF.bottom = top + mExperienceHeight - mStrokeWidth * 2
         } else {
             val top = when (mExperienceGravity) {
@@ -213,7 +222,7 @@ class ExperienceView @JvmOverloads constructor(
                 else -> (height - mExperienceHeight) / 2 + mStrokeWidth
             }
 
-            mRectF.left = levelTotalWidth + mStrokeWidth
+            mRectF.left = levelTotalWidth + mStrokeWidth * 0.8F
             mRectF.top = top
             mRectF.right = mRectF.left + progressWidth
             mRectF.bottom = top + mExperienceHeight - mStrokeWidth * 2
@@ -301,7 +310,7 @@ class ExperienceView @JvmOverloads constructor(
             mRectF.left + mExpGap
         }
         val textY =
-            (mRectF.bottom + (mExpTextPaint.descent() - mExpTextPaint.ascent())) / 2F - (mExpTextPaint.fontMetrics.ascent - mExpTextPaint.fontMetrics.top)
+            ((mRectF.bottom + mRectF.top) + (mExpTextPaint.descent() - mExpTextPaint.ascent())) / 2F - (mExpTextPaint.fontMetrics.ascent - mExpTextPaint.fontMetrics.top)
         canvas.drawText(expText, expTextX, textY, mExpTextPaint)
     }
 
@@ -324,57 +333,52 @@ class ExperienceView @JvmOverloads constructor(
     fun getProgress(): Int = mExperienceProgress
 
     fun setProgress(progress: Int) {
-        mExperienceProgress = progress
-        invalidate()
-    }
+        if (mProgressAnimator?.isRunning == true) {
+            return
+        }
 
-//    fun setProgress(progress: Int) {
-//        if (mProgressAnimator?.isRunning == true) {
-//            return
-//        }
-//
-//        val nextProgress = calibrationProgress(progress)
-//        var targetProgress = nextProgress
-//        mExperienceOverflow = if (nextProgress >= mExperienceMax) {
-//            //溢出经验值
-//            targetProgress = mExperienceMax
-//            nextProgress - mExperienceMax
-//        } else {
-//            0
-//        }
-//
-//        mProgressAnimator = ObjectAnimator.ofInt(
-//            this,
-//            "mExperienceProgress",
-//            mExperienceProgress,
-//            targetProgress
-//        )
-//        mProgressAnimator?.duration = 1000
-//        //差值器 其变化开始速率较快，后面减速
-//        mProgressAnimator?.interpolator = DecelerateInterpolator()
-//        mProgressAnimator?.addListener(object : Animator.AnimatorListener {
-//            override fun onAnimationRepeat(animation: Animator?) {
-//            }
-//
-//            override fun onAnimationEnd(animation: Animator?) {
-//                if (mExperienceOverflow > 0 || mExperienceProgress == mExperienceMax) {
-//                    mLevel++
-//                    mExperienceProgress = 0
-//
-//                    mExperienceMax = mExperienceFactor * mLevel
-//                    setProgress(mExperienceOverflow)
-//                } else {
-//                    mProgressAnimator?.removeAllListeners()
-//                    mProgressAnimator = null
-//                }
-//            }
-//
-//            override fun onAnimationCancel(animation: Animator?) {
-//            }
-//
-//            override fun onAnimationStart(animation: Animator?) {
-//            }
-//        })
-//        mProgressAnimator?.start()
-//    }
+        val nextProgress = calibrationProgress(progress)
+        var targetProgress = nextProgress
+        mExperienceOverflow = if (nextProgress >= mExperienceMax) {
+            //溢出经验值
+            targetProgress = mExperienceMax
+            nextProgress - mExperienceMax
+        } else {
+            0
+        }
+
+        mProgressAnimator = ObjectAnimator.ofInt(
+            this,
+            "mExperienceProgress",
+            mExperienceProgress,
+            targetProgress
+        )
+        mProgressAnimator?.duration = mAnimatorDuration.toLong()
+        //差值器 其变化开始速率较快，后面减速
+        mProgressAnimator?.interpolator = DecelerateInterpolator()
+        mProgressAnimator?.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                if (mExperienceOverflow > 0 || mExperienceProgress == mExperienceMax) {
+                    mLevel++
+                    mExperienceProgress = 0
+
+                    mExperienceMax = mExperienceFactor * mLevel
+                    setProgress(mExperienceOverflow)
+                } else {
+                    mProgressAnimator?.removeAllListeners()
+                    mProgressAnimator = null
+                }
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+            }
+        })
+        mProgressAnimator?.start()
+    }
 }
