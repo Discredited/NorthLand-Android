@@ -21,5 +21,12 @@
         <attr name="exp_stroke_show" format="boolean" />
 
         <attr name="exp_radius" format="dimension" />
+
+        <attr name="exp_rect_percent" format="float" />
+        <attr name="exp_rect_gravity" format="integer">
+            <enum name="center" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
     </declare-styleable>
 </resources>

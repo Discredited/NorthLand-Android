@@ -9,17 +9,22 @@
     <com.june.northland.feature.character.widget.ExperienceView
         android:id="@+id/vExperience"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_30"
+        android:layout_height="@dimen/dp_80"
         android:layout_marginStart="@dimen/common_margin"
         android:layout_marginEnd="@dimen/common_margin"
-        app:exp_progress="50"
+        app:exp_level_size="@dimen/sp_30"
+        app:exp_progress="30"
+        app:exp_radius="@dimen/dp_10"
+        app:exp_rect_gravity="center"
+        app:exp_rect_percent="0.5"
+        app:exp_stroke_show="true"
+        app:exp_stroke_width="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:exp_max_color="@color/color_gray"
-        app:exp_level_size="@dimen/sp_30"
-        tools:exp_progress_color="@color/color_yellow" />
+        tools:exp_max_color="@color/color_purple"
+        tools:exp_progress_color="@color/color_pink" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/add"
@@ -32,4 +37,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sub"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:gravity="center"
+        android:text="sub"
+        android:textColor="@color/color_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/color_bg_alpha_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
