@@ -16,14 +16,26 @@
         app:exp_radius="@dimen/dp_5"
         app:exp_rect_gravity="top"
         app:exp_stroke_show="true"
+        android:visibility="gone"
         app:exp_stroke_width="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:exp_progress="30"
         tools:exp_max_color="@color/color_purple"
+        tools:exp_progress="30"
         tools:exp_progress_color="@color/color_pink" />
+
+    <com.june.northland.feature.character.widget.HealthView
+        android:id="@+id/vHealthView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/common_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vExperience" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/add"
@@ -52,6 +64,7 @@
         android:id="@+id/ivImage1"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
+        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +76,7 @@
         android:id="@+id/ivImage2"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
+        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
         app:layout_constraintStart_toEndOf="@+id/ivImage1"
         app:layout_constraintTop_toTopOf="@+id/vExperience" />
@@ -70,6 +84,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
+        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
         app:layout_constraintBottom_toBottomOf="@+id/vExperience"
         app:layout_constraintStart_toEndOf="@+id/ivImage2" />
