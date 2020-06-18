@@ -1,5 +1,6 @@
 package com.june.northland.feature.character.widget
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
@@ -15,7 +16,12 @@ class HealthView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var mHealthMax: Int = 1000
-    private var mHealthValue: Int = 800
+    private var mHealthValue: Int = 950
+    private var mDamageValue: Int = 0
+        set(value) {
+            field = value
+            invalidate()
+        }
 
     private var mHealthColor = ContextCompat.getColor(context, R.color.color_red)
     private var mDamageColor = ContextCompat.getColor(context, R.color.color_red_light)
@@ -27,10 +33,15 @@ class HealthView @JvmOverloads constructor(
 
     private var mRadius = resources.getDimension(R.dimen.dp_10)
 
-    private val mRectF = RectF()
     private val mPath = Path()
+    private val mRectF = RectF()
+
+    private val mDamagePath = Path()
+    private val mDamageRectF = RectF()
 
     private lateinit var mRectRadii: FloatArray
+
+    private var mDamageAnimator: ObjectAnimator? = null
 
     init {
         //mHealthPaint.style = Paint.Style.STROKE
@@ -59,16 +70,25 @@ class HealthView @JvmOverloads constructor(
         //mPath.addArc()
         //mPath.arcTo()
 
+        val reactWidth = width - mStrokeWidth * 2
+
+        //绘制生命条
+        val radiusPercent = mRadius / reactWidth
         val healthPercent = mHealthValue.toFloat() / mHealthMax
         if (healthPercent > 0) {
+            mHealthPaint.color = mHealthColor
             mPath.reset()
-
             mRectF.left = mStrokeWidth
             mRectF.top = mStrokeWidth
-            mRectF.right = (width - mStrokeWidth) * healthPercent
+            mRectF.right = mRectF.left + reactWidth * healthPercent
             mRectF.bottom = height - mStrokeWidth
 
-            if (mHealthValue < mHealthMax) {
+            mRectRadii[0] = mRadius
+            mRectRadii[1] = mRadius
+            mRectRadii[6] = mRadius
+            mRectRadii[7] = mRadius
+
+            if (healthPercent < (1F - radiusPercent)) {
                 mRectRadii[2] = 0F
                 mRectRadii[3] = 0F
                 mRectRadii[4] = 0F
@@ -83,6 +103,46 @@ class HealthView @JvmOverloads constructor(
             canvas.drawPath(mPath, mHealthPaint)
         }
 
+        //绘制伤害条
+        if (mDamageValue > 0) {
+            mHealthPaint.color = mDamageColor
+            val damagePercent = mDamageValue.toFloat() / mHealthMax
+            val totalPercent = damagePercent + healthPercent
+
+            mDamagePath.reset()
+            mDamageRectF.left = mStrokeWidth + reactWidth * healthPercent
+            mDamageRectF.top = mStrokeWidth
+            mDamageRectF.right = mDamageRectF.left + reactWidth * damagePercent
+            mDamageRectF.bottom = height - mStrokeWidth
+
+            if (healthPercent > radiusPercent) {
+                mRectRadii[0] = 0F
+                mRectRadii[1] = 0F
+                mRectRadii[6] = 0F
+                mRectRadii[7] = 0F
+            } else {
+                mRectRadii[0] = mRadius
+                mRectRadii[1] = mRadius
+                mRectRadii[6] = mRadius
+                mRectRadii[7] = mRadius
+            }
+
+            if (totalPercent < (1F - radiusPercent)) {
+                mRectRadii[2] = 0F
+                mRectRadii[3] = 0F
+                mRectRadii[4] = 0F
+                mRectRadii[5] = 0F
+            } else {
+                mRectRadii[2] = mRadius
+                mRectRadii[3] = mRadius
+                mRectRadii[4] = mRadius
+                mRectRadii[5] = mRadius
+            }
+
+            mDamagePath.addRoundRect(mDamageRectF, mRectRadii, Path.Direction.CW)
+            canvas.drawPath(mDamagePath, mHealthPaint)
+        }
+
         mRectF.left = mStrokeWidth / 2
         mRectF.top = mStrokeWidth / 2
         mRectF.right = width - mStrokeWidth / 2
@@ -90,12 +150,32 @@ class HealthView @JvmOverloads constructor(
         canvas.drawRoundRect(mRectF, mRadius, mRadius, mStrokePaint)
     }
 
-    fun damage(reduceHealth: Int) {
-        mHealthValue -= reduceHealth
-        if (mHealthValue < 0) {
+    fun damage(reduceHealth: Int, damageAnimator: Boolean = true) {
+        val damagePercent = reduceHealth.toFloat() / mHealthMax
+        mDamageValue = if (damageAnimator && damagePercent > 0.3F) {
+            reduceHealth
+        } else {
+            0
+        }
+        if (mHealthValue > reduceHealth) {
+            mHealthValue -= reduceHealth
+        } else {
+            mDamageValue = mHealthValue
             mHealthValue = 0
         }
-        invalidate()
+
+        if (mDamageValue > 0) {
+            mDamageAnimator = ObjectAnimator.ofInt(
+                this,
+                "mDamageValue",
+                mDamageValue,
+                0
+            )
+            mDamageAnimator?.duration = 1000L
+            mDamageAnimator?.start()
+        } else {
+            invalidate()
+        }
     }
 
     fun restore(addHealth: Int) {

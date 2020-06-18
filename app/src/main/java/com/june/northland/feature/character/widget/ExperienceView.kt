@@ -327,12 +327,12 @@ class ExperienceView @JvmOverloads constructor(
         mLevel = level
         mExperienceMax = max
         mExperienceFactor = factor
-        setProgress(progress)
+        setProgress(progress, false)
     }
 
     fun getProgress(): Int = mExperienceProgress
 
-    fun setProgress(progress: Int) {
+    fun setProgress(progress: Int, isAnimator: Boolean = true) {
         if (mProgressAnimator?.isRunning == true) {
             return
         }

@@ -16,7 +16,6 @@
         app:exp_radius="@dimen/dp_5"
         app:exp_rect_gravity="top"
         app:exp_stroke_show="true"
-        android:visibility="gone"
         app:exp_stroke_width="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,12 +16,12 @@ class LineUpActivity : BaseActivity() {
         add.click {
 //            val progress = vExperience.getProgress() + 10
 //            vExperience.setProgress(progress)
-            vHealthView.restore(70)
+            vHealthView.restore(3)
         }
         sub.click {
 //            val progress = vExperience.getProgress() - 10
 //            vExperience.setProgress(progress)
-            vHealthView.damage(90)
+            vHealthView.damage(730)
         }
     }
 
