@@ -15,7 +15,7 @@ class HealthView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var mHealthMax: Int = 1000
-    private var mHealthValue: Int = 1000
+    private var mHealthValue: Int = 800
 
     private var mHealthColor = ContextCompat.getColor(context, R.color.color_red)
     private var mDamageColor = ContextCompat.getColor(context, R.color.color_red_light)
@@ -30,6 +30,8 @@ class HealthView @JvmOverloads constructor(
     private val mRectF = RectF()
     private val mPath = Path()
 
+    private lateinit var mRectRadii: FloatArray
+
     init {
         //mHealthPaint.style = Paint.Style.STROKE
         //mHealthPaint.strokeWidth = resources.getDimension(R.dimen.dp_5)
@@ -38,6 +40,13 @@ class HealthView @JvmOverloads constructor(
         mStrokePaint.style = Paint.Style.STROKE
         mStrokePaint.strokeWidth = mStrokeWidth
         mStrokePaint.color = mStrokeColor
+
+        mRectRadii = floatArrayOf(
+            mRadius, mRadius,
+            mRadius, mRadius,
+            mRadius, mRadius,
+            mRadius, mRadius
+        )
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -50,57 +59,50 @@ class HealthView @JvmOverloads constructor(
         //mPath.addArc()
         //mPath.arcTo()
 
-        val pathX = mStrokeWidth + mRadius
-        val rectX = mStrokeWidth + mRadius * 2
-        val pathY = mStrokeWidth
-        mPath.moveTo(pathX, pathY)
-        mPath.lineTo(width - pathX, pathY)
-        mPath.arcTo(
-            width - rectX,
-            pathY,
-            width - mStrokeWidth,
-            pathY + mRadius * 2,
-            -90F,
-            90F,
-            false
-        )
-        mPath.lineTo(width - mStrokeWidth, height - mStrokeWidth - mRadius)
-        mPath.arcTo(
-            width - mStrokeWidth - mRadius * 2,
-            height - mStrokeWidth - mRadius * 2,
-            width - mStrokeWidth,
-            height - mStrokeWidth,
-            0F,
-            90F,
-            false
-        )
-        mPath.lineTo(mStrokeWidth + mRadius, height - mStrokeWidth)
-        mPath.arcTo(
-            mStrokeWidth,
-            height - mStrokeWidth - mRadius * 2,
-            mStrokeWidth + mRadius * 2,
-            height - mStrokeWidth,
-            90F,
-            90F,
-            false
-        )
-        mPath.lineTo(mStrokeWidth, mStrokeWidth + mRadius)
-        mPath.arcTo(
-            mStrokeWidth,
-            mStrokeWidth,
-            mStrokeWidth + mRadius * 2,
-            mStrokeWidth + mRadius * 2,
-            180F,
-            90F,
-            false
-        )
-        //mPath.close()
-        canvas.drawPath(mPath, mHealthPaint)
+        val healthPercent = mHealthValue.toFloat() / mHealthMax
+        if (healthPercent > 0) {
+            mPath.reset()
 
-//        mRectF.left = mStrokeWidth / 2
-//        mRectF.top = mStrokeWidth / 2
-//        mRectF.right = width - mStrokeWidth / 2
-//        mRectF.bottom = height - mStrokeWidth / 2
-//        canvas.drawRoundRect(mRectF, mRadius, mRadius, mStrokePaint)
+            mRectF.left = mStrokeWidth
+            mRectF.top = mStrokeWidth
+            mRectF.right = (width - mStrokeWidth) * healthPercent
+            mRectF.bottom = height - mStrokeWidth
+
+            if (mHealthValue < mHealthMax) {
+                mRectRadii[2] = 0F
+                mRectRadii[3] = 0F
+                mRectRadii[4] = 0F
+                mRectRadii[5] = 0F
+            } else {
+                mRectRadii[2] = mRadius
+                mRectRadii[3] = mRadius
+                mRectRadii[4] = mRadius
+                mRectRadii[5] = mRadius
+            }
+            mPath.addRoundRect(mRectF, mRectRadii, Path.Direction.CW)
+            canvas.drawPath(mPath, mHealthPaint)
+        }
+
+        mRectF.left = mStrokeWidth / 2
+        mRectF.top = mStrokeWidth / 2
+        mRectF.right = width - mStrokeWidth / 2
+        mRectF.bottom = height - mStrokeWidth / 2
+        canvas.drawRoundRect(mRectF, mRadius, mRadius, mStrokePaint)
+    }
+
+    fun damage(reduceHealth: Int) {
+        mHealthValue -= reduceHealth
+        if (mHealthValue < 0) {
+            mHealthValue = 0
+        }
+        invalidate()
+    }
+
+    fun restore(addHealth: Int) {
+        mHealthValue += addHealth
+        if (mHealthValue > mHealthMax) {
+            mHealthValue = mHealthMax
+        }
+        invalidate()
     }
 }
