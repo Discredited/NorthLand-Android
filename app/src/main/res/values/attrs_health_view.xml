@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HealthView">
+        <attr name="hp_health_color" format="color|reference" />
+        <attr name="hp_damage_color" format="color|reference" />
+        <attr name="hp_health_max" format="integer" />
+        <attr name="hp_health_value" format="integer" />
+
+        <attr name="hp_stroke_color" format="color|reference" />
+        <attr name="hp_stroke_width" format="dimension" />
+        <attr name="hp_radius" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_200"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5"
+    tools:background="@drawable/shape_rect_realm_radius_10"
+    tools:parentTag="androidx.appcompat.widget.LinearLayoutCompat">
+
+    <com.june.northland.widget.ScaleImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/ic_avatar_gan_ning_zhen" />
+
+    <com.june.northland.feature.character.widget.HealthView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20" />
+</merge>

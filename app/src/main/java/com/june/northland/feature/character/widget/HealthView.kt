@@ -15,8 +15,8 @@ class HealthView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var mHealthMax: Int = 1000
-    private var mHealthValue: Int = 950
+    private var mHealthMax: Int = 100
+    private var mHealthValue: Int = 0
     private var mDamageValue: Int = 0
         set(value) {
             field = value
@@ -39,13 +39,27 @@ class HealthView @JvmOverloads constructor(
     private val mDamagePath = Path()
     private val mDamageRectF = RectF()
 
-    private lateinit var mRectRadii: FloatArray
+    private var mRectRadii: FloatArray
 
     private var mDamageAnimator: ObjectAnimator? = null
 
     init {
-        //mHealthPaint.style = Paint.Style.STROKE
-        //mHealthPaint.strokeWidth = resources.getDimension(R.dimen.dp_5)
+        val array = context.obtainStyledAttributes(attrs, R.styleable.HealthView, defStyleAttr, 0)
+        try {
+            mHealthMax = array.getInt(R.styleable.HealthView_hp_health_max, mHealthMax)
+            mHealthValue = array.getInt(R.styleable.HealthView_hp_health_value, mHealthValue)
+
+            mHealthColor = array.getColor(R.styleable.HealthView_hp_health_color, mHealthColor)
+            mDamageColor = array.getColor(R.styleable.HealthView_hp_damage_color, mDamageColor)
+
+            mStrokeWidth = array.getDimension(R.styleable.HealthView_hp_stroke_width, mStrokeWidth)
+            mStrokeColor = array.getColor(R.styleable.HealthView_hp_stroke_color, mStrokeColor)
+
+            mRadius = array.getDimension(R.styleable.HealthView_hp_radius, mRadius)
+        } finally {
+            array.recycle()
+        }
+
         mHealthPaint.color = mHealthColor
 
         mStrokePaint.style = Paint.Style.STROKE
@@ -61,7 +75,12 @@ class HealthView @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val specWidth = MeasureSpec.getSize(widthMeasureSpec)
+        val specHeight = MeasureSpec.getSize(heightMeasureSpec)
+        val rectHeight = mRadius * 2
+        if (specHeight >= rectHeight) {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
