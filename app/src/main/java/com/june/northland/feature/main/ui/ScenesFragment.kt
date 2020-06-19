@@ -19,6 +19,7 @@ import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.main.vo.PlotVo
 import com.june.northland.feature.practice.PracticeActivity
+import com.june.northland.feature.store.StoreActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
 
 class ScenesFragment : BaseFragment() {
@@ -59,6 +60,7 @@ class ScenesFragment : BaseFragment() {
             when (position) {
                 0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
+                4 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 5 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
                 else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }

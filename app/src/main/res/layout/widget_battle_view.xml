@@ -12,7 +12,7 @@
         android:id="@+id/ivAvatar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src="@drawable/ic_avatar_gan_ning_zhen" />
+        android:src="@drawable/ic_avatar_gan_ning_zhen" />
 
     <com.june.northland.feature.character.widget.HealthView
         android:layout_width="match_parent"

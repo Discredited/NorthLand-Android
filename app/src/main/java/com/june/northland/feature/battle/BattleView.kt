@@ -12,5 +12,6 @@ class BattleView @JvmOverloads constructor(
 
     init {
         View.inflate(context, R.layout.widget_battle_view, this)
+        orientation = VERTICAL
     }
 }
