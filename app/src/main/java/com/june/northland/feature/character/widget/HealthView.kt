@@ -16,7 +16,7 @@ class HealthView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var mHealthMax: Int = 100
-    private var mHealthValue: Int = 0
+    private var mHealthValue: Int = 100
     private var mDamageValue: Int = 0
         set(value) {
             field = value
@@ -27,11 +27,11 @@ class HealthView @JvmOverloads constructor(
     private var mDamageColor = ContextCompat.getColor(context, R.color.color_red_light)
     private val mHealthPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private var mStrokeWidth = resources.getDimension(R.dimen.dp_2)  //线框宽度
+    private var mStrokeWidth = resources.getDimension(R.dimen.dp_1)  //线框宽度
     private var mStrokeColor = ContextCompat.getColor(context, R.color.color_white)  //线框颜色
     private val mStrokePaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private var mRadius = resources.getDimension(R.dimen.dp_10)
+    private var mRadius = resources.getDimension(R.dimen.dp_5)
 
     private val mPath = Path()
     private val mRectF = RectF()
@@ -77,9 +77,17 @@ class HealthView @JvmOverloads constructor(
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val specWidth = MeasureSpec.getSize(widthMeasureSpec)
         val specHeight = MeasureSpec.getSize(heightMeasureSpec)
-        val rectHeight = mRadius * 2
-        if (specHeight >= rectHeight) {
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val rectHeight = (mRadius * 2).toInt()
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+
+        if (heightMode == MeasureSpec.AT_MOST) {
+            setMeasuredDimension(specWidth, rectHeight)
+        } else {
+            if (specHeight >= rectHeight) {
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+            } else {
+                setMeasuredDimension(specWidth, rectHeight)
+            }
         }
     }
 

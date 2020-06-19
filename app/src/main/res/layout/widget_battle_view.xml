@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/dp_200"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="@dimen/dp_5"
     tools:background="@drawable/shape_rect_realm_radius_10"
-    tools:parentTag="androidx.appcompat.widget.LinearLayoutCompat">
+    tools:parentTag="android.widget.FrameLayout">
 
     <com.june.northland.widget.ScaleImageView
         android:id="@+id/ivAvatar"
@@ -16,7 +17,9 @@
 
     <com.june.northland.feature.character.widget.HealthView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_20"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginBottom="@dimen/dp_20" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp_4"
+        app:hp_radius="@dimen/dp_3"
+        app:hp_stroke_width="@dimen/dp_0_5" />
 </merge>

@@ -6,6 +6,7 @@
     android:background="@color/color_bg_alpha_black">
 
     <com.june.northland.feature.battle.BattlegroundLayout
+        android:id="@+id/vBattleground"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
