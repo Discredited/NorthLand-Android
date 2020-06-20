@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_bg_alpha_black">
+    android:background="@color/color_pink">
 
-    <com.june.northland.feature.character.widget.ExperienceView
-        android:id="@+id/vExperience"
+    <com.june.northland.feature.battle.BattleHealthView
+        android:id="@+id/vHealthView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_200"
         android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_20"
+        app:battle_health_gravity="bottom"
+        app:battle_health_value="40"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
         android:layout_marginEnd="@dimen/common_margin"
-        app:exp_level_size="@dimen/sp_30"
-        app:exp_radius="@dimen/dp_5"
-        app:exp_rect_gravity="top"
-        app:exp_stroke_show="true"
-        app:exp_stroke_width="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:exp_max_color="@color/color_purple"
-        tools:exp_progress="30"
-        tools:exp_progress_color="@color/color_pink" />
-
-    <com.june.northland.feature.character.widget.HealthView
-        android:id="@+id/vHealthView"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_40"
-        android:layout_marginStart="@dimen/common_margin"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/common_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vExperience" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/add"
@@ -43,7 +30,6 @@
         android:layout_marginBottom="@dimen/dp_60"
         android:gravity="center"
         android:text="add"
-        android:textColor="@color/color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -54,7 +40,6 @@
         android:layout_height="@dimen/dp_56"
         android:gravity="center"
         android:text="sub"
-        android:textColor="@color/color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -63,8 +48,8 @@
         android:id="@+id/ivImage1"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
-        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
@@ -75,16 +60,16 @@
         android:id="@+id/ivImage2"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
-        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@+id/ivImage1"
         app:layout_constraintTop_toTopOf="@+id/vExperience" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_40"
-        android:visibility="gone"
         android:background="@color/color_bg_alpha_black"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/vExperience"
         app:layout_constraintStart_toEndOf="@+id/ivImage2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

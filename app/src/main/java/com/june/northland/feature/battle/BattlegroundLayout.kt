@@ -1,7 +1,10 @@
 package com.june.northland.feature.battle
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.widget.LinearLayoutCompat
@@ -19,8 +22,10 @@ class BattlegroundLayout @JvmOverloads constructor(
     private val mBattleCount = 8 // Battle数量
 
     private var mBgPadding = 0
-    private var mBattleGap = 0
-    private var mbgHalfHeight = 0
+    private var mBattleGap = 0  //BattleView的间距
+
+    private var mbgHalfHeight = 0  //战场中间分割线
+    private var mBgDivider = 0  //BattleView分割线高度(敌方和己方的距离)
 
     private var mBattleWidth = 0
     private var mBattleHeight = 0
@@ -36,14 +41,22 @@ class BattlegroundLayout @JvmOverloads constructor(
         ViewGroup.LayoutParams.WRAP_CONTENT
     )
 
+    private var mAttackAnimator: ObjectAnimator? = null
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val specWidth = MeasureSpec.getSize(widthMeasureSpec)
         val specHeight = MeasureSpec.getSize(heightMeasureSpec)
         mBattleWidth = (specWidth * 0.2F).toInt()
         mBattleHeight = mBattleWidth
         mBattleGap = (specWidth * 0.1F / 3).toInt()
-        mBgPadding = (specWidth * 0.05F).toInt()
+
+        val maxColumn = getMaxColumn()
+        mBgPadding = (specWidth - mBattleWidth * maxColumn - mBattleGap * (maxColumn - 1)) / 2
+
+        mBgDivider = mBattleGap * 3
+
         mbgHalfHeight = specHeight / 2
+
         children.forEachIndexed { _, view ->
             view.layoutParams.width = mBattleWidth
             view.layoutParams.height = mBattleHeight
@@ -56,60 +69,96 @@ class BattlegroundLayout @JvmOverloads constructor(
         children.forEachIndexed { index, child ->
             if (index < mBattleOpponent.size) {
                 //对手布局
-                val row = index / mColumn
-                val column = index % mColumn
-
-                val childLeft = mBgPadding + column * (mBattleWidth + mBattleGap)
-                val childTop = if (row == 0) {
-                    mbgHalfHeight - mBattleHeight * 2 - mBattleGap * 3
-                } else {
-                    mbgHalfHeight + mBattleGap * 2
-                }
-                val childRight = childLeft + mBattleWidth
-                val childBottom = childTop + mBattleHeight
-
-                Timber.e("row:$row    column$column    childLeft:$childLeft    childTop:$childTop    childRight:$childRight    childBottom:$childBottom")
-
-                child.layout(childLeft, childTop, childRight, childBottom)
+                layoutOpponent(index, child)
             } else {
                 //己方布局
-                //对手布局
                 val position = index - mBattleOpponent.size
-                val row = position / mColumn
-                val column = position % mColumn
-
-                val childLeft = mBgPadding + column * (mBattleWidth + mBattleGap)
-                val childTop = if (row == 0) {
-                    mbgHalfHeight - mBattleHeight - mBattleGap * 2
-                } else {
-                    mbgHalfHeight + mBattleHeight + mBattleGap * 3
-                }
-                val childRight = childLeft + mBattleWidth
-                val childBottom = childTop + mBattleHeight
-
-                Timber.e("row:$row    column$column    childLeft:$childLeft    childTop:$childTop    childRight:$childRight    childBottom:$childBottom")
-
-                child.layout(childLeft, childTop, childRight, childBottom)
+                layoutOwnSide(position, child)
             }
         }
     }
 
+    private fun layoutOpponent(position: Int, child: View) {
+        val row = position / mColumn
+        val column = position % mColumn
+        val childLeft = mBgPadding + column * (mBattleWidth + mBattleGap)
+        val childTop = mbgHalfHeight - mBgDivider - mBattleHeight * (row + 1) - mBattleGap * row
+        val childRight = childLeft + mBattleWidth
+        val childBottom = childTop + mBattleHeight
+
+        child.layout(childLeft, childTop, childRight, childBottom)
+    }
+
+    private fun layoutOwnSide(position: Int, child: View) {
+        val row = position / mColumn
+        val column = position % mColumn
+        val childLeft = mBgPadding + column * (mBattleWidth + mBattleGap)
+        val childTop = mbgHalfHeight + mBgDivider + (mBattleHeight + mBattleGap) * row
+        val childRight = childLeft + mBattleWidth
+        val childBottom = childTop + mBattleHeight
+
+        child.layout(childLeft, childTop, childRight, childBottom)
+    }
+
+    private fun getMaxColumn(): Int {
+        val opponentColumn = if (mBattleOpponent.size / mColumn > 0) {
+            mColumn
+        } else {
+            mBattleOpponent.size % (mColumn + 1)
+        }
+        val ownSideColumn = if (mBattleOwnSide.size / mColumn > 0) {
+            mColumn
+        } else {
+            mBattleOpponent.size % (mColumn + 1)
+        }
+        return opponentColumn.coerceAtLeast(ownSideColumn)
+    }
+
     fun initBattleView() {
+
+        val opponentSize = (Math.random() * 7).toInt() + 1
+        val ownSideSize = (Math.random() * 7).toInt() + 1
+
+        Timber.e("生成了 $opponentSize 个地方战员")
+        Timber.e("生成了 $ownSideSize 个己方战员")
+
         val opponentColor = ContextCompat.getColor(context, R.color.color_quality_rare)
         val ownSideColor = ContextCompat.getColor(context, R.color.color_quality_epic)
-        val strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_1)
-        val radius = resources.getDimension(R.dimen.dp_1)
-        for (index in 0 until mBattleCount) {
+        val strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_2)
+        val radius = resources.getDimension(R.dimen.dp_2)
+        for (index in 0 until opponentSize) {
             val battleView = BattleView(context)
             battleView.setDrawable(strokeColor = opponentColor, strokeWidth = strokeWidth, cornerRadius = radius)
+            battleView.setPosition(index + 1)
             mBattleOpponent.add(battleView)
             addView(battleView, mDefaultParams)
         }
-        for (index in 0 until mBattleCount) {
+        for (index in 0 until ownSideSize) {
             val battleView = BattleView(context)
+            battleView.setPosition(index + 1)
             battleView.setDrawable(strokeColor = ownSideColor, strokeWidth = strokeWidth, cornerRadius = radius)
             mBattleOwnSide.add(battleView)
             addView(battleView, mDefaultParams)
+        }
+    }
+
+    fun roundStart() {
+        val translationY = PropertyValuesHolder.ofFloat("translationY", -60F, 0F)
+        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.2F, 1F)
+        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.2F, 1F)
+
+        mAttackAnimator = ObjectAnimator.ofPropertyValuesHolder(
+            getChildAt(mBattleOpponent.size),
+            translationY,
+            scaleX,
+            scaleY
+        )
+        mAttackAnimator?.duration = 200
+        mAttackAnimator?.start()
+
+        for (index in 0 until mBattleOpponent.size) {
+            val battleView = getChildAt(index) as BattleView
+            battleView.damage(20)
         }
     }
 }

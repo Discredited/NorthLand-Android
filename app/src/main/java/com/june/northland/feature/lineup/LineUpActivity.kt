@@ -26,6 +26,6 @@ class LineUpActivity : BaseActivity() {
     }
 
     override fun loadData() {
-        vExperience.initExperience(0, 0, 100, 20)
+        //vExperience.initExperience(0, 0, 100, 20)
     }
 }

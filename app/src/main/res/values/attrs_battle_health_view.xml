@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BattleHealthView">
+        <attr name="battle_health_gravity" format="integer">
+            <enum name="center" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+        <attr name="battle_health_color" format="color|reference" />
+        <attr name="battle_damage_color" format="color|reference" />
+        <attr name="battle_health_max" format="integer" />
+        <attr name="battle_health_value" format="integer" />
+
+        <attr name="battle_stroke_color" format="color|reference" />
+        <attr name="battle_stroke_width" format="dimension" />
+        <attr name="battle_radius" format="dimension" />
+    </declare-styleable>
+</resources>
