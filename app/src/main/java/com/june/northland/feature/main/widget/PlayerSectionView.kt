@@ -18,7 +18,7 @@ class PlayerSectionView @JvmOverloads constructor(
     fun getAvatarView(): View? = ivAvatar
 
     fun setPlayerInfo() {
-        ivAvatar.setImageResource(R.drawable.ic_avatar_gan_ning_zhen)
+        ivAvatar.setImageResource(R.drawable.ic_avatar_gan_ning_zhen_1)
         tvName.text = "生命的长河是多迂回"
         vExperience.initExperience(5, 30, 100, 20)
 

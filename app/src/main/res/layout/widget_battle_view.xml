@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/dp_2"
-        android:src="@drawable/ic_avatar_gan_ning_zhen" />
+        android:src="@drawable/ic_avatar_gan_ning_zhen_1" />
 
     <com.june.northland.feature.battle.BattleHealthView
         android:id="@+id/vHealthView"

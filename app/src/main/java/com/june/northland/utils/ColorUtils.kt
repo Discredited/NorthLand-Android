@@ -6,6 +6,7 @@ object ColorUtils {
 
     fun getRealmColor(realm: Int): Int {
         return when (realm) {
+            1 -> R.color.color_quality_primary
             2 -> R.color.color_quality_intermediate
             3 -> R.color.color_quality_advanced
             4 -> R.color.color_quality_rare

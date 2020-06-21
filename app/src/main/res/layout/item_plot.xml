@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_180">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlotCover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/img_practice_0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPlotName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/common_margin"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_30"
+        tools:text="红尘天" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPlotProcess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:background="@color/color_bg_alpha_black"
+        android:drawableStart="@drawable/ic_star"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        tools:text="90 / 120" />
+</FrameLayout>

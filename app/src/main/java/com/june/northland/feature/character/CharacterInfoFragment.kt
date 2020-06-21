@@ -47,7 +47,8 @@ class CharacterInfoFragment : BaseDialogFragment() {
     }
 
     private fun setCharacter(character: CharacterVo) {
-        val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getRealmColor(5))
+        val realm = arguments?.getInt("REALM", 8) ?: 8
+        val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getRealmColor(realm))
         vCollapsing.setContentScrimColor(realmColor)
 
         vCharacterDisplay.setCharacterAndWeapon(realmColor, character)
@@ -96,5 +97,15 @@ class CharacterInfoFragment : BaseDialogFragment() {
                 )
             )
         )
+    }
+
+    companion object {
+        fun newInstance(realm: Int): CharacterInfoFragment {
+            val arguments = Bundle()
+            arguments.putInt("REALM", realm)
+            val fragment = CharacterInfoFragment()
+            fragment.arguments = arguments
+            return fragment
+        }
     }
 }

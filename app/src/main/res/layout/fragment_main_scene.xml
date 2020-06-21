@@ -45,7 +45,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMenu"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_60"
+        android:layout_height="@dimen/dp_70"
         android:clipToPadding="false"
         android:paddingStart="@dimen/common_margin"
         android:paddingEnd="@dimen/common_margin"

@@ -23,6 +23,7 @@
         <activity android:name=".feature.lineup.LineUpActivity" />
         <activity android:name=".feature.practice.PracticeActivity" />
         <activity android:name=".feature.store.StoreActivity" />
+        <activity android:name=".feature.plot.PlotActivity" />
     </application>
 
 </manifest>

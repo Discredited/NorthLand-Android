@@ -1,7 +1,10 @@
 package com.june.northland.feature.character
 
+import com.june.northland.R
+
 class CharacterVo(
     val name: String = "甘柠真",
+    val avatarIcon: Int = R.drawable.ic_avatar_gan_ning_zhen,
     var level: Int = 0,
     var experience: Long = 0,  //总经验
     var expLevel: Long = 20,  //单级经验

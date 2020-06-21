@@ -13,12 +13,12 @@ class ScenesCharacterAdapter :
     BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.layout.item_main_scenes_character) {
 
     override fun convert(holder: BaseViewHolder, item: CharacterVo) {
-        val realm = ColorUtils.getRealmColor((holder.layoutPosition + 1) % 9)
+        val realm = ColorUtils.getRealmColor((holder.layoutPosition) % 9)
         val realmColor = ContextCompat.getColor(holder.itemView.context, realm)
         holder.itemView.ivCharacter.setDrawable(
             strokeColor = realmColor,
             strokeWidth = holder.itemView.resources.getDimensionPixelSize(R.dimen.dp_3)
         )
-        holder.itemView.ivCharacter.setImageResource(R.drawable.ic_avatar_gan_ning_zhen)
+        holder.itemView.ivCharacter.setImageResource(item.avatarIcon)
     }
 }

@@ -18,6 +18,7 @@ import com.june.northland.feature.lineup.LineUpActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.main.vo.PlotVo
+import com.june.northland.feature.plot.PlotActivity
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
@@ -32,8 +33,8 @@ class ScenesFragment : BaseFragment() {
 
     override fun initView() {
         //阵容人物
-        mCharacterAdapter.itemClick { _, _, _ ->
-            val characterInfoFragment = CharacterInfoFragment()
+        mCharacterAdapter.itemClick { _, _, position ->
+            val characterInfoFragment = CharacterInfoFragment.newInstance(position)
             characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
         }
 
@@ -60,8 +61,9 @@ class ScenesFragment : BaseFragment() {
             when (position) {
                 0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
-                4 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
-                5 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
+                2 -> startActivity(Intent(requireActivity(), PlotActivity::class.java))
+                5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
+                7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
                 else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }
         }
@@ -91,14 +93,14 @@ class ScenesFragment : BaseFragment() {
     private fun requestCharacter() {
         mCharacterAdapter.setNewInstance(
             mutableListOf(
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo(),
-                CharacterVo()
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_gan_ning_zhen),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_hai_ji),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_jiu_dan_mei),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_lin_fei),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_gan_ning_zhen),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_hai_ji),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_jiu_dan_mei),
+                CharacterVo(avatarIcon = R.drawable.ic_avatar_lin_fei)
             )
         )
     }
@@ -118,14 +120,14 @@ class ScenesFragment : BaseFragment() {
     private fun initMenu() {
         mMenuAdapter.setNewInstance(
             mutableListOf(
-                MenuVo("背包", R.drawable.ic_attack),
-                MenuVo("阵容", R.drawable.ic_defense),
-                MenuVo("关卡", R.drawable.ic_health),
-                MenuVo("竞技场", R.drawable.ic_speed),
-                MenuVo("商店", R.drawable.ic_critical),
-                MenuVo("修炼", R.drawable.ic_resister),
-                MenuVo("工会", R.drawable.ic_hit),
-                MenuVo("好友", R.drawable.ic_dodge)
+                MenuVo("背包", R.drawable.ic_menu_backpack),
+                MenuVo("阵容", R.drawable.ic_menu_line_up),
+                MenuVo("关卡", R.drawable.ic_menu_plot),
+                MenuVo("竞技场", R.drawable.ic_menu_arena),
+                MenuVo("商店", R.drawable.ic_menu_store),
+                MenuVo("装备", R.drawable.ic_menu_magic),
+                MenuVo("秘籍", R.drawable.ic_menu_weapon),
+                MenuVo("修炼", R.drawable.ic_menu_practice)
             )
         )
     }
