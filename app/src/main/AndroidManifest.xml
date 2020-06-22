@@ -24,6 +24,7 @@
         <activity android:name=".feature.practice.PracticeActivity" />
         <activity android:name=".feature.store.StoreActivity" />
         <activity android:name=".feature.plot.PlotActivity" />
+        <activity android:name=".feature.plot.PlotBattleActivity" />
     </application>
 
 </manifest>

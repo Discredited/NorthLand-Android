@@ -62,7 +62,7 @@ class ScenesFragment : BaseFragment() {
                 0 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), PlotActivity::class.java))
-                5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
+                4 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
                 else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }

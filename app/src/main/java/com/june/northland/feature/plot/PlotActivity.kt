@@ -1,8 +1,10 @@
 package com.june.northland.feature.plot
 
+import android.content.Intent
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.addLinearItemDecoration
+import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.feature.main.vo.PlotVo
 import kotlinx.android.synthetic.main.activity_plot.*
@@ -14,6 +16,10 @@ class PlotActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_plot
 
     override fun initView() {
+        mAdapter.itemClick { _, _, _ ->
+            startActivity(Intent(this, PlotBattleActivity::class.java))
+        }
+
         rvPlot.setLinearManager()
         rvPlot.adapter = mAdapter
         rvPlot.setHasFixedSize(true)

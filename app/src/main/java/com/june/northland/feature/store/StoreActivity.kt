@@ -11,10 +11,5 @@ class StoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store)
-        vBattleground.initBattleView()
-
-        damage.click {
-            vBattleground.roundStart()
-        }
     }
 }
