@@ -8,7 +8,7 @@
         android:id="@+id/ivPlotCover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src="@drawable/img_practice_0" />
+        tools:src="@drawable/img_practice_0"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPlotName"
@@ -16,8 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="@dimen/common_margin"
-        android:textColor="@color/color_black"
-        android:textSize="@dimen/sp_30"
+        android:shadowColor="@color/color_black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:textStyle="bold"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_24"
         tools:text="红尘天" />
 
     <androidx.appcompat.widget.AppCompatTextView
