@@ -13,8 +13,6 @@ class PlotBattleActivity : BaseActivity() {
     }
 
     override fun loadData() {
-
-
         damage.click {
             vBattleground.roundStart()
         }
