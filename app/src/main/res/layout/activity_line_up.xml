@@ -5,71 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/color_pink">
 
-    <com.june.northland.feature.battle.BattleHealthView
-        android:id="@+id/vHealthView"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_200"
-        android:layout_marginStart="@dimen/common_margin"
-        android:layout_marginTop="@dimen/dp_20"
-        app:battle_health_gravity="bottom"
-        app:battle_health_value="40"
-        android:paddingBottom="@dimen/dp_10"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="@dimen/dp_10"
-        android:paddingTop="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/common_margin"
+    <com.june.northland.feature.lineup.LineUpView
+        android:id="@+id/vLineUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/add"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_56"
-        android:layout_marginBottom="@dimen/dp_60"
-        android:gravity="center"
-        android:text="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/sub"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_56"
-        android:gravity="center"
-        android:text="sub"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivImage1"
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_40"
-        android:background="@color/color_bg_alpha_black"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivImage2"
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_40"
-        android:background="@color/color_bg_alpha_black"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/ivImage1"
-        app:layout_constraintTop_toTopOf="@+id/vExperience" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_40"
-        android:background="@color/color_bg_alpha_black"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/vExperience"
-        app:layout_constraintStart_toEndOf="@+id/ivImage2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

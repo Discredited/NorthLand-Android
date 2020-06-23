@@ -2,7 +2,6 @@ package com.june.northland.feature.lineup
 
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.click
 import kotlinx.android.synthetic.main.activity_line_up.*
 
 /**
@@ -13,19 +12,21 @@ class LineUpActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_line_up
 
     override fun initView() {
-        add.click {
-//            val progress = vExperience.getProgress() + 10
-//            vExperience.setProgress(progress)
-            vHealthView.restore(3)
-        }
-        sub.click {
-//            val progress = vExperience.getProgress() - 10
-//            vExperience.setProgress(progress)
-            vHealthView.damage(730)
-        }
     }
 
     override fun loadData() {
-        //vExperience.initExperience(0, 0, 100, 20)
+        vLineUp.setLineUp(
+            mutableListOf(
+                LineUpVo(R.drawable.ic_avatar_gan_ning_zhen, 0, true),
+                LineUpVo(R.drawable.ic_avatar_hai_ji, 1, true),
+                LineUpVo(R.drawable.ic_avatar_jiu_dan_mei, 2, true),
+                LineUpVo(R.drawable.ic_avatar_gan_ning_zhen_1, 3, true),
+
+                LineUpVo(0, 4, false),
+                LineUpVo(0, 5, false),
+                LineUpVo(0, 6, false),
+                LineUpVo(0, 7, false)
+            )
+        )
     }
 }
