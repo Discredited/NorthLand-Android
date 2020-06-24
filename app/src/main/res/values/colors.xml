@@ -8,9 +8,9 @@
 
     <!-- 颜色品质 -->
     <!-- 普通 -->
-    <color name="color_quality_ordinary">#FFFFFF</color>
+    <color name="color_quality_ordinary">#7D7E7E</color>
     <!-- 初级 -->
-    <color name="color_quality_primary">#7D7E7E</color>
+    <color name="color_quality_primary">#FFFFFF</color>
     <!-- 中级 -->
     <color name="color_quality_intermediate">#64BD67</color>
     <!-- 高级 -->

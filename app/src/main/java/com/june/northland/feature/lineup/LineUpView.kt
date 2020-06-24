@@ -9,6 +9,9 @@ import com.june.northland.common.GridItemDecoration
 import timber.log.Timber
 import java.util.*
 
+/**
+ * 阵容视图
+ */
 class LineUpView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : RecyclerView(context, attrs, defStyleAttr) {
@@ -39,7 +42,6 @@ class LineUpView @JvmOverloads constructor(
             ): Boolean {
                 from = viewHolder.adapterPosition
                 to = target.adapterPosition
-                Timber.e("onMove    from:$from    to:$to")
                 return false
             }
 

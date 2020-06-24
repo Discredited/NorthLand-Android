@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_line_up.view.*
 class LineUpAdapter : BaseQuickAdapter<LineUpVo, BaseViewHolder>(R.layout.item_line_up) {
 
     override fun convert(holder: BaseViewHolder, item: LineUpVo) {
-        holder.itemView.tvLineUpPosition.text = item.position.toString()
+        holder.itemView.tvLineUpPosition.text = holder.layoutPosition.toString()
         if (item.isActive) {
             holder.itemView.ivLineUpCover.setImageResource(item.coverRes)
             val color = ContextCompat.getColor(holder.itemView.context, R.color.color_transparent)

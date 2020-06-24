@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_avatar_hai_ji" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:shadowColor="@color/color_black"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@id/ivAvatar"
+        tools:text="Lv.100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLineUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:textColor="@color/color_red"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="已上阵" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:textColor="@color/color_text_33"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvLineUp"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
+        app:layout_constraintTop_toTopOf="@id/ivAvatar"
+        tools:text="海武神(海姬)" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHealth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_health"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/tvSpeed"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:text="100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_speed"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvHealth"
+        app:layout_constraintTop_toTopOf="@+id/tvHealth"
+        tools:text="100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_attack"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/tvDefense"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvHealth"
+        tools:text="100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDefense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_attack"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAttack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvAttack"
+        app:layout_constraintTop_toTopOf="@+id/tvAttack"
+        tools:text="100" />
+</androidx.constraintlayout.widget.ConstraintLayout>
