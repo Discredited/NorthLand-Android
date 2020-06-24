@@ -9,4 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:src="@drawable/ic_avatar_gan_ning_zhen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLineUpPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_alpha_black"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_20"
+        tools:text="1" />
 </com.june.northland.widget.SquareFrameLayout>

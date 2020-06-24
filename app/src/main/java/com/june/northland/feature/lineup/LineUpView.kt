@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.june.northland.base.ext.setGridManager
 import com.june.northland.common.GridItemDecoration
+import timber.log.Timber
+import java.util.*
 
 class LineUpView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -20,6 +22,10 @@ class LineUpView @JvmOverloads constructor(
         addItemDecoration(GridItemDecoration(4, 30))
 
         ItemTouchHelper(object : ItemTouchHelper.Callback() {
+
+            private var from: Int = -1
+            private var to: Int = -1
+
             override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: ViewHolder): Int {
                 val dragFlags =
                     ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END
@@ -31,23 +37,32 @@ class LineUpView @JvmOverloads constructor(
                 viewHolder: ViewHolder,
                 target: ViewHolder
             ): Boolean {
-                val from = viewHolder.adapterPosition
-                val to = target.adapterPosition
-                val fromVo = mAdapter.data[from]
-                val toVo = mAdapter.data[to]
-                fromVo.position = to
-                toVo.position = from
-                mAdapter.notifyItemMoved(from, to)
-                return true
-
+                from = viewHolder.adapterPosition
+                to = target.adapterPosition
+                Timber.e("onMove    from:$from    to:$to")
+                return false
             }
 
             override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
+            }
+
+            override fun clearView(recyclerView: RecyclerView, viewHolder: ViewHolder) {
+                super.clearView(recyclerView, viewHolder)
+                if (from >= 0 && to >= 0 && from != to) {
+                    Timber.e("clearView    from:$from    to:$to")
+                    Collections.swap(mAdapter.data, from, to)
+                    mAdapter.notifyItemChanged(to)
+                    mAdapter.notifyItemChanged(from)
+                }
             }
         }).attachToRecyclerView(this)
     }
 
     fun setLineUp(list: MutableList<LineUpVo>) {
         mAdapter.setNewInstance(list)
+    }
+
+    fun getLineUp(): MutableList<LineUpVo> {
+        return mAdapter.data
     }
 }
