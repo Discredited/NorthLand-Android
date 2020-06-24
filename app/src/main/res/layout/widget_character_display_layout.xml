@@ -11,7 +11,7 @@
         android:layout_height="@dimen/dp_150"
         android:layout_gravity="center"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_avatar_lin_fei"
+        android:src="@drawable/ic_avatar_gan_ning_zhen"
         tools:background="@drawable/shape_rect_realm_radius_10" />
 
     <!-- 武器 -->
@@ -31,7 +31,7 @@
         android:layout_gravity="end"
         android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack" />
+        android:src="@drawable/ic_defense" />
 
     <!-- 鞋子 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -41,7 +41,7 @@
         android:layout_gravity="bottom|start"
         android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack" />
+        android:src="@drawable/ic_speed" />
 
     <!-- 首饰 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -51,5 +51,5 @@
         android:layout_gravity="end|bottom"
         android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack" />
+        android:src="@drawable/ic_health" />
 </FrameLayout>

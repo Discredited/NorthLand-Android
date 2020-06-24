@@ -9,12 +9,14 @@
         android:id="@+id/ivAvatar"
         android:layout_width="@dimen/dp_100"
         android:layout_height="@dimen/dp_100"
+        android:padding="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_avatar_hai_ji" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_10"

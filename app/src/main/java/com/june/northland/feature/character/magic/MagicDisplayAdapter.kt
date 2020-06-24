@@ -14,6 +14,5 @@ class MagicDisplayAdapter : BaseQuickAdapter<MagicVo, BaseViewHolder>(R.layout.i
             item.name,
             item.level.toString()
         )
-        //holder.itemView.tvMagicDesc.text = item.desc
     }
 }

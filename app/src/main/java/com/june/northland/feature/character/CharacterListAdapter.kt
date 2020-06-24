@@ -25,6 +25,7 @@ class CharacterListAdapter : BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.lay
 
         holder.itemView.ivAvatar.setImageResource(item.avatarIcon)
         holder.itemView.tvName.text = item.name
+        holder.itemView.tvLevel.text = "Lv.${holder.layoutPosition}"
         holder.itemView.tvHealth.text = "${holder.layoutPosition * 33}"
         holder.itemView.tvSpeed.text = "${holder.layoutPosition * 3}"
         holder.itemView.tvAttack.text = "${holder.layoutPosition * 23}"

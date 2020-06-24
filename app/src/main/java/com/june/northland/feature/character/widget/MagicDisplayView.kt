@@ -17,7 +17,7 @@ class MagicDisplayView @JvmOverloads constructor(
 
     override fun onFinishInflate() {
         super.onFinishInflate()
-        setGridManager(3)
+        setGridManager(4)
         adapter = mAdapter
         setHasFixedSize(true)
         addItemDecoration(GridItemDecoration(3, resources.getDimensionPixelSize(R.dimen.dp_10)))

@@ -347,38 +347,42 @@ class ExperienceView @JvmOverloads constructor(
             0
         }
 
-        mProgressAnimator = ObjectAnimator.ofInt(
-            this,
-            "mExperienceProgress",
-            mExperienceProgress,
-            targetProgress
-        )
-        mProgressAnimator?.duration = mAnimatorDuration.toLong()
-        //差值器 其变化开始速率较快，后面减速
-        mProgressAnimator?.interpolator = DecelerateInterpolator()
-        mProgressAnimator?.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {
-            }
-
-            override fun onAnimationEnd(animation: Animator?) {
-                if (mExperienceOverflow > 0 || mExperienceProgress == mExperienceMax) {
-                    mLevel++
-                    mExperienceProgress = 0
-
-                    mExperienceMax = mExperienceFactor * mLevel
-                    setProgress(mExperienceOverflow)
-                } else {
-                    mProgressAnimator?.removeAllListeners()
-                    mProgressAnimator = null
+        if (isAnimator) {
+            mProgressAnimator = ObjectAnimator.ofInt(
+                this,
+                "mExperienceProgress",
+                mExperienceProgress,
+                targetProgress
+            )
+            mProgressAnimator?.duration = mAnimatorDuration.toLong()
+            //差值器 其变化开始速率较快，后面减速
+            mProgressAnimator?.interpolator = DecelerateInterpolator()
+            mProgressAnimator?.addListener(object : Animator.AnimatorListener {
+                override fun onAnimationRepeat(animation: Animator?) {
                 }
-            }
 
-            override fun onAnimationCancel(animation: Animator?) {
-            }
+                override fun onAnimationEnd(animation: Animator?) {
+                    if (mExperienceOverflow > 0 || mExperienceProgress == mExperienceMax) {
+                        mLevel++
+                        mExperienceProgress = 0
 
-            override fun onAnimationStart(animation: Animator?) {
-            }
-        })
-        mProgressAnimator?.start()
+                        mExperienceMax = mExperienceFactor * mLevel
+                        setProgress(mExperienceOverflow)
+                    } else {
+                        mProgressAnimator?.removeAllListeners()
+                        mProgressAnimator = null
+                    }
+                }
+
+                override fun onAnimationCancel(animation: Animator?) {
+                }
+
+                override fun onAnimationStart(animation: Animator?) {
+                }
+            })
+            mProgressAnimator?.start()
+        } else {
+            invalidate()
+        }
     }
 }

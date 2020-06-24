@@ -10,22 +10,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.main.MainActivity">
+        <activity
+            android:name=".feature.main.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".feature.character.CharacterConfigActivity" />
-        <activity android:name=".feature.character.CharacterInfoActivity" />
-        <activity android:name=".feature.backpack.BackpackActivity" />
-        <activity android:name=".feature.lineup.LineUpActivity" />
-        <activity android:name=".feature.practice.PracticeActivity" />
-        <activity android:name=".feature.store.StoreActivity" />
-        <activity android:name=".feature.plot.PlotActivity" />
-        <activity android:name=".feature.plot.PlotBattleActivity" />
-        <activity android:name=".feature.character.CharacterListActivity" />
+        <activity
+            android:name=".feature.character.CharacterConfigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.character.CharacterInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.backpack.BackpackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.lineup.LineUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.practice.PracticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.store.StoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.plot.PlotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.plot.PlotBattleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.character.CharacterListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.character.CharacterDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".feature.character.weapon.WeaponChooseActivity" />
     </application>
 
 </manifest>

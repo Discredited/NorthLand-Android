@@ -23,6 +23,6 @@
         android:paddingEnd="@dimen/dp_5"
         android:paddingBottom="@dimen/dp_10"
         android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_12"
+        android:textSize="@dimen/sp_10"
         tools:text="身外化身 Lv.25" />
 </com.june.northland.widget.SquareFrameLayout>
