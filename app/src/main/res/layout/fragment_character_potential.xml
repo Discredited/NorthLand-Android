@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_20">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPotentialTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="当前潜力值:" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPotential"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPotentialTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvPotentialTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvPotentialTitle"
+        tools:text="99999" />
+
+    <!-- Attack -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_attack"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPotentialTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAttackTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvAttackTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvAttackTitle"
+        tools:text="1000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttackChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAttack"
+        app:layout_constraintStart_toEndOf="@+id/tvAttack"
+        app:layout_constraintTop_toTopOf="@+id/tvAttack"
+        tools:text="+1000" />
+
+    <!-- Defense -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDefenseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_defense"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_defense"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttackTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDefense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDefenseTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvDefenseTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvDefenseTitle"
+        tools:text="1000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDefenseChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDefenseTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvDefense"
+        app:layout_constraintTop_toTopOf="@+id/tvDefenseTitle"
+        tools:text="+1000" />
+
+    <!-- Health -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHealthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_health"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_health"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDefenseTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHealthTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvHealthTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvHealthTitle"
+        tools:text="1000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHealthChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="@string/str_attack"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHealthTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvHealth"
+        app:layout_constraintTop_toTopOf="@+id/tvHealthTitle"
+        tools:text="+1000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddHundred"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="+100"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHealthTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSubHundred"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="-100"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddHundred" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddTen"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="+10"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAddHundred" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSubTen"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="-10"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintEnd_toEndOf="@+id/tvAddTen"
+        app:layout_constraintStart_toStartOf="@+id/tvAddTen"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddTen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddOne"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="+1"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAddHundred" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSubOne"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="-1"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintEnd_toEndOf="@+id/tvAddOne"
+        app:layout_constraintStart_toStartOf="@+id/tvAddOne"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddOne" />
+</androidx.constraintlayout.widget.ConstraintLayout>
