@@ -1,5 +1,6 @@
 package com.june.northland.feature.character
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
@@ -8,6 +9,8 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.feature.character.magic.MagicVo
 import com.june.northland.feature.character.relationship.RelationshipVo
+import com.june.northland.feature.character.weapon.WeaponChooseActivity
+import com.june.northland.feature.character.weapon.WeaponVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.fragment_dialog_character_info.*
 import kotlinx.android.synthetic.main.view_close_image.*
@@ -36,17 +39,34 @@ class CharacterDetailActivity : BaseActivity() {
             getString(R.string.str_extra_attributes)
         )
 
-        ivClose.click { onBackPressed() }
+        vCharacterDisplay.replaceWeaponClick()
+
         ivHelper.click {
             AttributeExplanationFragment().show(
                 supportFragmentManager,
                 AttributeExplanationFragment::javaClass.name
             )
         }
+        ivClose.click { onBackPressed() }
     }
 
     override fun loadData() {
         setCharacter(CharacterVo())
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode != Activity.RESULT_OK) {
+            return
+        }
+        if (requestCode == WeaponChooseActivity.REQUEST_WEAPON_CHOOSE) {
+            data?.let {
+                val choice = it.getParcelableExtra<WeaponVo>(WeaponChooseActivity.RESPONSE_WEAPON_CHOOSE)
+                choice?.let { equipment ->
+                    vCharacterDisplay.wearEquipment(equipment)
+                }
+            }
+        }
     }
 
     private fun setCharacter(character: CharacterVo) {

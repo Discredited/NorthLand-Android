@@ -22,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    //使用Kotlin实验特性
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {

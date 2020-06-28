@@ -11,6 +11,6 @@ class WeaponChooseAdapter : BaseQuickAdapter<WeaponVo, BaseViewHolder>(R.layout.
         holder.itemView.ivCover.setImageResource(item.coverIcon)
         holder.itemView.tvName.text = item.name
         holder.itemView.tvLevel.text = "${holder.adapterPosition * 3}"
-        holder.itemView.tvAttribute.text = "攻击力+${holder.adapterPosition * 303}"
+        holder.itemView.tvAttribute.text = "攻击力+${item.attribute}"
     }
 }
