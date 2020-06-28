@@ -1,14 +1,127 @@
 package com.june.northland.feature.character
 
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.widget.AppCompatTextView
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
+import com.june.northland.base.ext.click
+import kotlinx.android.synthetic.main.fragment_character_potential.*
+import kotlin.math.abs
 
-class CharacterPotentialFragment : BaseDialogFragment() {
+class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
 
     private var mPotential = 1000
+    private var mSelectedType = 0 // 0-attack 1-defense 2-health
+    private var mSelectedView: AppCompatTextView? = null
 
     override fun getLayoutResId(): Int = R.layout.fragment_character_potential
 
     override fun initView() {
+        tvAttackTitle.click {
+            if (mSelectedType == 0) {
+                return@click
+            }
+            mSelectedType = 0
+            vAttackSelected.visibility = View.VISIBLE
+            vDefenseSelected.visibility = View.INVISIBLE
+            vHealthSelected.visibility = View.INVISIBLE
+            mSelectedView = tvAttackChange
+        }
+        tvDefenseTitle.click {
+            if (mSelectedType == 1) {
+                return@click
+            }
+            mSelectedType = 1
+            vAttackSelected.visibility = View.INVISIBLE
+            vDefenseSelected.visibility = View.VISIBLE
+            vHealthSelected.visibility = View.INVISIBLE
+            mSelectedView = tvDefenseChange
+        }
+        tvHealthTitle.click {
+            if (mSelectedType == 2) {
+                return@click
+            }
+            mSelectedType = 2
+            vAttackSelected.visibility = View.INVISIBLE
+            vDefenseSelected.visibility = View.INVISIBLE
+            vHealthSelected.visibility = View.VISIBLE
+            mSelectedView = tvHealthChange
+        }
+
+        tvAddHundred.setOnClickListener(this)
+        tvSubHundred.setOnClickListener(this)
+        tvAddTen.setOnClickListener(this)
+        tvSubTen.setOnClickListener(this)
+        tvAddOne.setOnClickListener(this)
+        tvSubOne.setOnClickListener(this)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        tvPotentialTitle.text = "当前潜力点："
+        tvPotential.text = mPotential.toString()
+
+        tvAttack.text = "500"
+        tvDefense.text = "300"
+        tvHealth.text = "800"
+
+        tvAttackChange.tag = 0
+        tvDefenseChange.tag = 0
+        tvHealthChange.tag = 0
+
+        mSelectedView = tvAttackChange
+    }
+
+    override fun onClick(v: View) {
+        val calculation = when (v.id) {
+            R.id.tvAddHundred -> +100
+            R.id.tvSubHundred -> -100
+            R.id.tvAddTen -> +10
+            R.id.tvSubTen -> -10
+            R.id.tvAddOne -> +1
+            R.id.tvSubOne -> -1
+            else -> 0
+        }
+
+        val point = (mSelectedView?.tag ?: 0) as Int
+
+        if (calculation > 0) {
+            //增加
+            var addCalculation = if (mPotential > calculation) {
+                calculation
+            } else {
+                mPotential
+            }
+            val result = point + addCalculation
+            mPotential -= addCalculation
+            mSelectedView?.tag = result
+            mSelectedView?.text = result.toString()
+        } else {
+            //减少
+            var subCalculation = if (point > abs(calculation)) {
+                calculation
+            } else {
+                -point
+            }
+            val result = point + subCalculation
+            mPotential -= subCalculation
+            mSelectedView?.tag = result
+            mSelectedView?.text = result.toString()
+        }
+        tvPotential.text = mPotential.toString()
+
+        val resultPoint = (mSelectedView?.tag ?: 0) as Int
+        mSelectedView?.visibility = if (resultPoint > 0) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+    }
+
+    companion object {
+        fun newInstance(): CharacterPotentialFragment {
+            return CharacterPotentialFragment()
+        }
     }
 }

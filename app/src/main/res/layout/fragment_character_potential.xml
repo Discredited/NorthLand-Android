@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/dp_20">
+    android:paddingStart="@dimen/dp_20"
+    android:paddingTop="@dimen/dp_50"
+    android:paddingEnd="@dimen/dp_20"
+    tools:background="@color/color_bg_alpha_black">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPotentialTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_18"
         app:layout_constraintBottom_toBottomOf="@+id/tvPotentialTitle"
         app:layout_constraintStart_toEndOf="@+id/tvPotentialTitle"
@@ -27,6 +32,16 @@
         tools:text="99999" />
 
     <!-- Attack -->
+    <View
+        android:id="@+id/vAttackSelected"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAttackTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAttackTitle" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAttackTitle"
         android:layout_width="wrap_content"
@@ -36,6 +51,7 @@
         android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
         android:text="@string/str_attack"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPotentialTitle" />
@@ -46,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="@string/str_attack"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/tvAttackTitle"
         app:layout_constraintStart_toEndOf="@+id/tvAttackTitle"
@@ -69,6 +85,17 @@
         tools:text="+1000" />
 
     <!-- Defense -->
+    <View
+        android:id="@+id/vDefenseSelected"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_yellow"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDefenseTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDefenseTitle" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvDefenseTitle"
         android:layout_width="wrap_content"
@@ -78,6 +105,7 @@
         android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
         android:text="@string/str_defense"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAttackTitle" />
@@ -88,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="@string/str_attack"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/tvDefenseTitle"
         app:layout_constraintStart_toEndOf="@+id/tvDefenseTitle"
@@ -101,7 +129,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="@string/str_attack"
         android:textColor="@color/color_green"
         android:textSize="@dimen/sp_16"
         android:visibility="gone"
@@ -111,6 +138,17 @@
         tools:text="+1000" />
 
     <!-- Health -->
+    <View
+        android:id="@+id/vHealthSelected"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_yellow"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHealthTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHealthTitle" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHealthTitle"
         android:layout_width="wrap_content"
@@ -120,6 +158,7 @@
         android:drawablePadding="@dimen/dp_10"
         android:gravity="center_vertical"
         android:text="@string/str_health"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDefenseTitle" />
@@ -130,7 +169,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:gravity="center_vertical"
-        android:text="@string/str_attack"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/tvHealthTitle"
         app:layout_constraintStart_toEndOf="@+id/tvHealthTitle"
@@ -160,6 +199,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="+100"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHealthTitle" />
@@ -172,6 +212,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="-100"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddHundred" />
@@ -183,6 +224,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="+10"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,6 +238,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="-10"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="@+id/tvAddTen"
         app:layout_constraintStart_toStartOf="@+id/tvAddTen"
@@ -208,6 +251,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="+1"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvAddHundred" />
@@ -220,6 +264,7 @@
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="-1"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="@+id/tvAddOne"
         app:layout_constraintStart_toStartOf="@+id/tvAddOne"

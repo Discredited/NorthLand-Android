@@ -41,6 +41,12 @@ class CharacterDetailActivity : BaseActivity() {
 
         vCharacterDisplay.replaceWeaponClick()
 
+        vBasicAttribute.click {
+            CharacterPotentialFragment
+                .newInstance()
+                .show(supportFragmentManager, CharacterPotentialFragment::javaClass.name)
+        }
+
         ivHelper.click {
             AttributeExplanationFragment().show(
                 supportFragmentManager,
