@@ -1,10 +1,12 @@
 package com.june.northland.feature.character
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
+import com.june.northland.base.dialog.ChoiceDialog
 import com.june.northland.base.ext.click
 import kotlinx.android.synthetic.main.fragment_character_potential.*
 import kotlin.math.abs
@@ -55,6 +57,18 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
         tvSubTen.setOnClickListener(this)
         tvAddOne.setOnClickListener(this)
         tvSubOne.setOnClickListener(this)
+
+        tvSure.click {
+            val choiceDialog = ChoiceDialog(requireActivity())
+            choiceDialog.setChoiceTitle("提示")
+            choiceDialog.setChoiceContent("当前花费1000潜力点，确定继续?")
+            choiceDialog.setChoiceSureListener(DialogInterface.OnClickListener { dialog, _ ->
+                dialog.dismiss()
+                requestPotential()
+            })
+            choiceDialog.show()
+        }
+        tvCancel.click { dismiss() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -117,6 +131,14 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
         } else {
             View.GONE
         }
+    }
+
+    private fun requestPotential() {
+        showLoading()
+        tvAttackTitle.postDelayed({
+            hideLoading()
+            dismiss()
+        }, 1000)
     }
 
     companion object {

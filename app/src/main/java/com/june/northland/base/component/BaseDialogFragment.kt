@@ -4,8 +4,11 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
+import com.june.northland.base.dialog.LoadingDialog
 
 abstract class BaseDialogFragment : DialogFragment() {
+
+    private var mLoadingDialog: LoadingDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,6 +30,34 @@ abstract class BaseDialogFragment : DialogFragment() {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT
         )
+    }
+
+    override fun onDestroyView() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog = null
+        super.onDestroyView()
+    }
+
+    fun showLoading(isCancelable: Boolean = true) {
+        if (null == mLoadingDialog) {
+            mLoadingDialog = LoadingDialog(requireActivity())
+        }
+        if (!isCancelable) {
+            mLoadingDialog?.setCancelable(isCancelable)
+            mLoadingDialog?.setCanceledOnTouchOutside(isCancelable)
+        }
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog?.show()
+    }
+
+    fun hideLoading() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
     }
 
     abstract fun getLayoutResId(): Int

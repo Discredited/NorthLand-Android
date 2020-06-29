@@ -23,9 +23,6 @@
             android:name=".feature.character.CharacterConfigActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.character.CharacterInfoActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".feature.backpack.BackpackActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -49,7 +46,7 @@
         <activity
             android:name=".feature.character.CharacterDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".feature.character.weapon.WeaponChooseActivity" />
+        <activity android:name=".feature.character.equipment.EquipmentChooseActivity" />
     </application>
 
 </manifest>

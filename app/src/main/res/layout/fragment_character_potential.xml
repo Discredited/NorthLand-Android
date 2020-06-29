@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:paddingStart="@dimen/dp_20"
     android:paddingTop="@dimen/dp_50"
     android:paddingEnd="@dimen/dp_20"
@@ -269,4 +270,31 @@
         app:layout_constraintEnd_toEndOf="@+id/tvAddOne"
         app:layout_constraintStart_toStartOf="@+id/tvAddOne"
         app:layout_constraintTop_toBottomOf="@+id/tvAddOne" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCancel"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:text="@string/str_cancel"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubHundred" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSure"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:text="@string/str_sure"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCancel"
+        app:layout_constraintTop_toTopOf="@+id/tvCancel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

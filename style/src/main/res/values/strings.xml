@@ -25,4 +25,6 @@
     <string name="str_skill_name_and_level">%1$s - Lv.%2$s</string>
     <string name="title_attribute_explanation">属性说明</string>
     <string name="prompt_coming_soon">敬请期待</string>
+    <string name="str_sure">确认</string>
+    <string name="str_cancel">取消</string>
 </resources>

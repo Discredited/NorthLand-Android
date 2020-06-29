@@ -5,18 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.june.northland.base.dialog.LoadingDialog
 import timber.log.Timber
 
 abstract class BaseFragment : Fragment() {
+
+    private var mLoadingDialog: LoadingDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.v("----${javaClass.simpleName}:onCreate")
     }
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         Timber.v("----${javaClass.simpleName}:onCreateView")
         return inflater.inflate(getLayoutResId(), container, false)
     }
@@ -54,6 +59,10 @@ abstract class BaseFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog = null
         super.onDestroyView()
         Timber.v("----${javaClass.simpleName}:onDestroyView")
     }
@@ -61,6 +70,26 @@ abstract class BaseFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         Timber.v("----${javaClass.simpleName}:onDestroy")
+    }
+
+    fun showLoading(isCancelable: Boolean = true) {
+        if (null == mLoadingDialog) {
+            mLoadingDialog = LoadingDialog(requireActivity())
+        }
+        if (!isCancelable) {
+            mLoadingDialog?.setCancelable(isCancelable)
+            mLoadingDialog?.setCanceledOnTouchOutside(isCancelable)
+        }
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog?.show()
+    }
+
+    fun hideLoading() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
     }
 
     /**

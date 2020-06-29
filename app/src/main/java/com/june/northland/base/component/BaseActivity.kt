@@ -2,10 +2,12 @@ package com.june.northland.base.component
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.june.northland.base.dialog.LoadingDialog
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    protected lateinit var mActivity: AppCompatActivity
+    private var mLoadingDialog: LoadingDialog? = null
+    lateinit var mActivity: AppCompatActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,6 +15,34 @@ abstract class BaseActivity : AppCompatActivity() {
         setContentView(getLayoutResId())
         initView()
         loadData()
+    }
+
+    override fun onDestroy() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog = null
+        super.onDestroy()
+    }
+
+    fun showLoading(isCancelable: Boolean = true) {
+        if (null == mLoadingDialog) {
+            mLoadingDialog = LoadingDialog(this)
+        }
+        if (!isCancelable) {
+            mLoadingDialog?.setCancelable(isCancelable)
+            mLoadingDialog?.setCanceledOnTouchOutside(isCancelable)
+        }
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
+        mLoadingDialog?.show()
+    }
+
+    fun hideLoading() {
+        if (mLoadingDialog?.isShowing == true) {
+            mLoadingDialog?.dismiss()
+        }
     }
 
     /**

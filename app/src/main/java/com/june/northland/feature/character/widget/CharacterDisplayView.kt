@@ -10,8 +10,8 @@ import com.june.northland.R
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.character.weapon.WeaponChooseActivity
-import com.june.northland.feature.character.weapon.WeaponVo
+import com.june.northland.feature.character.equipment.EquipmentChooseActivity
+import com.june.northland.feature.character.equipment.EquipmentVo
 import com.june.northland.utils.Toast
 import kotlinx.android.synthetic.main.widget_character_display_layout.view.*
 
@@ -30,22 +30,22 @@ class CharacterDisplayView @JvmOverloads constructor(
     fun replaceWeaponClick() {
         if (context is Activity) {
             val activity = context as Activity
-            ivCharacterWeapon?.click { WeaponChooseActivity.starter(activity, 1) }
+            ivCharacterWeapon?.click { EquipmentChooseActivity.starter(activity, 1) }
             ivCharacterWeapon?.setOnLongClickListener {
                 Toast.toastShort("显示武器属性")
                 true
             }
-            ivCharacterArmor?.click { WeaponChooseActivity.starter(activity, 2) }
+            ivCharacterArmor?.click { EquipmentChooseActivity.starter(activity, 2) }
             ivCharacterArmor?.setOnLongClickListener {
                 Toast.toastShort("显示防具属性")
                 true
             }
-            ivCharacterShoes?.click { WeaponChooseActivity.starter(activity, 3) }
+            ivCharacterShoes?.click { EquipmentChooseActivity.starter(activity, 3) }
             ivCharacterShoes?.setOnLongClickListener {
                 Toast.toastShort("显示鞋子属性")
                 true
             }
-            ivCharacterJewelry?.click { WeaponChooseActivity.starter(activity, 4) }
+            ivCharacterJewelry?.click { EquipmentChooseActivity.starter(activity, 4) }
             ivCharacterJewelry?.setOnLongClickListener {
                 Toast.toastShort("显示首饰属性")
                 true
@@ -53,7 +53,7 @@ class CharacterDisplayView @JvmOverloads constructor(
         }
     }
 
-    fun wearEquipment(equipment: WeaponVo) {
+    fun wearEquipment(equipment: EquipmentVo) {
         val view: AppCompatImageView? = when (equipment.part) {
             1 -> ivCharacterWeapon
             2 -> ivCharacterArmor

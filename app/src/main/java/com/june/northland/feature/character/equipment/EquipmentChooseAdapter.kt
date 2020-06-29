@@ -1,13 +1,13 @@
-package com.june.northland.feature.character.weapon
+package com.june.northland.feature.character.equipment
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
 import kotlinx.android.synthetic.main.item_weapon_choose.view.*
 
-class WeaponChooseAdapter : BaseQuickAdapter<WeaponVo, BaseViewHolder>(R.layout.item_weapon_choose) {
+class EquipmentChooseAdapter : BaseQuickAdapter<EquipmentVo, BaseViewHolder>(R.layout.item_weapon_choose) {
 
-    override fun convert(holder: BaseViewHolder, item: WeaponVo) {
+    override fun convert(holder: BaseViewHolder, item: EquipmentVo) {
         holder.itemView.ivCover.setImageResource(item.coverIcon)
         holder.itemView.tvName.text = item.name
         holder.itemView.tvLevel.text = "${holder.adapterPosition * 3}"
