@@ -1,4 +1,4 @@
-package com.june.northland.feature.backpack
+package com.june.northland.feature.backpack.goods
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

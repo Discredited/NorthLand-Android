@@ -14,7 +14,7 @@
     <string name="str_resister">抵抗</string>
     <string name="str_hit">命中</string>
     <string name="str_dodge">闪避</string>
-    
+
     <string name="str_logout">退出登录</string>
     <string name="str_talent_skill">天赋技能</string>
 
@@ -27,4 +27,19 @@
     <string name="prompt_coming_soon">敬请期待</string>
     <string name="str_sure">确认</string>
     <string name="str_cancel">取消</string>
+
+    <string name="equipment_part">部位</string>
+    <string name="str_quality">品质</string>
+    <string name="str_reset">重置</string>
+
+    <string name="str_all">全部</string>
+    <string name="str_weapon">武器</string>
+    <string name="str_armor">防具</string>
+    <string name="str_shoes">战靴</string>
+    <string name="str_jewelry">饰品</string>
+
+    <string name="quality_normal">普通</string>
+    <string name="quality_advanced">高级</string>
+    <string name="quality_rare">稀有</string>
+    <string name="quality_artifact">神器</string>
 </resources>

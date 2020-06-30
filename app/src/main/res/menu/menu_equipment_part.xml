@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/part_all"
+        android:icon="@drawable/ic_attack"
+        android:title="@string/str_all" />
+    <item
+        android:id="@+id/part_weapon"
+        android:icon="@drawable/ic_attack"
+        android:title="@string/str_weapon" />
+    <item
+        android:id="@+id/part_armor"
+        android:icon="@drawable/ic_defense"
+        android:title="@string/str_armor" />
+    <item
+        android:id="@+id/part_shoes"
+        android:icon="@drawable/ic_speed"
+        android:title="@string/str_shoes" />
+    <item
+        android:id="@+id/part_jewelry"
+        android:icon="@drawable/ic_health"
+        android:title="@string/str_jewelry" />
+</menu>

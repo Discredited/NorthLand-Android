@@ -47,62 +47,62 @@ class EquipmentChooseActivity : BaseActivity() {
             1 -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
-                        EquipmentVo(R.drawable.ic_attack, "一点黛眉刀", 500, 1),
-                        EquipmentVo(R.drawable.ic_attack, "无量刀", 300, 1),
-                        EquipmentVo(R.drawable.ic_attack, "劫灰剑", 200, 1),
-                        EquipmentVo(R.drawable.ic_attack, "射日弓", 100, 1)
+                        EquipmentVo(R.drawable.ic_attack, "一点黛眉刀", 500, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "无量刀", 300, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "劫灰剑", 200, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "射日弓", 100, EquipmentHelper.PART_WEAPON)
                     )
                 )
             }
             2 -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
-                        EquipmentVo(R.drawable.ic_defense, "恒河沙数盾", 300, 2),
-                        EquipmentVo(R.drawable.ic_defense, "锁子甲", 200, 2),
-                        EquipmentVo(R.drawable.ic_defense, "荆棘甲", 150, 2),
-                        EquipmentVo(R.drawable.ic_defense, "碧落道袍", 100, 2)
+                        EquipmentVo(R.drawable.ic_defense, "恒河沙数盾", 300, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "锁子甲", 200, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "荆棘甲", 150, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "碧落道袍", 100, EquipmentHelper.PART_ARMOR)
                     )
                 )
             }
             3 -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
-                        EquipmentVo(R.drawable.ic_speed, "闪电靴", 200, 3),
-                        EquipmentVo(R.drawable.ic_speed, "潮生海落", 300, 3),
-                        EquipmentVo(R.drawable.ic_speed, "屠戮战靴", 10, 3),
-                        EquipmentVo(R.drawable.ic_speed, "浮光掠影", 500, 3)
+                        EquipmentVo(R.drawable.ic_speed, "闪电靴", 200, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "潮生海落", 300, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "屠戮战靴", 10, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "浮光掠影", 500, EquipmentHelper.PART_SHOES)
                     )
                 )
             }
             4 -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
-                        EquipmentVo(R.drawable.ic_menu_practice, "麻痹戒指", 200, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "永恒项链", 300, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "海上明月吊坠", 10, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "勇者徽章", 500, 4)
+                        EquipmentVo(R.drawable.ic_menu_practice, "麻痹戒指", 200, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "永恒项链", 300, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "海上明月吊坠", 10, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "勇者徽章", 500, EquipmentHelper.PART_JEWELRY)
                     )
                 )
             }
             else -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
-                        EquipmentVo(R.drawable.ic_attack, "一点黛眉刀", 500, 1),
-                        EquipmentVo(R.drawable.ic_attack, "无量刀", 300, 1),
-                        EquipmentVo(R.drawable.ic_attack, "劫灰剑", 200, 1),
-                        EquipmentVo(R.drawable.ic_attack, "射日弓", 100, 1),
-                        EquipmentVo(R.drawable.ic_defense, "恒河沙数盾", 300, 2),
-                        EquipmentVo(R.drawable.ic_defense, "锁子甲", 200, 2),
-                        EquipmentVo(R.drawable.ic_defense, "荆棘甲", 150, 2),
-                        EquipmentVo(R.drawable.ic_defense, "碧落道袍", 100, 2),
-                        EquipmentVo(R.drawable.ic_speed, "闪电靴", 200, 3),
-                        EquipmentVo(R.drawable.ic_speed, "潮生海落", 300, 3),
-                        EquipmentVo(R.drawable.ic_speed, "屠戮战靴", 10, 3),
-                        EquipmentVo(R.drawable.ic_speed, "浮光掠影", 500, 3),
-                        EquipmentVo(R.drawable.ic_menu_practice, "麻痹戒指", 200, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "永恒项链", 300, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "海上明月吊坠", 10, 4),
-                        EquipmentVo(R.drawable.ic_menu_practice, "勇者徽章", 500, 4)
+                        EquipmentVo(R.drawable.ic_attack, "一点黛眉刀", 500, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "无量刀", 300, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "劫灰剑", 200, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_attack, "射日弓", 100, EquipmentHelper.PART_WEAPON),
+                        EquipmentVo(R.drawable.ic_defense, "恒河沙数盾", 300, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "锁子甲", 200, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "荆棘甲", 150, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_defense, "碧落道袍", 100, EquipmentHelper.PART_ARMOR),
+                        EquipmentVo(R.drawable.ic_speed, "闪电靴", 200, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "潮生海落", 300, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "屠戮战靴", 10, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_speed, "浮光掠影", 500, EquipmentHelper.PART_SHOES),
+                        EquipmentVo(R.drawable.ic_menu_practice, "麻痹戒指", 200, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "永恒项链", 300, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "海上明月吊坠", 10, EquipmentHelper.PART_JEWELRY),
+                        EquipmentVo(R.drawable.ic_menu_practice, "勇者徽章", 500, EquipmentHelper.PART_JEWELRY)
                     )
                 )
             }

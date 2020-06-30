@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/quality_all"
+        android:title="@string/str_all" />
+    <item
+        android:id="@+id/quality_normal"
+        android:title="@string/quality_normal" />
+    <item
+        android:id="@+id/quality_advanced"
+        android:title="@string/quality_advanced" />
+    <item
+        android:id="@+id/quality_rare"
+        android:title="@string/quality_rare" />
+    <item
+        android:id="@+id/quality_artifact"
+        android:title="@string/quality_artifact" />
+</menu>

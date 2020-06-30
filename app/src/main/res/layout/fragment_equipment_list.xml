@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTypePart"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        android:gravity="center"
+        android:text="@string/equipment_part"
+        android:background="@drawable/selector_pressed_bg_changed"
+        android:textColor="@color/color_text_33"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTypeQuality"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/str_quality"
+        android:background="@drawable/selector_pressed_bg_changed"
+        android:textColor="@color/color_text_33"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTypePart"
+        app:layout_constraintStart_toEndOf="@+id/tvTypePart"
+        app:layout_constraintTop_toTopOf="@+id/tvTypePart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTypeReset"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:gravity="center"
+        android:text="@string/str_reset"
+        android:background="@drawable/selector_pressed_bg_changed"
+        android:textColor="@color/color_text_33"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTypePart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTypePart" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWeapon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:clipToPadding="false"
+        android:padding="@dimen/common_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTypePart"
+        tools:listitem="@layout/item_weapon_choose" />
+</androidx.constraintlayout.widget.ConstraintLayout>

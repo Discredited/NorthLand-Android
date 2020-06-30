@@ -1,4 +1,4 @@
-package com.june.northland.feature.backpack
+package com.june.northland.feature.backpack.goods
 
 import com.june.northland.R
 

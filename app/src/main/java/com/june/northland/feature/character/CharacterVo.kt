@@ -3,6 +3,7 @@ package com.june.northland.feature.character
 import com.june.northland.R
 
 class CharacterVo(
+    val id: String = "111111",
     val name: String = "甘柠真",
     val avatar: String = "",
     val avatarIcon: Int = R.drawable.ic_avatar_gan_ning_zhen,
