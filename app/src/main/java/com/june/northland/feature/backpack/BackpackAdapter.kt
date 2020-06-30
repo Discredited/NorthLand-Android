@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.june.northland.feature.backpack.goods.GoodsListFragment
-import com.june.northland.feature.character.equipment.EquipmentListFragment
+import com.june.northland.feature.backpack.equipment.EquipmentListFragment
 
 class BackpackAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {

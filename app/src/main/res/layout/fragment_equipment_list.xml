@@ -59,5 +59,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTypePart"
-        tools:listitem="@layout/item_weapon_choose" />
+        tools:listitem="@layout/item_equipment_choose" />
 </androidx.constraintlayout.widget.ConstraintLayout>

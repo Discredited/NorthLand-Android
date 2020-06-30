@@ -8,7 +8,7 @@ import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
-import kotlinx.android.synthetic.main.activity_weapon_choose.*
+import kotlinx.android.synthetic.main.activity_equipment_choose.*
 import kotlinx.android.synthetic.main.view_close_image.*
 import timber.log.Timber
 
@@ -16,7 +16,7 @@ class EquipmentChooseActivity : BaseActivity() {
 
     private val mAdapter = EquipmentChooseAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_weapon_choose
+    override fun getLayoutResId(): Int = R.layout.activity_equipment_choose
 
     override fun initView() {
         mAdapter.itemClick { _, _, i ->

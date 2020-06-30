@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="@dimen/common_margin"
-        tools:listitem="@layout/item_weapon_choose" />
+        tools:listitem="@layout/item_equipment_choose" />
 
     <include layout="@layout/view_close_image" />
 </FrameLayout>

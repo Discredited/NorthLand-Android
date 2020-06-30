@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.view_close_image.*
 class BackpackActivity : BaseActivity() {
 
     private lateinit var mAdapter: BackpackAdapter
+    private val mPagerTitleList = mutableListOf<String>()
 
     override fun getLayoutResId(): Int = R.layout.activity_backpack
 
@@ -19,17 +20,20 @@ class BackpackActivity : BaseActivity() {
 
         vpGoods.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         vpGoods.adapter = mAdapter
+        ivClose.click { finish() }
+    }
+
+    override fun loadData() {
+        mPagerTitleList.add(getString(R.string.str_goods))
+        mPagerTitleList.add(getString(R.string.str_equipment))
+        mPagerTitleList.add(getString(R.string.str_magic))
+        mPagerTitleList.add(getString(R.string.str_soul))
 
         TabLayoutMediator(
             tlCategory,
             vpGoods,
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text = "$position"
+                tab.text = mPagerTitleList[position]
             }).attach()
-
-        ivClose.click { finish() }
-    }
-
-    override fun loadData() {
     }
 }

@@ -1,11 +1,12 @@
-package com.june.northland.feature.character.equipment
+package com.june.northland.feature.backpack.equipment
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
-import kotlinx.android.synthetic.main.item_equipment_choose.view.*
+import com.june.northland.feature.character.equipment.EquipmentVo
+import kotlinx.android.synthetic.main.item_equipment.view.*
 
-class EquipmentChooseAdapter : BaseQuickAdapter<EquipmentVo, BaseViewHolder>(R.layout.item_equipment_choose) {
+class EquipmentAdapter : BaseQuickAdapter<EquipmentVo, BaseViewHolder>(R.layout.item_equipment) {
 
     override fun convert(holder: BaseViewHolder, item: EquipmentVo) {
         holder.itemView.ivCover.setImageResource(item.coverIcon)
