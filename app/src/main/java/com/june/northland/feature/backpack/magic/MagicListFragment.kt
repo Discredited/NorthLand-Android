@@ -45,7 +45,7 @@ class MagicListFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        requestMagic(mAttribute,mQuality)
+        requestMagic(mAttribute, mQuality)
     }
 
     private fun requestMagic(attribute: Int, quality: Int) {
@@ -53,20 +53,20 @@ class MagicListFragment : BaseFragment() {
             mMagicList.addAll(
                 mutableListOf(
                     MagicVo("龙虎秘道术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("混沌甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_DEFENSE),
-                    MagicVo("碧落赋道术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_HEALTH),
+                    MagicVo("混沌甲御术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DEFENSE),
+                    MagicVo("碧落赋道术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_HEALTH),
                     MagicVo("隐遁妖典", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_SPEED),
-                    MagicVo("胎化长生妖术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    MagicVo("脉经甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_RESISTER),
+                    MagicVo("胎化长生妖术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_CRITICAL),
+                    MagicVo("脉经甲御术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_RESISTER),
                     MagicVo("影流甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_HIT),
-                    MagicVo("镜花水月大法", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_DODGE),
-                    MagicVo("龙象般若拳", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_DEFENSE),
+                    MagicVo("镜花水月大法", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DODGE),
+                    MagicVo("龙象般若拳", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_DEFENSE),
                     MagicVo("镜像手", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("悲喜换身大法", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    MagicVo("复生秘道术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_SPEED),
+                    MagicVo("悲喜换身大法", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_CRITICAL),
+                    MagicVo("复生秘道术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_SPEED),
                     MagicVo("兵器甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("镜瞳秘道术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_DODGE),
-                    MagicVo("地藏妖经", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_RESISTER)
+                    MagicVo("镜瞳秘道术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DODGE),
+                    MagicVo("地藏妖经", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_RESISTER)
                 )
             )
         }
