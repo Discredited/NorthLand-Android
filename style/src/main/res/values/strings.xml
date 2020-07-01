@@ -26,6 +26,7 @@
     <string name="str_cancel">取消</string>
 
     <string name="equipment_part">部位</string>
+    <string name="str_attribute">属性</string>
     <string name="str_quality">品质</string>
     <string name="str_reset">重置</string>
 
@@ -39,7 +40,7 @@
     <string name="str_equipment">装备</string>
     <string name="str_magic">秘籍</string>
     <string name="str_soul">魂器</string>
-    
+
     <string name="str_relationship">羁绊</string>
 
     <string name="quality_normal">普通</string>

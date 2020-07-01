@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_avatar_hai_ji" />
+        tools:src="@drawable/ic_attack" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWearStatus"

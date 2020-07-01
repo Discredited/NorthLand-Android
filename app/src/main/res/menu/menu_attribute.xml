@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/attribute_attack"
+        android:title="@string/str_attack" />
+    <item
+        android:id="@+id/attribute_defense"
+        android:title="@string/str_defense" />
+    <item
+        android:id="@+id/attribute_health"
+        android:title="@string/str_health" />
+    <item
+        android:id="@+id/attribute_speed"
+        android:title="@string/str_speed" />
+    <item
+        android:id="@+id/attribute_critical"
+        android:title="@string/str_critical" />
+    <item
+        android:id="@+id/attribute_resister"
+        android:title="@string/str_resister" />
+    <item
+        android:id="@+id/attribute_hit"
+        android:title="@string/str_hit" />
+    <item
+        android:id="@+id/attribute_dodge"
+        android:title="@string/str_dodge" />
+</menu>

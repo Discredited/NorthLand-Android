@@ -9,6 +9,7 @@ import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.common.QualityHelper
 import com.june.northland.feature.character.equipment.EquipmentHelper
 import com.june.northland.feature.character.equipment.EquipmentVo
 import kotlinx.android.synthetic.main.fragment_equipment_list.*
@@ -19,24 +20,24 @@ class EquipmentListFragment : BaseFragment() {
     private val mEquipmentList = mutableListOf<EquipmentVo>()
 
     private var mPart = EquipmentHelper.PART_ALL
-    private var mQuality = 0
+    private var mQuality = QualityHelper.QUALITY_ALL
     private var mPartMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
 
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_list
 
     override fun initView() {
-        rvWeapon.setLinearManager()
-        rvWeapon.adapter = mAdapter
-        rvWeapon.setHasFixedSize(true)
-        rvWeapon.addLinearItemDecoration()
+        rvEquipment.setLinearManager()
+        rvEquipment.adapter = mAdapter
+        rvEquipment.setHasFixedSize(true)
+        rvEquipment.addLinearItemDecoration()
 
         tvTypePart.click { showPartMenu(it) }
         tvTypeQuality.click { showQualityMenu(it) }
         tvTypeReset.click {
             mPart = EquipmentHelper.PART_ALL
+            mQuality = QualityHelper.QUALITY_ALL
             tvTypePart.text = getString(R.string.str_all)
-            mQuality = 0
             tvTypeQuality.text = getString(R.string.str_all)
             requestEquipment(mPart, mQuality)
         }
