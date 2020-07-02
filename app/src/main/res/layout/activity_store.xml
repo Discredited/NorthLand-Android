@@ -4,17 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/color_pink"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="15"
-        android:text="文字 abc 123"
-        android:textColor="@color/color_pink"
-        android:textSize="@dimen/sp_40"
-        android:textStyle="bold"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpStore"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
