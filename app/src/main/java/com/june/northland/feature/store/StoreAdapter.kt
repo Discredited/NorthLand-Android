@@ -11,8 +11,8 @@ class StoreAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            1 -> RecruitNormalFragment.newInstance()
-            else -> RecruitActivityFragment.newInstance()
+            1 -> RecruitActivityFragment.newInstance()
+            else -> RecruitNormalFragment.newInstance()
         }
     }
 }

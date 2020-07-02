@@ -1,9 +1,9 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- 去掉ActionBar -->
         <item name="windowActionBar">false</item>
-        <!--  ActionBar和windowNoTitle需要组合配置 否则会抛出异常-->
+        <!-- ActionBar和windowNoTitle需要组合配置 否则会抛出异常-->
         <!-- AppCompat does not support the current theme features -->
         <item name="windowNoTitle">true</item>
 

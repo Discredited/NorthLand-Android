@@ -5,7 +5,7 @@ import com.june.northland.base.component.BaseFragment
 
 class RecruitActivityFragment : BaseFragment() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_recruit_normal
+    override fun getLayoutResId(): Int = R.layout.fragment_recruit_activity
 
     override fun initView() {
     }
