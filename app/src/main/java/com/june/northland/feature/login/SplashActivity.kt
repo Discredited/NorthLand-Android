@@ -2,6 +2,11 @@ package com.june.northland.feature.login
 
 import android.content.Intent
 import android.text.SpannableStringBuilder
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.view.View
+import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
@@ -31,6 +36,7 @@ class SplashActivity : BaseActivity() {
         mUserLogin = UserDataCache.getInstance().isUserLogin()
         if (mUserLogin) {
             tvUserAccount.text = getUserAccount(UserDataCache.getInstance().userName())
+            tvUserAccount.movementMethod = LinkMovementMethod.getInstance()
             btGoIn.text = getString(R.string.prompt_go_in_north_land)
         } else {
             btGoIn.text = getString(R.string.str_login)
@@ -42,10 +48,21 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun getUserAccount(account: String): SpannableStringBuilder {
-        return SpanUtils().append("欢迎您")
-            .append(account)
+        return SpanUtils().append("欢迎您，")
+            .append(account).setBold()
             .append("    ")
             .append("切换账号")
+            .setForegroundColor(ContextCompat.getColor(this, R.color.color_green))
+            .setBold()
+            .setClickSpan(object : ClickableSpan() {
+                override fun updateDrawState(ds: TextPaint) {
+                    ds.color = ds.linkColor
+                }
+
+                override fun onClick(widget: View) {
+                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                }
+            })
             .create()
     }
 }

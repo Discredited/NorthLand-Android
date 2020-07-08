@@ -12,7 +12,14 @@ class UserDataCache private constructor() {
         mSharedPreferences = context.getSharedPreferences("USER", Context.MODE_PRIVATE)
     }
 
+    fun checkInit() {
+        if (null == mSharedPreferences) {
+            throw Exception("Cache not init")
+        }
+    }
+
     fun saveUserId(userId: String) {
+        checkInit()
         //commit为同步执行
         //apply为异步执行
         mSharedPreferences?.edit()?.putString("USER_ID", userId)?.apply()
@@ -21,12 +28,14 @@ class UserDataCache private constructor() {
     fun userId(): String = mSharedPreferences?.getString("USER_ID", "") ?: ""
 
     fun saveToken(token: String) {
+        checkInit()
         mSharedPreferences?.edit()?.putString("USER_TOKEN", token)?.apply()
     }
 
     fun userToken(): String = mSharedPreferences?.getString("USER_TOKEN", "") ?: ""
 
     fun saveUserName(name: String) {
+        checkInit()
         mSharedPreferences?.edit()?.putString("USER_NAME", name)?.apply()
     }
 

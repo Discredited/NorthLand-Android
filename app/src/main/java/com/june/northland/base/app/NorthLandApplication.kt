@@ -1,6 +1,7 @@
 package com.june.northland.base.app
 
 import android.app.Application
+import com.june.northland.utils.cache.UserDataCache
 import timber.log.Timber
 
 class NorthLandApplication : Application() {
@@ -9,5 +10,6 @@ class NorthLandApplication : Application() {
         super.onCreate()
 
         Timber.plant(Timber.DebugTree())
+        UserDataCache.getInstance().init(this)
     }
 }
