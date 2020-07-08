@@ -9,7 +9,7 @@ class UserDataCache private constructor() {
     private var mSharedPreferences: SharedPreferences? = null
 
     fun init(context: Context) {
-        mSharedPreferences = context.getSharedPreferences("", Context.MODE_PRIVATE)
+        mSharedPreferences = context.getSharedPreferences("USER", Context.MODE_PRIVATE)
     }
 
     fun saveUserId(userId: String) {
