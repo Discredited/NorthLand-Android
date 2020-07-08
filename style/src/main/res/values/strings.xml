@@ -47,4 +47,10 @@
     <string name="quality_advanced">高级</string>
     <string name="quality_rare">稀有</string>
     <string name="quality_artifact">神器</string>
+
+    <string name="prompt_go_in_north_land">进入北境</string>
+    <string name="prompt_input_account">请输入账号</string>
+    <string name="prompt_input_password">请输入密码</string>
+
+    <string name="str_login">登录</string>
 </resources>

@@ -7,4 +7,11 @@
         <item name="android:shadowRadius">10</item>
         <item name="android:shadowColor">@color/color_black</item>
     </style>
+
+    <style name="OutlineButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_10</item>
+        <item name="strokeColor">@color/color_text_logo</item>
+        <item name="strokeWidth">@dimen/dp_2</item>
+    </style>
 </resources>

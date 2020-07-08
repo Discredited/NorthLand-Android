@@ -18,6 +18,8 @@
     <color name="color_purple">#E655D3</color>
     <color name="color_pink">#FF8585</color>
 
+    <color name="color_text_logo">#434264</color>
+
     <!-- style 1 -->
     <color name="color_style_1_1">#084056</color>
     <color name="color_style_1_2">#188367</color>
