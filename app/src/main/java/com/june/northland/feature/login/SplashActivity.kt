@@ -30,7 +30,7 @@ class SplashActivity : BaseActivity() {
     override fun loadData() {
         mUserLogin = UserDataCache.getInstance().isUserLogin()
         if (mUserLogin) {
-            tvUserAccount.text = getUserAccount("")
+            tvUserAccount.text = getUserAccount(UserDataCache.getInstance().userName())
             btGoIn.text = getString(R.string.prompt_go_in_north_land)
         } else {
             btGoIn.text = getString(R.string.str_login)
