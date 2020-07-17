@@ -8,10 +8,12 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
+import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
 import com.june.northland.feature.character.equipment.EquipmentHelper
 import com.june.northland.feature.character.equipment.EquipmentVo
+import com.june.northland.feature.equipment.EquipmentDetailFragment
 import kotlinx.android.synthetic.main.fragment_equipment_list.*
 
 class EquipmentListFragment : BaseFragment() {
@@ -27,6 +29,10 @@ class EquipmentListFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_list
 
     override fun initView() {
+        mAdapter.itemClick { _, _, position ->
+            val equipment = mEquipmentList[position]
+            EquipmentDetailFragment.newInstance(equipment.id)
+        }
         rvEquipment.setLinearManager()
         rvEquipment.adapter = mAdapter
         rvEquipment.setHasFixedSize(true)

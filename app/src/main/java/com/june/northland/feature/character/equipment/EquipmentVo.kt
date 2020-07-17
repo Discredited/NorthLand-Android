@@ -9,5 +9,6 @@ class EquipmentVo(
     val coverIcon: Int = R.drawable.ic_attack,
     val name: String = "一点黛眉刀",
     val attribute: Int = 100,
-    val part: Int = EquipmentHelper.PART_ALL
+    val part: Int = EquipmentHelper.PART_ALL,
+    val id: String = "111111"
 ) : Parcelable

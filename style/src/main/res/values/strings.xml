@@ -58,4 +58,6 @@
     <string name="str_upgrade">升级</string>
     <string name="str_strengthen">强化</string>
     <string name="str_forging">锻造</string>
+    <string name="str_increase">增幅</string>
+    <string name="str_breakdown">分解</string>
 </resources>
