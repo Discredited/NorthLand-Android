@@ -29,9 +29,11 @@ class EquipmentListFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_list
 
     override fun initView() {
-        mAdapter.itemClick { _, _, position ->
+        mAdapter.itemClick {  _, _, position ->
             val equipment = mEquipmentList[position]
-            EquipmentDetailFragment.newInstance(equipment.id)
+            EquipmentDetailFragment
+                .newInstance(equipment.id)
+                .show(childFragmentManager, EquipmentDetailFragment::class.java.name)
         }
         rvEquipment.setLinearManager()
         rvEquipment.adapter = mAdapter

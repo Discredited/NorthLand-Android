@@ -1,6 +1,7 @@
 package com.june.northland.feature.equipment
 
 import android.os.Bundle
+import android.view.WindowManager
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import kotlinx.android.synthetic.main.fragment_dialog_equipment_detail.*
@@ -23,6 +24,14 @@ class EquipmentDetailFragment : BaseDialogFragment() {
         tvBasic.text = "攻击力增加10%"
         tvExtra.text = "攻击力增加10%\n暴击增加5%"
         tvDescContent.text = "比电更快，比雷更烈。北境第一攻击魂器，可以破开时空的极限之枪，是林飞自灵宝天取得"
+    }
+
+    override fun layoutParamsWidth(): Int {
+        return WindowManager.LayoutParams.WRAP_CONTENT
+    }
+
+    override fun layoutParamsHeight(): Int {
+        return WindowManager.LayoutParams.WRAP_CONTENT
     }
 
     companion object {

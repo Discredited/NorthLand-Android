@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/dp_320"
+    android:layout_width="@dimen/dp_300"
     android:layout_height="wrap_content"
     tools:background="@color/color_yellow">
 
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:text="@string/str_forging"
         app:layout_constraintBottom_toBottomOf="@+id/btStrengthen"
-        app:layout_constraintEnd_toStartOf="@+id/btIncrease"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btStrengthen"
         app:layout_constraintTop_toTopOf="@+id/btStrengthen" />
 
@@ -100,18 +100,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/str_increase"
-        app:layout_constraintBottom_toBottomOf="@+id/btStrengthen"
         app:layout_constraintEnd_toStartOf="@+id/btBreakdown"
-        app:layout_constraintStart_toEndOf="@+id/btForging"
-        app:layout_constraintTop_toTopOf="@+id/btStrengthen" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btStrengthen" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btBreakdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/str_breakdown"
-        app:layout_constraintBottom_toBottomOf="@+id/btStrengthen"
+        app:layout_constraintBottom_toBottomOf="@+id/btIncrease"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btIncrease"
-        app:layout_constraintTop_toTopOf="@+id/btStrengthen" />
+        app:layout_constraintTop_toTopOf="@+id/btIncrease" />
 </androidx.constraintlayout.widget.ConstraintLayout>
