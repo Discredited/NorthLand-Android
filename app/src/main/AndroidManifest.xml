@@ -53,6 +53,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".feature.character.equipment.EquipmentChooseActivity" />
         <activity android:name=".feature.login.LoginActivity" />
+        <activity android:name=".feature.store.RecruitResultActivity" />
     </application>
 
 </manifest>

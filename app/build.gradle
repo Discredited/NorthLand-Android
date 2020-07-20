@@ -52,4 +52,7 @@ dependencies {
     implementation 'com.blankj:utilcodex:1.29.0'
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //粒子爆炸效果
+    implementation 'me.samlss:bloom:1.0.0'
 }
