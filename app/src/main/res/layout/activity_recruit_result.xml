@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llRecruitContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRecruitAvatar"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_200"
+            tools:src="@color/color_quality_advanced" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRecruitName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textSize="@dimen/sp_24"
+            tools:text="楚度"
+            tools:textColor="@color/color_quality_epic" />
+
+        <com.june.northland.feature.character.widget.RealmDisplayView
+            android:id="@+id/vPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            app:realm_count="9"
+            app:realm_text="阿赖耶"
+            app:realm_text_size="@dimen/sp_16" />
+
+        <com.june.northland.feature.character.widget.RealmDisplayView
+            android:id="@+id/vReal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            app:realm_count="9"
+            app:realm_text="知微"
+            app:realm_text_size="@dimen/sp_16" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvRecruitSlogan"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dp_100"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp_20"
         android:background="@color/color_quality_epic"
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
         tools:text="沙罗铁树，只为自己盛开" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
