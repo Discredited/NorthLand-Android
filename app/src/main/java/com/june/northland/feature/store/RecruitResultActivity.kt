@@ -39,14 +39,16 @@ class RecruitResultActivity : BaseActivity() {
                 )
                 .setBloomListener(object : BloomListener {
                     override fun onBegin() {
+                        llRecruitContainer.postDelayed({
+                            llRecruitContainer.visibility = View.VISIBLE
+                        }, 300)
                     }
 
                     override fun onEnd() {
-                        tvRecruitSlogan.visibility = View.GONE
-                        llRecruitContainer.visibility = View.VISIBLE
                     }
                 })
                 .boom(tvRecruitSlogan)
+            tvRecruitSlogan.visibility = View.GONE
         }, 1000)
     }
 }

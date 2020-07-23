@@ -53,13 +53,13 @@
         android:id="@+id/tvRecruitSlogan"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_100"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center"
         android:layout_margin="@dimen/dp_20"
         android:background="@color/color_quality_epic"
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
         android:visibility="gone"
-        tools:visibility="visible"
-        tools:text="沙罗铁树，只为自己盛开" />
+        tools:text="沙罗铁树，只为自己盛开"
+        tools:visibility="visible" />
 </FrameLayout>
