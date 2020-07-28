@@ -1,9 +1,11 @@
 package com.june.northland.feature.dungeon.chapter
 
+import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 
-class ChapterActivity : BaseActivity() {
-    override fun getLayoutResId(): Int = 0
+class ChapterListActivity : BaseActivity() {
+
+    override fun getLayoutResId(): Int = R.layout.activity_chapter_list
 
     override fun initView() {
     }
