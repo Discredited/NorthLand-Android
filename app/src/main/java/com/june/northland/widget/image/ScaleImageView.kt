@@ -1,4 +1,4 @@
-package com.june.northland.widget
+package com.june.northland.widget.image
 
 import android.content.Context
 import android.util.AttributeSet
@@ -18,12 +18,14 @@ class ScaleImageView @JvmOverloads constructor(
     //修饰类型
     //FIX_TYPE_NONE 不修饰
     //FIX_TYPE_SQUARE 正方形修饰
-    private var mScaleType = SCALE_TYPE_SQUARE
+    private var mScaleType =
+        SCALE_TYPE_SQUARE
 
     //修饰模式
     //FIX_MODE_WIDTH  以宽定高
     //FIX_MODE_HEIGHT  已高定宽
-    private var mScaleMode = SCALE_MODE_WIDTH
+    private var mScaleMode =
+        SCALE_MODE_WIDTH
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         if (mScaleType == SCALE_TYPE_NONE) {

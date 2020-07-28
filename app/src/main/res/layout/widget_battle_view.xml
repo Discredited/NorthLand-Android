@@ -9,7 +9,7 @@
     tools:background="@drawable/shape_rect_realm_radius_10"
     tools:parentTag="android.widget.FrameLayout">
 
-    <com.june.northland.widget.ScaleImageView
+    <com.june.northland.widget.image.ScaleImageView
         android:id="@+id/ivAvatar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

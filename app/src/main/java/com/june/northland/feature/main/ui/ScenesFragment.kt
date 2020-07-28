@@ -18,8 +18,8 @@ import com.june.northland.feature.character.CharacterVo
 import com.june.northland.feature.lineup.LineUpActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
-import com.june.northland.feature.main.vo.PlotVo
-import com.june.northland.feature.plot.PlotActivity
+import com.june.northland.feature.dungeon.DungeonVo
+import com.june.northland.feature.dungeon.piece.PieceActivity
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
@@ -63,7 +63,7 @@ class ScenesFragment : BaseFragment() {
                 0 -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
-                3 -> startActivity(Intent(requireActivity(), PlotActivity::class.java))
+                3 -> startActivity(Intent(requireActivity(), PieceActivity::class.java))
                 5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
                 else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
@@ -110,11 +110,11 @@ class ScenesFragment : BaseFragment() {
     private fun requestPlot() {
         mPlotAdapter.setNewInstance(
             mutableListOf(
-                PlotVo("红尘天", R.drawable.ic_scense_one),
-                PlotVo("魔刹天", R.drawable.ic_scense_second),
-                PlotVo("罗生天", R.drawable.ic_scense_third),
-                PlotVo("清虚天", R.drawable.ic_scense_one),
-                PlotVo("吉祥天", R.drawable.ic_scense_second)
+                DungeonVo("红尘天", R.drawable.ic_scense_one),
+                DungeonVo("魔刹天", R.drawable.ic_scense_second),
+                DungeonVo("罗生天", R.drawable.ic_scense_third),
+                DungeonVo("清虚天", R.drawable.ic_scense_one),
+                DungeonVo("吉祥天", R.drawable.ic_scense_second)
             )
         )
     }
