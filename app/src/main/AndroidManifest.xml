@@ -40,9 +40,6 @@
             android:name=".feature.store.StoreActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.dungeon.piece.PieceActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".feature.dungeon.DungeonBattleActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -55,7 +52,8 @@
         <activity android:name=".feature.login.LoginActivity" />
         <activity android:name=".feature.store.RecruitResultActivity" />
         <activity android:name=".feature.role.RoleDetailActivity" />
-        <activity android:name=".feature.dungeon.PlotDisplayActivity" />
+        <activity android:name=".feature.dungeon.plot.PlotDisplayActivity" />
+        <activity android:name=".feature.dungeon.chapter.ChapterListActivity" />
     </application>
 
 </manifest>

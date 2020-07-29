@@ -62,4 +62,6 @@
     <string name="str_breakdown">分解</string>
     <string name="str_manual">图鉴</string>
     <string name="str_chapter_reward">章节奖励</string>
+    <string name="prompt_chapter_unlock">请先解锁上一章节</string>
+    <string name="str_fight">挑战</string>
 </resources>

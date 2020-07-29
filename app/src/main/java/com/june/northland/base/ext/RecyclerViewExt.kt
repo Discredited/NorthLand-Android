@@ -27,7 +27,7 @@ fun RecyclerView.addLinearItemDecoration(
     color: Int = ContextCompat.getColor(context, R.color.color_transparent),
     marginStart: Int = 0,
     marginEnd: Int = 0,
-    size: Int = resources.getDimensionPixelSize(R.dimen.dp_10),
+    size: Int = resources.getDimensionPixelSize(R.dimen.dp_5),
     orientation: Int = RecyclerView.VERTICAL
 ) {
     addItemDecoration(

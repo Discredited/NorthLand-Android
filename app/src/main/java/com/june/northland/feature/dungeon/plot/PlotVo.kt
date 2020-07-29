@@ -1,4 +1,4 @@
-package com.june.northland.feature.dungeon
+package com.june.northland.feature.dungeon.plot
 
 class PlotVo(
     val content: String,

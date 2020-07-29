@@ -14,4 +14,14 @@
         <item name="strokeColor">@color/color_text_logo</item>
         <item name="strokeWidth">@dimen/dp_2</item>
     </style>
+
+    <style name="CommonButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">?attr/textAppearanceHeadline1</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
 </resources>
