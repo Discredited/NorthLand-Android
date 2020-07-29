@@ -54,6 +54,7 @@
         <activity android:name=".feature.role.RoleDetailActivity" />
         <activity android:name=".feature.dungeon.plot.PlotDisplayActivity" />
         <activity android:name=".feature.dungeon.chapter.ChapterListActivity" />
+        <activity android:name=".feature.dungeon.DungeonListActivity" />
     </application>
 
 </manifest>
