@@ -62,10 +62,4 @@ class EvaluateView @JvmOverloads constructor(
             }
         }
     }
-
-    override fun onDetachedFromWindow() {
-        mActiveBitmap?.recycle()
-        mNegativeBitmap?.recycle()
-        super.onDetachedFromWindow()
-    }
 }

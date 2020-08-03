@@ -11,5 +11,8 @@ class DungeonVo(
     val icon: Int,
     val raidCost: Int = 5,  //闯关花费
     val passTarget: Int = 3,  //通关目标
-    val passResult: Int = 0   //通过结果
-)
+    val passResult: Int = 0,   //通过结果
+    val plot: Int = 0  //是含有剧情  0-没有剧情 1-需要显示剧情
+) {
+    fun hasPlot(): Boolean = plot == 1
+}
