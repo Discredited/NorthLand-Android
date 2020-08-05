@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvArenaRank"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1000" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivArenaAvatar"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvArenaRank"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_avatar_jiu_dan_mei" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvArenaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@+id/tvArenaPower"
+        app:layout_constraintStart_toEndOf="@+id/ivArenaAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="天王盖地虎哈哈" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvArenaPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvArenaName"
+        app:layout_constraintTop_toBottomOf="@+id/tvArenaName"
+        tools:text="战斗力:900W" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btArenaFight"
+        style="@style/CommonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:text="@string/str_fight"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/tvArenaName"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
