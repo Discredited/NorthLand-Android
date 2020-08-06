@@ -49,12 +49,30 @@
             android:name=".feature.character.CharacterDetailActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".feature.character.equipment.EquipmentChooseActivity" />
-        <activity android:name=".feature.login.LoginActivity" />
-        <activity android:name=".feature.store.RecruitResultActivity" />
-        <activity android:name=".feature.role.RoleDetailActivity" />
-        <activity android:name=".feature.dungeon.plot.PlotDisplayActivity" />
-        <activity android:name=".feature.dungeon.chapter.ChapterListActivity" />
-        <activity android:name=".feature.dungeon.DungeonListActivity" />
+        <activity
+            android:name=".feature.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.store.RecruitResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.role.RoleDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.dungeon.plot.PlotDisplayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.dungeon.chapter.ChapterListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.dungeon.DungeonListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.taoism.TaoismActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.taoism.arena.ArenaListActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

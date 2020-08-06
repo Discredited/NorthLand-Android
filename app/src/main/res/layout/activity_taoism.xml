@@ -17,7 +17,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/common_margin"
-        app:layout_constraintDimensionRatio="h,16:9"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:layout_constraintDimensionRatio="h,4:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +45,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/common_margin"
         android:layout_marginTop="@dimen/common_margin"
-        app:layout_constraintDimensionRatio="h,3:4"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:layout_constraintDimensionRatio="h,3:5"
         app:layout_constraintEnd_toEndOf="@+id/vGuideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cdArena">
@@ -73,6 +75,7 @@
         android:layout_marginTop="@dimen/common_margin"
         android:layout_marginEnd="@dimen/common_margin"
         android:layout_marginBottom="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="@+id/vBaseLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vGuideLine"
@@ -91,6 +94,7 @@
         android:layout_marginStart="@dimen/common_margin"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/common_margin"
+        app:cardCornerRadius="@dimen/dp_5"
         app:layout_constraintBottom_toBottomOf="@+id/cdLadder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vGuideLine"
@@ -101,5 +105,16 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/img_practice_3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ShadowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20"
+            tools:text="@string/str_stay_tuned" />
     </androidx.cardview.widget.CardView>
+
+    <include layout="@layout/view_close_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

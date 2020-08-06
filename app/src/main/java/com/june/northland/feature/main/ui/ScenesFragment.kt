@@ -22,6 +22,7 @@ import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
+import com.june.northland.feature.taoism.TaoismActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
 
 class ScenesFragment : BaseFragment() {
@@ -64,14 +65,13 @@ class ScenesFragment : BaseFragment() {
                 1 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 3 -> startActivity(Intent(requireActivity(), ChapterListActivity::class.java))
+                4 -> startActivity(Intent(requireActivity(), TaoismActivity::class.java))
                 5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
                 else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }
         }
-        rvMenu.setLinearManager(
-            orientation = RecyclerView.HORIZONTAL
-        )
+        rvMenu.setLinearManager(orientation = RecyclerView.HORIZONTAL)
         rvMenu.adapter = mMenuAdapter
         rvMenu.setHasFixedSize(true)
 

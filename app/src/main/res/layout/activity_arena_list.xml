@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/vArenaHead"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_60"
+        android:background="@color/color_yellow"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/color_yellow" />
+        tools:text="排行信息" />
 
     <View
         android:id="@+id/vArenaRank"
