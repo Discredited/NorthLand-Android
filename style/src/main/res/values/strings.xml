@@ -65,4 +65,9 @@
     <string name="prompt_chapter_unlock">请先解锁上一章节</string>
     <string name="str_fight">挑战</string>
     <string name="str_stay_tuned">敬请期待</string>
+
+    <string name="str_bring_up">培养</string>
+    <string name="str_refine">洗练</string>
+    <string name="str_evolution">进化</string>
+    <string name="str_advanced">进阶</string>
 </resources>

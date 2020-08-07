@@ -5,6 +5,8 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.feature.taoism.arena.ArenaListActivity
+import com.june.northland.feature.taoism.ladder.LadderListActivity
+import com.june.northland.utils.Toast
 import kotlinx.android.synthetic.main.activity_taoism.*
 import kotlinx.android.synthetic.main.view_close_image.*
 
@@ -22,8 +24,15 @@ class TaoismActivity : BaseActivity() {
         cdArena.click {
             startActivity(Intent(this, ArenaListActivity::class.java))
         }
-        cdLadder.click { }
-        cdLeague.click { }
+        cdLadder.click {
+            startActivity(Intent(this, LadderListActivity::class.java))
+        }
+        cdLeague.click {
+            Toast.toastShort(getString(R.string.str_stay_tuned))
+        }
+        cdView.click {
+            Toast.toastShort(getString(R.string.str_stay_tuned))
+        }
 
         ivClose.click { finish() }
     }

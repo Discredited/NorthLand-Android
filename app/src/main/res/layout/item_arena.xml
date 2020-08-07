@@ -2,26 +2,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_80">
+    android:layout_width="@dimen/dp_240"
+    android:layout_height="wrap_content"
+    android:background="@color/color_gray">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvArenaRank"
-        android:layout_width="@dimen/dp_80"
-        android:layout_height="@dimen/dp_50"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/color_yellow"
         android:gravity="center"
+        android:minWidth="@dimen/dp_100"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1000" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivArenaAvatar"
-        android:layout_width="@dimen/dp_60"
-        android:layout_height="@dimen/dp_60"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvArenaRank"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_160"
+        android:layout_marginTop="@dimen/dp_60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_avatar_jiu_dan_mei" />
 
@@ -29,20 +35,21 @@
         android:id="@+id/tvArenaName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
         android:textSize="@dimen/sp_15"
-        app:layout_constraintBottom_toTopOf="@+id/tvArenaPower"
-        app:layout_constraintStart_toEndOf="@+id/ivArenaAvatar"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivArenaAvatar"
         tools:text="天王盖地虎哈哈" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvArenaPower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
         android:textSize="@dimen/sp_14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvArenaName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvArenaName"
         tools:text="战斗力:900W" />
 
@@ -51,12 +58,10 @@
         style="@style/CommonButton"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_40"
-        android:layout_marginEnd="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_50"
         android:text="@string/str_fight"
         android:textSize="@dimen/sp_14"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/tvArenaName"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvArenaPower" />
 </androidx.constraintlayout.widget.ConstraintLayout>
