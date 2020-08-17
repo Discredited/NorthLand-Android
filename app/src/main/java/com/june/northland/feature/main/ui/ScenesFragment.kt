@@ -4,13 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.constant.PermissionConstants
+import com.blankj.utilcode.util.PathUtils
+import com.blankj.utilcode.util.PermissionUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
-import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
+import com.june.northland.base.ext.*
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment
 import com.june.northland.feature.character.CharacterListActivity
@@ -24,6 +24,8 @@ import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import com.june.northland.feature.taoism.TaoismActivity
 import kotlinx.android.synthetic.main.fragment_main_scene.*
+import timber.log.Timber
+import java.io.File
 
 class ScenesFragment : BaseFragment() {
 
@@ -68,7 +70,10 @@ class ScenesFragment : BaseFragment() {
                 4 -> startActivity(Intent(requireActivity(), TaoismActivity::class.java))
                 5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
-                else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
+                else -> {
+                    checkPermission()
+                    ToastUtils.showShort(getString(R.string.prompt_coming_soon))
+                }
             }
         }
         rvMenu.setLinearManager(orientation = RecyclerView.HORIZONTAL)
@@ -132,5 +137,33 @@ class ScenesFragment : BaseFragment() {
                 MenuVo("修炼", R.drawable.ic_menu_practice)
             )
         )
+    }
+
+    private fun checkPermission() {
+        PermissionUtils.permission(PermissionConstants.STORAGE)
+            .callback(object : PermissionUtils.FullCallback {
+                override fun onGranted(granted: MutableList<String>) {
+                    visitorOutAppFile()
+                }
+
+                override fun onDenied(deniedForever: MutableList<String>, denied: MutableList<String>) {
+                    ToastUtils.showShort("没有申请到权限")
+                }
+
+            })
+            .request()
+    }
+
+    private fun visitorOutAppFile() {
+        //访问其他App 外部私有目录下的文件
+        val externalStoragePath = PathUtils.getExternalStoragePath()
+        val fileName = "${externalStoragePath}/Android/data/com.june.studyproject/1597651330997.jpg"
+        val file = File(fileName)
+        if (file.exists()) {
+            ivSection.loadImage(fileName)
+            Timber.e("文件存在，可以访问")
+        } else {
+            Timber.e("文件不存在，不可以访问")
+        }
     }
 }
