@@ -41,7 +41,9 @@ class ResourceUpdateFragment : BaseFragment() {
             override fun onProgress(progress: Long, max: Long, percent: Float) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     withContext(Dispatchers.Main) {
-                        tvProgress.text = getString(R.string.str_download_progress, percent.toInt())
+                        pbDownload.max = max.toInt()
+                        pbDownload.progress = progress.toInt()
+                        tvProgress.text = getString(R.string.str_download_progress, (percent * 100).toInt())
                     }
                 }
             }
