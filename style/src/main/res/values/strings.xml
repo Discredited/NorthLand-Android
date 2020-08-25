@@ -70,4 +70,12 @@
     <string name="str_refine">洗练</string>
     <string name="str_evolution">进化</string>
     <string name="str_advanced">进阶</string>
+
+    <string name="str_retry">重试</string>
+
+    <string name="str_download_progress">正在下载资源(%d%%)</string>
+
+    <string name="prompt_health_game_title">健康游戏忠告</string>
+    <string name="prompt_health_game_content">抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。</string>
+    <string name="str_announcement">公告</string>
 </resources>

@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/flRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btGoIn"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="@dimen/dp_50"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="@dimen/dp_30"
-        android:textColor="@color/color_text_logo"
-        android:textSize="@dimen/sp_18"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/color_text_logo"
-        app:strokeWidth="@dimen/dp_2"
-        tools:text="进入北境" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvUserAccount"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/tvHealthGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_12"
-        android:textColor="@color/color_text_logo"
-        android:textSize="@dimen/sp_14"
-        app:layout_constraintBottom_toTopOf="@+id/btGoIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="欢迎您 : 無颜    切换账号" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_health_game_title"
+            android:textColor="@color/color_text_logo"
+            android:textSize="@dimen/sp_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:lineSpacingExtra="@dimen/dp_2"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/prompt_health_game_content"
+            android:textColor="@color/color_text_logo"
+            android:textSize="@dimen/sp_16" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>
