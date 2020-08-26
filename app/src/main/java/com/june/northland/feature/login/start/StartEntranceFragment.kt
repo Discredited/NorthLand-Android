@@ -1,5 +1,6 @@
 package com.june.northland.feature.login.start
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableStringBuilder
@@ -29,7 +30,7 @@ class StartEntranceFragment : BaseFragment() {
                 startActivity(Intent(requireActivity(), MainActivity::class.java))
                 activity?.finish()
             } else {
-                startActivity(Intent(requireActivity(), LoginActivity::class.java))
+                LoginActivity.starter(this)
             }
         }
     }
@@ -47,6 +48,17 @@ class StartEntranceFragment : BaseFragment() {
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode != Activity.RESULT_OK) {
+            return
+        }
+        if (requestCode == LoginActivity.REQUEST_LOGIN) {
+            val account = data?.getStringExtra(LoginActivity.RESPONSE_NAME) ?: ""
+            tvUserAccount.text = getUserAccount(account)
+        }
+    }
+
 
     private fun getUserAccount(account: String): SpannableStringBuilder {
         return SpanUtils().append("欢迎您，")
@@ -61,14 +73,14 @@ class StartEntranceFragment : BaseFragment() {
                 }
 
                 override fun onClick(widget: View) {
-                    startActivity(Intent(requireActivity(), LoginActivity::class.java))
+                    LoginActivity.starter(this@StartEntranceFragment)
                 }
             })
             .create()
     }
 
     companion object {
-        fun newInstance() :StartEntranceFragment{
+        fun newInstance(): StartEntranceFragment {
             return StartEntranceFragment()
         }
     }

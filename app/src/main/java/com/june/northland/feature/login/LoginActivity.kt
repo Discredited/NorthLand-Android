@@ -1,10 +1,11 @@
 package com.june.northland.feature.login
 
+import android.app.Activity
 import android.content.Intent
+import androidx.fragment.app.Fragment
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
-import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.Toast
 import com.june.northland.utils.cache.UserDataCache
 import kotlinx.android.synthetic.main.activity_login.*
@@ -30,11 +31,25 @@ class LoginActivity : BaseActivity() {
             UserDataCache.getInstance().saveUserId("1111")
             UserDataCache.getInstance().saveUserName(account)
 
-            startActivity(Intent(this, MainActivity::class.java))
+            val intent = Intent()
+            intent.putExtra(RESPONSE_ID, "")
+            intent.putExtra(RESPONSE_NAME, account)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
     }
 
     override fun loadData() {
+    }
+
+    companion object {
+        const val REQUEST_LOGIN = 100
+        const val RESPONSE_ID = "RESPONSE_ID"
+        const val RESPONSE_NAME = "RESPONSE_NAME"
+
+        fun starter(fragment: Fragment) {
+            val intent = Intent(fragment.requireActivity(), LoginActivity::class.java)
+            fragment.startActivityForResult(intent, REQUEST_LOGIN)
+        }
     }
 }

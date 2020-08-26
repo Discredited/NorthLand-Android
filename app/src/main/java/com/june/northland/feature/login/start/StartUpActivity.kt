@@ -37,13 +37,12 @@ class StartUpActivity : BaseActivity() {
     private fun requestConfigParams() {
         val timestamp = System.currentTimeMillis()
         val date = DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
-        val remoteConfig = ResourceConfig(1, "0.0.1", timestamp, date)
+        val remoteConfig = ResourceConfig(0, "0.0.1", timestamp, date)
         val needUpdate = mStartUpViewModel.checkUpdateResource(remoteConfig)
         if (needUpdate) {
             updateResource()
         } else {
             startEntrance()
-            requestAnnouncement()
         }
     }
 
@@ -57,6 +56,8 @@ class StartUpActivity : BaseActivity() {
     private fun startEntrance() {
         val fragment = StartEntranceFragment.newInstance()
         fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
+
+        requestAnnouncement()
     }
 
     //获取公告

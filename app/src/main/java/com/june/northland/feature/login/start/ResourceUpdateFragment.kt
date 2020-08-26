@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.blankj.utilcode.util.ZipUtils
 import com.june.network.download.DownloadHelper
 import com.june.network.download.ProgressListener
 import com.june.northland.R
@@ -13,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_resource_update.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 
 class ResourceUpdateFragment : BaseFragment() {
 
@@ -52,16 +54,34 @@ class ResourceUpdateFragment : BaseFragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             val result = withContext(Dispatchers.IO) {
                 val url =
-                    "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1827484078,582503147&fm=26&gp=0.jpg"
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598440722179&di=a3369a45c6f4d91312c9c78c47911328&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-01-09%2F5a547c0cb840c.jpg"
                 val filePath = "${FilePathHelper.getAppExternalDirectory()}/TempImage.jpg"
                 downloadHelper.startDownload(url, filePath)
             }
             result?.let {
-                mStartUpViewModel.mEntranceLive.value = 1
+                unzipFile()
             }
             if (null == result) {
                 changeRetry()
             }
+        }
+    }
+
+    private fun unzipFile() {
+        val zipFilePath = FilePathHelper.getResourceZipPath()
+        val unzipDirectory = FilePathHelper.getResourceDirectory()
+        val zipFile = File(zipFilePath)
+        if (!zipFile.exists()) {
+            //资源压缩包不存在
+            changeRetry()
+            return
+        }
+        val fileList = ZipUtils.unzipFile(zipFilePath, unzipDirectory)
+        if (fileList.isNotEmpty()) {
+            mStartUpViewModel.mEntranceLive.value = 1
+        } else {
+            //文件解压失败
+            changeRetry()
         }
     }
 

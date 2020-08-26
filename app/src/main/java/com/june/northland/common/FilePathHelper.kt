@@ -5,10 +5,14 @@ import java.io.File
 
 object FilePathHelper {
 
-    private const val RESOURCE_DIRECTORY = "resource"
+    private const val RESOURCE_DIRECTORY = ".resource"
 
     fun getResourceDirectory(): String {
         return "${PathUtils.getExternalAppDataPath()}/${RESOURCE_DIRECTORY}"
+    }
+
+    fun getResourceZipPath(): String {
+        return "${getAppExternalDirectory()}/resource.zip"
     }
 
     //获取资源配置文件

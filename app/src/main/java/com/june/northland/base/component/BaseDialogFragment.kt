@@ -26,6 +26,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         super.onActivityCreated(savedInstanceState)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(0x00000000))
+        dialog?.window?.setGravity(layoutGravity())
         dialog?.window?.setLayout(
             layoutParamsWidth(),
             layoutParamsHeight()
@@ -64,7 +65,9 @@ abstract class BaseDialogFragment : DialogFragment() {
 
     abstract fun initView()
 
-    open fun layoutParamsWidth() = WindowManager.LayoutParams.MATCH_PARENT
+    open fun layoutParamsWidth() = WindowManager.LayoutParams.WRAP_CONTENT
 
-    open fun layoutParamsHeight() = WindowManager.LayoutParams.MATCH_PARENT
+    open fun layoutParamsHeight() = WindowManager.LayoutParams.WRAP_CONTENT
+
+    open fun layoutGravity() = Gravity.CENTER
 }
