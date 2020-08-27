@@ -65,10 +65,10 @@ class RealmDisplayView @JvmOverloads constructor(
             array.recycle()
         }
 
-        mActiveBitmap = context.getDrawable(mActiveIconRes)?.let {
+        mActiveBitmap = ContextCompat.getDrawable(context, mActiveIconRes)?.let {
             it.toBitmap(it.intrinsicWidth, it.intrinsicHeight)
         }
-        mNegativeBitmap = context.getDrawable(mNegativeIconRes)?.let {
+        mNegativeBitmap = ContextCompat.getDrawable(context, mNegativeIconRes)?.let {
             it.toBitmap(it.intrinsicWidth, it.intrinsicHeight)
         }
 
@@ -78,7 +78,7 @@ class RealmDisplayView @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val textWidth = textPaint.measureText(mRealmName).toInt()
-        val textHeight = (textPaint.fontMetrics.bottom - textPaint.fontMetrics.top).toInt()
+        val textHeight = (textPaint.descent() - textPaint.ascent()).toInt()
         val bitmapWidth = mActiveBitmap?.width ?: textHeight
         val bitmapHeight = mActiveBitmap?.height ?: textHeight
 
@@ -97,8 +97,7 @@ class RealmDisplayView @JvmOverloads constructor(
         //文字绘制
         val textWidth = textPaint.measureText(mRealmName)
         val textX = 0F
-        val textY =
-            (height + textPaint.descent() - textPaint.ascent()) / 2F - (textPaint.fontMetrics.ascent - textPaint.fontMetrics.top)
+        val textY = (height - (textPaint.descent() + textPaint.ascent())) / 2F
         canvas.drawText(mRealmName, textX, textY, textPaint)
         //图标绘制
         val iconStart = if (textWidth == 0F) {

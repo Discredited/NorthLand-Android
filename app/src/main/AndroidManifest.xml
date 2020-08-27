@@ -83,6 +83,7 @@
             android:name=".feature.taoism.arena.ArenaListActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".feature.taoism.ladder.LadderListActivity" />
+        <activity android:name=".feature.main.email.EmailListActivity" />
     </application>
 
 </manifest>

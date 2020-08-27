@@ -39,13 +39,14 @@
                 <com.june.northland.feature.character.widget.ExperienceView
                     android:id="@+id/vCharacterExperience"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_20"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/common_margin"
                     android:layout_marginTop="@dimen/dp_20"
                     android:layout_marginEnd="@dimen/common_margin"
                     app:exp_level_size="@dimen/sp_18"
-                    app:exp_radius="@dimen/dp_4"
-                    app:exp_rect_percent="0.9"
+                    app:exp_radius="@dimen/dp_5"
+                    app:exp_text_size="@dimen/sp_10"
+                    app:exp_rect_percent="0.7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/vCharacterDisplay"
@@ -183,6 +184,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btBringUp"
             style="@style/TextButton"
             android:layout_width="@dimen/dp_50"
             android:layout_height="@dimen/dp_50"

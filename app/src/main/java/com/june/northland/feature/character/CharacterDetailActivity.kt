@@ -12,7 +12,7 @@ import com.june.northland.feature.character.relationship.RelationshipVo
 import com.june.northland.feature.character.equipment.EquipmentChooseActivity
 import com.june.northland.feature.character.equipment.EquipmentVo
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.fragment_dialog_character_info.*
+import kotlinx.android.synthetic.main.activity_character_detail.*
 import kotlinx.android.synthetic.main.view_close_image.*
 
 /**
@@ -41,7 +41,7 @@ class CharacterDetailActivity : BaseActivity() {
 
         vCharacterDisplay.replaceWeaponClick()
 
-        vBasicAttribute.click {
+        btBringUp.click {
             CharacterPotentialFragment
                 .newInstance()
                 .show(supportFragmentManager, CharacterPotentialFragment::javaClass.name)

@@ -19,6 +19,7 @@ import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
 import com.june.northland.feature.lineup.LineUpActivity
 import com.june.northland.feature.main.MainActivity
+import com.june.northland.feature.main.email.EmailListActivity
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
@@ -89,7 +90,7 @@ class ScenesFragment : BaseFragment() {
         }
 
         ivEmail.click {
-            
+            startActivity(Intent(requireActivity(), EmailListActivity::class.java))
         }
     }
 
