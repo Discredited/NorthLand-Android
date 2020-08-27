@@ -87,6 +87,10 @@ class ScenesFragment : BaseFragment() {
                 }
             }
         }
+
+        ivEmail.click {
+            
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

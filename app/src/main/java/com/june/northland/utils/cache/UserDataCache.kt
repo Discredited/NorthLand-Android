@@ -12,7 +12,7 @@ class UserDataCache private constructor() {
         mSharedPreferences = context.getSharedPreferences("USER", Context.MODE_PRIVATE)
     }
 
-    fun checkInit() {
+    private fun checkInit() {
         if (null == mSharedPreferences) {
             throw Exception("Cache not init")
         }

@@ -9,8 +9,7 @@
     app:contentInsetStart="0dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:navigationIcon="@drawable/ic_back_black">
+    app:layout_constraintTop_toTopOf="parent">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/toolbarTitle"

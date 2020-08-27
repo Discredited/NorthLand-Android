@@ -65,9 +65,9 @@ abstract class BaseDialogFragment : DialogFragment() {
 
     abstract fun initView()
 
-    open fun layoutParamsWidth() = WindowManager.LayoutParams.WRAP_CONTENT
+    open fun layoutParamsWidth() = WindowManager.LayoutParams.MATCH_PARENT
 
-    open fun layoutParamsHeight() = WindowManager.LayoutParams.WRAP_CONTENT
+    open fun layoutParamsHeight() = WindowManager.LayoutParams.MATCH_PARENT
 
     open fun layoutGravity() = Gravity.CENTER
 }

@@ -5,7 +5,9 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
+import com.june.northland.base.ext.click
 import com.june.northland.base.ext.commitFragment
+import com.june.northland.feature.login.start.announcement.AnnouncementFragment
 import kotlinx.android.synthetic.main.activity_start_up.*
 
 /**
@@ -18,7 +20,9 @@ class StartUpActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_start_up
 
     override fun initView() {
-
+        tvAnnouncement.click {
+            AnnouncementFragment.newInstance().show(supportFragmentManager, "AnnouncementFragment")
+        }
     }
 
     override fun loadData() {
@@ -56,7 +60,6 @@ class StartUpActivity : BaseActivity() {
     private fun startEntrance() {
         val fragment = StartEntranceFragment.newInstance()
         fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
-
         requestAnnouncement()
     }
 

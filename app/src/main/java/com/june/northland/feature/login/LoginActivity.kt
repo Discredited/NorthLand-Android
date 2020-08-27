@@ -26,6 +26,18 @@ class LoginActivity : BaseActivity() {
                 Toast.toastShort(getString(R.string.prompt_input_password))
                 return@click
             }
+            requestLogin(account, password)
+        }
+    }
+
+    override fun loadData() {
+    }
+
+    private fun requestLogin(account: String, password: String) {
+        showLoading(false)
+
+        btLogin.postDelayed({
+            hideLoading()
 
             UserDataCache.getInstance().saveToken("1111")
             UserDataCache.getInstance().saveUserId("1111")
@@ -36,10 +48,7 @@ class LoginActivity : BaseActivity() {
             intent.putExtra(RESPONSE_NAME, account)
             setResult(Activity.RESULT_OK, intent)
             finish()
-        }
-    }
-
-    override fun loadData() {
+        }, 1200)
     }
 
     companion object {

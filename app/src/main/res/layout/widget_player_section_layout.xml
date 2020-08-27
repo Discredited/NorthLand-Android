@@ -12,7 +12,6 @@
         android:id="@+id/ivAvatar"
         android:layout_width="@dimen/dp_100"
         android:layout_height="@dimen/dp_100"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_default_skill" />
@@ -23,58 +22,115 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:textColor="@color/color_white"
-        android:textStyle="bold"
         android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toTopOf="@id/ivAvatar"
         tools:text="沙罗铁树只为自己盛开" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCombatPower"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableStart="@drawable/ic_rating_yellow"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/color_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:text="战斗力:280W" />
+
+    <Space
+        android:id="@+id/vGuideLine"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivAvatar" />
+
+    <!-- 疲劳值->体力 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFatigue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@+id/tvGold"
+        app:layout_constraintEnd_toEndOf="@+id/vGuideLine"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvCombatPower"
+        tools:text="体力:200" />
+
+    <!-- 耐力值->战意 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStamina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/vGuideLine"
+        app:layout_constraintStart_toEndOf="@id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvHerb"
+        tools:text="战意:200" />
+
+    <!-- 元宝/钻石->草药 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHerb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:drawableStart="@drawable/ic_herb"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@+id/tvGold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/tvCombatPower"
+        tools:text="1234567" />
+
+    <!-- 金币 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:drawableStart="@drawable/ic_gold"
+        android:drawablePadding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/tvHerb"
+        tools:text="1234567" />
 
     <com.june.northland.feature.character.widget.ExperienceView
         android:id="@+id/vExperience"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
-        app:exp_rect_percent="0.75"
-        app:exp_rect_gravity="bottom"
+        android:layout_marginTop="@dimen/dp_2"
         app:exp_level_size="@dimen/sp_14"
-        app:exp_text_size="@dimen/sp_10"
-        app:exp_stroke_width="@dimen/dp_1"
+        app:exp_rect_percent="0.6"
+        app:exp_stroke_width="@dimen/dp_0_5"
+        app:exp_text_size="@dimen/sp_8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tvName"
-        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAvatar"
         tools:exp_progress="30" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvHerb"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:drawableStart="@drawable/ic_herb"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_18"
-        app:layout_constraintBottom_toTopOf="@+id/tvGold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivAvatar"
-        app:layout_constraintTop_toBottomOf="@id/vExperience"
-        tools:text="1234567" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvGold"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:drawableStart="@drawable/ic_gold"
-        android:drawablePadding="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_18"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivAvatar"
-        app:layout_constraintTop_toBottomOf="@id/tvHerb"
-        tools:text="1234567" />
 </merge>

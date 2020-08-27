@@ -19,4 +19,17 @@
         android:layout_height="@dimen/dp_200"
         android:layout_gravity="bottom"
         tools:background="@color/color_theme" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAnnouncement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        android:text="@string/str_announcement"
+        android:textColor="@color/color_text_logo"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
 </FrameLayout>

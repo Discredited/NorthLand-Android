@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/dp_300"
         android:layout_height="@dimen/dp_400"
-        android:background="@drawable/shape_rect_realm_radius_10">
+        android:background="@drawable/shape_rect_bg_white_stroke_theme_radius_10">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvAnnounceTitle"
@@ -26,8 +26,8 @@
             style="@style/CommonButton"
             android:layout_width="@dimen/dp_100"
             android:layout_height="@dimen/dp_40"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
             android:text="@string/str_sure"
             android:textSize="@dimen/sp_16"
             android:textStyle="bold"
@@ -36,9 +36,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAnnouncement"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_margin="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
             app:layout_constraintBottom_toTopOf="@+id/btSure"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

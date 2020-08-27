@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- 角色信息 -->
     <com.june.northland.feature.main.widget.PlayerSectionView
         android:id="@+id/vPlayerSection"
         android:layout_width="0dp"
@@ -28,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- 阵容列表 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCharacter"
         android:layout_width="0dp"
@@ -43,6 +45,7 @@
         tools:listitem="@layout/item_main_scenes_character"
         tools:orientation="horizontal" />
 
+    <!-- 菜单列表 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMenu"
         android:layout_width="0dp"
@@ -57,6 +60,7 @@
         tools:listitem="@layout/item_main_scenes_menu"
         tools:orientation="horizontal" />
 
+    <!-- 主场景列表 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPlot"
         android:layout_width="0dp"
@@ -68,4 +72,14 @@
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_main_scenes_plot"
         tools:orientation="horizontal" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEmail"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_40"
+        android:src="@drawable/ic_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvPlot" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -65,35 +65,24 @@ class ExperienceView @JvmOverloads constructor(
             mExperienceProgress = attribute.getInt(R.styleable.ExperienceView_exp_progress, 0)
             mExperienceMax = attribute.getInt(R.styleable.ExperienceView_exp_max, mExperienceMax)
 
-            mProgressColor =
-                attribute.getColor(R.styleable.ExperienceView_exp_progress_color, mProgressColor)
+            mProgressColor = attribute.getColor(R.styleable.ExperienceView_exp_progress_color, mProgressColor)
             mMaxColor = attribute.getColor(R.styleable.ExperienceView_exp_max_color, mMaxColor)
-            mLevelTextColor =
-                attribute.getColor(R.styleable.ExperienceView_exp_level_color, mLevelTextColor)
-            mExpTextColor =
-                attribute.getColor(R.styleable.ExperienceView_exp_text_color, mExpTextColor)
-            mStrokeColor =
-                attribute.getColor(R.styleable.ExperienceView_exp_stroke_color, mStrokeColor)
+            mLevelTextColor = attribute.getColor(R.styleable.ExperienceView_exp_level_color, mLevelTextColor)
+            mExpTextColor = attribute.getColor(R.styleable.ExperienceView_exp_text_color, mExpTextColor)
+            mStrokeColor = attribute.getColor(R.styleable.ExperienceView_exp_stroke_color, mStrokeColor)
 
-            mExperienceSeparator =
-                attribute.getString(R.styleable.ExperienceView_exp_separator) ?: "/"
+            mExperienceSeparator = attribute.getString(R.styleable.ExperienceView_exp_separator) ?: "/"
             mLevelTag = attribute.getString(R.styleable.ExperienceView_exp_level_tag) ?: "Lv."
 
             mLevelGap = attribute.getDimension(R.styleable.ExperienceView_exp_level_gap, mLevelGap)
             mExpGap = attribute.getDimension(R.styleable.ExperienceView_exp_gap, mExpGap)
-            mLevelTextSize =
-                attribute.getDimension(R.styleable.ExperienceView_exp_level_size, mLevelTextSize)
-            mExpTextSize =
-                attribute.getDimension(R.styleable.ExperienceView_exp_text_size, mExpTextSize)
-            mStrokeWidth =
-                attribute.getDimension(R.styleable.ExperienceView_exp_stroke_width, mStrokeWidth)
+            mLevelTextSize = attribute.getDimension(R.styleable.ExperienceView_exp_level_size, mLevelTextSize)
+            mExpTextSize = attribute.getDimension(R.styleable.ExperienceView_exp_text_size, mExpTextSize)
+            mStrokeWidth = attribute.getDimension(R.styleable.ExperienceView_exp_stroke_width, mStrokeWidth)
 
-            mExperiencePercent =
-                attribute.getFloat(R.styleable.ExperienceView_exp_rect_percent, mExperiencePercent)
-            mExperienceGravity =
-                attribute.getInt(R.styleable.ExperienceView_exp_rect_gravity, mExperienceGravity)
-            isStrokeShow =
-                attribute.getBoolean(R.styleable.ExperienceView_exp_stroke_show, isStrokeShow)
+            mExperiencePercent = attribute.getFloat(R.styleable.ExperienceView_exp_rect_percent, mExperiencePercent)
+            mExperienceGravity = attribute.getInt(R.styleable.ExperienceView_exp_rect_gravity, mExperienceGravity)
+            isStrokeShow = attribute.getBoolean(R.styleable.ExperienceView_exp_stroke_show, isStrokeShow)
             mRectRadius = attribute.getDimension(R.styleable.ExperienceView_exp_radius, mRectRadius)
 
             mAnimatorDuration = attribute.getInt(
@@ -127,10 +116,8 @@ class ExperienceView @JvmOverloads constructor(
     private fun getRecommendW(widthMeasureSpec: Int): Int {
         val specWidth = MeasureSpec.getSize(widthMeasureSpec)
         val levelTextWidth = mLevelTextPaint.measureText("$mLevelTag$mLevel")
-        val expTextWith =
-            mExpTextPaint.measureText("$mExperienceProgress$mExperienceSeparator$mExperienceMax")
-        val width =
-            (levelTextWidth + mLevelGap).toInt() + specWidth.coerceAtLeast(expTextWith.toInt())
+        val expTextWith = mExpTextPaint.measureText("$mExperienceProgress$mExperienceSeparator$mExperienceMax")
+        val width = (levelTextWidth + mLevelGap).toInt() + specWidth.coerceAtLeast(expTextWith.toInt())
         return width + paddingStart + paddingEnd
     }
 
@@ -152,7 +139,6 @@ class ExperienceView @JvmOverloads constructor(
         mExperienceHeight = recommendHeight * mExperiencePercent
         setMeasuredDimension(recommendWith, recommendHeight)
     }
-
 
     private fun setStrokeRectF(levelTotalWidth: Float) {
         val strokeGap = mStrokeWidth / 2
@@ -297,10 +283,10 @@ class ExperienceView @JvmOverloads constructor(
 
         //绘制等级文本
         val levelTextX = 0F
-        val levelTextY =
-            (height + (mLevelTextPaint.descent() - mLevelTextPaint.ascent())) / 2F - (mLevelTextPaint.fontMetrics.ascent - mLevelTextPaint.fontMetrics.top)
+        val levelTextY = (height - (mLevelTextPaint.descent() + mLevelTextPaint.ascent())) / 2F
         canvas.drawText(levelText, levelTextX, levelTextY, mLevelTextPaint)
         //绘制经验文本
+
         val expText = "$mExperienceProgress$mExperienceSeparator$mExperienceMax"
         val expTextWidth = mExpTextPaint.measureText(expText)
         val expExpectStart = progressWidth - expTextWidth
@@ -309,8 +295,7 @@ class ExperienceView @JvmOverloads constructor(
         } else {
             mRectF.left + mExpGap
         }
-        val textY =
-            ((mRectF.bottom + mRectF.top) + (mExpTextPaint.descent() - mExpTextPaint.ascent())) / 2F - (mExpTextPaint.fontMetrics.ascent - mExpTextPaint.fontMetrics.top)
+        val textY = ((mRectF.bottom + mRectF.top) - (mExpTextPaint.descent() + mExpTextPaint.ascent())) / 2F
         canvas.drawText(expText, expTextX, textY, mExpTextPaint)
     }
 
@@ -382,7 +367,11 @@ class ExperienceView @JvmOverloads constructor(
             })
             mProgressAnimator?.start()
         } else {
-            invalidate()
+            mExperienceProgress = if (mExperienceOverflow > 0) {
+                mExperienceOverflow
+            } else {
+                targetProgress
+            }
         }
     }
 }

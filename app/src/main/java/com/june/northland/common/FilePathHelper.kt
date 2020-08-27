@@ -29,4 +29,13 @@ object FilePathHelper {
     fun getAppExternalDirectory(): String {
         return PathUtils.getExternalAppDataPath()
     }
+
+
+    fun getCharacterAvatarDirectory(): String {
+        return "${getResourceDirectory()}/characters"
+    }
+
+    fun getCharacterAvatar(avatar: String): String {
+        return "${getCharacterAvatarDirectory()}/$avatar"
+    }
 }

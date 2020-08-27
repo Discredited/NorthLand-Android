@@ -27,8 +27,7 @@ class StartEntranceFragment : BaseFragment() {
     override fun initView() {
         btGoIn.click {
             if (mUserLogin) {
-                startActivity(Intent(requireActivity(), MainActivity::class.java))
-                activity?.finish()
+                requestEntrance()
             } else {
                 LoginActivity.starter(this)
             }
@@ -59,9 +58,17 @@ class StartEntranceFragment : BaseFragment() {
         }
     }
 
+    private fun requestEntrance() {
+        showLoading(false)
+        btGoIn.postDelayed({
+            hideLoading()
+            startActivity(Intent(requireActivity(), MainActivity::class.java))
+            activity?.finish()
+        }, 1200)
+    }
 
     private fun getUserAccount(account: String): SpannableStringBuilder {
-        return SpanUtils().append("欢迎您，")
+        return SpanUtils().append("欢迎回来，")
             .append(account).setBold()
             .append("    ")
             .append("切换账号")

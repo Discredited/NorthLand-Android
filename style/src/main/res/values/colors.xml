@@ -21,6 +21,8 @@
     <color name="color_mask_gray">#CC666666</color>
 
     <color name="color_text_logo">#434264</color>
+    <color name="color_text_title">#333333</color>
+    <color name="color_text_content">#666666</color>
 
     <!-- style 1 -->
     <color name="color_style_1_1">#084056</color>
