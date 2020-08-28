@@ -31,7 +31,7 @@ inline fun View.click(debounceTime: Long = 500, crossinline block: (View) -> Uni
 fun View.setDrawable(
     bgColor: Int = ContextCompat.getColor(context, R.color.color_transparent),
     strokeColor: Int = ContextCompat.getColor(context, R.color.color_white),
-    strokeWidth: Int = resources.getDimensionPixelSize(R.dimen.dp_5),
+    strokeWidth: Int = resources.getDimensionPixelSize(R.dimen.dp_3),
     cornerRadius: Float = resources.getDimension(R.dimen.dp_5)
 ) {
     val shapeDrawable = GradientDrawable()

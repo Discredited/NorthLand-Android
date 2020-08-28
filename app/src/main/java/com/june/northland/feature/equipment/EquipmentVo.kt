@@ -1,7 +1,8 @@
-package com.june.northland.feature.character.equipment
+package com.june.northland.feature.equipment
 
 import android.os.Parcelable
 import com.june.northland.R
+import com.june.northland.feature.equipment.EquipmentHelper
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

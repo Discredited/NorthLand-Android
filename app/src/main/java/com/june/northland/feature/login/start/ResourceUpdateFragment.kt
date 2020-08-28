@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
+import java.io.FileOutputStream
 
 class ResourceUpdateFragment : BaseFragment() {
 
@@ -58,6 +59,16 @@ class ResourceUpdateFragment : BaseFragment() {
                 val filePath = "${FilePathHelper.getAppExternalDirectory()}/TempImage.jpg"
                 downloadHelper.startDownload(url, filePath)
             }
+            tvProgress.text = getString(R.string.str_unzip_resource)
+            //测试代码  将asset的资源写入本地目录
+            withContext(Dispatchers.IO) {
+                val inputStream = resources.assets.open("resource.zip")
+                val fileOutputStream = FileOutputStream(FilePathHelper.getResourceZipPath())
+                inputStream.use {
+                    it.copyTo(fileOutputStream)
+                }
+            }
+
             result?.let {
                 unzipFile()
             }
@@ -77,6 +88,8 @@ class ResourceUpdateFragment : BaseFragment() {
             return
         }
         val fileList = ZipUtils.unzipFile(zipFilePath, unzipDirectory)
+        //解压完成删除zip文件
+        zipFile.delete()
         if (fileList.isNotEmpty()) {
             mStartUpViewModel.mEntranceLive.value = 1
         } else {

@@ -1,4 +1,4 @@
-package com.june.northland.feature.character.equipment
+package com.june.northland.feature.equipment
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

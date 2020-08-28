@@ -6,7 +6,11 @@ import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import kotlinx.android.synthetic.main.activity_character_list.*
+import kotlinx.android.synthetic.main.view_toolbar_layout.*
 
+/**
+ * 人物列表
+ */
 class CharacterListActivity : BaseActivity() {
 
     private val mAdapter = CharacterListAdapter()
@@ -22,6 +26,8 @@ class CharacterListActivity : BaseActivity() {
         rvCharacter.adapter = mAdapter
         rvCharacter.setHasFixedSize(true)
         rvCharacter.addLinearItemDecoration()
+
+        toolbar.title = "人物列表"
     }
 
     override fun loadData() {

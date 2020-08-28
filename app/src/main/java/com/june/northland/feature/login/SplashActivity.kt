@@ -25,8 +25,8 @@ class SplashActivity : BaseActivity() {
             it.start()
         }
         tvHealthGame.postDelayed({
-            //startActivity(Intent(this, StartUpActivity::class.java))
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, StartUpActivity::class.java))
+            //startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 2000)
     }

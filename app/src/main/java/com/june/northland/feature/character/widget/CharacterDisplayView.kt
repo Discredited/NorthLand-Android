@@ -10,8 +10,8 @@ import com.june.northland.R
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.character.equipment.EquipmentChooseActivity
-import com.june.northland.feature.character.equipment.EquipmentVo
+import com.june.northland.feature.equipment.EquipmentChooseActivity
+import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.utils.Toast
 import kotlinx.android.synthetic.main.widget_character_display_layout.view.*
 

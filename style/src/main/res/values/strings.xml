@@ -74,6 +74,7 @@
     <string name="str_retry">重试</string>
 
     <string name="str_download_progress">正在下载资源(%d%%)</string>
+    <string name="str_unzip_resource">正在解压资源</string>
 
     <string name="prompt_health_game_title">健康游戏忠告</string>
     <string name="prompt_health_game_content">抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。</string>

@@ -36,6 +36,7 @@ class StartEntranceFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         //判断用户是否登录
         mUserLogin = UserDataCache.getInstance().isUserLogin()
         if (mUserLogin) {
@@ -55,6 +56,7 @@ class StartEntranceFragment : BaseFragment() {
         if (requestCode == LoginActivity.REQUEST_LOGIN) {
             val account = data?.getStringExtra(LoginActivity.RESPONSE_NAME) ?: ""
             tvUserAccount.text = getUserAccount(account)
+            mUserLogin = true
         }
     }
 

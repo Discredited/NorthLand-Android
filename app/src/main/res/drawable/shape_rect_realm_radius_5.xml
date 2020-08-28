@@ -4,5 +4,5 @@
         android:width="@dimen/dp_5"
         android:color="@color/color_quality_epic" />
 
-    <corners android:radius="@dimen/dp_10" />
+    <corners android:radius="@dimen/dp_5" />
 </shape>

@@ -9,8 +9,8 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.feature.character.magic.MagicVo
 import com.june.northland.feature.character.relationship.RelationshipVo
-import com.june.northland.feature.character.equipment.EquipmentChooseActivity
-import com.june.northland.feature.character.equipment.EquipmentVo
+import com.june.northland.feature.equipment.EquipmentChooseActivity
+import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.activity_character_detail.*
 import kotlinx.android.synthetic.main.view_close_image.*
@@ -67,7 +67,8 @@ class CharacterDetailActivity : BaseActivity() {
         }
         if (requestCode == EquipmentChooseActivity.REQUEST_WEAPON_CHOOSE) {
             data?.let {
-                val choice = it.getParcelableExtra<EquipmentVo>(EquipmentChooseActivity.RESPONSE_WEAPON_CHOOSE)
+                val choice = it.getParcelableExtra<EquipmentVo>(
+                    EquipmentChooseActivity.RESPONSE_WEAPON_CHOOSE)
                 choice?.let { equipment ->
                     vCharacterDisplay.wearEquipment(equipment)
                 }

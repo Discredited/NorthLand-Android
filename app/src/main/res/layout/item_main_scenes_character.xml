@@ -5,5 +5,5 @@
     android:layout_width="@dimen/dp_80"
     android:layout_height="@dimen/dp_80"
     android:padding="@dimen/dp_3"
-    tools:background="@drawable/shape_rect_realm_radius_10"
+    tools:background="@drawable/shape_rect_realm_radius_5"
     tools:src="@drawable/ic_avatar_gan_ning_zhen_1" />

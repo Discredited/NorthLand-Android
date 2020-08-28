@@ -1,4 +1,4 @@
-package com.june.northland.feature.character.equipment
+package com.june.northland.feature.equipment
 
 object EquipmentHelper {
 

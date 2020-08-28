@@ -57,7 +57,7 @@
         <activity
             android:name=".feature.character.CharacterDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".feature.character.equipment.EquipmentChooseActivity" />
+        <activity android:name=".feature.equipment.EquipmentChooseActivity" />
         <activity
             android:name=".feature.login.LoginActivity"
             android:screenOrientation="portrait" />

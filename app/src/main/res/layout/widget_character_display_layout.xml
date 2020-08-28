@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:padding="@dimen/dp_5"
         android:src="@drawable/ic_avatar_gan_ning_zhen"
-        tools:background="@drawable/shape_rect_realm_radius_10" />
+        tools:background="@drawable/shape_rect_realm_radius_5" />
 
     <!-- 武器 -->
     <androidx.appcompat.widget.AppCompatImageView

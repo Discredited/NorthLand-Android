@@ -9,15 +9,12 @@ import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.item_character.view.*
 
 class CharacterListAdapter : BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.layout.item_character) {
+
     override fun convert(holder: BaseViewHolder, item: CharacterVo) {
-        val realm = holder.layoutPosition % 9
-        holder.itemView.ivAvatar.setDrawable(
-            strokeColor = ContextCompat.getColor(
-                holder.itemView.context,
-                ColorUtils.getRealmColor(realm)
-            )
-        )
-        if (holder.layoutPosition < 8) {
+        val realm = holder.layoutPosition % 10
+        val realmColor = ContextCompat.getColor(holder.itemView.context, ColorUtils.getRealmColor(realm))
+        holder.itemView.ivAvatar.setDrawable(strokeColor = realmColor)
+        if (holder.layoutPosition < 6) {
             holder.itemView.tvLineUp.text = "已上阵"
         } else {
             holder.itemView.tvLineUp.text = ""
@@ -25,6 +22,7 @@ class CharacterListAdapter : BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.lay
 
         holder.itemView.ivAvatar.setImageResource(item.avatarIcon)
         holder.itemView.tvName.text = item.name
+        holder.itemView.tvName.setTextColor(realmColor)
         holder.itemView.tvLevel.text = "Lv.${holder.layoutPosition}"
         holder.itemView.tvHealth.text = "${holder.layoutPosition * 33}"
         holder.itemView.tvSpeed.text = "${holder.layoutPosition * 3}"

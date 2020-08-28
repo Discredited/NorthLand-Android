@@ -11,8 +11,8 @@ import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
-import com.june.northland.feature.character.equipment.EquipmentHelper
-import com.june.northland.feature.character.equipment.EquipmentVo
+import com.june.northland.feature.equipment.EquipmentHelper
+import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.EquipmentDetailFragment
 import kotlinx.android.synthetic.main.fragment_equipment_list.*
 

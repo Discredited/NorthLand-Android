@@ -7,6 +7,9 @@
     android:layout_height="@dimen/dp_56"
     app:contentInsetEnd="0dp"
     app:contentInsetStart="0dp"
+    android:paddingStart="@dimen/common_margin"
+    android:paddingEnd="@dimen/common_margin"
+    android:background="@drawable/shape_rect_realm_radius_5"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">

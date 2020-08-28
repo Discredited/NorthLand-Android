@@ -3,7 +3,7 @@ package com.june.northland.feature.backpack.equipment
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
-import com.june.northland.feature.character.equipment.EquipmentVo
+import com.june.northland.feature.equipment.EquipmentVo
 import kotlinx.android.synthetic.main.item_equipment.view.*
 
 class EquipmentAdapter : BaseQuickAdapter<EquipmentVo, BaseViewHolder>(R.layout.item_equipment) {
