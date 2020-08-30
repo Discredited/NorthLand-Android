@@ -5,8 +5,8 @@ import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
-import com.june.northland.feature.character.magic.MagicVo
-import com.june.northland.feature.character.relationship.RelationshipVo
+import com.june.northland.feature.magic.MagicVo
+import com.june.northland.feature.relationship.RelationshipVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.fragment_dialog_character_info.*
 import kotlinx.android.synthetic.main.view_close_image.*

@@ -55,6 +55,8 @@
     <string name="str_login">登录</string>
     <string name="str_desc">描述</string>
 
+    <string name="str_look_up">查看</string>
+    <string name="str_exchange">交换</string>
     <string name="str_upgrade">升级</string>
     <string name="str_strengthen">强化</string>
     <string name="str_forging">锻造</string>

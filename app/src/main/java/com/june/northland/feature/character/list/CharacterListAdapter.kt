@@ -1,10 +1,11 @@
-package com.june.northland.feature.character
+package com.june.northland.feature.character.list
 
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.feature.character.CharacterVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.item_character.view.*
 

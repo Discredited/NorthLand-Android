@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/equipment_look_up"
+        android:title="@string/str_look_up" />
+
+    <item
+        android:id="@+id/equipment_exchange"
+        android:title="@string/str_exchange" />
+
+    <item
+        android:id="@+id/equipment_strengthen"
+        android:title="@string/str_strengthen" />
+
+    <item
+        android:id="@+id/equipment_forging"
+        android:title="@string/str_forging" />
+
+    <item
+        android:id="@+id/equipment_increase"
+        android:title="@string/str_increase" />
+
+    <item
+        android:id="@+id/equipment_breakdown"
+        android:title="@string/str_breakdown" />
+</menu>

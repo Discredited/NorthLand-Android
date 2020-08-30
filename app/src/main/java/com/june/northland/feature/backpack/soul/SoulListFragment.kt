@@ -11,7 +11,7 @@ import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.AttributeHelper
 import com.june.northland.common.QualityHelper
-import com.june.northland.feature.character.soul.SoulVo
+import com.june.northland.feature.soul.SoulVo
 import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeAttribute
 import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeQuality
 import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeReset

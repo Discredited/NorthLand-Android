@@ -1,4 +1,4 @@
-package com.june.northland.feature.character.magic
+package com.june.northland.feature.magic
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

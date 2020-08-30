@@ -3,7 +3,7 @@ package com.june.northland.feature.backpack.magic
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
-import com.june.northland.feature.character.magic.MagicVo
+import com.june.northland.feature.magic.MagicVo
 import kotlinx.android.synthetic.main.item_magic.view.*
 
 class MagicAdapter : BaseQuickAdapter<MagicVo, BaseViewHolder>(R.layout.item_magic) {

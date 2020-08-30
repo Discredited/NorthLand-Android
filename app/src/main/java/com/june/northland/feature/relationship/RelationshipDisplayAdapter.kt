@@ -1,4 +1,4 @@
-package com.june.northland.feature.character.relationship
+package com.june.northland.feature.relationship
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

@@ -117,8 +117,8 @@ class ExperienceView @JvmOverloads constructor(
         val specWidth = MeasureSpec.getSize(widthMeasureSpec)
         val levelTextWidth = mLevelTextPaint.measureText("$mLevelTag$mLevel")
         val expTextWith = mExpTextPaint.measureText("$mExperienceProgress$mExperienceSeparator$mExperienceMax")
-        val width = (levelTextWidth + mLevelGap).toInt() + specWidth.coerceAtLeast(expTextWith.toInt())
-        return width + paddingStart + paddingEnd
+        val width = (levelTextWidth + mLevelGap).toInt() + expTextWith.toInt()
+        return specWidth.coerceAtLeast(width) +  + paddingStart + paddingEnd
     }
 
     private fun getRecommendH(heightMeasureSpec: Int): Int {

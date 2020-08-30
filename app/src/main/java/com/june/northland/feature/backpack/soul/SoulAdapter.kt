@@ -3,7 +3,7 @@ package com.june.northland.feature.backpack.soul
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.june.northland.R
-import com.june.northland.feature.character.soul.SoulVo
+import com.june.northland.feature.soul.SoulVo
 import kotlinx.android.synthetic.main.item_soul.view.*
 
 class SoulAdapter : BaseQuickAdapter<SoulVo, BaseViewHolder>(R.layout.item_soul) {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/common_margin"
+        android:paddingTop="@dimen/common_margin"
+        android:paddingEnd="@dimen/common_margin"
+        android:paddingBottom="@dimen/dp_70"
+        tools:background="@color/color_bg_alpha_black">
+
+        <!-- 经验等级 -->
+        <com.june.northland.feature.character.widget.ExperienceView
+            android:id="@+id/vCharacterExperience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:exp_level_size="@dimen/sp_15"
+            app:exp_radius="@dimen/dp_2"
+            app:exp_rect_percent="0.5"
+            app:exp_text_size="@dimen/sp_8"
+            tools:exp_progress="30" />
+
+        <!-- 妖力/法力 -->
+        <com.june.northland.feature.character.widget.RealmDisplayView
+            android:id="@+id/tvCharacterPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/color_quality_epic"
+            android:textSize="@dimen/sp_20"
+            tools:realm_text="身态" />
+
+        <com.june.northland.feature.character.widget.RealmDisplayView
+            android:id="@+id/tvCharacterRealm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/color_quality_epic"
+            android:textSize="@dimen/sp_20"
+            tools:realm_text="知微" />
+
+        <com.june.northland.feature.character.widget.AttributeDisplayView
+            android:id="@+id/vBasicAttribute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"/>
+
+        <com.june.northland.feature.character.widget.AttributeDisplayView
+            android:id="@+id/vExtraAttribute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/str_relationship"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14" />
+
+        <com.june.northland.feature.character.widget.RelationshipDisplayView
+            android:id="@+id/vRelationshipDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            tools:itemCount="6"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_relationship_display"
+            tools:orientation="vertical" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

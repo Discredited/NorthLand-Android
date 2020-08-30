@@ -2,7 +2,9 @@ package com.june.northland.feature.character
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.widget.AppCompatTextView
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
@@ -140,6 +142,12 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
             dismiss()
         }, 1000)
     }
+
+    override fun layoutParamsWidth(): Int = WindowManager.LayoutParams.WRAP_CONTENT
+
+    override fun layoutParamsHeight(): Int = WindowManager.LayoutParams.WRAP_CONTENT
+
+    override fun layoutGravity(): Int = Gravity.CENTER
 
     companion object {
         fun newInstance(): CharacterPotentialFragment {

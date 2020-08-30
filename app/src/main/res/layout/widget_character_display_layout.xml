@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_150"
-    tools:background="@color/color_bg_alpha_black">
+    android:layout_height="wrap_content"
+    tools:background="@color/color_bg_alpha_black"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivCharacterAvatar"
@@ -12,6 +14,10 @@
         android:layout_gravity="center"
         android:padding="@dimen/dp_5"
         android:src="@drawable/ic_avatar_gan_ning_zhen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:background="@drawable/shape_rect_realm_radius_5" />
 
     <!-- 武器 -->
@@ -19,9 +25,12 @@
         android:id="@+id/ivCharacterWeapon"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
-        android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack" />
+        android:src="@drawable/ic_attack"
+        app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 防具 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -29,9 +38,12 @@
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_gravity="end"
-        android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_defense" />
+        android:src="@drawable/ic_defense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 鞋子 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -39,9 +51,12 @@
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_gravity="bottom|start"
-        android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_speed" />
+        android:src="@drawable/ic_speed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCharacterAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 首饰 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -49,7 +64,10 @@
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_gravity="end|bottom"
-        android:background="@drawable/shape_rect_white_stroke_radius_5"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_health" />
-</FrameLayout>
+        android:src="@drawable/ic_health"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivCharacterAvatar"
+        tools:background="@drawable/shape_rect_white_stroke_radius_5" />
+</merge>

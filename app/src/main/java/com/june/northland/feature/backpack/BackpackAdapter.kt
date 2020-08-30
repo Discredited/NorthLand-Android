@@ -11,6 +11,7 @@ import com.june.northland.feature.backpack.soul.SoulListFragment
 
 class BackpackAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
+
     override fun getItemCount(): Int {
         return 4
     }

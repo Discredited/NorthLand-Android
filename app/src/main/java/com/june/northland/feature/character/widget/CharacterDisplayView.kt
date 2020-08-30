@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
@@ -25,6 +26,10 @@ class CharacterDisplayView @JvmOverloads constructor(
 
     fun setCharacterAndWeapon(realmColor: Int, character: CharacterVo?) {
         ivCharacterAvatar?.setDrawable(strokeColor = realmColor)
+        ivCharacterWeapon?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_advanced))
+        ivCharacterArmor?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_artifact))
+        ivCharacterShoes?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_artifact))
+        ivCharacterJewelry?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_epic))
     }
 
     fun replaceWeaponClick() {

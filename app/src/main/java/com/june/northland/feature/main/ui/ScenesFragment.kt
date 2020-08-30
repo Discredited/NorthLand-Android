@@ -13,7 +13,7 @@ import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment
-import com.june.northland.feature.character.CharacterListActivity
+import com.june.northland.feature.character.list.CharacterListActivity
 import com.june.northland.feature.character.CharacterVo
 import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
