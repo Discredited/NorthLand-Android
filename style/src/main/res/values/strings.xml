@@ -26,6 +26,12 @@
     <string name="str_cancel">取消</string>
 
     <string name="equipment_part">部位</string>
+    <string name="equipment_normal">普通</string>
+    <string name="equipment_refine">精炼</string>
+    <string name="equipment_flawless">无暇</string>
+    <string name="equipment_extraordinary">非凡</string>
+    <string name="equipment_extreme">至臻</string>
+    <string name="equipment_peerless">绝世</string>
     <string name="str_attribute">属性</string>
     <string name="str_quality">品质</string>
     <string name="str_reset">重置</string>
@@ -59,19 +65,27 @@
     <string name="str_exchange">交换</string>
     <string name="str_upgrade">升级</string>
     <string name="str_strengthen">强化</string>
+    <string name="strengthen_max">强化Max</string>
+    <string name="strengthen_cost">花费%s两</string>
+    <string name="strengthen_property">强化属性</string>
+    <string name="strengthen_addition">强化加成</string>
     <string name="str_forging">锻造</string>
+    <string name="forging_property">锻造属性</string>
+    <string name="forging_cost">锻造花费</string>
     <string name="str_increase">增幅</string>
+    <string name="str_spell">符篆</string>
     <string name="str_breakdown">分解</string>
-    <string name="str_manual">图鉴</string>
-    <string name="str_chapter_reward">章节奖励</string>
-    <string name="prompt_chapter_unlock">请先解锁上一章节</string>
-    <string name="str_fight">挑战</string>
-    <string name="str_stay_tuned">敬请期待</string>
 
     <string name="str_bring_up">培养</string>
     <string name="str_refine">洗练</string>
     <string name="str_evolution">进化</string>
     <string name="str_advanced">进阶</string>
+
+    <string name="str_manual">图鉴</string>
+    <string name="str_chapter_reward">章节奖励</string>
+    <string name="prompt_chapter_unlock">请先解锁上一章节</string>
+    <string name="str_fight">挑战</string>
+    <string name="str_stay_tuned">敬请期待</string>
 
     <string name="str_retry">重试</string>
 

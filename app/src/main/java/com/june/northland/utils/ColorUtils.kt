@@ -17,4 +17,21 @@ object ColorUtils {
             else -> R.color.color_quality_ordinary
         }
     }
+
+    fun equipmentQualityColor(quality: Int): Int {
+        return when (quality) {
+            //精炼
+            1 -> R.color.color_equipment_refine
+            //无暇
+            2 -> R.color.color_equipment_flawless
+            //非凡
+            3 -> R.color.color_equipment_extraordinary
+            //至臻
+            4 -> R.color.color_equipment_extreme
+            //绝世
+            5 -> R.color.color_equipment_peerless
+            //普通
+            else -> R.color.color_equipment_normal
+        }
+    }
 }

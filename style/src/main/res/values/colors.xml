@@ -25,11 +25,11 @@
     <color name="color_text_content">#666666</color>
 
     <!-- style 1 -->
-    <color name="color_style_1_1">#084056</color>
-    <color name="color_style_1_2">#188367</color>
-    <color name="color_style_1_3">#9EA66D</color>
-    <color name="color_style_1_4">#FF914D</color>
-    <color name="color_style_1_5">#F26D6D</color>
+    <!--    <color name="color_style_1_1">#084056</color>-->
+    <!--    <color name="color_style_1_2">#188367</color>-->
+    <!--    <color name="color_style_1_3">#9EA66D</color>-->
+    <!--    <color name="color_style_1_4">#FF914D</color>-->
+    <!--    <color name="color_style_1_5">#F26D6D</color>-->
 
 
     <color name="color_text_99">#999999</color>
@@ -39,4 +39,42 @@
     <color name="color_text_1E2E50">#1E2E50</color>
     <color name="color_text_223253">#223253</color>
     <color name="color_text_A2A8C3">#A2A8C3</color>
+
+    <color name="color_attack">#64BD67</color>
+    <color name="color_defense">#3A7EC4</color>
+    <color name="color_health">#F26D6D</color>
+    <color name="color_speed">#BB66FF</color>
+
+    <!-- 颜色品质 -->
+    <!-- 普通 -->
+    <color name="color_quality_ordinary">#7D7E7E</color>
+    <!-- 初级 -->
+    <color name="color_quality_primary">#FFFFFF</color>
+    <!-- 中级 -->
+    <color name="color_quality_intermediate">#64BD67</color>
+    <!-- 高级 -->
+    <color name="color_quality_advanced">#3A7EC4</color>
+    <!-- 稀有 -->
+    <color name="color_quality_rare">#BB66FF</color>
+    <!-- 神器 -->
+    <color name="color_quality_artifact">#FF00FF</color>
+    <!-- 勇者 -->
+    <color name="color_quality_brave">#FF6666</color>
+    <!-- 传说 -->
+    <color name="color_quality_legend">#FF7700</color>
+    <!-- 史诗 -->
+    <color name="color_quality_epic">#FFBB00</color>
+
+    <!-- 普通 -->
+    <color name="color_equipment_normal">@color/color_quality_ordinary</color>
+    <!-- 精炼 -->
+    <color name="color_equipment_refine">@color/color_quality_advanced</color>
+    <!-- 无暇 -->
+    <color name="color_equipment_flawless">@color/color_quality_rare</color>
+    <!-- 非凡 -->
+    <color name="color_equipment_extraordinary">@color/color_quality_artifact</color>
+    <!-- 至臻 -->
+    <color name="color_equipment_extreme">@color/color_quality_legend</color>
+    <!-- 绝世 -->
+    <color name="color_equipment_peerless">@color/color_quality_epic</color>
 </resources>

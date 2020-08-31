@@ -12,8 +12,9 @@ import com.june.northland.base.ext.click
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.equipment.EquipmentChooseActivity
+import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentVo
+import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.activity_character_detail.*
 import kotlinx.android.synthetic.main.view_close_image.*
@@ -23,16 +24,13 @@ import kotlinx.android.synthetic.main.view_close_image.*
  */
 class CharacterDetailActivity : BaseActivity() {
 
-    private lateinit var mAdapter: CharacterDetailAdapter
     private val mPagerTitleList = mutableListOf<String>()
 
     override fun getLayoutResId(): Int = R.layout.activity_character_detail
 
     override fun initView() {
-        mAdapter = CharacterDetailAdapter(supportFragmentManager, lifecycle)
-
         vpCharacter.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        vpCharacter.adapter = mAdapter
+        vpCharacter.adapter = CharacterDetailAdapter(supportFragmentManager, lifecycle)
 
         btBringUp.click {
             CharacterPotentialFragment.newInstance()
@@ -49,10 +47,10 @@ class CharacterDetailActivity : BaseActivity() {
     }
 
     override fun loadData() {
-        vCharacterDisplay.replaceWeaponClick()
+        vCharacterDisplay.equipmentClick()
         setCharacter(CharacterVo())
 
-        mPagerTitleList.add("基本信息")
+        mPagerTitleList.add("属性")
         mPagerTitleList.add("技能")
         mPagerTitleList.add("秘籍")
         //mPageTitleList.add("道心")

@@ -13,7 +13,7 @@ import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentVo
-import com.june.northland.feature.equipment.EquipmentDetailFragment
+import com.june.northland.feature.equipment.EquipmentInfoFragment
 import kotlinx.android.synthetic.main.fragment_equipment_list.*
 
 class EquipmentListFragment : BaseFragment() {
@@ -31,9 +31,9 @@ class EquipmentListFragment : BaseFragment() {
     override fun initView() {
         mAdapter.itemClick {  _, _, position ->
             val equipment = mEquipmentList[position]
-            EquipmentDetailFragment
+            EquipmentInfoFragment
                 .newInstance(equipment.id)
-                .show(childFragmentManager, EquipmentDetailFragment::class.java.name)
+                .show(childFragmentManager, EquipmentInfoFragment::class.java.name)
         }
         rvEquipment.setLinearManager()
         rvEquipment.adapter = mAdapter

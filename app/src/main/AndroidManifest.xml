@@ -57,7 +57,7 @@
         <activity
             android:name=".feature.character.detail.CharacterDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".feature.equipment.EquipmentChooseActivity" />
+        <activity android:name=".feature.equipment.choose.EquipmentChooseActivity" />
         <activity
             android:name=".feature.login.LoginActivity"
             android:screenOrientation="portrait" />
@@ -84,6 +84,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".feature.taoism.ladder.LadderListActivity" />
         <activity android:name=".feature.main.email.EmailListActivity" />
+        <activity android:name=".feature.equipment.detail.EquipmentDetailActivity" />
     </application>
 
 </manifest>

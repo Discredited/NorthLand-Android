@@ -1,4 +1,4 @@
-package com.june.northland.feature.equipment
+package com.june.northland.feature.equipment.choose
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,8 @@ import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.feature.equipment.EquipmentHelper
+import com.june.northland.feature.equipment.EquipmentVo
 import kotlinx.android.synthetic.main.activity_equipment_choose.*
 import kotlinx.android.synthetic.main.view_close_image.*
 import timber.log.Timber
@@ -22,7 +24,7 @@ class EquipmentChooseActivity : BaseActivity() {
         mAdapter.itemClick { _, _, i ->
             val weapon = mAdapter.getItem(i)
             val intent = Intent()
-            Timber.e("weapon:${weapon.name}    ${weapon.attribute}")
+            Timber.e("weapon:${weapon.name}    ${weapon.value}")
             intent.putExtra(RESPONSE_WEAPON_CHOOSE, weapon)
             setResult(RESULT_OK, intent)
             finish()
@@ -44,7 +46,7 @@ class EquipmentChooseActivity : BaseActivity() {
 
     private fun requestWeaponList(part: Int) {
         when (part) {
-            1 -> {
+            EquipmentHelper.PART_WEAPON -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
@@ -74,7 +76,7 @@ class EquipmentChooseActivity : BaseActivity() {
                     )
                 )
             }
-            2 -> {
+            EquipmentHelper.PART_ARMOR -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
@@ -104,7 +106,7 @@ class EquipmentChooseActivity : BaseActivity() {
                     )
                 )
             }
-            3 -> {
+            EquipmentHelper.PART_SHOES -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
@@ -134,7 +136,7 @@ class EquipmentChooseActivity : BaseActivity() {
                     )
                 )
             }
-            4 -> {
+            EquipmentHelper.PART_JEWELRY -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
@@ -276,7 +278,8 @@ class EquipmentChooseActivity : BaseActivity() {
         fun starter(activity: Activity, part: Int) {
             val intent = Intent(activity, EquipmentChooseActivity::class.java)
             intent.putExtra("PART", part)
-            activity.startActivityForResult(intent,
+            activity.startActivityForResult(
+                intent,
                 REQUEST_WEAPON_CHOOSE
             )
         }

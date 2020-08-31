@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_60"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvIncrease"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_weight="1"
+        android:textColor="@color/color_text_content"
+        android:textSize="@dimen/sp_14"
+        tools:text="暴击+5%" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/CommonButton"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_34"
+        android:text="@string/str_refine" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/CommonButton"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:text="@string/str_increase" />
+</androidx.appcompat.widget.LinearLayoutCompat>

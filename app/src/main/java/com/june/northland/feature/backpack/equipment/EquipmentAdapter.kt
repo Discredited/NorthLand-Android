@@ -12,6 +12,6 @@ class EquipmentAdapter : BaseQuickAdapter<EquipmentVo, BaseViewHolder>(R.layout.
         holder.itemView.ivCover.setImageResource(item.coverIcon)
         holder.itemView.tvName.text = item.name
         holder.itemView.tvLevel.text = "${holder.adapterPosition * 3}"
-        holder.itemView.tvAttribute.text = "攻击力+${item.attribute}"
+        holder.itemView.tvAttribute.text = "攻击力+${item.value}"
     }
 }

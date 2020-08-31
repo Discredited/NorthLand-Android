@@ -33,6 +33,9 @@
         <item name="android:paddingLeft">0dp</item>
         <item name="android:paddingRight">0dp</item>
         <item name="android:insetLeft">0dp</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:minHeight">@dimen/dp_36</item>
+        <item name="android:minWidth">@dimen/dp_100</item>
         <item name="android:insetRight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
@@ -43,6 +46,9 @@
         <item name="android:paddingRight">@dimen/dp_10</item>
         <item name="strokeColor">@color/color_text_logo</item>
         <item name="strokeWidth">@dimen/dp_2</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:minHeight">@dimen/dp_36</item>
+        <item name="android:minWidth">@dimen/dp_100</item>
     </style>
 
     <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton">
@@ -53,6 +59,9 @@
         <item name="android:insetRight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:minHeight">@dimen/dp_36</item>
+        <item name="android:minWidth">@dimen/dp_100</item>
     </style>
     <!-- MaterialButton End -->
 </resources>

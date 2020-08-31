@@ -5,24 +5,4 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="color_bg_alpha_black">#99000000</color>
-
-    <!-- 颜色品质 -->
-    <!-- 普通 -->
-    <color name="color_quality_ordinary">#7D7E7E</color>
-    <!-- 初级 -->
-    <color name="color_quality_primary">#FFFFFF</color>
-    <!-- 中级 -->
-    <color name="color_quality_intermediate">#64BD67</color>
-    <!-- 高级 -->
-    <color name="color_quality_advanced">#3A7EC4</color>
-    <!-- 稀有 -->
-    <color name="color_quality_rare">#BB66FF</color>
-    <!-- 神器 -->
-    <color name="color_quality_artifact">#FF00FF</color>
-    <!-- 勇者 -->
-    <color name="color_quality_brave">#FF6666</color>
-    <!-- 传说 -->
-    <color name="color_quality_legend">#FF7700</color>
-    <!-- 史诗 -->
-    <color name="color_quality_epic">#FFBB00</color>
 </resources>
