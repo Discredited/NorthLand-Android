@@ -19,6 +19,7 @@ class BattleHealthView @JvmOverloads constructor(
             field = value
             invalidate()
         }
+    private var mDamageOnceValue: Int = 0
 
     private var mHealthGravity: Int = 0
     private var mHealthColor = ContextCompat.getColor(context, R.color.color_red)
@@ -27,11 +28,13 @@ class BattleHealthView @JvmOverloads constructor(
     private val mRectF = RectF()
     private var mHealthHeight: Int = 0
 
-    private var mStatusColor = ContextCompat.getColor(context, R.color.color_bg_alpha_black)
+    private var mFailText = "败"
+    private var mStatusColor = ContextCompat.getColor(context, R.color.color_mask_status)
     private val mStatusPath = Path()
     private val mStatusRectF = RectF()
 
     private var mDamageColor = ContextCompat.getColor(context, R.color.color_red_light)
+    private val mDamagePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mDamagePath = Path()
     private val mDamageRectF = RectF()
 
@@ -64,6 +67,10 @@ class BattleHealthView @JvmOverloads constructor(
         }
 
         mHealthPaint.color = mHealthColor
+
+        mDamagePaint.color = mHealthColor
+        mDamagePaint.textSize = resources.getDimension(R.dimen.sp_20)
+        mDamagePaint.isFakeBoldText = true
 
         mStrokePaint.style = Paint.Style.STROKE
         mStrokePaint.strokeWidth = mStrokeWidth
@@ -157,7 +164,7 @@ class BattleHealthView @JvmOverloads constructor(
             canvas.drawPath(mPath, mHealthPaint)
         }
 
-        //绘制伤害条
+        //绘制伤害条和伤害数值
         if (mDamageValue > 0) {
             mHealthPaint.color = mDamageColor
             val damagePercent = mDamageValue.toFloat() / mHealthMax
@@ -229,24 +236,34 @@ class BattleHealthView @JvmOverloads constructor(
             canvas.drawPath(mStatusPath, mHealthPaint)
 
             if (healthPercent <= 0F) {
-                mHealthPaint.textSize = height / 2F
+                mHealthPaint.textSize = (height shr 1).toFloat()
                 mHealthPaint.color = Color.WHITE
-                val textWidth = mHealthPaint.measureText("K.O")
+                val textWidth = mHealthPaint.measureText(mFailText)
                 val textX = (width - textWidth) / 2F
-                val textY =
-                    (height + mHealthPaint.descent() - mHealthPaint.ascent()) / 2F - mHealthPaint.fontMetrics.ascent + mHealthPaint.fontMetrics.top
-                canvas.drawText("K.O", textX, textY, mHealthPaint)
+                val textY = (height - (mHealthPaint.descent() + mHealthPaint.ascent())) / 2F
+                canvas.drawText(mFailText, textX, textY, mHealthPaint)
             }
+        }
+
+        if (mDamageValue > 0 && mDamageOnceValue > 0) {
+            //绘制伤害数值
+            val damageString = "- $mDamageOnceValue"
+            val damageWidth = mDamagePaint.measureText(damageString)
+            val damageInitHeight = (height - (mDamagePaint.descent() + mDamagePaint.ascent())) / 2F
+            val damageX = (width - damageWidth) / 2F
+            val damageY = damageInitHeight * (mDamageValue * 1F / mDamageOnceValue)
+            canvas.drawText(damageString, damageX, damageY, mDamagePaint)
         }
     }
 
+    //减少伤害
     fun damage(reduceHealth: Int, damageAnimator: Boolean = true) {
-        val damagePercent = reduceHealth.toFloat() / mHealthMax
-        mDamageValue = if (damageAnimator && damagePercent > 0.3F) {
+        mDamageValue = if (damageAnimator) {
             reduceHealth
         } else {
             0
         }
+        mDamageOnceValue = mDamageValue
         if (mHealthValue > reduceHealth) {
             mHealthValue -= reduceHealth
         } else {
@@ -261,13 +278,14 @@ class BattleHealthView @JvmOverloads constructor(
                 mDamageValue,
                 0
             )
-            mDamageAnimator?.duration = 1000L
+            mDamageAnimator?.duration = 600
             mDamageAnimator?.start()
         } else {
             invalidate()
         }
     }
 
+    //恢复生命
     fun restore(addHealth: Int) {
         mHealthValue += addHealth
         if (mHealthValue > mHealthMax) {

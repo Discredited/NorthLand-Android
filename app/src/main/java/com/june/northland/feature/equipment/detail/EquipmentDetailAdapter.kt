@@ -10,14 +10,14 @@ class EquipmentDetailAdapter(
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
-        return 3
+        return 4
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             1 -> EquipmentForgingFragment.newInstance()
             2 -> EquipmentIncreaseFragment.newInstance()
-//            3 -> EquipmentSpellFragment.newInstance()
+            3 -> EquipmentSpellFragment.newInstance()
             else -> EquipmentStrengthenFragment.newInstance()
         }
     }

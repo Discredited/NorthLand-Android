@@ -142,18 +142,30 @@ class BattlegroundLayout @JvmOverloads constructor(
         }
     }
 
+    var mTargetPosition = 0
+
     fun roundStart() {
-        val translationY = PropertyValuesHolder.ofFloat("translationY", -60F, 0F)
-        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.2F, 1F)
-        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.2F, 1F)
+        //找到目标位置
+        val targetPosition = mTargetPosition % mBattleOpponent.size
+        val targetView = getChildAt(targetPosition)
+        val targetCenterX = targetView.x
+        val targetCenterY = targetView.y
+
+        mTargetPosition++
+
+        val translationX = PropertyValuesHolder.ofFloat("translationX", targetCenterX, 0F)
+        val translationY = PropertyValuesHolder.ofFloat("translationY", -targetCenterY, 0F)
+        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.3F, 1F)
+        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.3F, 1F)
 
         mAttackAnimator = ObjectAnimator.ofPropertyValuesHolder(
             getChildAt(mBattleOpponent.size),
+            translationX,
             translationY,
             scaleX,
             scaleY
         )
-        mAttackAnimator?.duration = 200
+        mAttackAnimator?.duration = 1000
         mAttackAnimator?.start()
 
         for (index in 0 until mBattleOpponent.size) {
