@@ -101,7 +101,7 @@ class BattlegroundLayout @JvmOverloads constructor(
 
         child.layout(childLeft, childTop, childRight, childBottom)
 
-        (child as BattleView).setPosition(position)
+        (child as BattleView).setPosition(position + mBattleOpponent.size)
     }
 
     private fun getMaxColumn(): Int {
@@ -149,25 +149,42 @@ class BattlegroundLayout @JvmOverloads constructor(
     var mTargetPosition = 0
 
     fun roundStart() {
+        val round = mTargetPosition / mBattleOpponent.size
+        val position = if (round > 0) {
+            round
+        } else {
+            0
+        }
+
+
         //找到目标位置
         val targetPosition = mTargetPosition % mBattleOpponent.size
         val targetView = getChildAt(targetPosition)
-        val targetCenterX = targetView.x
-        val targetCenterY = targetView.y
+        val targetX = targetView.x
+        val targetY = targetView.y
+
+        //自己的位置
+        val moverPosition = (mBattleOpponent.size + position) % mBattleOwnSide.size
+        val moverView = getChildAt(moverPosition)
+        val moverX = moverView.x
+        val moverY = moverView.y
 
         mTargetPosition++
 
-        val translationX = PropertyValuesHolder.ofFloat("translationX", targetCenterX, 0F)
-        val translationY = PropertyValuesHolder.ofFloat("translationY", -targetCenterY, 0F)
-        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.3F, 1F)
-        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.3F, 1F)
+        val offsetX = targetX - moverX
+        val offsetY = (moverY - targetY) * 0.75F
+
+        val translationX = PropertyValuesHolder.ofFloat("translationX", offsetX, 0F)
+        val translationY = PropertyValuesHolder.ofFloat("translationY", -offsetY, 0F)
+        val translationZ = PropertyValuesHolder.ofFloat("translationZ", 1F, 0F)
+//        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.3F, 1F)
+//        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.3F, 1F)
 
         mAttackAnimator = ObjectAnimator.ofPropertyValuesHolder(
-            getChildAt(mBattleOpponent.size),
+            getChildAt(moverPosition),
             translationX,
             translationY,
-            scaleX,
-            scaleY
+            translationZ
         )
         mAttackAnimator?.duration = 1000
         mAttackAnimator?.start()
