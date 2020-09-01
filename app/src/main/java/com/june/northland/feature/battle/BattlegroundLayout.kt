@@ -87,6 +87,8 @@ class BattlegroundLayout @JvmOverloads constructor(
         val childBottom = childTop + mBattleHeight
 
         child.layout(childLeft, childTop, childRight, childBottom)
+
+        (child as BattleView).setPosition(position)
     }
 
     private fun layoutOwnSide(position: Int, child: View) {
@@ -98,6 +100,8 @@ class BattlegroundLayout @JvmOverloads constructor(
         val childBottom = childTop + mBattleHeight
 
         child.layout(childLeft, childTop, childRight, childBottom)
+
+        (child as BattleView).setPosition(position)
     }
 
     private fun getMaxColumn(): Int {

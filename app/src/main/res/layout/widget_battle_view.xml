@@ -20,8 +20,8 @@
         android:id="@+id/vHealthView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:battle_health_gravity="bottom"
         android:padding="@dimen/dp_5"
+        app:battle_health_gravity="bottom"
         app:battle_radius="@dimen/dp_3"
         app:battle_stroke_width="@dimen/dp_0_5" />
 
@@ -36,5 +36,5 @@
         android:paddingEnd="@dimen/dp_10"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
-        tools:text="1" />
+        tools:text="1 - 1" />
 </merge>
