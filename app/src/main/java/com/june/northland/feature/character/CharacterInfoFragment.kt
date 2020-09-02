@@ -48,7 +48,7 @@ class CharacterInfoFragment : BaseDialogFragment() {
 
     private fun setCharacter(character: CharacterVo) {
         val realm = arguments?.getInt("REALM", 8) ?: 8
-        val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getRealmColor(realm))
+        val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getPowerColor(realm))
         vCollapsing.setContentScrimColor(realmColor)
 
         vCharacterDisplay.setCharacterAndWeapon(realmColor, character)

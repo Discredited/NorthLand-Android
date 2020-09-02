@@ -12,7 +12,6 @@ import com.june.northland.base.ext.click
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
 import com.june.northland.utils.ColorUtils
@@ -81,7 +80,7 @@ class CharacterDetailActivity : BaseActivity() {
 
     private fun setCharacter(character: CharacterVo) {
         val realm = intent?.getIntExtra("REALM", 8) ?: 8
-        val realmColor = ContextCompat.getColor(this, ColorUtils.getRealmColor(realm))
+        val realmColor = ContextCompat.getColor(this, ColorUtils.getPowerColor(realm))
         vCollapsing.setContentScrimColor(realmColor)
 
         vCharacterDisplay.setCharacterAndWeapon(realmColor, character)

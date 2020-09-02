@@ -7,11 +7,10 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.children
-import com.june.northland.R
-import com.june.northland.base.ext.setDrawable
+import com.june.northland.feature.battle.vo.BattleVo
 import timber.log.Timber
 
 class BattlegroundLayout @JvmOverloads constructor(
@@ -31,9 +30,11 @@ class BattlegroundLayout @JvmOverloads constructor(
     private var mBattleHeight = 0
 
     //对手
+    private val mOpponent = mutableListOf<BattleVo>()
     private val mBattleOpponent = mutableListOf<BattleView>()
 
     //己方
+    private val mOwnSide = mutableListOf<BattleVo>()
     private val mBattleOwnSide = mutableListOf<BattleView>()
 
     private val mDefaultParams = LinearLayoutCompat.LayoutParams(
@@ -42,6 +43,8 @@ class BattlegroundLayout @JvmOverloads constructor(
     )
 
     private var mAttackAnimator: ObjectAnimator? = null
+
+    private var mSkillEffectView: AppCompatTextView? = null
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val specWidth = MeasureSpec.getSize(widthMeasureSpec)
@@ -87,8 +90,6 @@ class BattlegroundLayout @JvmOverloads constructor(
         val childBottom = childTop + mBattleHeight
 
         child.layout(childLeft, childTop, childRight, childBottom)
-
-        (child as BattleView).setPosition(position)
     }
 
     private fun layoutOwnSide(position: Int, child: View) {
@@ -100,8 +101,6 @@ class BattlegroundLayout @JvmOverloads constructor(
         val childBottom = childTop + mBattleHeight
 
         child.layout(childLeft, childTop, childRight, childBottom)
-
-        (child as BattleView).setPosition(position + mBattleOpponent.size)
     }
 
     private fun getMaxColumn(): Int {
@@ -118,80 +117,107 @@ class BattlegroundLayout @JvmOverloads constructor(
         return opponentColumn.coerceAtLeast(ownSideColumn)
     }
 
-    fun initBattleView() {
+    fun initBattleView(ownSide: MutableList<BattleVo>, opponent: MutableList<BattleVo>) {
+        Timber.e("生成了 ${ownSide.size} 个己方战员")
+        Timber.e("生成了 ${opponent.size} 个敌方战员")
+        mOpponent.addAll(opponent)
+        mOwnSide.addAll(ownSide)
 
-        val opponentSize = (Math.random() * 7).toInt() + 1
-        val ownSideSize = (Math.random() * 7).toInt() + 1
-
-        Timber.e("生成了 $opponentSize 个地方战员")
-        Timber.e("生成了 $ownSideSize 个己方战员")
-
-        val opponentColor = ContextCompat.getColor(context, R.color.color_quality_rare)
-        val ownSideColor = ContextCompat.getColor(context, R.color.color_quality_epic)
-        val strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_2)
-        val radius = resources.getDimension(R.dimen.dp_2)
-        for (index in 0 until opponentSize) {
+        mOpponent.forEach {
             val battleView = BattleView(context)
-            battleView.setDrawable(strokeColor = opponentColor, strokeWidth = strokeWidth, cornerRadius = radius)
-            battleView.setPosition(index + 1)
+            battleView.setBattleVo(it)
             mBattleOpponent.add(battleView)
             addView(battleView, mDefaultParams)
         }
-        for (index in 0 until ownSideSize) {
+        mOwnSide.forEach {
             val battleView = BattleView(context)
-            battleView.setPosition(index + 1)
-            battleView.setDrawable(strokeColor = ownSideColor, strokeWidth = strokeWidth, cornerRadius = radius)
+            battleView.setBattleVo(it)
             mBattleOwnSide.add(battleView)
             addView(battleView, mDefaultParams)
         }
     }
 
-    var mTargetPosition = 0
+    fun bindSkillEffectView(view: AppCompatTextView) {
+        mSkillEffectView = view
+    }
 
-    fun roundStart() {
-        val round = mTargetPosition / mBattleOpponent.size
-        val position = if (round > 0) {
-            round
+    fun roundStart(mover: Int = 0, target: Int = 0, attackMode: Int = 0) {
+        //行动者的位置
+        val moverPosition = (mBattleOpponent.size + (mover % mBattleOwnSide.size))
+        //找到目标者位置
+        val targetPosition = target % mBattleOpponent.size
+
+        val attackSkill = attackMode == 1
+
+        mAttackAnimator = if (attackSkill) {
+            attackSkill(moverPosition)
         } else {
-            0
+            attackNormal(moverPosition, targetPosition)
         }
+        mAttackAnimator?.start()
 
+        val battleView = getChildAt(targetPosition) as BattleView
+        battleView.damage(20)
+    }
 
-        //找到目标位置
-        val targetPosition = mTargetPosition % mBattleOpponent.size
+    private fun attackNormal(moverPosition: Int, targetPosition: Int): ObjectAnimator {
         val targetView = getChildAt(targetPosition)
         val targetX = targetView.x
         val targetY = targetView.y
 
-        //自己的位置
-        val moverPosition = (mBattleOpponent.size + position) % mBattleOwnSide.size
         val moverView = getChildAt(moverPosition)
         val moverX = moverView.x
         val moverY = moverView.y
 
-        mTargetPosition++
-
         val offsetX = targetX - moverX
         val offsetY = (moverY - targetY) * 0.75F
 
-        val translationX = PropertyValuesHolder.ofFloat("translationX", offsetX, 0F)
-        val translationY = PropertyValuesHolder.ofFloat("translationY", -offsetY, 0F)
-        val translationZ = PropertyValuesHolder.ofFloat("translationZ", 1F, 0F)
-//        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.3F, 1F)
-//        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.3F, 1F)
+        val translationX = PropertyValuesHolder.ofFloat("translationX", offsetX, 0F, 0F)
+        val translationY = PropertyValuesHolder.ofFloat("translationY", -offsetY, 0F, 0F)
+        val translationZ = PropertyValuesHolder.ofFloat("translationZ", 1F, 0F, 0F)
 
-        mAttackAnimator = ObjectAnimator.ofPropertyValuesHolder(
-            getChildAt(moverPosition),
+        val animator = ObjectAnimator.ofPropertyValuesHolder(
+            moverView,
             translationX,
             translationY,
             translationZ
         )
-        mAttackAnimator?.duration = 1000
-        mAttackAnimator?.start()
+        animator.interpolator = null
+        animator.duration = 600
+        return animator
+    }
 
-        for (index in 0 until mBattleOpponent.size) {
-            val battleView = getChildAt(index) as BattleView
-            battleView.damage(20)
+    private fun attackSkill(moverPosition: Int): ObjectAnimator {
+        val moverView = getChildAt(moverPosition)
+        val offsetY = -(moverView.height shr 1).toFloat()
+
+        val translationY = PropertyValuesHolder.ofFloat("translationY", 0F, offsetY, 0F)
+        val translationZ = PropertyValuesHolder.ofFloat("translationZ", 0F, 1F, 0F)
+        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1F, 1.3F, 1F)
+        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1F, 1.3F, 1F)
+
+        mSkillEffectView?.let {
+            it.text = "- 崩山裂地斩 -"
+            val animator = ObjectAnimator.ofFloat(it, "alpha", 0F, 1F, 1F, 1F, 1F, 0F)
+            animator.duration = 1200L
+            animator.start()
         }
+
+        val animator = ObjectAnimator.ofPropertyValuesHolder(
+            moverView,
+            translationY,
+            translationZ,
+            scaleX,
+            scaleY
+        )
+        animator.interpolator = BattleSkillInterpolator()
+        animator.duration = 1000
+        return animator
+    }
+
+    override fun onDetachedFromWindow() {
+        mAttackAnimator?.cancel()
+        mAttackAnimator = null
+        super.onDetachedFromWindow()
     }
 }

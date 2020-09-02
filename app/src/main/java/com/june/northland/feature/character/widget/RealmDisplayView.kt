@@ -130,7 +130,7 @@ class RealmDisplayView @JvmOverloads constructor(
     fun setRealm(realm: Int, realmName: String) {
         mRealm = realm
         mRealmName = realmName
-        val realmColor = ColorUtils.getRealmColor(realm)
+        val realmColor = ColorUtils.getPowerColor(realm)
         textPaint.color = ContextCompat.getColor(context, realmColor)
         invalidate()
     }

@@ -4,7 +4,7 @@ import com.june.northland.R
 
 object ColorUtils {
 
-    fun getRealmColor(realm: Int): Int {
+    fun getPowerColor(realm: Int): Int {
         return when (realm) {
             //1-身  2-受  3-数
             1, 2, 3 -> R.color.color_quality_advanced

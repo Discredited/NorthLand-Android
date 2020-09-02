@@ -13,7 +13,7 @@ class CharacterListAdapter : BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.lay
 
     override fun convert(holder: BaseViewHolder, item: CharacterVo) {
         val realm = holder.layoutPosition % 10
-        val realmColor = ContextCompat.getColor(holder.itemView.context, ColorUtils.getRealmColor(realm))
+        val realmColor = ContextCompat.getColor(holder.itemView.context, ColorUtils.getPowerColor(realm))
         holder.itemView.ivAvatar.setDrawable(strokeColor = realmColor)
         if (holder.layoutPosition < 6) {
             holder.itemView.tvLineUp.text = "已上阵"

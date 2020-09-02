@@ -13,7 +13,7 @@ class ScenesCharacterAdapter :
     BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.layout.item_main_scenes_character) {
 
     override fun convert(holder: BaseViewHolder, item: CharacterVo) {
-        val realm = ColorUtils.getRealmColor(item.realm)
+        val realm = ColorUtils.getPowerColor(item.realm)
         val realmColor = ContextCompat.getColor(holder.itemView.context, realm)
         holder.itemView.ivCharacter.setDrawable(
             strokeColor = realmColor,

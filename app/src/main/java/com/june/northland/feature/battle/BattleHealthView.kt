@@ -256,6 +256,11 @@ class BattleHealthView @JvmOverloads constructor(
         }
     }
 
+    fun initHealth(health: Int, healthMax: Int) {
+        mHealthValue = health
+        mHealthMax = healthMax
+    }
+
     //减少伤害
     fun damage(reduceHealth: Int, damageAnimator: Boolean = true) {
         mDamageValue = if (damageAnimator) {
@@ -292,5 +297,11 @@ class BattleHealthView @JvmOverloads constructor(
             mHealthValue = mHealthMax
         }
         invalidate()
+    }
+
+    override fun onDetachedFromWindow() {
+        mDamageAnimator?.cancel()
+        mDamageAnimator = null
+        super.onDetachedFromWindow()
     }
 }
