@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rect_white_radius_10">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvResult"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/color_mask_gray"
+            android:gravity="center"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fight Fail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromoteCharacters"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:drawableStart="@drawable/ic_menu_weapon"
+            android:gravity="center"
+            android:textColor="@color/color_text_title"
+            app:layout_constraintEnd_toStartOf="@+id/tvPromoteEquipment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvResult"
+            tools:text="提升人物等级\n培养人物属性" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromoteEquipment"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:drawableStart="@drawable/ic_attack"
+            android:gravity="center"
+            android:textColor="@color/color_text_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPromoteCharacters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPromoteCharacters"
+            app:layout_constraintTop_toTopOf="@+id/tvPromoteCharacters"
+            tools:text="提升装备等级\n培养装备属性" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromotePractice"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:drawableStart="@drawable/ic_menu_practice"
+            android:gravity="center"
+            android:textColor="@color/color_text_title"
+            app:layout_constraintEnd_toStartOf="@+id/tvPromoteOther"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPromoteCharacters"
+            tools:text="提升妖力\n提升道境" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPromoteOther"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:drawableStart="@drawable/ic_menu_plot"
+            android:gravity="center"
+            android:textColor="@color/color_text_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPromotePractice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPromotePractice"
+            app:layout_constraintTop_toTopOf="@+id/tvPromotePractice"
+            tools:text="提升其他属性\n提升其他技能" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btSure"
+            style="@style/CommonButton"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:text="@string/str_sure"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPromotePractice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

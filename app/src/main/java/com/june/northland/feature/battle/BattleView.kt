@@ -32,7 +32,7 @@ class BattleView @JvmOverloads constructor(
         setDrawable(strokeColor = powerColor, strokeWidth = strokeWidth, cornerRadius = radius)
     }
 
-    fun damage(damage: Int, isAnimator: Boolean = true) {
-        vHealthView.damage(damage, isAnimator)
+    fun damage(damage: Int, damageType: Int, isAnimator: Boolean = true) {
+        vHealthView.damage(damage, damageType, isAnimator)
     }
 }

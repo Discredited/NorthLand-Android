@@ -36,11 +36,11 @@
         android:paddingEnd="@dimen/dp_20"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_32"
-        app:layout_constraintVertical_bias="0.12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12"
         tools:alpha="1"
         tools:text="- 崩山裂地斩 -" />
 
@@ -67,4 +67,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvAttackNormal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btSkip"
+        style="@style/TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_skip"
+        android:textColor="@color/color_blue"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

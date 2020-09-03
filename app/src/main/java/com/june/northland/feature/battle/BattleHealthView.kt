@@ -33,7 +33,9 @@ class BattleHealthView @JvmOverloads constructor(
     private val mStatusPath = Path()
     private val mStatusRectF = RectF()
 
-    private var mDamageColor = ContextCompat.getColor(context, R.color.color_red_light)
+    private var mDamageColor = ContextCompat.getColor(context, R.color.color_red)
+    private var mDamageRealColor = ContextCompat.getColor(context, R.color.color_white)
+    private var mDamageCriticalColor = ContextCompat.getColor(context, R.color.color_yellow)
     private val mDamagePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mDamagePath = Path()
     private val mDamageRectF = RectF()
@@ -68,9 +70,13 @@ class BattleHealthView @JvmOverloads constructor(
 
         mHealthPaint.color = mHealthColor
 
-        mDamagePaint.color = mHealthColor
+        mDamagePaint.color = mDamageColor
         mDamagePaint.textSize = resources.getDimension(R.dimen.sp_20)
         mDamagePaint.isFakeBoldText = true
+//        val fontFamily = ResourcesCompat.getFont(context,R.font.custom_font)
+//        fontFamily?.let {
+//            mDamagePaint.setTypeface(it)
+//        }
 
         mStrokePaint.style = Paint.Style.STROKE
         mStrokePaint.strokeWidth = mStrokeWidth
@@ -262,7 +268,7 @@ class BattleHealthView @JvmOverloads constructor(
     }
 
     //减少伤害
-    fun damage(reduceHealth: Int, damageAnimator: Boolean = true) {
+    fun damage(reduceHealth: Int, damageType: Int = 0, damageAnimator: Boolean = true) {
         mDamageValue = if (damageAnimator) {
             reduceHealth
         } else {
@@ -275,6 +281,13 @@ class BattleHealthView @JvmOverloads constructor(
             mDamageValue = mHealthValue
             mHealthValue = 0
         }
+
+        val damageColor = when (damageType) {
+            1 -> mDamageCriticalColor
+            2 -> mDamageRealColor
+            else -> mDamageColor
+        }
+        mDamagePaint.color = damageColor
 
         if (mDamageValue > 0) {
             mDamageAnimator = ObjectAnimator.ofInt(

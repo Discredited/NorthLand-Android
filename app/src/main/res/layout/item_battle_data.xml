@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    tools:background="@color/color_yellow_light">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:src="@drawable/ic_avatar_gan_ning_zhen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/dp_3"
+        android:layout_marginStart="@dimen/dp_50"
+        android:textColor="@color/color_text_content"
+        android:textSize="@dimen/sp_12"
+        tools:text="造成伤害: 19600" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUndertake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:layout_marginStart="@dimen/dp_50"
+        android:textColor="@color/color_text_content"
+        android:textSize="@dimen/sp_12"
+        tools:text="承受伤害: 600" />
+</FrameLayout>
