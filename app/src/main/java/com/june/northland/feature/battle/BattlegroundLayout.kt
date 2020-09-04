@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.animation.addListener
 import androidx.core.view.children
 import com.june.northland.feature.battle.vo.BattleResultVo
@@ -41,7 +40,7 @@ class BattlegroundLayout @JvmOverloads constructor(
     private val mOwnSide = mutableListOf<BattleVo>()
     private val mBattleOwnSide = mutableListOf<BattleView>()
 
-    private val mDefaultParams = LinearLayoutCompat.LayoutParams(
+    private val mDefaultParams = LayoutParams(
         ViewGroup.LayoutParams.MATCH_PARENT,
         ViewGroup.LayoutParams.WRAP_CONTENT
     )
@@ -69,6 +68,8 @@ class BattlegroundLayout @JvmOverloads constructor(
 
         mbgHalfHeight = specHeight / 2
 
+        mDefaultParams.width = mBattleWidth
+        mDefaultParams.height = mBattleWidth
         children.forEachIndexed { _, view ->
             view.layoutParams.width = mBattleWidth
             view.layoutParams.height = mBattleHeight

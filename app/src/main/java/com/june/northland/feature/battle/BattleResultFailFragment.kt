@@ -5,6 +5,7 @@ import android.view.Gravity
 import android.view.WindowManager
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
+import com.june.northland.base.ext.click
 import kotlinx.android.synthetic.main.fragment_dialog_battle_result_fail.*
 
 class BattleResultFailFragment : BaseDialogFragment() {
@@ -12,6 +13,7 @@ class BattleResultFailFragment : BaseDialogFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_dialog_battle_result_fail
 
     override fun initView() {
+        btSure.click { dismiss() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

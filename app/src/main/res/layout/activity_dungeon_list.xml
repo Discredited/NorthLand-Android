@@ -4,6 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.june.northland.widget.res.ResourceLayout
+        android:id="@+id/vResource"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/shape_rect_realm_radius_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/vDungeonReward"
         android:layout_width="0dp"
@@ -24,5 +33,5 @@
         app:layout_constraintBottom_toTopOf="@+id/vDungeonReward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/vResource" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/shape_rect_realm_radius_5" />
+        tools:background="@drawable/shape_rect_realm_radius_2" />
 
     <!-- 武器 -->
     <androidx.appcompat.widget.AppCompatImageView

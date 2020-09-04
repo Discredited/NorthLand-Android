@@ -8,8 +8,12 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.itemChildClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.feature.dungeon.plot.PlotDisplayActivity
+import com.june.northland.widget.res.ResourceVo
 import kotlinx.android.synthetic.main.activity_dungeon_list.*
 
+/**
+ * 剧情列表
+ */
 class DungeonListActivity : BaseActivity() {
 
     private val mAdapter = DungeonAdapter()
@@ -17,6 +21,9 @@ class DungeonListActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_dungeon_list
 
     override fun initView() {
+        vResource.addResource(ResourceVo(R.drawable.ic_herb, 9999))
+        vResource.addResource(ResourceVo(R.drawable.ic_gold, 150))
+
         mAdapter.addChildClickViewIds(R.id.btDungeonFight)
         mAdapter.itemChildClick { _, view, position ->
             val item = mAdapter.data[position]
