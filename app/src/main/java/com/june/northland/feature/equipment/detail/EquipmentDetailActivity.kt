@@ -12,6 +12,7 @@ import com.june.northland.base.ext.setDrawable
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.utils.ColorUtils
+import com.june.northland.widget.res.ResourceVo
 import kotlinx.android.synthetic.main.activity_equipment_detail.*
 
 class EquipmentDetailActivity : BaseActivity() {
@@ -22,6 +23,10 @@ class EquipmentDetailActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_equipment_detail
 
     override fun initView() {
+        vEquipmentResource.addResource(ResourceVo(R.drawable.ic_gold, 9999))
+        vEquipmentResource.addResource(ResourceVo(R.drawable.ic_menu_practice, 200))
+        vEquipmentResource.addResource(ResourceVo(R.drawable.ic_menu_practice, 800))
+
         vpEquipment.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         vpEquipment.adapter = EquipmentDetailAdapter(supportFragmentManager, lifecycle)
     }

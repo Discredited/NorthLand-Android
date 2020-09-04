@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        android:id="@+id/vHead"
+    <com.june.northland.widget.res.ResourceLayout
+        android:id="@+id/vEquipmentResource"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_50"
         android:background="@color/color_blue"
@@ -24,7 +24,7 @@
         android:padding="@dimen/dp_5"
         android:src="@drawable/ic_attack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vHead"
+        app:layout_constraintTop_toBottomOf="@+id/vEquipmentResource"
         tools:background="@drawable/shape_rect_realm_radius_2" />
 
     <androidx.appcompat.widget.AppCompatTextView
