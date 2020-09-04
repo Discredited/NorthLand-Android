@@ -4,7 +4,7 @@ import android.animation.ObjectAnimator
 import android.content.Intent
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
-import com.june.northland.feature.main.MainActivity
+import com.june.northland.feature.login.start.StartUpActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity() {
@@ -23,8 +23,8 @@ class SplashActivity : BaseActivity() {
             it.start()
         }
         tvHealthGame.postDelayed({
-            //startActivity(Intent(this, StartUpActivity::class.java))
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, StartUpActivity::class.java))
+            //startActivity(Intent(this, MainActivity::class.java))
             //startActivity(Intent(this, DungeonListActivity::class.java))
             finish()
         }, 1000)

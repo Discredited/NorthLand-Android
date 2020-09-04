@@ -164,9 +164,7 @@ class BattlegroundLayout @JvmOverloads constructor(
         mAttackAnimator = if (attackMode == 1) {
             attackSkill(moverPosition)
         } else {
-            // 找到目标者位置
-            val targetPosition = target[0]
-            attackNormal(moverPosition, targetPosition)
+            attackNormal(moverPosition)
         }
         mAttackAnimator?.addListener(onEnd = {
             mAttackAnimator?.removeAllListeners()
@@ -192,46 +190,48 @@ class BattlegroundLayout @JvmOverloads constructor(
             mBattling = true
             mBattleProcedureListener?.onBattleBegin()
         }
-        roundStart(mRoundList.pop())
+        val round = mRoundList.pop()
+        Timber.e("第${round.round}回合")
+        roundStart(round)
     }
 
-    private fun attackNormal(moverPosition: Int, targetPosition: Int): ObjectAnimator {
-        val targetView = getChildAt(targetPosition)
-        val targetX = targetView.x
-        val targetY = targetView.y
-
+    private fun attackNormal(moverPosition: Int): ObjectAnimator {
         val moverView = getChildAt(moverPosition)
-        val moverX = moverView.x
-        val moverY = moverView.y
 
+        val offsetX = (moverView.width shr 2).toFloat()
         //判断是敌方进攻还是己方进攻
-        val offsetX = targetX - moverX
-        val offsetY = if (moverPosition >= mBattleOpponent.size) {
-            //己方进攻
-            (targetY - moverY) * 0.75F
-        } else {
-            //敌方进攻
-            (targetY - moverY) * 0.75F
-        }
+        val offsetY = -(moverView.height shr 2).toFloat()
 
-        val translationX = PropertyValuesHolder.ofFloat("translationX", offsetX, 0F, 0F)
-        val translationY = PropertyValuesHolder.ofFloat("translationY", offsetY, 0F, 0F)
-        val translationZ = PropertyValuesHolder.ofFloat("translationZ", 1F, 0F, 0F)
+//        if (moverPosition >= mBattleOpponent.size) {
+//            //己方进攻
+//            -(moverView.height shr 2).toFloat()
+//        } else {
+//            //敌方进攻
+//            (moverView.height shr 2).toFloat()
+//        }
+        val halfOffsetX = offsetX / 2F
+        val halfOffsetY = offsetY / 2F
+
+        val translationX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, 0F, offsetX, -halfOffsetX, 0F)
+        val translationY = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0F, offsetY, halfOffsetY, 0F)
+        val translationZ = PropertyValuesHolder.ofFloat(View.TRANSLATION_Z, 0F, 1F, 1F, 0F)
+        val rotation = PropertyValuesHolder.ofFloat(View.ROTATION, 0F, 20F, -5F, 0F)
 
         val animator = ObjectAnimator.ofPropertyValuesHolder(
             moverView,
             translationX,
             translationY,
-            translationZ
+            translationZ,
+            rotation
         )
         animator.interpolator = null
-        animator.duration = 600
+        animator.duration = 500
         return animator
     }
 
     private fun attackSkill(moverPosition: Int): ObjectAnimator {
         val moverView = getChildAt(moverPosition)
-        val offsetY = if (moverPosition > mOpponent.size) {
+        val offsetY = if (moverPosition >= mOpponent.size) {
             -(moverView.height shr 1).toFloat()
         } else {
             (moverView.height shr 1).toFloat()
@@ -262,8 +262,10 @@ class BattlegroundLayout @JvmOverloads constructor(
     }
 
     override fun onDetachedFromWindow() {
+        mAttackAnimator?.removeAllListeners()
         mAttackAnimator?.cancel()
         mAttackAnimator = null
+        Timber.e("对战销毁")
         super.onDetachedFromWindow()
     }
 }
