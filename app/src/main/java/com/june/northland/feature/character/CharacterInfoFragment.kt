@@ -51,7 +51,7 @@ class CharacterInfoFragment : BaseDialogFragment() {
         val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getPowerColor(realm))
         vCollapsing.setContentScrimColor(realmColor)
 
-        vCharacterDisplay.setCharacterAndWeapon(realmColor, character)
+        vCharacterDisplay.setCharacterAndEquipment(realmColor, character)
 
         tvCharacterName.text = character.name
         vCharacterExperience.initExperience(20, 30, 100, 20)

@@ -11,6 +11,7 @@ import android.view.View
 import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import com.june.northland.R
+import timber.log.Timber
 
 
 class ExperienceView @JvmOverloads constructor(
@@ -118,18 +119,17 @@ class ExperienceView @JvmOverloads constructor(
         val levelTextWidth = mLevelTextPaint.measureText("$mLevelTag$mLevel")
         val expTextWith = mExpTextPaint.measureText("$mExperienceProgress$mExperienceSeparator$mExperienceMax")
         val width = (levelTextWidth + mLevelGap).toInt() + expTextWith.toInt()
-        return specWidth.coerceAtLeast(width) +  + paddingStart + paddingEnd
+        return specWidth.coerceAtLeast(width) + +paddingStart + paddingEnd
     }
 
     private fun getRecommendH(heightMeasureSpec: Int): Int {
         val specHeight = MeasureSpec.getSize(heightMeasureSpec)
         val specMode = MeasureSpec.getMode(heightMeasureSpec)
-        val maxTextHeight = mLevelTextPaint.textSize.coerceAtLeast(mExpTextPaint.textSize)
-        val maxHeight = mExperienceHeight.coerceAtLeast(maxTextHeight).toInt()
+        val maxTextHeight = mLevelTextPaint.textSize.coerceAtLeast(mExpTextPaint.textSize).toInt()
         return if (specMode == MeasureSpec.AT_MOST) {
-            maxHeight.coerceAtMost(specHeight) + paddingTop + paddingBottom
+            maxTextHeight.coerceAtMost(specHeight) + paddingTop + paddingBottom
         } else {
-            maxHeight.coerceAtLeast(specHeight) + paddingTop + paddingBottom
+            maxTextHeight.coerceAtLeast(specHeight) + paddingTop + paddingBottom
         }
     }
 

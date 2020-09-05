@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.PopupMenu
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
@@ -12,11 +14,15 @@ import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
 import com.june.northland.feature.equipment.EquipmentHelper
-import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.EquipmentInfoFragment
+import com.june.northland.feature.equipment.EquipmentViewModel
+import com.june.northland.feature.equipment.EquipmentVo
+import com.june.northland.feature.equipment.detail.EquipmentBuildFragment
 import kotlinx.android.synthetic.main.fragment_equipment_list.*
 
 class EquipmentListFragment : BaseFragment() {
+
+    private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
     private val mAdapter = EquipmentAdapter()
     private val mEquipmentList = mutableListOf<EquipmentVo>()
@@ -25,11 +31,12 @@ class EquipmentListFragment : BaseFragment() {
     private var mQuality = QualityHelper.QUALITY_ALL
     private var mPartMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
+    private var mBuildMenu: PopupMenu? = null
 
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_list
 
     override fun initView() {
-        mAdapter.itemClick {  _, _, position ->
+        mAdapter.itemClick { _, _, position ->
             val equipment = mEquipmentList[position]
             EquipmentInfoFragment
                 .newInstance(equipment.id)
@@ -42,6 +49,7 @@ class EquipmentListFragment : BaseFragment() {
 
         tvTypePart.click { showPartMenu(it) }
         tvTypeQuality.click { showQualityMenu(it) }
+        tvBuild.click { showBuildMenu(it) }
         tvTypeReset.click {
             mPart = EquipmentHelper.PART_ALL
             mQuality = QualityHelper.QUALITY_ALL
@@ -53,6 +61,10 @@ class EquipmentListFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, Observer {
+            mAdapter.addData(0, it)
+        })
+
         requestEquipment(mPart, mQuality)
     }
 
@@ -205,6 +217,28 @@ class EquipmentListFragment : BaseFragment() {
             }
         }
         mQualityMenu?.show()
+    }
+
+    private fun showBuildMenu(view: View) {
+        if (null == mBuildMenu) {
+            mBuildMenu = PopupMenu(requireActivity(), view, Gravity.CENTER)
+            mBuildMenu?.menuInflater?.inflate(R.menu.menu_equipment_part, mBuildMenu?.menu)
+            mBuildMenu?.setOnMenuItemClickListener {
+                val part = when (it.itemId) {
+                    R.id.part_weapon -> EquipmentHelper.PART_WEAPON
+                    R.id.part_armor -> EquipmentHelper.PART_ARMOR
+                    R.id.part_shoes -> EquipmentHelper.PART_SHOES
+                    R.id.part_jewelry -> EquipmentHelper.PART_JEWELRY
+                    else -> EquipmentHelper.PART_WEAPON
+                }
+                EquipmentBuildFragment.newInstance(part).show(
+                    childFragmentManager,
+                    EquipmentBuildFragment::class.java.name
+                )
+                true
+            }
+        }
+        mBuildMenu?.show()
     }
 
     companion object {

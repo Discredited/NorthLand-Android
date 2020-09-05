@@ -12,50 +12,114 @@ import com.june.northland.R
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
-import com.june.northland.feature.equipment.EquipmentInfoFragment
 import com.june.northland.feature.equipment.EquipmentHelper
+import com.june.northland.feature.equipment.EquipmentInfoFragment
 import com.june.northland.feature.equipment.EquipmentVo
+import com.june.northland.feature.equipment.detail.EquipmentBuildFragment
+import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.widget_character_display_layout.view.*
 
 class CharacterDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
+    private var mCharacter: CharacterVo? = null
+    private var mWeapon: EquipmentVo? = null
+    private var mArmor: EquipmentVo? = null
+    private var mShoes: EquipmentVo? = null
+    private var mJewelry: EquipmentVo? = null
+
     init {
         View.inflate(context, R.layout.widget_character_display_layout, this)
     }
 
-    fun setCharacterAndWeapon(realmColor: Int, character: CharacterVo?) {
-        ivCharacterAvatar?.setDrawable(strokeColor = realmColor)
-        ivCharacterWeapon?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_advanced))
-        ivCharacterArmor?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_artifact))
-        ivCharacterShoes?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_artifact))
-        ivCharacterJewelry?.setDrawable(ContextCompat.getColor(context, R.color.color_quality_epic))
+    fun wearEquipment(equipment: EquipmentVo) {
+        val view: AppCompatImageView? = when (equipment.part) {
+            1 -> {
+                mWeapon = equipment
+                ivCharacterWeapon
+            }
+            2 -> {
+                mArmor = equipment
+                ivCharacterArmor
+            }
+            3 -> {
+                mShoes = equipment
+                ivCharacterShoes
+            }
+            4 -> {
+                mJewelry = equipment
+                ivCharacterJewelry
+            }
+            else -> null
+        }
+        setEquipment(view, equipment)
+    }
+
+    private fun setEquipment(view: AppCompatImageView?, equipment: EquipmentVo?) {
+        val quality = ColorUtils.equipmentQualityColor(equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL)
+        val qualityColor = ContextCompat.getColor(context, quality)
+        view?.setDrawable(strokeColor = qualityColor)
+        equipment?.let {
+            view?.setImageResource(it.coverIcon)
+        }
+    }
+
+    fun setCharacterAndEquipment(
+        powerColor: Int,
+        character: CharacterVo?,
+        weapon: EquipmentVo? = null,
+        armor: EquipmentVo? = null,
+        shoes: EquipmentVo? = null,
+        jewelry: EquipmentVo? = null
+    ) {
+        mCharacter = character
+        ivCharacterAvatar?.setDrawable(strokeColor = powerColor)
+
+        mWeapon = weapon
+        mArmor = armor
+        mShoes = shoes
+        mJewelry = jewelry
+
+        setEquipment(ivCharacterWeapon, weapon)
+        setEquipment(ivCharacterArmor, armor)
+        setEquipment(ivCharacterShoes, shoes)
+        setEquipment(ivCharacterJewelry, jewelry)
     }
 
     fun equipmentClick() {
         if (context is Activity) {
-            val activity = context as Activity
-            ivCharacterWeapon?.click { EquipmentChooseActivity.starter(activity, EquipmentHelper.PART_WEAPON) }
-            ivCharacterWeapon?.setOnLongClickListener {
-                equipmentInfo("1")
-                true
+            ivCharacterWeapon?.click {
+                mWeapon?.let {
+                    equipmentInfo(it.id)
+                }
+                if (null == mWeapon) {
+                    equipmentBuild(EquipmentHelper.PART_WEAPON)
+                }
             }
-            ivCharacterArmor?.click { EquipmentChooseActivity.starter(activity, EquipmentHelper.PART_ARMOR) }
-            ivCharacterArmor?.setOnLongClickListener {
-                equipmentInfo("2")
-                true
+            ivCharacterArmor?.click {
+                mArmor?.let {
+                    equipmentInfo(it.id)
+                }
+                if (null == mArmor) {
+                    equipmentBuild(EquipmentHelper.PART_ARMOR)
+                }
             }
-            ivCharacterShoes?.click { EquipmentChooseActivity.starter(activity, EquipmentHelper.PART_SHOES) }
-            ivCharacterShoes?.setOnLongClickListener {
-                equipmentInfo("3")
-                true
+            ivCharacterShoes?.click {
+                mShoes?.let {
+                    equipmentInfo(it.id)
+                }
+                if (null == mShoes) {
+                    equipmentBuild(EquipmentHelper.PART_SHOES)
+                }
             }
-            ivCharacterJewelry?.click { EquipmentChooseActivity.starter(activity, EquipmentHelper.PART_JEWELRY) }
-            ivCharacterJewelry?.setOnLongClickListener {
-                equipmentInfo("4")
-                true
+            ivCharacterJewelry?.click {
+                mJewelry?.let {
+                    equipmentInfo(it.id)
+                }
+                if (null == mJewelry) {
+                    equipmentBuild(EquipmentHelper.PART_JEWELRY)
+                }
             }
         }
     }
@@ -69,14 +133,12 @@ class CharacterDisplayView @JvmOverloads constructor(
         }
     }
 
-    fun wearEquipment(equipment: EquipmentVo) {
-        val view: AppCompatImageView? = when (equipment.part) {
-            1 -> ivCharacterWeapon
-            2 -> ivCharacterArmor
-            3 -> ivCharacterShoes
-            4 -> ivCharacterJewelry
-            else -> null
+    private fun equipmentBuild(part: Int) {
+        if (context is AppCompatActivity) {
+            EquipmentBuildFragment.newInstance(part).show(
+                (context as AppCompatActivity).supportFragmentManager,
+                EquipmentBuildFragment::class.java.name
+            )
         }
-        view?.setImageResource(equipment.coverIcon)
     }
 }

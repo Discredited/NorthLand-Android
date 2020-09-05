@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_400"
+        android:background="@drawable/shape_rect_white_radius_10">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBuildTitle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/color_blue"
+            android:gravity="center"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="装备打造" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEquipmentIcon"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_20"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/ic_attack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuildTitle"
+            tools:background="@drawable/shape_rect_realm_radius_2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ivEquipmentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/color_equipment_normal"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivEquipmentIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivEquipmentIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivEquipmentIcon"
+            tools:text="普通长剑" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ivEquipmentQuality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/color_equipment_normal"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivEquipmentIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivEquipmentIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivEquipmentName"
+            tools:text="品质：普通" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBuildPropertyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/forging_cost"
+            android:textColor="@color/color_text_title"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEquipmentQuality" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEquipmentValue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_yellow_light"
+            android:gravity="center"
+            android:paddingStart="@dimen/common_margin"
+            android:paddingEnd="@dimen/common_margin"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuildPropertyTitle"
+            tools:text="攻击+100" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBuildCostTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/forging_cost"
+            android:textColor="@color/color_text_title"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEquipmentValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEquipmentCost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_yellow_light"
+            android:gravity="center"
+            android:paddingStart="@dimen/common_margin"
+            android:paddingEnd="@dimen/common_margin"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuildCostTitle"
+            tools:text="装备打造石：2000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btCancel"
+            style="@style/CommonButton"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"
+            android:text="@string/str_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btBuild"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEquipmentCost" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btBuild"
+            style="@style/CommonButton"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"
+            android:text="@string/equipment_build"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btCancel"
+            app:layout_constraintTop_toBottomOf="@+id/tvEquipmentCost" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

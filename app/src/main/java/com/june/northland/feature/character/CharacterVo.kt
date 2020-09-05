@@ -8,6 +8,7 @@ class CharacterVo(
     val avatar: String = "",
     val avatarIcon: Int = R.drawable.ic_avatar_gan_ning_zhen,
     val quality: Int = 3,  //品质
+    val power: Int = 0, //妖力
     val realm: Int = 0,  //境界
     var level: Int = 0,
     var experience: Long = 0,  //总经验

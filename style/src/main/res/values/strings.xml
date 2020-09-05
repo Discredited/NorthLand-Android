@@ -96,4 +96,5 @@
     <string name="prompt_health_game_content">抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。</string>
     <string name="str_announcement">公告</string>
     <string name="str_skip">跳过</string>
+    <string name="equipment_build">打造</string>
 </resources>

@@ -3,15 +3,19 @@ package com.june.northland.feature.character.detail
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
+import com.june.northland.common.ConstantUtils
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
+import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
 import com.june.northland.utils.ColorUtils
@@ -23,6 +27,7 @@ import kotlinx.android.synthetic.main.view_close_image.*
  */
 class CharacterDetailActivity : BaseActivity() {
 
+    private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
     private val mPagerTitleList = mutableListOf<String>()
 
     override fun getLayoutResId(): Int = R.layout.activity_character_detail
@@ -46,8 +51,11 @@ class CharacterDetailActivity : BaseActivity() {
     }
 
     override fun loadData() {
+        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
+            vCharacterDisplay.wearEquipment(it)
+        })
         vCharacterDisplay.equipmentClick()
-        setCharacter(CharacterVo())
+        setCharacter(CharacterVo(power = intent?.getIntExtra("REALM", 8) ?: 8))
 
         mPagerTitleList.add("属性")
         mPagerTitleList.add("技能")
@@ -79,12 +87,16 @@ class CharacterDetailActivity : BaseActivity() {
     }
 
     private fun setCharacter(character: CharacterVo) {
-        val realm = intent?.getIntExtra("REALM", 8) ?: 8
-        val realmColor = ContextCompat.getColor(this, ColorUtils.getPowerColor(realm))
-        vCollapsing.setContentScrimColor(realmColor)
+        val powerColor = ContextCompat.getColor(this, ColorUtils.getPowerColor(character.power))
+        vCollapsing.setContentScrimColor(powerColor)
 
-        vCharacterDisplay.setCharacterAndWeapon(realmColor, character)
         tvCharacterName.text = character.name
+        vCharacterDisplay.setCharacterAndEquipment(
+            powerColor,
+            character,
+            ConstantUtils.randomEquipment(1),
+            ConstantUtils.randomEquipment(2)
+        )
     }
 
     companion object {

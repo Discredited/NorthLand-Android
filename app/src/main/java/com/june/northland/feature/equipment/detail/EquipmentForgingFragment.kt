@@ -13,6 +13,9 @@ import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.fragment_equipment_forging.*
 
+/**
+ * 装备锻造
+ */
 class EquipmentForgingFragment : BaseFragment() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()

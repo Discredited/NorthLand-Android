@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
 import com.june.northland.base.component.AppViewModel
+import com.june.northland.common.ConstantUtils
 
 class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
@@ -30,5 +31,9 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
         )
         mEquipmentLive.value = equipment
         return equipment
+    }
+
+    fun equipmentBuildInfo(part: Int): EquipmentVo {
+        return ConstantUtils.randomEquipment(part)
     }
 }
