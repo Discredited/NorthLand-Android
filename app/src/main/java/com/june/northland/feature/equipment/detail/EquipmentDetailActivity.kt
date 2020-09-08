@@ -4,13 +4,16 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.common.PropertyHelper
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentViewModel
+import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.utils.ColorUtils
 import com.june.northland.widget.res.ResourceVo
 import kotlinx.android.synthetic.main.activity_equipment_detail.*
@@ -32,6 +35,10 @@ class EquipmentDetailActivity : BaseActivity() {
     }
 
     override fun loadData() {
+        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
+            initEquipment(it)
+        })
+
         mPagerTitleList.add(getString(R.string.str_strengthen))
         mPagerTitleList.add(getString(R.string.str_forging))
         mPagerTitleList.add(getString(R.string.str_increase))
@@ -53,11 +60,15 @@ class EquipmentDetailActivity : BaseActivity() {
     }
 
     private fun requestEquipment() {
-        val equipment = mEquipmentViewModel.equipmentDetail("")
+        mEquipmentViewModel.equipmentDetail("")
+    }
+
+    private fun initEquipment(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(this, ColorUtils.equipmentQualityColor(equipment.quality))
         ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
         tvEquipmentName.setTextColor(qualityColor)
         tvEquipmentName.text = equipment.name
+        tvEquipmentValue.text = "${PropertyHelper.getPropertyName(equipment.property)}+${equipment.value}"
     }
 
     companion object {

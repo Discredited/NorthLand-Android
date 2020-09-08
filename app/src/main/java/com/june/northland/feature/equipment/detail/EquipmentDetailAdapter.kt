@@ -4,6 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.june.northland.feature.equipment.forging.EquipmentForgingFragment
+import com.june.northland.feature.equipment.increase.EquipmentIncreaseFragment
+import com.june.northland.feature.equipment.strengthen.EquipmentStrengthenFragment
 
 class EquipmentDetailAdapter(
     fragmentManager: FragmentManager,

@@ -49,6 +49,7 @@ class ResourceLayout @JvmOverloads constructor(
             resourceTextView.setCompoundDrawables(it, null, null, null)
         }
         resourceTextView.compoundDrawablePadding = 10
+        resourceTextView.setTextColor(ContextCompat.getColor(context, R.color.color_text_title))
         resourceTextView.text = value.toString()
         return resourceTextView
     }

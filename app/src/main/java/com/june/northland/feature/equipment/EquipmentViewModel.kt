@@ -7,6 +7,7 @@ import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
 import com.june.northland.base.component.AppViewModel
 import com.june.northland.common.ConstantUtils
+import com.june.northland.feature.equipment.strengthen.StrengthenVo
 
 class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
@@ -33,7 +34,18 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
         return equipment
     }
 
+    //打造装备信息
     fun equipmentBuildInfo(part: Int): EquipmentVo {
         return ConstantUtils.randomEquipment(part)
+    }
+
+    //打造装备
+    fun equipmentBuild(part: Int): EquipmentVo {
+        return ConstantUtils.randomEquipment(part)
+    }
+
+    //强化装备
+    fun equipmentStrengthen(id: String, level: Int): StrengthenVo {
+        return StrengthenVo()
     }
 }

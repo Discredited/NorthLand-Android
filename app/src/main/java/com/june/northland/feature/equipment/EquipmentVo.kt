@@ -17,5 +17,7 @@ class EquipmentVo(
     val valueUpgrade: Int = 100,
     val property: Int = PropertyHelper.PRO_ATTACK,
     val basicDesc: String = "",
-    val extraDesc: CharSequence = ""
+    val extraDesc: CharSequence = "",
+    val strengthenMax: Int = 100,
+    var strengthen: Int = 0
 ) : Parcelable

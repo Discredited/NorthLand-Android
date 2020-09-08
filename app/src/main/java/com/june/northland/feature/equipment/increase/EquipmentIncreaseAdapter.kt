@@ -1,4 +1,4 @@
-package com.june.northland.feature.equipment.detail
+package com.june.northland.feature.equipment.increase
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

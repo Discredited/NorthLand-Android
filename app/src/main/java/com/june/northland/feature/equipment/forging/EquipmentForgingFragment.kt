@@ -1,4 +1,4 @@
-package com.june.northland.feature.equipment.detail
+package com.june.northland.feature.equipment.forging
 
 import android.os.Bundle
 import androidx.core.content.ContextCompat

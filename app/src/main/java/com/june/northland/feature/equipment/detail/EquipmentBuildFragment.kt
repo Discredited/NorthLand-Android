@@ -56,7 +56,7 @@ class EquipmentBuildFragment : BaseDialogFragment() {
         tvBuildTitle.postDelayed({
             hideLoading()
             val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_WEAPON
-            val equipment = mEquipmentViewModel.equipmentBuildInfo(part)
+            val equipment = mEquipmentViewModel.equipmentBuild(part)
             mEquipmentViewModel.mEquipmentLive.value = equipment
             dismiss()
         }, 500)

@@ -10,7 +10,7 @@
         android:id="@+id/vEquipmentResource"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_50"
-        android:background="@color/color_blue"
+        android:background="@color/color_red_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,12 +32,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
         android:textColor="@color/color_quality_epic"
         android:textSize="@dimen/sp_18"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivEquipmentIcon"
         app:layout_constraintTop_toTopOf="@+id/ivEquipmentIcon"
         tools:text="一点黛眉刀" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEquipmentValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:textColor="@color/color_text_content"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEquipmentIcon"
+        app:layout_constraintStart_toEndOf="@+id/ivEquipmentIcon"
+        tools:text="攻击+2000" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlEquipment"
