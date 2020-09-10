@@ -73,34 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStrengthenNextValue" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvStrengthenAddOne"
+    <com.june.northland.feature.equipment.widget.StrengthenAdditionView
+        android:id="@+id/vStrengthenAddition"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_30"
+        android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_10"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/common_margin"
-        android:paddingEnd="@dimen/common_margin"
-        android:textColor="@color/color_green"
-        android:textSize="@dimen/sp_12"
+        android:layout_marginBottom="@dimen/dp_90"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStrengthenAddTitle"
-        tools:text="攻击+5%" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvStrengthenAddTwo"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_30"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/common_margin"
-        android:paddingEnd="@dimen/common_margin"
-        android:textColor="@color/color_green"
-        android:textSize="@dimen/sp_12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenAddOne"
-        tools:text="暴击+5%" />
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_strengthen_addition"
+        tools:orientation="vertical" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btStrengthenMin"

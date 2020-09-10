@@ -21,15 +21,19 @@ class EquipmentInfoFragment : BaseDialogFragment() {
     override fun initView() {
         btStrengthen.click {
             EquipmentDetailActivity.start(requireActivity(), "")
+            dismiss()
         }
         btForging.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_FORGING)
+            dismiss()
         }
         btIncrease.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_INCREASE)
+            dismiss()
         }
         btSpell.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_SPELL)
+            dismiss()
         }
     }
 

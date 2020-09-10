@@ -7,7 +7,7 @@ import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
 import com.june.northland.base.component.AppViewModel
 import com.june.northland.common.ConstantUtils
-import com.june.northland.feature.equipment.strengthen.StrengthenVo
+import com.june.northland.feature.equipment.strengthen.StrengthAdditionVo
 
 class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
@@ -30,6 +30,16 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
             basicDesc = "攻击力+1000",
             extraDesc = extraDesc
         )
+
+        equipment.strengthenAdditions.addAll(
+            mutableListOf(
+                StrengthAdditionVo("攻击+5%", 0, "激活", true),
+                StrengthAdditionVo("暴击+5%", -1, "未激活", false),
+                StrengthAdditionVo("命中+10%", 1, "已激活", false),
+                StrengthAdditionVo("防御+20%", 0, "激活", true)
+            )
+        )
+
         mEquipmentLive.value = equipment
         return equipment
     }
@@ -45,7 +55,7 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
     }
 
     //强化装备
-    fun equipmentStrengthen(id: String, level: Int): StrengthenVo {
-        return StrengthenVo()
+    fun equipmentStrengthen(id: String, level: Int) {
+
     }
 }

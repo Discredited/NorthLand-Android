@@ -97,4 +97,8 @@
     <string name="str_announcement">公告</string>
     <string name="str_skip">跳过</string>
     <string name="equipment_build">打造</string>
+
+    <string name="str_activation">激活</string>
+    <string name="str_activated">已激活</string>
+    <string name="str_inactivated">未激活</string>
 </resources>

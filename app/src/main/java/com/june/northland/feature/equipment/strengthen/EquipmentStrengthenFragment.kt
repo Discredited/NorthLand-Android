@@ -8,6 +8,7 @@ import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
+import com.june.northland.feature.equipment.widget.AdditionActiveListener
 import kotlinx.android.synthetic.main.fragment_equipment_strengthen.*
 
 /**
@@ -21,6 +22,12 @@ class EquipmentStrengthenFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_strengthen
 
     override fun initView() {
+        vStrengthenAddition.initAdditionActive(object : AdditionActiveListener {
+            override fun onAdditionActive(position: Int) {
+                additionActive(position)
+            }
+        })
+
         btStrengthenMin.click {
             //强化一级
             strengthenEquipment(1)
@@ -41,18 +48,48 @@ class EquipmentStrengthenFragment : BaseFragment() {
     private fun initStrengthen(equipment: EquipmentVo) {
         mEquipmentVo = equipment
 
-        tvStrengthenLevel.text = "当前强化等级:${equipment.level}"
-        tvStrengthenValue.text = "当前强化属性:攻击力+${equipment.level * equipment.valueUpgrade}"
+        tvStrengthenLevel.text = "当前强化等级:${equipment.strengthen}"
+        tvStrengthenValue.text = "当前强化属性:攻击力+${equipment.strengthen * equipment.valueUpgrade}"
         tvStrengthenNextValue.text = "下次强化属性:攻击力+${equipment.valueUpgrade}"
 
-        tvStrengthenAddOne.text = "攻击+5%"
-        tvStrengthenAddTwo.text = "暴击+5%"
+        vStrengthenAddition.initAddition(equipment.strengthenAdditions)
     }
 
+    //强化
     private fun strengthenEquipment(level: Int) {
+        mEquipmentViewModel.equipmentStrengthen("", level)
         mEquipmentVo?.let {
-            val strengthen = mEquipmentViewModel.equipmentStrengthen("", level)
+            val levelStep = if (level == -1) {
+                it.strengthenMax - it.strengthen
+            } else {
+                1
+            }
 
+            if (level == -1) {
+                it.strengthen = it.strengthenMax
+            } else {
+                it.strengthen = it.strengthen + 1
+            }
+
+            it.value = it.value + it.valueUpgrade * levelStep
+
+            if (!it.enableStrength()) {
+                btStrengthenMin.isEnabled = false
+                btStrengthenMax.isEnabled = false
+            }
+
+            mEquipmentViewModel.mEquipmentLive.value = it
+        }
+    }
+
+    //激活强化加成激活
+    private fun additionActive(position: Int) {
+        mEquipmentVo?.let {
+            val addition = it.strengthenAdditions[position]
+            addition.status = 1
+            addition.statusString = getString(R.string.str_activated)
+            addition.statusEnable = false
+            vStrengthenAddition.additionChanged(position)
         }
     }
 
