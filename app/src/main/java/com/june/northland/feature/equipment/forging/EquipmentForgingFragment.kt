@@ -33,20 +33,7 @@ class EquipmentForgingFragment : BaseFragment() {
     }
 
     private fun requestForgingInfo(equipment: EquipmentVo) {
-        val qualityColor = ContextCompat.getColor(requireContext(), ColorUtils.equipmentQualityColor(equipment.quality))
-        val qualityString = EquipmentHelper.equipmentQuality(equipment.quality)
-        ivEquipment.setDrawable(strokeColor = qualityColor)
-        ivEquipmentName.text = "${qualityString}长剑"
-        ivEquipmentName.setTextColor(qualityColor)
-        val forgingQualityColor = ContextCompat.getColor(
-            requireContext(),
-            ColorUtils.equipmentQualityColor(equipment.quality + 1)
-        )
         val forgingQualityString = EquipmentHelper.equipmentQuality(equipment.quality + 1)
-        ivEquipmentForging.setDrawable(strokeColor = forgingQualityColor)
-        tvEquipmentForgingName.text = "${forgingQualityString}长剑"
-        tvEquipmentForgingName.setTextColor(forgingQualityColor)
-
         tvEquipmentProperty.text = "基本属性由100增至200，成长属性由100增至200"
         tvForgingStrengthen.text = "增加一条${forgingQualityString}增幅属性"
         tvForgingIncrease.text = "开启${forgingQualityString}强化加成"

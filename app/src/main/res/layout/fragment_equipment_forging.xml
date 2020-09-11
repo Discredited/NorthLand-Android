@@ -5,67 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivEquipment"
-        android:layout_width="@dimen/dp_60"
-        android:layout_height="@dimen/dp_60"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginTop="@dimen/dp_20"
-        android:background="@drawable/shape_rect_realm_radius_2"
-        android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack"
+    <com.june.northland.feature.equipment.widget.ForgingDisplayView
+        android:id="@+id/vForgingDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/ivEquipmentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
-        android:textColor="@color/color_blue"
-        android:textSize="@dimen/sp_12"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ivEquipment"
-        app:layout_constraintStart_toStartOf="@+id/ivEquipment"
-        app:layout_constraintTop_toBottomOf="@+id/ivEquipment"
-        tools:text="普通长剑" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivEquipmentForging"
-        android:layout_width="@dimen/dp_60"
-        android:layout_height="@dimen/dp_60"
-        android:layout_marginEnd="@dimen/dp_20"
-        android:background="@drawable/shape_rect_realm_radius_2"
-        android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_attack"
-        app:layout_constraintBottom_toBottomOf="@+id/ivEquipment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivEquipment" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvEquipmentForgingName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
-        android:textColor="@color/color_blue"
-        android:textSize="@dimen/sp_12"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ivEquipmentForging"
-        app:layout_constraintStart_toStartOf="@+id/ivEquipmentForging"
-        app:layout_constraintTop_toBottomOf="@+id/ivEquipmentForging"
-        tools:text="精炼长剑" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="====>>>>"
-        android:textColor="@color/color_green"
-        android:textSize="@dimen/sp_20"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivEquipment"
-        app:layout_constraintEnd_toStartOf="@+id/ivEquipmentForging"
-        app:layout_constraintStart_toEndOf="@+id/ivEquipment"
-        app:layout_constraintTop_toTopOf="@+id/ivEquipment" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvForgingPropertyTitle"
@@ -78,7 +25,7 @@
         android:textSize="@dimen/sp_14"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivEquipmentName" />
+        app:layout_constraintTop_toBottomOf="@+id/vForgingDisplay" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvEquipmentProperty"
