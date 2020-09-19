@@ -24,4 +24,6 @@ class EquipmentVo(
 ) : Parcelable {
 
     fun enableStrength(): Boolean = strengthen < strengthenMax
+
+    fun isQualityMax() = quality >= 5
 }

@@ -58,4 +58,29 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
     fun equipmentStrengthen(id: String, level: Int) {
 
     }
+
+    //锻造装备
+    fun equipmentForging(id: String) {
+        val equipment = mEquipmentLive.value
+        val forgingQuality = (equipment?.quality ?: 0) + 1
+        val forgingName = "${EquipmentHelper.equipmentQuality(forgingQuality)}长剑"
+        val forgingValueUpgrade = forgingQuality * 100
+        val forgingValue = (forgingQuality + 1) * 1000 + (equipment?.strengthen ?: 0 * forgingValueUpgrade)
+
+        val forgingEquipment = EquipmentVo(
+            coverIcon = equipment?.coverIcon ?: R.drawable.ic_attack,
+            name = forgingName,
+            value = forgingValue,
+            part = equipment?.part ?: 0,
+            id = equipment?.id ?: "",
+            quality = forgingQuality,
+            valueUpgrade = equipment?.valueUpgrade ?: 0,
+            property = equipment?.property ?: 0,
+            extraDesc = equipment?.extraDesc ?: "",
+            strengthenMax = equipment?.strengthenMax ?: 0,
+            strengthen = equipment?.strengthen ?: 0,
+            strengthenAdditions = equipment?.strengthenAdditions ?: mutableListOf()
+        )
+        mEquipmentLive.value = forgingEquipment
+    }
 }

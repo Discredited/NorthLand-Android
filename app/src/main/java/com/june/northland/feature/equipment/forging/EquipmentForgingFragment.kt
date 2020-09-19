@@ -1,16 +1,14 @@
 package com.june.northland.feature.equipment.forging
 
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
-import com.june.northland.base.ext.setDrawable
+import com.june.northland.base.ext.click
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
-import com.june.northland.utils.ColorUtils
 import kotlinx.android.synthetic.main.fragment_equipment_forging.*
 
 /**
@@ -23,6 +21,9 @@ class EquipmentForgingFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_forging
 
     override fun initView() {
+        btForging.click {
+            forgingEquipment("")
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -33,6 +34,8 @@ class EquipmentForgingFragment : BaseFragment() {
     }
 
     private fun requestForgingInfo(equipment: EquipmentVo) {
+        vForgingDisplay.initForgingDisplay(equipment)
+
         val forgingQualityString = EquipmentHelper.equipmentQuality(equipment.quality + 1)
         tvEquipmentProperty.text = "基本属性由100增至200，成长属性由100增至200"
         tvForgingStrengthen.text = "增加一条${forgingQualityString}增幅属性"
@@ -40,6 +43,12 @@ class EquipmentForgingFragment : BaseFragment() {
 
         tvSilverCost.text = "银两:2000"
         tvMaterialCost.text = "锻造石:2000"
+
+        btForging.isEnabled = !equipment.isQualityMax()
+    }
+
+    private fun forgingEquipment(id:String) {
+        mEquipmentViewModel.equipmentForging(id)
     }
 
     companion object {

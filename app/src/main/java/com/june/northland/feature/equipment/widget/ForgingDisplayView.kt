@@ -3,6 +3,7 @@ package com.june.northland.feature.equipment.widget
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.northland.R
@@ -26,13 +27,19 @@ class ForgingDisplayView @JvmOverloads constructor(
         ivEquipment.setDrawable(strokeColor = qualityColor)
         ivEquipmentName.text = "${qualityString}长剑"
         ivEquipmentName.setTextColor(qualityColor)
-        val forgingQualityColor = ContextCompat.getColor(
-            context,
-            ColorUtils.equipmentQualityColor(equipment.quality + 1)
-        )
-        val forgingQualityString = EquipmentHelper.equipmentQuality(equipment.quality + 1)
-        ivEquipmentForging.setDrawable(strokeColor = forgingQualityColor)
-        tvEquipmentForgingName.text = "${forgingQualityString}长剑"
-        tvEquipmentForgingName.setTextColor(forgingQualityColor)
+
+        if (equipment.isQualityMax()) {
+            vForgingGroup.visibility = View.GONE
+        } else {
+            val forgingQualityColor = ContextCompat.getColor(
+                context,
+                ColorUtils.equipmentQualityColor(equipment.quality + 1)
+            )
+            val forgingQualityString = EquipmentHelper.equipmentQuality(equipment.quality + 1)
+            ivEquipmentForging.setDrawable(strokeColor = forgingQualityColor)
+            tvEquipmentForgingName.text = "${forgingQualityString}长剑"
+            tvEquipmentForgingName.setTextColor(forgingQualityColor)
+            vForgingGroup.visibility = View.VISIBLE
+        }
     }
 }

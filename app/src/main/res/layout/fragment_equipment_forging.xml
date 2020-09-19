@@ -116,6 +116,7 @@
         tools:text="锻造石:2000" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btForging"
         style="@style/CommonButton"
         android:layout_width="@dimen/dp_150"
         android:layout_height="@dimen/dp_36"

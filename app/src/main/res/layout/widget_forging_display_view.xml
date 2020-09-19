@@ -76,5 +76,7 @@
         android:id="@+id/vForgingGroup"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:constraint_referenced_ids="ivEquipmentForging,tvEquipmentForgingName,tvForgingNext" />
+        android:visibility="gone"
+        app:constraint_referenced_ids="ivEquipmentForging,tvEquipmentForgingName,tvForgingNext"
+        tools:visibility="visible" />
 </merge>
