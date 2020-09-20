@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
+import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.IncreaseVo
@@ -20,6 +21,16 @@ class EquipmentIncreaseFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_equipment_increase
 
     override fun initView() {
+        mAdapter.addChildLongClickViewIds(R.id.btIncreaseRefine, R.id.btIncreasePromote)
+        mAdapter.itemClick { _, view, i ->
+            if (view.id == R.id.btIncreaseRefine) {
+                //洗练
+                val increase = mAdapter.data[i]
+            } else {
+                //增幅
+            }
+        }
+
         rvEquipmentIncrease.setLinearManager()
         rvEquipmentIncrease.adapter = mAdapter
         rvEquipmentIncrease.setHasFixedSize(true)
@@ -78,6 +89,16 @@ class EquipmentIncreaseFragment : BaseFragment() {
         if (list.isNotEmpty()) {
             mAdapter.setNewInstance(list)
         }
+    }
+
+    //洗练
+    private fun refine() {
+        mEquipmentViewModel.increaseRefine()
+    }
+
+    //增幅
+    private fun increase() {
+        mEquipmentViewModel.equipmentIncrease()
     }
 
     companion object {

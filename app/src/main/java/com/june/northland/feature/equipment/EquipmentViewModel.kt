@@ -83,4 +83,14 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
         )
         mEquipmentLive.value = forgingEquipment
     }
+
+    //增幅
+    fun equipmentIncrease() {
+
+    }
+
+    //洗练
+    fun increaseRefine(){
+
+    }
 }

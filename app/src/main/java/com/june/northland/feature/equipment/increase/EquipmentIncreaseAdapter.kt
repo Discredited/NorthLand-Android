@@ -11,6 +11,7 @@ class EquipmentIncreaseAdapter : BaseQuickAdapter<IncreaseVo, BaseViewHolder>(R.
 
     override fun convert(holder: BaseViewHolder, item: IncreaseVo) {
         holder.itemView.tvIncrease.text = item.description
+        holder.itemView.tvIncreaseLevel.text = "增幅等级:${holder.layoutPosition}/10"
         holder.itemView.setDrawable(strokeColor = item.color)
     }
 }
