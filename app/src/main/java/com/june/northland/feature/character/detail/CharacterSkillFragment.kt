@@ -1,16 +1,23 @@
 package com.june.northland.feature.character.detail
 
 import android.os.Bundle
-import com.june.northland.R
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.june.northland.base.component.BaseFragment
+import com.june.northland.databinding.FragmentCharacterSkillBinding
 import kotlinx.android.synthetic.main.fragment_character_skill.*
 
 /**
  * 技能
  */
-class CharacterSkillFragment : BaseFragment() {
+class CharacterSkillFragment : BaseFragment<FragmentCharacterSkillBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_character_skill
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentCharacterSkillBinding {
+        return FragmentCharacterSkillBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
     }

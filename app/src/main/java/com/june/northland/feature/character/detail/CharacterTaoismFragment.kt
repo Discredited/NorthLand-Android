@@ -1,12 +1,21 @@
 package com.june.northland.feature.character.detail
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.june.northland.base.component.BaseFragment
+import com.june.northland.databinding.FragmentCharacterTaoismBinding
 
 /**
  * 道心
  */
-class CharacterTaoismFragment : BaseFragment() {
-    override fun getLayoutResId(): Int = 0
+class CharacterTaoismFragment : BaseFragment<FragmentCharacterTaoismBinding>() {
+
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentCharacterTaoismBinding {
+        return FragmentCharacterTaoismBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
     }

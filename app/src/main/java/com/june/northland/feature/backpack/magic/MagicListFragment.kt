@@ -2,7 +2,9 @@ package com.june.northland.feature.backpack.magic
 
 import android.os.Bundle
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupMenu
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
@@ -11,10 +13,10 @@ import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.AttributeHelper
 import com.june.northland.common.QualityHelper
+import com.june.northland.databinding.FragmentMagicListBinding
 import com.june.northland.feature.magic.MagicVo
-import kotlinx.android.synthetic.main.fragment_magic_list.*
 
-class MagicListFragment : BaseFragment() {
+class MagicListFragment : BaseFragment<FragmentMagicListBinding>() {
 
     private val mAdapter = MagicAdapter()
     private val mMagicList = mutableListOf<MagicVo>()
@@ -24,21 +26,28 @@ class MagicListFragment : BaseFragment() {
     private var mAttributeMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
 
-    override fun getLayoutResId(): Int = R.layout.fragment_magic_list
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentMagicListBinding {
+        return FragmentMagicListBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        rvMagic.setLinearManager()
-        rvMagic.adapter = mAdapter
-        rvMagic.setHasFixedSize(true)
-        rvMagic.addLinearItemDecoration()
+        mBinding.rvMagic.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        tvTypeAttribute.click { showActionMenu(it) }
-        tvTypeQuality.click { showQualityMenu(it) }
-        tvTypeReset.click {
+        mBinding.tvTypeAttribute.click { showActionMenu(it) }
+        mBinding.tvTypeQuality.click { showQualityMenu(it) }
+        mBinding.tvTypeReset.click {
             mAttribute = AttributeHelper.ATTRIBUTE_ALL
             mQuality = QualityHelper.QUALITY_ALL
-            tvTypeAttribute.text = getString(R.string.str_all)
-            tvTypeQuality.text = getString(R.string.str_all)
+            mBinding.tvTypeAttribute.text = getString(R.string.str_all)
+            mBinding.tvTypeQuality.text = getString(R.string.str_all)
             requestMagic(mAttribute, mQuality)
         }
     }
@@ -52,21 +61,111 @@ class MagicListFragment : BaseFragment() {
         if (mMagicList.isEmpty()) {
             mMagicList.addAll(
                 mutableListOf(
-                    MagicVo("龙虎秘道术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("混沌甲御术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DEFENSE),
-                    MagicVo("碧落赋道术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_HEALTH),
-                    MagicVo("隐遁妖典", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_SPEED),
-                    MagicVo("胎化长生妖术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    MagicVo("脉经甲御术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_RESISTER),
-                    MagicVo("影流甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_HIT),
-                    MagicVo("镜花水月大法", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DODGE),
-                    MagicVo("龙象般若拳", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_DEFENSE),
-                    MagicVo("镜像手", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("悲喜换身大法", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    MagicVo("复生秘道术", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_SPEED),
-                    MagicVo("兵器甲御术", "????", 0, R.drawable.ic_magic_1, AttributeHelper.ATTRIBUTE_ATTACK),
-                    MagicVo("镜瞳秘道术", "????", 0, R.drawable.ic_magic_2, AttributeHelper.ATTRIBUTE_DODGE),
-                    MagicVo("地藏妖经", "????", 0, R.drawable.ic_magic_3, AttributeHelper.ATTRIBUTE_RESISTER)
+                    MagicVo(
+                        "龙虎秘道术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_1,
+                        AttributeHelper.ATTRIBUTE_ATTACK
+                    ),
+                    MagicVo(
+                        "混沌甲御术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_2,
+                        AttributeHelper.ATTRIBUTE_DEFENSE
+                    ),
+                    MagicVo(
+                        "碧落赋道术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_3,
+                        AttributeHelper.ATTRIBUTE_HEALTH
+                    ),
+                    MagicVo(
+                        "隐遁妖典",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_1,
+                        AttributeHelper.ATTRIBUTE_SPEED
+                    ),
+                    MagicVo(
+                        "胎化长生妖术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_2,
+                        AttributeHelper.ATTRIBUTE_CRITICAL
+                    ),
+                    MagicVo(
+                        "脉经甲御术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_3,
+                        AttributeHelper.ATTRIBUTE_RESISTER
+                    ),
+                    MagicVo(
+                        "影流甲御术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_1,
+                        AttributeHelper.ATTRIBUTE_HIT
+                    ),
+                    MagicVo(
+                        "镜花水月大法",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_2,
+                        AttributeHelper.ATTRIBUTE_DODGE
+                    ),
+                    MagicVo(
+                        "龙象般若拳",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_3,
+                        AttributeHelper.ATTRIBUTE_DEFENSE
+                    ),
+                    MagicVo(
+                        "镜像手",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_1,
+                        AttributeHelper.ATTRIBUTE_ATTACK
+                    ),
+                    MagicVo(
+                        "悲喜换身大法",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_2,
+                        AttributeHelper.ATTRIBUTE_CRITICAL
+                    ),
+                    MagicVo(
+                        "复生秘道术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_3,
+                        AttributeHelper.ATTRIBUTE_SPEED
+                    ),
+                    MagicVo(
+                        "兵器甲御术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_1,
+                        AttributeHelper.ATTRIBUTE_ATTACK
+                    ),
+                    MagicVo(
+                        "镜瞳秘道术",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_2,
+                        AttributeHelper.ATTRIBUTE_DODGE
+                    ),
+                    MagicVo(
+                        "地藏妖经",
+                        "????",
+                        0,
+                        R.drawable.ic_magic_3,
+                        AttributeHelper.ATTRIBUTE_RESISTER
+                    )
                 )
             )
         }
@@ -94,7 +193,7 @@ class MagicListFragment : BaseFragment() {
                     R.id.attribute_dodge -> AttributeHelper.ATTRIBUTE_DODGE
                     else -> AttributeHelper.ATTRIBUTE_ALL
                 }
-                tvTypeAttribute.text = it.title
+                mBinding.tvTypeAttribute.text = it.title
                 requestMagic(mAttribute, mQuality)
                 true
             }
@@ -114,7 +213,7 @@ class MagicListFragment : BaseFragment() {
                     R.id.quality_artifact -> QualityHelper.QUALITY_ARTIFACT
                     else -> 0
                 }
-                tvTypeQuality.text = it.title
+                mBinding.tvTypeQuality.text = it.title
                 requestMagic(mAttribute, mQuality)
                 true
             }

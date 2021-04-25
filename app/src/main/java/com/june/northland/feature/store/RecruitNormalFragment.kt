@@ -3,34 +3,49 @@ package com.june.northland.feature.store
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
+import android.view.LayoutInflater
 import android.view.View
-import com.june.northland.R
+import android.view.ViewGroup
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
-import kotlinx.android.synthetic.main.fragment_recruit_normal.*
+import com.june.northland.databinding.FragmentRecruitNormalBinding
 
-class RecruitNormalFragment : BaseFragment() {
+class RecruitNormalFragment : BaseFragment<FragmentRecruitNormalBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_recruit_normal
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentRecruitNormalBinding {
+        return FragmentRecruitNormalBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        btRecruitOnce.click { startActivity(Intent(requireActivity(), RecruitResultActivity::class.java)) }
-        btRecruitTen.click { shakeAnimator() }
+        mBinding.btRecruitOnce.click {
+            startActivity(
+                Intent(
+                    requireActivity(),
+                    RecruitResultActivity::class.java
+                )
+            )
+        }
+        mBinding.btRecruitTen.click { shakeAnimator() }
     }
 
 
     private fun shakeAnimator() {
-        val offsetX = (ivAvatar.width shr 2).toFloat()
-        val offsetY = -(ivAvatar.height shr 2).toFloat()
+        val offsetX = (mBinding.ivAvatar.width shr 2).toFloat()
+        val offsetY = -(mBinding.ivAvatar.height shr 2).toFloat()
         val halfOffsetX = offsetX / 2F
         val halfOffsetY = offsetY / 2F
 
-        val translationX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, 0F, offsetX, -halfOffsetX, 0F)
-        val translationY = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0F, offsetY, halfOffsetY, 0F)
+        val translationX =
+            PropertyValuesHolder.ofFloat(View.TRANSLATION_X, 0F, offsetX, -halfOffsetX, 0F)
+        val translationY =
+            PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0F, offsetY, halfOffsetY, 0F)
         val translationZ = PropertyValuesHolder.ofFloat(View.TRANSLATION_Z, 0F, 1F, 1F, 0F)
         val rotation = PropertyValuesHolder.ofFloat(View.ROTATION, 0F, 20F, -5F, 0F)
         val animator = ObjectAnimator.ofPropertyValuesHolder(
-            ivAvatar,
+            mBinding.ivAvatar,
             translationX,
             translationY,
             translationZ,

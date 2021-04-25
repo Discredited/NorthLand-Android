@@ -2,6 +2,8 @@ package com.june.northland.feature.main.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
@@ -11,10 +13,11 @@ import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.FragmentMainSceneBinding
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment
-import com.june.northland.feature.character.list.CharacterListActivity
 import com.june.northland.feature.character.CharacterVo
+import com.june.northland.feature.character.list.CharacterListActivity
 import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
 import com.june.northland.feature.lineup.LineUpActivity
@@ -24,15 +27,19 @@ import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import com.june.northland.feature.taoism.TaoismActivity
-import kotlinx.android.synthetic.main.fragment_main_scene.*
 
-class ScenesFragment : BaseFragment() {
+class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
 
     private val mCharacterAdapter = ScenesCharacterAdapter()
     private val mMenuAdapter = ScenesMenuAdapter()
     private val mPlotAdapter = ScenesPlotAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_main_scene
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentMainSceneBinding {
+        return FragmentMainSceneBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
         //阵容人物
@@ -41,18 +48,22 @@ class ScenesFragment : BaseFragment() {
             characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
         }
 
-        rvCharacter.setLinearManager(orientation = RecyclerView.HORIZONTAL)
-        rvCharacter.adapter = mCharacterAdapter
-        rvCharacter.setHasFixedSize(true)
-        rvCharacter.addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
+        mBinding.rvCharacter.apply {
+            setLinearManager(orientation = RecyclerView.HORIZONTAL)
+            adapter = mCharacterAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
+        }
 
 
         //剧情关卡
-        rvPlot.setLinearManager(orientation = RecyclerView.HORIZONTAL)
-        rvPlot.adapter = mPlotAdapter
-        rvPlot.setHasFixedSize(true)
-        rvPlot.addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
-        PagerSnapHelper().attachToRecyclerView(rvPlot)
+        mBinding.rvPlot.apply {
+            setLinearManager(orientation = RecyclerView.HORIZONTAL)
+            adapter = mPlotAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
+        }
+        PagerSnapHelper().attachToRecyclerView(mBinding.rvPlot)
 
 
         //底部菜单
@@ -70,11 +81,13 @@ class ScenesFragment : BaseFragment() {
                 }
             }
         }
-        rvMenu.setLinearManager(orientation = RecyclerView.HORIZONTAL)
-        rvMenu.adapter = mMenuAdapter
-        rvMenu.setHasFixedSize(true)
+        mBinding.rvMenu.apply {
+            setLinearManager(orientation = RecyclerView.HORIZONTAL)
+            adapter = mMenuAdapter
+            setHasFixedSize(true)
+        }
 
-        vPlayerSection.getAvatarView()?.click {
+        mBinding.vPlayerSection.getAvatarView()?.click {
             activity?.let {
                 if (it is MainActivity) {
                     it.openDrawLayout()
@@ -82,14 +95,14 @@ class ScenesFragment : BaseFragment() {
             }
         }
 
-        ivEmail.click {
+        mBinding.ivEmail.click {
             startActivity(Intent(requireActivity(), EmailListActivity::class.java))
         }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        vPlayerSection.setPlayerInfo()
+        mBinding.vPlayerSection.setPlayerInfo()
         requestCharacter()
         requestPlot()
         initMenu()

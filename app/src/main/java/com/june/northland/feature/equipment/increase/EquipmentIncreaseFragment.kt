@@ -1,6 +1,8 @@
 package com.june.northland.feature.equipment.increase
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -9,16 +11,21 @@ import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.FragmentEquipmentIncreaseBinding
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.IncreaseVo
-import kotlinx.android.synthetic.main.fragment_equipment_increase.*
 
-class EquipmentIncreaseFragment : BaseFragment() {
+class EquipmentIncreaseFragment : BaseFragment<FragmentEquipmentIncreaseBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
     private val mAdapter = EquipmentIncreaseAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_equipment_increase
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentEquipmentIncreaseBinding {
+        return FragmentEquipmentIncreaseBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
         mAdapter.addChildLongClickViewIds(R.id.btIncreaseRefine, R.id.btIncreasePromote)
@@ -31,10 +38,12 @@ class EquipmentIncreaseFragment : BaseFragment() {
             }
         }
 
-        rvEquipmentIncrease.setLinearManager()
-        rvEquipmentIncrease.adapter = mAdapter
-        rvEquipmentIncrease.setHasFixedSize(true)
-        rvEquipmentIncrease.addLinearItemDecoration()
+        mBinding.rvEquipmentIncrease.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -47,7 +56,13 @@ class EquipmentIncreaseFragment : BaseFragment() {
     private fun initIncrease(quality: Int) {
         val list: MutableList<IncreaseVo> = mutableListOf()
         if (quality > 0) {
-            list.add(IncreaseVo("", "攻击+5%", ContextCompat.getColor(requireContext(), R.color.color_equipment_refine)))
+            list.add(
+                IncreaseVo(
+                    "",
+                    "攻击+5%",
+                    ContextCompat.getColor(requireContext(), R.color.color_equipment_refine)
+                )
+            )
         }
         if (quality > 1) {
             list.add(

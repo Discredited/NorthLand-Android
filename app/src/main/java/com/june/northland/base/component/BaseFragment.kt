@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 import com.june.northland.base.dialog.LoadingDialog
 import timber.log.Timber
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<V : ViewBinding> : Fragment() {
+
+    private var _binding: V? = null
+    protected val mBinding get() = _binding!!
 
     private var mLoadingDialog: LoadingDialog? = null
 
@@ -23,7 +27,8 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Timber.v("----${javaClass.simpleName}:onCreateView")
-        return inflater.inflate(getLayoutResId(), container, false)
+        _binding = viewBinding(inflater, container)
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -97,7 +102,7 @@ abstract class BaseFragment : Fragment() {
      *
      * @return
      */
-    protected abstract fun getLayoutResId(): Int
+    protected abstract fun viewBinding(inflater: LayoutInflater, container: ViewGroup?): V
 
     /**
      * 初始化View

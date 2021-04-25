@@ -1,24 +1,31 @@
 package com.june.northland.feature.character.detail
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
+import com.june.northland.databinding.FragmentCharacterMagicBinding
 import com.june.northland.feature.magic.MagicVo
-import kotlinx.android.synthetic.main.fragment_character_magic.*
 
 /**
  * 秘籍
  */
-class CharacterMagicFragment : BaseFragment() {
+class CharacterMagicFragment : BaseFragment<FragmentCharacterMagicBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_character_magic
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentCharacterMagicBinding {
+        return FragmentCharacterMagicBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        vMagicDisplay.setMagic(
+        mBinding.vMagicDisplay.setMagic(
             mutableListOf(
                 MagicVo("兵器甲御术", "肢体任意化作攻击武器，造成(攻击力*225%)伤害值", 1, R.drawable.ic_magic_1),
                 MagicVo("龙蝶爪", "龙蝶利爪齐齐探出，造成(攻击力*210%*利爪数量)伤害值", 1, R.drawable.ic_magic_2),

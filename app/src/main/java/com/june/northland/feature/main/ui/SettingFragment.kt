@@ -1,17 +1,25 @@
 package com.june.northland.feature.main.ui
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.loadAvatar
-import kotlinx.android.synthetic.main.fragment_main_setting.*
+import com.june.northland.databinding.FragmentMainSettingBinding
 
-class SettingFragment : BaseFragment() {
-    override fun getLayoutResId(): Int = R.layout.fragment_main_setting
+class SettingFragment : BaseFragment<FragmentMainSettingBinding>() {
+
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentMainSettingBinding {
+        return FragmentMainSettingBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        ivAvatar.loadAvatar(R.drawable.ic_avatar_gan_ning_zhen_1)
-        tvLogout.click { ToastUtils.showShort("登出") }
+        mBinding.ivAvatar.loadAvatar(R.drawable.ic_avatar_gan_ning_zhen_1)
+        mBinding.tvLogout.click { ToastUtils.showShort("登出") }
     }
 }

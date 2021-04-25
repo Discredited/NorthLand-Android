@@ -1,11 +1,14 @@
 package com.june.northland.feature.equipment.strengthen
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.FragmentEquipmentStrengthenBinding
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.widget.AdditionActiveListener
@@ -14,12 +17,17 @@ import kotlinx.android.synthetic.main.fragment_equipment_strengthen.*
 /**
  * 装备强化
  */
-class EquipmentStrengthenFragment : BaseFragment() {
+class EquipmentStrengthenFragment : BaseFragment<FragmentEquipmentStrengthenBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
     private var mEquipmentVo: EquipmentVo? = null
 
-    override fun getLayoutResId(): Int = R.layout.fragment_equipment_strengthen
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentEquipmentStrengthenBinding {
+        return FragmentEquipmentStrengthenBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
         vStrengthenAddition.initAdditionActive(object : AdditionActiveListener {

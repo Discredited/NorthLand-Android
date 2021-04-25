@@ -7,25 +7,32 @@ import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache
-import kotlinx.android.synthetic.main.fragment_start_entrance.*
 
-class StartEntranceFragment : BaseFragment() {
+class StartEntranceFragment : BaseFragment<FragmentStartEntranceBinding>() {
 
     private var mUserLogin: Boolean = false
 
-    override fun getLayoutResId(): Int = R.layout.fragment_start_entrance
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentStartEntranceBinding {
+        return FragmentStartEntranceBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        btGoIn.click {
+        mBinding.btGoIn.click {
             if (mUserLogin) {
                 requestEntrance()
             } else {
@@ -40,11 +47,11 @@ class StartEntranceFragment : BaseFragment() {
         //判断用户是否登录
         mUserLogin = UserDataCache.getInstance().isUserLogin()
         if (mUserLogin) {
-            tvUserAccount.text = getUserAccount(UserDataCache.getInstance().userName())
-            tvUserAccount.movementMethod = LinkMovementMethod.getInstance()
-            btGoIn.text = getString(R.string.prompt_go_in_north_land)
+            mBinding.tvUserAccount.text = getUserAccount(UserDataCache.getInstance().userName())
+            mBinding.tvUserAccount.movementMethod = LinkMovementMethod.getInstance()
+            mBinding.btGoIn.text = getString(R.string.prompt_go_in_north_land)
         } else {
-            btGoIn.text = getString(R.string.str_login)
+            mBinding.btGoIn.text = getString(R.string.str_login)
         }
     }
 
@@ -55,14 +62,14 @@ class StartEntranceFragment : BaseFragment() {
         }
         if (requestCode == LoginActivity.REQUEST_LOGIN) {
             val account = data?.getStringExtra(LoginActivity.RESPONSE_NAME) ?: ""
-            tvUserAccount.text = getUserAccount(account)
+            mBinding.tvUserAccount.text = getUserAccount(account)
             mUserLogin = true
         }
     }
 
     private fun requestEntrance() {
         showLoading(false)
-        btGoIn.postDelayed({
+        mBinding.btGoIn.postDelayed({
             hideLoading()
             startActivity(Intent(requireActivity(), MainActivity::class.java))
             activity?.finish()

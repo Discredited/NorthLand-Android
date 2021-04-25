@@ -1,28 +1,37 @@
 package com.june.northland.feature.backpack.goods
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.setGridManager
 import com.june.northland.common.GridItemDecoration
-import kotlinx.android.synthetic.main.fragment_goods_list.*
+import com.june.northland.databinding.FragmentGoodsListBinding
 
-class GoodsListFragment : BaseFragment() {
+class GoodsListFragment : BaseFragment<FragmentGoodsListBinding>() {
 
     private val mAdapter = GoodsAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_goods_list
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentGoodsListBinding {
+        return FragmentGoodsListBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        rvGoods.setGridManager(4)
-        rvGoods.adapter = mAdapter
-        rvGoods.setHasFixedSize(true)
-        rvGoods.addItemDecoration(
-            GridItemDecoration(
-                4,
-                resources.getDimensionPixelSize(R.dimen.dp_5)
+        mBinding.rvGoods.apply {
+            setGridManager(4)
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addItemDecoration(
+                GridItemDecoration(
+                    4,
+                    resources.getDimensionPixelSize(R.dimen.dp_5)
+                )
             )
-        )
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

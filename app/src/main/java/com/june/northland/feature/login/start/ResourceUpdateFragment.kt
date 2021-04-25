@@ -1,7 +1,9 @@
 package com.june.northland.feature.login.start
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.ZipUtils
@@ -10,21 +12,26 @@ import com.june.network.download.ProgressListener
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.common.FilePathHelper
-import kotlinx.android.synthetic.main.fragment_resource_update.*
+import com.june.northland.databinding.FragmentResourceUpdateBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 
-class ResourceUpdateFragment : BaseFragment() {
+class ResourceUpdateFragment : BaseFragment<FragmentResourceUpdateBinding>() {
 
     private val mStartUpViewModel by activityViewModels<StartUpViewModel>()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_resource_update
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentResourceUpdateBinding {
+        return FragmentResourceUpdateBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        tvProgress.text = getString(R.string.str_download_progress, 0)
+        mBinding.tvProgress.text = getString(R.string.str_download_progress, 0)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -44,9 +51,10 @@ class ResourceUpdateFragment : BaseFragment() {
             override fun onProgress(progress: Long, max: Long, percent: Float) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     withContext(Dispatchers.Main) {
-                        pbDownload.max = max.toInt()
-                        pbDownload.progress = progress.toInt()
-                        tvProgress.text = getString(R.string.str_download_progress, (percent * 100).toInt())
+                        mBinding.pbDownload.max = max.toInt()
+                        mBinding.pbDownload.progress = progress.toInt()
+                        mBinding.tvProgress.text =
+                            getString(R.string.str_download_progress, (percent * 100).toInt())
                     }
                 }
             }
@@ -59,7 +67,7 @@ class ResourceUpdateFragment : BaseFragment() {
                 val filePath = "${FilePathHelper.getAppExternalDirectory()}/TempImage.jpg"
                 downloadHelper.startDownload(url, filePath)
             }
-            tvProgress.text = getString(R.string.str_unzip_resource)
+            mBinding.tvProgress.text = getString(R.string.str_unzip_resource)
             //测试代码  将asset的资源写入本地目录
             withContext(Dispatchers.IO) {
                 val inputStream = resources.assets.open("resource.zip")
@@ -99,9 +107,9 @@ class ResourceUpdateFragment : BaseFragment() {
     }
 
     private fun changeRetry() {
-        pbDownload.visibility = View.GONE
-        tvProgress.visibility = View.GONE
-        btRetry.visibility = View.VISIBLE
+        mBinding.pbDownload.visibility = View.GONE
+        mBinding.tvProgress.visibility = View.GONE
+        mBinding.btRetry.visibility = View.VISIBLE
     }
 
     companion object {

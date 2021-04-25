@@ -2,7 +2,9 @@ package com.june.northland.feature.backpack.equipment
 
 import android.os.Bundle
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -13,14 +15,14 @@ import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
+import com.june.northland.databinding.FragmentEquipmentListBinding
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentInfoFragment
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.detail.EquipmentBuildFragment
-import kotlinx.android.synthetic.main.fragment_equipment_list.*
 
-class EquipmentListFragment : BaseFragment() {
+class EquipmentListFragment : BaseFragment<FragmentEquipmentListBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
@@ -33,7 +35,12 @@ class EquipmentListFragment : BaseFragment() {
     private var mQualityMenu: PopupMenu? = null
     private var mBuildMenu: PopupMenu? = null
 
-    override fun getLayoutResId(): Int = R.layout.fragment_equipment_list
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentEquipmentListBinding {
+        return FragmentEquipmentListBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
         mAdapter.itemClick { _, _, position ->
@@ -42,19 +49,22 @@ class EquipmentListFragment : BaseFragment() {
                 .newInstance(equipment.id)
                 .show(childFragmentManager, EquipmentInfoFragment::class.java.name)
         }
-        rvEquipment.setLinearManager()
-        rvEquipment.adapter = mAdapter
-        rvEquipment.setHasFixedSize(true)
-        rvEquipment.addLinearItemDecoration()
+        mBinding.rvEquipment.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        tvTypePart.click { showPartMenu(it) }
-        tvTypeQuality.click { showQualityMenu(it) }
-        tvBuild.click { showBuildMenu(it) }
-        tvTypeReset.click {
+
+        mBinding.tvTypePart.click { showPartMenu(it) }
+        mBinding.tvTypeQuality.click { showQualityMenu(it) }
+        mBinding.tvBuild.click { showBuildMenu(it) }
+        mBinding.tvTypeReset.click {
             mPart = EquipmentHelper.PART_ALL
             mQuality = QualityHelper.QUALITY_ALL
-            tvTypePart.text = getString(R.string.str_all)
-            tvTypeQuality.text = getString(R.string.str_all)
+            mBinding.tvTypePart.text = getString(R.string.str_all)
+            mBinding.tvTypeQuality.text = getString(R.string.str_all)
             requestEquipment(mPart, mQuality)
         }
     }
@@ -191,7 +201,7 @@ class EquipmentListFragment : BaseFragment() {
                     R.id.part_jewelry -> EquipmentHelper.PART_JEWELRY
                     else -> EquipmentHelper.PART_ALL
                 }
-                tvTypePart.text = it.title
+                mBinding.tvTypePart.text = it.title
                 requestEquipment(mPart, mQuality)
                 true
             }
@@ -211,7 +221,7 @@ class EquipmentListFragment : BaseFragment() {
                     R.id.quality_artifact -> 4
                     else -> 0
                 }
-                tvTypeQuality.text = it.title
+                mBinding.tvTypeQuality.text = it.title
                 requestEquipment(mPart, mQuality)
                 true
             }

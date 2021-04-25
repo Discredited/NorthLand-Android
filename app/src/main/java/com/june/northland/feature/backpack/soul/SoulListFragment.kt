@@ -2,7 +2,9 @@ package com.june.northland.feature.backpack.soul
 
 import android.os.Bundle
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupMenu
 import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
@@ -11,13 +13,10 @@ import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.AttributeHelper
 import com.june.northland.common.QualityHelper
+import com.june.northland.databinding.FragmentSoulListBinding
 import com.june.northland.feature.soul.SoulVo
-import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeAttribute
-import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeQuality
-import kotlinx.android.synthetic.main.fragment_magic_list.tvTypeReset
-import kotlinx.android.synthetic.main.fragment_soul_list.*
 
-class SoulListFragment : BaseFragment() {
+class SoulListFragment : BaseFragment<FragmentSoulListBinding>() {
 
     private val mAdapter = SoulAdapter()
     private val mSoulList = mutableListOf<SoulVo>()
@@ -27,21 +26,28 @@ class SoulListFragment : BaseFragment() {
     private var mAttributeMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
 
-    override fun getLayoutResId(): Int = R.layout.fragment_soul_list
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentSoulListBinding {
+        return FragmentSoulListBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        rvSoul.setLinearManager()
-        rvSoul.adapter = mAdapter
-        rvSoul.setHasFixedSize(true)
-        rvSoul.addLinearItemDecoration()
+        mBinding.rvSoul.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        tvTypeAttribute.click { showActionMenu(it) }
-        tvTypeQuality.click { showQualityMenu(it) }
-        tvTypeReset.click {
+        mBinding.tvTypeAttribute.click { showActionMenu(it) }
+        mBinding.tvTypeQuality.click { showQualityMenu(it) }
+        mBinding.tvTypeReset.click {
             mAttribute = AttributeHelper.ATTRIBUTE_ALL
             mQuality = QualityHelper.QUALITY_ALL
-            tvTypeAttribute.text = getString(R.string.str_all)
-            tvTypeQuality.text = getString(R.string.str_all)
+            mBinding.tvTypeAttribute.text = getString(R.string.str_all)
+            mBinding.tvTypeQuality.text = getString(R.string.str_all)
             requestSoul(mAttribute, mQuality)
         }
     }
@@ -55,21 +61,81 @@ class SoulListFragment : BaseFragment() {
         if (mSoulList.isEmpty()) {
             mSoulList.addAll(
                 mutableListOf(
-                    SoulVo("一点黛眉刀", "????", 0, R.drawable.ic_attack, AttributeHelper.ATTRIBUTE_ATTACK),
-                    SoulVo("恒河沙数盾", "????", 0, R.drawable.ic_defense, AttributeHelper.ATTRIBUTE_DEFENSE),
-                    SoulVo("补天石", "????", 0, R.drawable.ic_health, AttributeHelper.ATTRIBUTE_HEALTH),
+                    SoulVo(
+                        "一点黛眉刀",
+                        "????",
+                        0,
+                        R.drawable.ic_attack,
+                        AttributeHelper.ATTRIBUTE_ATTACK
+                    ),
+                    SoulVo(
+                        "恒河沙数盾",
+                        "????",
+                        0,
+                        R.drawable.ic_defense,
+                        AttributeHelper.ATTRIBUTE_DEFENSE
+                    ),
+                    SoulVo(
+                        "补天石",
+                        "????",
+                        0,
+                        R.drawable.ic_health,
+                        AttributeHelper.ATTRIBUTE_HEALTH
+                    ),
                     SoulVo("黄泉扇", "????", 0, R.drawable.ic_speed, AttributeHelper.ATTRIBUTE_SPEED),
-                    SoulVo("劫灰剑", "????", 0, R.drawable.ic_critical, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    SoulVo("鬼牙", "????", 0, R.drawable.ic_resister, AttributeHelper.ATTRIBUTE_RESISTER),
+                    SoulVo(
+                        "劫灰剑",
+                        "????",
+                        0,
+                        R.drawable.ic_critical,
+                        AttributeHelper.ATTRIBUTE_CRITICAL
+                    ),
+                    SoulVo(
+                        "鬼牙",
+                        "????",
+                        0,
+                        R.drawable.ic_resister,
+                        AttributeHelper.ATTRIBUTE_RESISTER
+                    ),
                     SoulVo("囚牛", "????", 0, R.drawable.ic_hit, AttributeHelper.ATTRIBUTE_HIT),
                     SoulVo("蒲牢", "????", 0, R.drawable.ic_dodge, AttributeHelper.ATTRIBUTE_DODGE),
-                    SoulVo("狻猊", "????", 0, R.drawable.ic_defense, AttributeHelper.ATTRIBUTE_DEFENSE),
+                    SoulVo(
+                        "狻猊",
+                        "????",
+                        0,
+                        R.drawable.ic_defense,
+                        AttributeHelper.ATTRIBUTE_DEFENSE
+                    ),
                     SoulVo("螭吻", "????", 0, R.drawable.ic_attack, AttributeHelper.ATTRIBUTE_ATTACK),
-                    SoulVo("射日弓", "????", 0, R.drawable.ic_critical, AttributeHelper.ATTRIBUTE_CRITICAL),
-                    SoulVo("海上明月刀", "????", 0, R.drawable.ic_speed, AttributeHelper.ATTRIBUTE_SPEED),
-                    SoulVo("无量刀", "????", 0, R.drawable.ic_attack, AttributeHelper.ATTRIBUTE_ATTACK),
+                    SoulVo(
+                        "射日弓",
+                        "????",
+                        0,
+                        R.drawable.ic_critical,
+                        AttributeHelper.ATTRIBUTE_CRITICAL
+                    ),
+                    SoulVo(
+                        "海上明月刀",
+                        "????",
+                        0,
+                        R.drawable.ic_speed,
+                        AttributeHelper.ATTRIBUTE_SPEED
+                    ),
+                    SoulVo(
+                        "无量刀",
+                        "????",
+                        0,
+                        R.drawable.ic_attack,
+                        AttributeHelper.ATTRIBUTE_ATTACK
+                    ),
                     SoulVo("神罗天征", "????", 0, R.drawable.ic_dodge, AttributeHelper.ATTRIBUTE_DODGE),
-                    SoulVo("月魂", "????", 0, R.drawable.ic_resister, AttributeHelper.ATTRIBUTE_RESISTER)
+                    SoulVo(
+                        "月魂",
+                        "????",
+                        0,
+                        R.drawable.ic_resister,
+                        AttributeHelper.ATTRIBUTE_RESISTER
+                    )
                 )
             )
         }
@@ -97,7 +163,7 @@ class SoulListFragment : BaseFragment() {
                     R.id.attribute_dodge -> AttributeHelper.ATTRIBUTE_DODGE
                     else -> AttributeHelper.ATTRIBUTE_ALL
                 }
-                tvTypeAttribute.text = it.title
+                mBinding.tvTypeAttribute.text = it.title
                 requestSoul(mAttribute, mQuality)
                 true
             }
@@ -117,7 +183,7 @@ class SoulListFragment : BaseFragment() {
                     R.id.quality_artifact -> QualityHelper.QUALITY_ARTIFACT
                     else -> 0
                 }
-                tvTypeQuality.text = it.title
+                mBinding.tvTypeQuality.text = it.title
                 requestSoul(mAttribute, mQuality)
                 true
             }

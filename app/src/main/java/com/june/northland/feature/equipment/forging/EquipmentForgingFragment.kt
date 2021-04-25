@@ -1,27 +1,33 @@
 package com.june.northland.feature.equipment.forging
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import com.june.northland.R
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.FragmentEquipmentForgingBinding
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
-import kotlinx.android.synthetic.main.fragment_equipment_forging.*
 
 /**
  * 装备锻造
  */
-class EquipmentForgingFragment : BaseFragment() {
+class EquipmentForgingFragment : BaseFragment<FragmentEquipmentForgingBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_equipment_forging
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentEquipmentForgingBinding {
+        return FragmentEquipmentForgingBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        btForging.click {
+        mBinding.btForging.click {
             forgingEquipment("")
         }
     }
@@ -34,20 +40,20 @@ class EquipmentForgingFragment : BaseFragment() {
     }
 
     private fun requestForgingInfo(equipment: EquipmentVo) {
-        vForgingDisplay.initForgingDisplay(equipment)
+        mBinding.vForgingDisplay.initForgingDisplay(equipment)
 
         val forgingQualityString = EquipmentHelper.equipmentQuality(equipment.quality + 1)
-        tvEquipmentProperty.text = "基本属性由100增至200，成长属性由100增至200"
-        tvForgingStrengthen.text = "增加一条${forgingQualityString}增幅属性"
-        tvForgingIncrease.text = "开启${forgingQualityString}强化加成"
+        mBinding.tvEquipmentProperty.text = "基本属性由100增至200，成长属性由100增至200"
+        mBinding.tvForgingStrengthen.text = "增加一条${forgingQualityString}增幅属性"
+        mBinding.tvForgingIncrease.text = "开启${forgingQualityString}强化加成"
 
-        tvSilverCost.text = "银两:2000"
-        tvMaterialCost.text = "锻造石:2000"
+        mBinding.tvSilverCost.text = "银两:2000"
+        mBinding.tvMaterialCost.text = "锻造石:2000"
 
-        btForging.isEnabled = !equipment.isQualityMax()
+        mBinding.btForging.isEnabled = !equipment.isQualityMax()
     }
 
-    private fun forgingEquipment(id:String) {
+    private fun forgingEquipment(id: String) {
         mEquipmentViewModel.equipmentForging(id)
     }
 
