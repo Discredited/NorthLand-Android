@@ -2,9 +2,12 @@ package com.june.northland.base.component
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import com.june.northland.base.dialog.LoadingDialog
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
+
+    protected lateinit var mBinding: T
 
     private var mLoadingDialog: LoadingDialog? = null
     lateinit var mActivity: AppCompatActivity
@@ -12,7 +15,8 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mActivity = this
-        setContentView(getLayoutResId())
+        mBinding = viewBinding()
+        setContentView(mBinding.root)
         initView()
         loadData()
     }
@@ -45,12 +49,7 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * 获取布局资源文件ID
-     *
-     * @return
-     */
-    protected abstract fun getLayoutResId(): Int
+    protected abstract fun viewBinding(): T
 
     /**
      * 初始化View

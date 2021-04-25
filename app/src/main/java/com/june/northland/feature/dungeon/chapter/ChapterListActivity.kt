@@ -6,9 +6,9 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.ActivityChapterListBinding
 import com.june.northland.feature.dungeon.DungeonListActivity
 import com.june.northland.utils.Toast
-import kotlinx.android.synthetic.main.activity_chapter_list.*
 
 /**
  * @author June
@@ -16,11 +16,13 @@ import kotlinx.android.synthetic.main.activity_chapter_list.*
  * @version 1.0.0
  * @time 2020/7/29 11:30
  */
-class ChapterListActivity : BaseActivity() {
+class ChapterListActivity : BaseActivity<ActivityChapterListBinding>() {
 
     private val mAdapter = ChapterAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_chapter_list
+    override fun viewBinding(): ActivityChapterListBinding {
+        return ActivityChapterListBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
 
@@ -33,12 +35,12 @@ class ChapterListActivity : BaseActivity() {
             }
         }
 
-        R.style.Widget_MaterialComponents_CardView
-
-        rvChapter.setLinearManager()
-        rvChapter.adapter = mAdapter
-        rvChapter.setHasFixedSize(true)
-        rvChapter.addLinearItemDecoration()
+        mBinding.rvChapter.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
     }
 
     override fun loadData() {

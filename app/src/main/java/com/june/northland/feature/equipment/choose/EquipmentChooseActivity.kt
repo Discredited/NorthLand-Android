@@ -8,17 +8,18 @@ import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.ActivityEquipmentChooseBinding
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentVo
-import kotlinx.android.synthetic.main.activity_equipment_choose.*
-import kotlinx.android.synthetic.main.view_close_image.*
 import timber.log.Timber
 
-class EquipmentChooseActivity : BaseActivity() {
+class EquipmentChooseActivity : BaseActivity<ActivityEquipmentChooseBinding>() {
 
     private val mAdapter = EquipmentChooseAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_equipment_choose
+    override fun viewBinding(): ActivityEquipmentChooseBinding {
+        return ActivityEquipmentChooseBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
         mAdapter.itemClick { _, _, i ->
@@ -30,12 +31,14 @@ class EquipmentChooseActivity : BaseActivity() {
             finish()
         }
 
-        rvWeaponChoose.setLinearManager()
-        rvWeaponChoose.adapter = mAdapter
-        rvWeaponChoose.setHasFixedSize(true)
-        rvWeaponChoose.addLinearItemDecoration()
+        mBinding.rvWeaponChoose.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        ivClose.click { onBackPressed() }
+        mBinding.iClose.ivClose.click { onBackPressed() }
     }
 
     override fun loadData() {

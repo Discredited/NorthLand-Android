@@ -3,14 +3,16 @@ package com.june.northland.feature.store
 import android.view.View
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
-import kotlinx.android.synthetic.main.activity_recruit_result.*
+import com.june.northland.databinding.ActivityRecruitResultBinding
 import me.samlss.bloom.Bloom
 import me.samlss.bloom.effector.BloomEffector
 import me.samlss.bloom.listener.BloomListener
 
-class RecruitResultActivity : BaseActivity() {
+class RecruitResultActivity : BaseActivity<ActivityRecruitResultBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.activity_recruit_result
+    override fun viewBinding(): ActivityRecruitResultBinding {
+        return ActivityRecruitResultBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
     }
@@ -20,35 +22,38 @@ class RecruitResultActivity : BaseActivity() {
     }
 
     private fun requestRecruit() {
-        ivRecruitAvatar.setImageResource(R.drawable.ic_avatar_jiu_dan_mei)
-        tvRecruitName.text = "鸠丹媚"
+        mBinding.ivRecruitAvatar.setImageResource(R.drawable.ic_avatar_jiu_dan_mei)
+        mBinding.tvRecruitName.text = "鸠丹媚"
         boom()
     }
 
     private fun boom() {
-        tvRecruitSlogan.text = "沙罗铁树，只为自己盛开"
-        tvRecruitSlogan.visibility = View.VISIBLE
-        tvRecruitSlogan.postDelayed({
+        mBinding.tvRecruitSlogan.text = "沙罗铁树，只为自己盛开"
+        mBinding.tvRecruitSlogan.visibility = View.VISIBLE
+        mBinding.tvRecruitSlogan.postDelayed({
             Bloom.with(this)
                 .setParticleRadius(5F)
                 .setEffector(
                     BloomEffector.Builder()
                         .setDuration(800)
-                        .setAnchor(tvRecruitSlogan.width / 2F, tvRecruitSlogan.height / 2F)
+                        .setAnchor(
+                            mBinding.tvRecruitSlogan.width / 2F,
+                            mBinding.tvRecruitSlogan.height / 2F
+                        )
                         .build()
                 )
                 .setBloomListener(object : BloomListener {
                     override fun onBegin() {
-                        llRecruitContainer.postDelayed({
-                            llRecruitContainer.visibility = View.VISIBLE
+                        mBinding.llRecruitContainer.postDelayed({
+                            mBinding.llRecruitContainer.visibility = View.VISIBLE
                         }, 300)
                     }
 
                     override fun onEnd() {
                     }
                 })
-                .boom(tvRecruitSlogan)
-            tvRecruitSlogan.visibility = View.GONE
+                .boom(mBinding.tvRecruitSlogan)
+            mBinding.tvRecruitSlogan.visibility = View.GONE
         }, 1000)
     }
 }

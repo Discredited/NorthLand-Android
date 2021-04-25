@@ -24,5 +24,7 @@
         app:layout_constraintTop_toBottomOf="@id/tlCategory"
         tools:background="@color/color_yellow" />
 
-    <include layout="@layout/view_close_image" />
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

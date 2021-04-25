@@ -8,10 +8,10 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
-import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.common.ConstantUtils
+import com.june.northland.databinding.ActivityCharacterDetailBinding
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
@@ -19,42 +19,42 @@ import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.activity_character_detail.*
-import kotlinx.android.synthetic.main.view_close_image.*
 
 /**
  * 人物详情
  */
-class CharacterDetailActivity : BaseActivity() {
+class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
     private val mPagerTitleList = mutableListOf<String>()
 
-    override fun getLayoutResId(): Int = R.layout.activity_character_detail
+    override fun viewBinding(): ActivityCharacterDetailBinding {
+        return ActivityCharacterDetailBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        vpCharacter.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        vpCharacter.adapter = CharacterDetailAdapter(supportFragmentManager, lifecycle)
+        mBinding.vpCharacter.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        mBinding.vpCharacter.adapter = CharacterDetailAdapter(supportFragmentManager, lifecycle)
 
-        btBringUp.click {
+        mBinding.btBringUp.click {
             CharacterPotentialFragment.newInstance()
                 .show(supportFragmentManager, CharacterPotentialFragment::javaClass.name)
         }
 
-        ivHelper.click {
+        mBinding.ivHelper.click {
             AttributeExplanationFragment().show(
                 supportFragmentManager,
                 AttributeExplanationFragment::javaClass.name
             )
         }
-        ivClose.click { onBackPressed() }
+        mBinding.iClose.ivClose.click { onBackPressed() }
     }
 
     override fun loadData() {
         mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
-            vCharacterDisplay.wearEquipment(it)
+            mBinding.vCharacterDisplay.wearEquipment(it)
         })
-        vCharacterDisplay.equipmentClick()
+        mBinding.vCharacterDisplay.equipmentClick()
         setCharacter(CharacterVo(power = intent?.getIntExtra("REALM", 8) ?: 8))
 
         mPagerTitleList.add("属性")
@@ -62,8 +62,8 @@ class CharacterDetailActivity : BaseActivity() {
         mPagerTitleList.add("秘籍")
         //mPageTitleList.add("道心")
         TabLayoutMediator(
-            tlCharacter,
-            vpCharacter,
+            mBinding.tlCharacter,
+            mBinding.vpCharacter,
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 tab.text = mPagerTitleList[position]
             }).attach()
@@ -80,7 +80,7 @@ class CharacterDetailActivity : BaseActivity() {
                     EquipmentChooseActivity.RESPONSE_WEAPON_CHOOSE
                 )
                 choice?.let { equipment ->
-                    vCharacterDisplay.wearEquipment(equipment)
+                    mBinding.vCharacterDisplay.wearEquipment(equipment)
                 }
             }
         }
@@ -88,10 +88,10 @@ class CharacterDetailActivity : BaseActivity() {
 
     private fun setCharacter(character: CharacterVo) {
         val powerColor = ContextCompat.getColor(this, ColorUtils.getPowerColor(character.power))
-        vCollapsing.setContentScrimColor(powerColor)
+        mBinding.vCollapsing.setContentScrimColor(powerColor)
 
-        tvCharacterName.text = character.name
-        vCharacterDisplay.setCharacterAndEquipment(
+        mBinding.tvCharacterName.text = character.name
+        mBinding.vCharacterDisplay.setCharacterAndEquipment(
             powerColor,
             character,
             ConstantUtils.randomEquipment(1),

@@ -28,5 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/vLadderHead"
         tools:listitem="@layout/item_ladder" />
 
-    <include layout="@layout/view_close_image" />
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

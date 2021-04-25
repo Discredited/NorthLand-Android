@@ -2,24 +2,25 @@ package com.june.northland.feature.character
 
 import android.text.SpannableStringBuilder
 import com.blankj.utilcode.util.SpanUtils
-import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
-import kotlinx.android.synthetic.main.activity_character_config.*
+import com.june.northland.databinding.ActivityCharacterConfigBinding
 
-class CharacterConfigActivity : BaseActivity() {
+class CharacterConfigActivity : BaseActivity<ActivityCharacterConfigBinding>() {
 
     private val mLevelVo = CharacterVo()
 
-    override fun getLayoutResId(): Int = R.layout.activity_character_config
+    override fun viewBinding(): ActivityCharacterConfigBinding {
+        return ActivityCharacterConfigBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        tvSure.setOnClickListener {
-            val expString = etExp.text.toString()
+        mBinding.tvSure.setOnClickListener {
+            val expString =  mBinding.etExp.text.toString()
             if (expString.isEmpty()) {
                 return@setOnClickListener
             }
             addExperience(expString.toLong())
-            tvInfo.text = levelInfo(mLevelVo)
+            mBinding.tvInfo.text = levelInfo(mLevelVo)
         }
     }
 

@@ -5,31 +5,34 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.ActivityCharacterListBinding
 import com.june.northland.feature.character.CharacterVo
 import com.june.northland.feature.character.detail.CharacterDetailActivity
-import kotlinx.android.synthetic.main.activity_character_list.*
-import kotlinx.android.synthetic.main.view_toolbar_layout.*
 
 /**
  * 人物列表
  */
-class CharacterListActivity : BaseActivity() {
+class CharacterListActivity : BaseActivity<ActivityCharacterListBinding>() {
 
     private val mAdapter = CharacterListAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_character_list
+    override fun viewBinding(): ActivityCharacterListBinding {
+        return ActivityCharacterListBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
         mAdapter.itemClick { _, _, position ->
             CharacterDetailActivity.starter(this, position.toString())
         }
 
-        rvCharacter.setLinearManager()
-        rvCharacter.adapter = mAdapter
-        rvCharacter.setHasFixedSize(true)
-        rvCharacter.addLinearItemDecoration()
+        mBinding.rvCharacter.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        toolbar.title = "人物列表"
+        mBinding.iToolbar.toolbar.title = "人物列表"
     }
 
     override fun loadData() {

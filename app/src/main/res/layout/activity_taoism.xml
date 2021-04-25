@@ -93,9 +93,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="@string/str_stay_tuned"
             android:textColor="@color/color_white"
-            android:textSize="@dimen/sp_20"
-            android:text="@string/str_stay_tuned" />
+            android:textSize="@dimen/sp_20" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -115,18 +115,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:tint="@color/color_bg_alpha_black"
-            android:src="@drawable/img_practice_3" />
+            android:src="@drawable/img_practice_3"
+            android:tint="@color/color_bg_alpha_black" />
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/ShadowText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="@string/str_stay_tuned"
             android:textColor="@color/color_white"
-            android:textSize="@dimen/sp_20"
-            android:text="@string/str_stay_tuned" />
+            android:textSize="@dimen/sp_20" />
     </androidx.cardview.widget.CardView>
 
-    <include layout="@layout/view_close_image" />
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,9 +5,9 @@ import android.view.View
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.ActivityPlotDisplayBinding
 import com.june.northland.feature.dungeon.DungeonBattleActivity
 import com.june.northland.widget.text.VerbatimListener
-import kotlinx.android.synthetic.main.activity_plot_display.*
 
 /**
  * @author June
@@ -15,15 +15,17 @@ import kotlinx.android.synthetic.main.activity_plot_display.*
  * @version 1.0.0
  * @time 2020/7/28 15:48
  */
-class PlotDisplayActivity : BaseActivity() {
+class PlotDisplayActivity : BaseActivity<ActivityPlotDisplayBinding>() {
 
     private var mStoryIndex: Int = 0
     private val mStoryList = mutableListOf<PlotVo>()
 
-    override fun getLayoutResId(): Int = R.layout.activity_plot_display
+    override fun viewBinding(): ActivityPlotDisplayBinding {
+        return ActivityPlotDisplayBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        tvVerbatim.setVerbatimListener(object : VerbatimListener {
+        mBinding.tvVerbatim.setVerbatimListener(object : VerbatimListener {
             override fun onVerbatimBegin() {
             }
 
@@ -31,8 +33,8 @@ class PlotDisplayActivity : BaseActivity() {
                 mStoryIndex++
             }
         })
-        tvVerbatim.click {
-            if (tvVerbatim.isVerbatimFinished()) {
+        mBinding.tvVerbatim.click {
+            if (mBinding.tvVerbatim.isVerbatimFinished()) {
                 if (mStoryIndex < mStoryList.size) {
                     displayStory(mStoryList[mStoryIndex])
                 } else {
@@ -41,7 +43,7 @@ class PlotDisplayActivity : BaseActivity() {
                     finish()
                 }
             } else {
-                tvVerbatim?.stopTextVerbatim()
+                mBinding.tvVerbatim.stopTextVerbatim()
             }
         }
     }
@@ -81,14 +83,14 @@ class PlotDisplayActivity : BaseActivity() {
 
     private fun displayStory(plot: PlotVo) {
         if (plot.rolePosition == 1) {
-            ivRoleLeft.visibility = View.GONE
-            ivRoleRight.visibility = View.VISIBLE
-            ivRoleRight.setImageResource(plot.roleAvatar)
+            mBinding.ivRoleLeft.visibility = View.GONE
+            mBinding.ivRoleRight.visibility = View.VISIBLE
+            mBinding.ivRoleRight.setImageResource(plot.roleAvatar)
         } else {
-            ivRoleRight.visibility = View.GONE
-            ivRoleLeft.visibility = View.VISIBLE
-            ivRoleLeft.setImageResource(plot.roleAvatar)
+            mBinding.ivRoleRight.visibility = View.GONE
+            mBinding.ivRoleLeft.visibility = View.VISIBLE
+            mBinding.ivRoleLeft.setImageResource(plot.roleAvatar)
         }
-        tvVerbatim.setVerbatimContent("${plot.roleName}:${plot.content}")
+        mBinding.tvVerbatim.setVerbatimContent("${plot.roleName}:${plot.content}")
     }
 }

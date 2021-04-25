@@ -6,25 +6,26 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.ActivityBackpackBinding
 import com.june.northland.feature.equipment.EquipmentViewModel
-import kotlinx.android.synthetic.main.activity_backpack.*
-import kotlinx.android.synthetic.main.view_close_image.*
 
-class BackpackActivity : BaseActivity() {
+class BackpackActivity : BaseActivity<ActivityBackpackBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
 
     private lateinit var mAdapter: BackpackAdapter
     private val mPagerTitleList = mutableListOf<String>()
 
-    override fun getLayoutResId(): Int = R.layout.activity_backpack
+    override fun viewBinding(): ActivityBackpackBinding {
+        return ActivityBackpackBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
         mAdapter = BackpackAdapter(supportFragmentManager, lifecycle)
 
-        vpGoods.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        vpGoods.adapter = mAdapter
-        ivClose.click { finish() }
+        mBinding.vpGoods.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        mBinding.vpGoods.adapter = mAdapter
+        mBinding.iClose.ivClose.click { finish() }
     }
 
     override fun loadData() {
@@ -34,8 +35,8 @@ class BackpackActivity : BaseActivity() {
         mPagerTitleList.add(getString(R.string.str_soul))
 
         TabLayoutMediator(
-            tlCategory,
-            vpGoods,
+            mBinding.tlCategory,
+            mBinding.vpGoods,
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 tab.text = mPagerTitleList[position]
             }).attach()

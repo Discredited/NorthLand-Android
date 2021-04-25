@@ -3,26 +3,28 @@ package com.june.northland.feature.lineup
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
-import kotlinx.android.synthetic.main.activity_line_up.*
+import com.june.northland.databinding.ActivityLineUpBinding
 import timber.log.Timber
 
 /**
  * 阵容
  */
-class LineUpActivity : BaseActivity() {
+class LineUpActivity : BaseActivity<ActivityLineUpBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.activity_line_up
+    override fun viewBinding(): ActivityLineUpBinding {
+        return ActivityLineUpBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
 
-        tvPrompt.click {
-            val lineUp = vLineUp.getLineUp()
+        mBinding.tvPrompt.click {
+            val lineUp = mBinding.vLineUp.getLineUp()
             Timber.e(lineUp.toString())
         }
     }
 
     override fun loadData() {
-        vLineUp.setLineUp(
+        mBinding.vLineUp.setLineUp(
             mutableListOf(
                 LineUpVo(R.drawable.ic_avatar_gan_ning_zhen, 0, true),
                 LineUpVo(R.drawable.ic_avatar_hai_ji, 1, true),

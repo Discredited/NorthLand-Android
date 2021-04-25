@@ -1,7 +1,7 @@
 package com.june.northland.feature.taoism.league
 
-import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
+import com.june.northland.databinding.ActivityArenaListBinding
 
 /**
  * @author June
@@ -9,9 +9,11 @@ import com.june.northland.base.component.BaseActivity
  * @version 1.0.0
  * @time 2020/8/6 15:36
  */
-class LeagueListActivity : BaseActivity() {
+class LeagueListActivity : BaseActivity<ActivityArenaListBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.activity_arena_list
+    override fun viewBinding(): ActivityArenaListBinding {
+        return ActivityArenaListBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
     }

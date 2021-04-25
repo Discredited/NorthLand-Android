@@ -41,5 +41,7 @@
         tools:listitem="@layout/item_arena"
         tools:orientation="horizontal" />
 
-    <include layout="@layout/view_close_image" />
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

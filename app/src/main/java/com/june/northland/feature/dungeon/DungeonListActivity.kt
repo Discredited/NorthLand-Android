@@ -1,28 +1,28 @@
 package com.june.northland.feature.dungeon
 
 import android.content.Intent
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.itemChildClick
 import com.june.northland.base.ext.setLinearManager
+import com.june.northland.databinding.ActivityDungeonListBinding
 import com.june.northland.feature.dungeon.plot.PlotDisplayActivity
 import com.june.northland.widget.res.ResourceVo
-import kotlinx.android.synthetic.main.activity_dungeon_list.*
 
 /**
  * 剧情列表
  */
-class DungeonListActivity : BaseActivity() {
+class DungeonListActivity : BaseActivity<ActivityDungeonListBinding>() {
 
     private val mAdapter = DungeonAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_dungeon_list
+    override fun viewBinding(): ActivityDungeonListBinding {
+        return ActivityDungeonListBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        vResource.addResource(ResourceVo(R.drawable.ic_herb, 9999))
-        vResource.addResource(ResourceVo(R.drawable.ic_gold, 150))
+        mBinding.vResource.addResource(ResourceVo(R.drawable.ic_herb, 9999))
+        mBinding.vResource.addResource(ResourceVo(R.drawable.ic_gold, 150))
 
         mAdapter.addChildClickViewIds(R.id.btDungeonFight)
         mAdapter.itemChildClick { _, view, position ->
@@ -36,10 +36,12 @@ class DungeonListActivity : BaseActivity() {
             }
         }
 
-        rvDungeon.adapter = mAdapter
-        rvDungeon.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        rvDungeon.setHasFixedSize(true)
-        rvDungeon.setLinearManager()
+        mBinding.rvDungeon.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+
+        }
     }
 
     override fun loadData() {

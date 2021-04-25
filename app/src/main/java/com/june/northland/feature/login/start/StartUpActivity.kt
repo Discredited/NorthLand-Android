@@ -7,20 +7,22 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.commitFragment
+import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
-import kotlinx.android.synthetic.main.activity_start_up.*
 
 /**
  * 启动页面
  */
-class StartUpActivity : BaseActivity() {
+class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
 
     private val mStartUpViewModel by viewModels<StartUpViewModel>()
 
-    override fun getLayoutResId(): Int = R.layout.activity_start_up
+    override fun viewBinding(): ActivityStartUpBinding {
+        return ActivityStartUpBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        tvAnnouncement.click {
+        mBinding.tvAnnouncement.click {
             AnnouncementFragment.newInstance().show(supportFragmentManager, "AnnouncementFragment")
         }
     }
@@ -40,7 +42,8 @@ class StartUpActivity : BaseActivity() {
 
     private fun requestConfigParams() {
         val timestamp = System.currentTimeMillis()
-        val date = DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
+        val date =
+            DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
         val remoteConfig = ResourceConfig(0, "0.0.1", timestamp, date)
         val needUpdate = mStartUpViewModel.checkUpdateResource(remoteConfig)
         if (needUpdate) {
@@ -53,13 +56,13 @@ class StartUpActivity : BaseActivity() {
     //更新游戏资源
     private fun updateResource() {
         val fragment = ResourceUpdateFragment.newInstance("")
-        fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
+        mBinding.fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
     }
 
     //进入游戏
     private fun startEntrance() {
         val fragment = StartEntranceFragment.newInstance()
-        fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
+        mBinding.fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
         requestAnnouncement()
     }
 

@@ -4,26 +4,28 @@ import androidx.core.view.GravityCompat
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.commitFragment
+import com.june.northland.databinding.ActivityMainBinding
 import com.june.northland.feature.main.ui.ScenesFragment
 import com.june.northland.feature.main.ui.SettingFragment
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.activity_main
+    override fun viewBinding(): ActivityMainBinding {
+        return ActivityMainBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
 
     }
 
     override fun loadData() {
-        fcScenesContainer.commitFragment(
+        mBinding.fcScenesContainer.commitFragment(
             supportFragmentManager,
             R.id.fcScenesContainer,
             ScenesFragment()
         )
 
-        fcSettingContainer.commitFragment(
+        mBinding.fcSettingContainer.commitFragment(
             supportFragmentManager,
             R.id.fcSettingContainer,
             SettingFragment()
@@ -31,6 +33,6 @@ class MainActivity : BaseActivity() {
     }
 
     fun openDrawLayout() {
-        drawLayout.openDrawer(GravityCompat.START)
+        mBinding.drawLayout.openDrawer(GravityCompat.START)
     }
 }

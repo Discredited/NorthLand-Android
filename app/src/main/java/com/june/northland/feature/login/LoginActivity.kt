@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.ActivityLoginBinding
 import com.june.northland.utils.Toast
 import com.june.northland.utils.cache.UserDataCache
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : BaseActivity() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.activity_login
+    override fun viewBinding(): ActivityLoginBinding {
+        return ActivityLoginBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
         btLogin.click {

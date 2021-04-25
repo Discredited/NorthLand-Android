@@ -1,12 +1,10 @@
 package com.june.northland.feature.taoism.ladder
 
-import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
-import kotlinx.android.synthetic.main.activity_ladder_list.*
-import kotlinx.android.synthetic.main.view_close_image.*
+import com.june.northland.databinding.ActivityLadderListBinding
 
 /**
  * @author June
@@ -14,19 +12,23 @@ import kotlinx.android.synthetic.main.view_close_image.*
  * @version 1.0.0
  * @time 2020/8/6 15:36
  */
-class LadderListActivity : BaseActivity() {
+class LadderListActivity : BaseActivity<ActivityLadderListBinding>() {
 
     private val mAdapter = LadderAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_ladder_list
+    override fun viewBinding(): ActivityLadderListBinding {
+        return ActivityLadderListBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        rvLadder.setLinearManager()
-        rvLadder.adapter = mAdapter
-        rvLadder.setHasFixedSize(true)
-        rvLadder.addLinearItemDecoration()
+        mBinding.rvLadder.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        ivClose.click { finish() }
+        mBinding.iClose.ivClose.click { finish() }
     }
 
     override fun loadData() {

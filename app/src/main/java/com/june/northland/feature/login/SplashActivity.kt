@@ -2,27 +2,28 @@ package com.june.northland.feature.login
 
 import android.animation.ObjectAnimator
 import android.content.Intent
-import com.june.northland.R
 import com.june.northland.base.component.BaseActivity
+import com.june.northland.databinding.ActivitySplashBinding
 import com.june.northland.feature.login.start.StartUpActivity
-import kotlinx.android.synthetic.main.activity_splash.*
 
-class SplashActivity : BaseActivity() {
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     private var mAdviceAnimator: ObjectAnimator? = null
 
-    override fun getLayoutResId(): Int = R.layout.activity_splash
+    override fun viewBinding(): ActivitySplashBinding {
+        return ActivitySplashBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
     }
 
     override fun loadData() {
-        mAdviceAnimator = ObjectAnimator.ofFloat(tvHealthGame, "alpha", 0F, 1F)
+        mAdviceAnimator = ObjectAnimator.ofFloat(mBinding.tvHealthGame, "alpha", 0F, 1F)
         mAdviceAnimator?.let {
             it.duration = 500
             it.start()
         }
-        tvHealthGame.postDelayed({
+        mBinding.tvHealthGame.postDelayed({
             startActivity(Intent(this, StartUpActivity::class.java))
             //startActivity(Intent(this, MainActivity::class.java))
             //startActivity(Intent(this, DungeonListActivity::class.java))

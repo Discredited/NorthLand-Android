@@ -5,22 +5,25 @@ import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
-import kotlinx.android.synthetic.main.activity_practice.*
-import kotlinx.android.synthetic.main.view_close_image.*
+import com.june.northland.databinding.ActivityPracticeBinding
 
-class PracticeActivity : BaseActivity() {
+class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
 
     private val mAdapter = PracticeAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.activity_practice
+    override fun viewBinding(): ActivityPracticeBinding {
+        return ActivityPracticeBinding.inflate(layoutInflater)
+    }
 
     override fun initView() {
-        rvPractice.setLinearManager()
-        rvPractice.adapter = mAdapter
-        rvPractice.setHasFixedSize(true)
-        rvPractice.addLinearItemDecoration()
+        mBinding.rvPractice.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        ivClose.click { finish() }
+        mBinding.iClose.ivClose.click { finish() }
     }
 
     override fun loadData() {

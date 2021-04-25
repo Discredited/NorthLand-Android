@@ -35,6 +35,10 @@ android {
         jvmTarget = "1.8"
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 
     //使用Kotlin实验特性
     androidExtensions {
