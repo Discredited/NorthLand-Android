@@ -1,15 +1,22 @@
 package com.june.northland.feature.character
 
-import com.june.northland.R
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
-import kotlinx.android.synthetic.main.fragment_dialog_attribut_explanation.*
+import com.june.northland.databinding.FragmentDialogAttributExplanationBinding
 
-class AttributeExplanationFragment : BaseDialogFragment() {
+class AttributeExplanationFragment :
+    BaseDialogFragment<FragmentDialogAttributExplanationBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_dialog_attribut_explanation
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentDialogAttributExplanationBinding {
+        return FragmentDialogAttributExplanationBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        vLayoutContainer.click { dismiss() }
+        mBinding.vLayoutContainer.click { dismiss() }
     }
 }

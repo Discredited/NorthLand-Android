@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_160">
+<layout>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivChapterCover"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/img_practice_0" />
+        android:layout_height="@dimen/dp_160"
+        tools:viewBindingIgnore="true">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvChapterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:shadowColor="@color/color_black"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_24"
-        android:textStyle="bold"
-        tools:text="红尘天" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivChapterCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/img_practice_0" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvChapterSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_30"
-        android:shadowColor="@color/color_black"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_14"
-        tools:text="- 红尘天 -" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChapterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="@color/color_black"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_24"
+            android:textStyle="bold"
+            tools:text="红尘天" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvChapterProcess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:background="@color/color_bg_alpha_black"
-        android:drawableStart="@drawable/ic_star"
-        android:drawablePadding="@dimen/dp_10"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="@dimen/dp_10"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_14"
-        tools:text="90 / 120" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChapterSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_30"
+            android:shadowColor="@color/color_black"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14"
+            tools:text="- 红尘天 -" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvChapterMask"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_mask_gray"
-        android:drawableTop="@drawable/ic_chapter_lock"
-        android:gravity="center"
-        android:paddingTop="@dimen/dp_50"
-        android:paddingBottom="@dimen/dp_30"
-        android:text="@string/prompt_chapter_unlock"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/sp_14"
-        android:visibility="gone"
-        tools:visibility="visible" />
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChapterProcess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@color/color_bg_alpha_black"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14"
+            tools:text="90 / 120" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChapterMask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_mask_gray"
+            android:drawableTop="@drawable/ic_chapter_lock"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_50"
+            android:paddingBottom="@dimen/dp_30"
+            android:text="@string/prompt_chapter_unlock"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
+</layout>

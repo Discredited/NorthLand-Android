@@ -2,6 +2,8 @@ package com.june.northland.feature.equipment.detail
 
 import android.os.Bundle
 import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
@@ -9,22 +11,27 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.databinding.FragmentEquipmentBuildBinding
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentViewModel
-import kotlinx.android.synthetic.main.fragment_equipment_build.*
 
 /**
  * 初次锻造装备
  */
-class EquipmentBuildFragment : BaseDialogFragment() {
+class EquipmentBuildFragment : BaseDialogFragment<FragmentEquipmentBuildBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_equipment_build
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentEquipmentBuildBinding {
+        return FragmentEquipmentBuildBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        btCancel.click { dismiss() }
-        btBuild.click { buildEquipment() }
+        mBinding.btCancel.click { dismiss() }
+        mBinding.btBuild.click { buildEquipment() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -36,24 +43,25 @@ class EquipmentBuildFragment : BaseDialogFragment() {
         val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_WEAPON
         val equipment = mEquipmentViewModel.equipmentBuildInfo(part)
 
-        tvBuildTitle.text = "打造${equipment.name}"
-        ivEquipmentIcon.setImageResource(equipment.coverIcon)
-        ivEquipmentIcon.setDrawable(
+        mBinding.tvBuildTitle.text = "打造${equipment.name}"
+        mBinding.ivEquipmentIcon.setImageResource(equipment.coverIcon)
+        mBinding.ivEquipmentIcon.setDrawable(
             strokeColor = ContextCompat.getColor(
                 requireContext(),
                 R.color.color_equipment_normal
             ),
             strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_3)
         )
-        ivEquipmentName.text = equipment.name
-        ivEquipmentQuality.text = "品质 ${EquipmentHelper.equipmentQuality(equipment.quality)}"
-        tvEquipmentValue.text = "攻击+${equipment.value}"
-        tvEquipmentCost.text = "打造石：2000"
+        mBinding.ivEquipmentName.text = equipment.name
+        mBinding.ivEquipmentQuality.text =
+            "品质 ${EquipmentHelper.equipmentQuality(equipment.quality)}"
+        mBinding.tvEquipmentValue.text = "攻击+${equipment.value}"
+        mBinding.tvEquipmentCost.text = "打造石：2000"
     }
 
     private fun buildEquipment() {
         showLoading()
-        tvBuildTitle.postDelayed({
+        mBinding.tvBuildTitle.postDelayed({
             hideLoading()
             val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_WEAPON
             val equipment = mEquipmentViewModel.equipmentBuild(part)

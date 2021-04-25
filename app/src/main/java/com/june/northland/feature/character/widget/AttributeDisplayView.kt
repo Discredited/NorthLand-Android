@@ -2,16 +2,20 @@ package com.june.northland.feature.character.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.northland.R
-import kotlinx.android.synthetic.main.widget_attribute_display_layout.view.*
+import com.june.northland.databinding.WidgetAttributeDisplayLayoutBinding
 
 class AttributeDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
+
+    private val mBinding: WidgetAttributeDisplayLayoutBinding =
+        WidgetAttributeDisplayLayoutBinding.inflate(LayoutInflater.from(context), this)
 
     init {
         View.inflate(context, R.layout.widget_attribute_display_layout, this)
@@ -33,19 +37,19 @@ class AttributeDisplayView @JvmOverloads constructor(
         titleName: String = "",
         isShowTitle: Int = View.VISIBLE
     ) {
-        tvAttributeTitle.visibility = isShowTitle
-        tvAttributeTitle.text = titleName
+        mBinding.tvAttributeTitle.visibility = isShowTitle
+        mBinding.tvAttributeTitle.text = titleName
 
-        initDrawable(tvAttributeOne, oneResId)
-        initDrawable(tvAttributeTwo, twoResId)
-        initDrawable(tvAttributeThree, threeResId)
-        initDrawable(tvAttributeFour, fourResId)
+        initDrawable(mBinding.tvAttributeOne, oneResId)
+        initDrawable(mBinding.tvAttributeTwo, twoResId)
+        initDrawable(mBinding.tvAttributeThree, threeResId)
+        initDrawable(mBinding.tvAttributeFour, fourResId)
     }
 
     fun setAttributeValue(first: String, second: String, third: String, four: String) {
-        tvAttributeOne.text = first
-        tvAttributeTwo.text = second
-        tvAttributeThree.text = third
-        tvAttributeFour.text = four
+        mBinding.tvAttributeOne.text = first
+        mBinding.tvAttributeTwo.text = second
+        mBinding.tvAttributeThree.text = third
+        mBinding.tvAttributeFour.text = four
     }
 }

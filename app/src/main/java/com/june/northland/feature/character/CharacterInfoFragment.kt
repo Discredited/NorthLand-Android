@@ -1,22 +1,28 @@
 package com.june.northland.feature.character
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
+import com.june.northland.databinding.FragmentDialogCharacterInfoBinding
 import com.june.northland.feature.magic.MagicVo
 import com.june.northland.feature.relationship.RelationshipVo
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.fragment_dialog_character_info.*
-import kotlinx.android.synthetic.main.view_close_image.*
 
-class CharacterInfoFragment : BaseDialogFragment() {
+class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_dialog_character_info
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentDialogCharacterInfoBinding {
+        return FragmentDialogCharacterInfoBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        vBasicAttribute.initAttributeIcon(
+        mBinding.vBasicAttribute.initAttributeIcon(
             R.drawable.ic_health,
             R.drawable.ic_speed,
             R.drawable.ic_attack,
@@ -24,7 +30,7 @@ class CharacterInfoFragment : BaseDialogFragment() {
             getString(R.string.str_basic_attributes)
         )
 
-        vExtraAttribute.initAttributeIcon(
+        mBinding.vExtraAttribute.initAttributeIcon(
             R.drawable.ic_critical,
             R.drawable.ic_resister,
             R.drawable.ic_hit,
@@ -32,8 +38,8 @@ class CharacterInfoFragment : BaseDialogFragment() {
             getString(R.string.str_extra_attributes)
         )
 
-        ivClose.click { dismiss() }
-        ivHelper.click {
+        mBinding.iClose.ivClose.click { dismiss() }
+        mBinding.ivHelper.click {
             AttributeExplanationFragment().show(
                 childFragmentManager,
                 AttributeExplanationFragment::javaClass.name
@@ -49,19 +55,19 @@ class CharacterInfoFragment : BaseDialogFragment() {
     private fun setCharacter(character: CharacterVo) {
         val realm = arguments?.getInt("REALM", 8) ?: 8
         val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getPowerColor(realm))
-        vCollapsing.setContentScrimColor(realmColor)
+        mBinding.vCollapsing.setContentScrimColor(realmColor)
 
-        vCharacterDisplay.setCharacterAndEquipment(realmColor, character)
+        mBinding.vCharacterDisplay.setCharacterAndEquipment(realmColor, character)
 
-        tvCharacterName.text = character.name
-        vCharacterExperience.initExperience(20, 30, 100, 20)
+        mBinding.tvCharacterName.text = character.name
+        mBinding.vCharacterExperience.initExperience(20, 30, 100, 20)
 
-        vBasicAttribute.setAttributeValue("2500", "110", "950", "600")
-        vExtraAttribute.setAttributeValue("35", "10", "200", "75")
+        mBinding.vBasicAttribute.setAttributeValue("2500", "110", "950", "600")
+        mBinding.vExtraAttribute.setAttributeValue("35", "10", "200", "75")
 
-        vSkillView.setSkill()
+        mBinding.vSkillView.setSkill()
 
-        vMagicDisplay.setMagic(
+        mBinding.vMagicDisplay.setMagic(
             mutableListOf(
                 MagicVo("兵器甲御术", "肢体任意化作攻击武器，造成(攻击力*225%)伤害值", 1, R.drawable.ic_magic_1),
                 MagicVo("龙蝶爪", "龙蝶利爪齐齐探出，造成(攻击力*210%*利爪数量)伤害值", 1, R.drawable.ic_magic_2),
@@ -69,7 +75,7 @@ class CharacterInfoFragment : BaseDialogFragment() {
             )
         )
 
-        vRelationshipDisplay.setRelationship(
+        mBinding.vRelationshipDisplay.setRelationship(
             mutableListOf(
                 RelationshipVo(
                     "丽人行",

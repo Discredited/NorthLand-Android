@@ -1,6 +1,8 @@
 package com.june.northland.feature.equipment
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -8,30 +10,35 @@ import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.databinding.FragmentDialogEquipmentInfoBinding
 import com.june.northland.feature.equipment.detail.EquipmentDetailActivity
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.fragment_dialog_equipment_info.*
 
-class EquipmentInfoFragment : BaseDialogFragment() {
+class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_dialog_equipment_info
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentDialogEquipmentInfoBinding {
+        return FragmentDialogEquipmentInfoBinding.inflate(inflater, container, false)
+    }
 
     override fun initView() {
-        btStrengthen.click {
+        mBinding.btStrengthen.click {
             EquipmentDetailActivity.start(requireActivity(), "")
             dismiss()
         }
-        btForging.click {
+        mBinding.btForging.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_FORGING)
             dismiss()
         }
-        btIncrease.click {
+        mBinding.btIncrease.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_INCREASE)
             dismiss()
         }
-        btSpell.click {
+        mBinding.btSpell.click {
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_SPELL)
             dismiss()
         }
@@ -44,14 +51,17 @@ class EquipmentInfoFragment : BaseDialogFragment() {
 
     private fun requestEquipment() {
         val equipment = mEquipmentViewModel.equipmentDetail("")
-        val qualityColor = ContextCompat.getColor(requireContext(), ColorUtils.equipmentQualityColor(equipment.quality))
-        ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
-        ivEquipmentIcon.setImageResource(R.drawable.ic_attack)
-        tvEquipmentName.text = equipment.name
-        tvEquipmentName.setTextColor(qualityColor)
-        tvBasic.text = equipment.basicDesc
-        tvExtra.text = equipment.extraDesc
-        tvDescContent.text = "比电更快，比雷更烈。北境第一攻击魂器，可以破开时空的极限之枪，是林飞自灵宝天取得"
+        val qualityColor = ContextCompat.getColor(
+            requireContext(),
+            ColorUtils.equipmentQualityColor(equipment.quality)
+        )
+        mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
+        mBinding.ivEquipmentIcon.setImageResource(R.drawable.ic_attack)
+        mBinding.tvEquipmentName.text = equipment.name
+        mBinding.tvEquipmentName.setTextColor(qualityColor)
+        mBinding.tvBasic.text = equipment.basicDesc
+        mBinding.tvExtra.text = equipment.extraDesc
+        mBinding.tvDescContent.text = "比电更快，比雷更烈。北境第一攻击魂器，可以破开时空的极限之枪，是林飞自灵宝天取得"
     }
 
     override fun layoutParamsWidth(): Int {

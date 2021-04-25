@@ -2,65 +2,69 @@ package com.june.northland.feature.character
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
-import android.view.WindowManager
+import android.view.*
 import androidx.appcompat.widget.AppCompatTextView
 import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.dialog.ChoiceDialog
 import com.june.northland.base.ext.click
-import kotlinx.android.synthetic.main.fragment_character_potential.*
+import com.june.northland.databinding.FragmentCharacterPotentialBinding
 import kotlin.math.abs
 
-class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
+class CharacterPotentialFragment : BaseDialogFragment<FragmentCharacterPotentialBinding>(),
+    View.OnClickListener {
 
     private var mPotential = 1000
     private var mSelectedType = 0 // 0-attack 1-defense 2-health
     private var mSelectedView: AppCompatTextView? = null
 
-    override fun getLayoutResId(): Int = R.layout.fragment_character_potential
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentCharacterPotentialBinding {
+        return FragmentCharacterPotentialBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        tvAttackTitle.click {
+        mBinding.tvAttackTitle.click {
             if (mSelectedType == 0) {
                 return@click
             }
             mSelectedType = 0
-            vAttackSelected.visibility = View.VISIBLE
-            vDefenseSelected.visibility = View.INVISIBLE
-            vHealthSelected.visibility = View.INVISIBLE
-            mSelectedView = tvAttackChange
+            mBinding.vAttackSelected.visibility = View.VISIBLE
+            mBinding.vDefenseSelected.visibility = View.INVISIBLE
+            mBinding.vHealthSelected.visibility = View.INVISIBLE
+            mSelectedView = mBinding.tvAttackChange
         }
-        tvDefenseTitle.click {
+        mBinding.tvDefenseTitle.click {
             if (mSelectedType == 1) {
                 return@click
             }
             mSelectedType = 1
-            vAttackSelected.visibility = View.INVISIBLE
-            vDefenseSelected.visibility = View.VISIBLE
-            vHealthSelected.visibility = View.INVISIBLE
-            mSelectedView = tvDefenseChange
+            mBinding.vAttackSelected.visibility = View.INVISIBLE
+            mBinding.vDefenseSelected.visibility = View.VISIBLE
+            mBinding.vHealthSelected.visibility = View.INVISIBLE
+            mSelectedView = mBinding.tvDefenseChange
         }
-        tvHealthTitle.click {
+        mBinding.tvHealthTitle.click {
             if (mSelectedType == 2) {
                 return@click
             }
             mSelectedType = 2
-            vAttackSelected.visibility = View.INVISIBLE
-            vDefenseSelected.visibility = View.INVISIBLE
-            vHealthSelected.visibility = View.VISIBLE
-            mSelectedView = tvHealthChange
+            mBinding.vAttackSelected.visibility = View.INVISIBLE
+            mBinding.vDefenseSelected.visibility = View.INVISIBLE
+            mBinding.vHealthSelected.visibility = View.VISIBLE
+            mSelectedView = mBinding.tvHealthChange
         }
 
-        tvAddHundred.setOnClickListener(this)
-        tvSubHundred.setOnClickListener(this)
-        tvAddTen.setOnClickListener(this)
-        tvSubTen.setOnClickListener(this)
-        tvAddOne.setOnClickListener(this)
-        tvSubOne.setOnClickListener(this)
+        mBinding.tvAddHundred.setOnClickListener(this)
+        mBinding.tvSubHundred.setOnClickListener(this)
+        mBinding.tvAddTen.setOnClickListener(this)
+        mBinding.tvSubTen.setOnClickListener(this)
+        mBinding.tvAddOne.setOnClickListener(this)
+        mBinding.tvSubOne.setOnClickListener(this)
 
-        tvSure.click {
+        mBinding.tvSure.click {
             val choiceDialog = ChoiceDialog(requireActivity())
             choiceDialog.setChoiceTitle("提示")
             choiceDialog.setChoiceContent("当前花费1000潜力点，确定继续?")
@@ -70,23 +74,23 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
             })
             choiceDialog.show()
         }
-        tvCancel.click { dismiss() }
+        mBinding.tvCancel.click { dismiss() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tvPotentialTitle.text = "当前潜力点："
-        tvPotential.text = mPotential.toString()
+        mBinding.tvPotentialTitle.text = "当前潜力点："
+        mBinding.tvPotential.text = mPotential.toString()
 
-        tvAttack.text = "500"
-        tvDefense.text = "300"
-        tvHealth.text = "800"
+        mBinding.tvAttack.text = "500"
+        mBinding.tvDefense.text = "300"
+        mBinding.tvHealth.text = "800"
 
-        tvAttackChange.tag = 0
-        tvDefenseChange.tag = 0
-        tvHealthChange.tag = 0
+        mBinding.tvAttackChange.tag = 0
+        mBinding.tvDefenseChange.tag = 0
+        mBinding.tvHealthChange.tag = 0
 
-        mSelectedView = tvAttackChange
+        mSelectedView = mBinding.tvAttackChange
     }
 
     override fun onClick(v: View) {
@@ -125,7 +129,7 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
             mSelectedView?.tag = result
             mSelectedView?.text = result.toString()
         }
-        tvPotential.text = mPotential.toString()
+        mBinding.tvPotential.text = mPotential.toString()
 
         val resultPoint = (mSelectedView?.tag ?: 0) as Int
         mSelectedView?.visibility = if (resultPoint > 0) {
@@ -137,7 +141,7 @@ class CharacterPotentialFragment : BaseDialogFragment(), View.OnClickListener {
 
     private fun requestPotential() {
         showLoading()
-        tvAttackTitle.postDelayed({
+        mBinding.tvAttackTitle.postDelayed({
             hideLoading()
             dismiss()
         }, 1000)

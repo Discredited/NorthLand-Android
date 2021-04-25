@@ -4,9 +4,13 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
+import androidx.viewbinding.ViewBinding
 import com.june.northland.base.dialog.LoadingDialog
 
-abstract class BaseDialogFragment : DialogFragment() {
+abstract class BaseDialogFragment<V : ViewBinding> : DialogFragment() {
+
+    private var _binding: V? = null
+    protected val mBinding get() = _binding!!
 
     private var mLoadingDialog: LoadingDialog? = null
 
@@ -15,7 +19,8 @@ abstract class BaseDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(getLayoutResId(), container, false)
+        _binding = viewBinding(inflater, container)
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,7 +66,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         }
     }
 
-    abstract fun getLayoutResId(): Int
+    protected abstract fun viewBinding(inflater: LayoutInflater, container: ViewGroup?): V
 
     abstract fun initView()
 

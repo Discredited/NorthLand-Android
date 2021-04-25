@@ -1,27 +1,35 @@
 package com.june.northland.feature.login.start.announcement
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.WindowManager
-import com.june.northland.R
 import com.june.northland.base.component.BaseDialogFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager
-import kotlinx.android.synthetic.main.fragment_dialog_announcement.*
+import com.june.northland.databinding.FragmentDialogAnnouncementBinding
 
-class AnnouncementFragment : BaseDialogFragment() {
+class AnnouncementFragment : BaseDialogFragment<FragmentDialogAnnouncementBinding>() {
 
     private val mAdapter = AnnouncementAdapter()
 
-    override fun getLayoutResId(): Int = R.layout.fragment_dialog_announcement
+    override fun viewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentDialogAnnouncementBinding {
+        return FragmentDialogAnnouncementBinding.inflate(layoutInflater, container, false)
+    }
 
     override fun initView() {
-        rvAnnouncement.setLinearManager()
-        rvAnnouncement.adapter = mAdapter
-        rvAnnouncement.setHasFixedSize(true)
-        rvAnnouncement.addLinearItemDecoration()
+        mBinding.rvAnnouncement.apply {
+            setLinearManager()
+            adapter = mAdapter
+            setHasFixedSize(true)
+            addLinearItemDecoration()
+        }
 
-        btSure.click { dismiss() }
+        mBinding.btSure.click { dismiss() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -3,6 +3,7 @@ package com.june.northland.feature.character.widget
 import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -11,17 +12,20 @@ import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.databinding.WidgetCharacterDisplayLayoutBinding
 import com.june.northland.feature.character.CharacterVo
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentInfoFragment
 import com.june.northland.feature.equipment.EquipmentVo
 import com.june.northland.feature.equipment.detail.EquipmentBuildFragment
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.widget_character_display_layout.view.*
 
 class CharacterDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
+
+    private val mBinding: WidgetCharacterDisplayLayoutBinding =
+        WidgetCharacterDisplayLayoutBinding.inflate(LayoutInflater.from(context), this)
 
     private var mCharacter: CharacterVo? = null
     private var mWeapon: EquipmentVo? = null
@@ -37,19 +41,19 @@ class CharacterDisplayView @JvmOverloads constructor(
         val view: AppCompatImageView? = when (equipment.part) {
             1 -> {
                 mWeapon = equipment
-                ivCharacterWeapon
+                mBinding.ivCharacterWeapon
             }
             2 -> {
                 mArmor = equipment
-                ivCharacterArmor
+                mBinding.ivCharacterArmor
             }
             3 -> {
                 mShoes = equipment
-                ivCharacterShoes
+                mBinding.ivCharacterShoes
             }
             4 -> {
                 mJewelry = equipment
-                ivCharacterJewelry
+                mBinding.ivCharacterJewelry
             }
             else -> null
         }
@@ -57,7 +61,8 @@ class CharacterDisplayView @JvmOverloads constructor(
     }
 
     private fun setEquipment(view: AppCompatImageView?, equipment: EquipmentVo?) {
-        val quality = ColorUtils.equipmentQualityColor(equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL)
+        val quality =
+            ColorUtils.equipmentQualityColor(equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL)
         val qualityColor = ContextCompat.getColor(context, quality)
         view?.setDrawable(strokeColor = qualityColor)
         equipment?.let {
@@ -74,22 +79,22 @@ class CharacterDisplayView @JvmOverloads constructor(
         jewelry: EquipmentVo? = null
     ) {
         mCharacter = character
-        ivCharacterAvatar?.setDrawable(strokeColor = powerColor)
+        mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
 
         mWeapon = weapon
         mArmor = armor
         mShoes = shoes
         mJewelry = jewelry
 
-        setEquipment(ivCharacterWeapon, weapon)
-        setEquipment(ivCharacterArmor, armor)
-        setEquipment(ivCharacterShoes, shoes)
-        setEquipment(ivCharacterJewelry, jewelry)
+        setEquipment(mBinding.ivCharacterWeapon, weapon)
+        setEquipment(mBinding.ivCharacterArmor, armor)
+        setEquipment(mBinding.ivCharacterShoes, shoes)
+        setEquipment(mBinding.ivCharacterJewelry, jewelry)
     }
 
     fun equipmentClick() {
         if (context is Activity) {
-            ivCharacterWeapon?.click {
+            mBinding.ivCharacterWeapon.click {
                 mWeapon?.let {
                     equipmentInfo(it.id)
                 }
@@ -97,7 +102,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentBuild(EquipmentHelper.PART_WEAPON)
                 }
             }
-            ivCharacterArmor?.click {
+            mBinding.ivCharacterArmor.click {
                 mArmor?.let {
                     equipmentInfo(it.id)
                 }
@@ -105,7 +110,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentBuild(EquipmentHelper.PART_ARMOR)
                 }
             }
-            ivCharacterShoes?.click {
+            mBinding.ivCharacterShoes.click {
                 mShoes?.let {
                     equipmentInfo(it.id)
                 }
@@ -113,7 +118,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentBuild(EquipmentHelper.PART_SHOES)
                 }
             }
-            ivCharacterJewelry?.click {
+            mBinding.ivCharacterJewelry.click {
                 mJewelry?.let {
                     equipmentInfo(it.id)
                 }

@@ -97,11 +97,6 @@ abstract class BaseFragment<V : ViewBinding> : Fragment() {
         }
     }
 
-    /**
-     * 获取布局资源文件ID
-     *
-     * @return
-     */
     protected abstract fun viewBinding(inflater: LayoutInflater, container: ViewGroup?): V
 
     /**

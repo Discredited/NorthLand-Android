@@ -1,60 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_80"
-    android:layout_margin="@dimen/dp_10"
-    app:cardCornerRadius="@dimen/dp_5">
+<layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/dp_80"
+        android:layout_margin="@dimen/dp_10"
+        app:cardCornerRadius="@dimen/dp_5"
+        tools:viewBindingIgnore="true">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDungeonTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_margin"
-            android:textSize="@dimen/sp_16"
-            app:layout_constraintBottom_toTopOf="@+id/vDungeonEvaluate"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="第一章-请跟我来" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <com.june.northland.feature.dungeon.widget.EvaluateView
-            android:id="@+id/vDungeonEvaluate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_margin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDungeonTitle" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDungeonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toTopOf="@+id/vDungeonEvaluate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="第一章-请跟我来" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btDungeonFight"
-            style="@style/CommonButton"
-            android:layout_width="@dimen/dp_42"
-            android:layout_height="@dimen/dp_42"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:text="@string/str_fight"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/sp_12"
-            app:cornerRadius="@dimen/dp_12"
-            app:layout_constraintBottom_toTopOf="@+id/tvDungeonCast"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.june.northland.feature.dungeon.widget.EvaluateView
+                android:id="@+id/vDungeonEvaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDungeonTitle" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDungeonCast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_text_99"
-            android:textSize="@dimen/sp_10"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btDungeonFight"
-            app:layout_constraintStart_toStartOf="@+id/btDungeonFight"
-            app:layout_constraintTop_toBottomOf="@+id/btDungeonFight"
-            tools:text="消耗:5体力" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btDungeonFight"
+                style="@style/CommonButton"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text="@string/str_fight"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_12"
+                app:cornerRadius="@dimen/dp_12"
+                app:layout_constraintBottom_toTopOf="@+id/tvDungeonCast"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDungeonCast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_99"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btDungeonFight"
+                app:layout_constraintStart_toStartOf="@+id/btDungeonFight"
+                app:layout_constraintTop_toBottomOf="@+id/btDungeonFight"
+                tools:text="消耗:5体力" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

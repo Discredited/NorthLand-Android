@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relationshipName"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_40"
-    android:gravity="center"
-    android:lines="1"
-    android:paddingStart="@dimen/dp_20"
-    android:paddingEnd="@dimen/dp_20"
-    android:textColor="@color/color_selector_selected_text_black_to_white"
-    android:textSize="@dimen/sp_16"
-    android:textStyle="bold"
-    tools:text="真假魔主" />
+<layout>
+
+    <androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relationshipName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
+        android:textColor="@color/color_selector_selected_text_black_to_white"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        tools:text="真假魔主"
+        tools:viewBindingIgnore="true" />
+</layout>

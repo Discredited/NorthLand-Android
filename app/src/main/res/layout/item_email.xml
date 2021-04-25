@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/shape_rect_realm_radius_2"
-    android:orientation="vertical"
-    android:padding="@dimen/dp_10">
+<layout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvEmailTitle"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:lines="1"
-        android:maxWidth="@dimen/dp_240"
-        android:textColor="@color/color_text_title"
-        android:textSize="@dimen/sp_18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="邮件标题邮件标题邮件标题邮件标题" />
+        android:background="@drawable/shape_rect_realm_radius_2"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        tools:viewBindingIgnore="true">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvEmailContent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:textColor="@color/color_text_content"
-        android:textSize="@dimen/sp_14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle"
-        tools:text="邮件内容:玩家可以在发邮件界面，填写收信人、标题和内容。如果想清除内容，可以点击“初始化”按钮。" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="@dimen/dp_240"
+            android:textColor="@color/color_text_title"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="邮件标题邮件标题邮件标题邮件标题" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmailContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_text_content"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle"
+            tools:text="邮件内容:玩家可以在发邮件界面，填写收信人、标题和内容。如果想清除内容，可以点击“初始化”按钮。" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
