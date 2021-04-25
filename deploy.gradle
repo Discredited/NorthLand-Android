@@ -1,0 +1,39 @@
+// 基本属性和依赖配置文件
+ext {
+    androidConfig = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+}
+
+static def androidxBasicDependencies(DependencyHandler dependencyHandler) {
+    dependencyHandler.implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.32'
+    dependencyHandler.implementation 'androidx.core:core-ktx:1.3.2'
+    dependencyHandler.implementation 'androidx.appcompat:appcompat:1.2.0'
+    dependencyHandler.implementation 'com.google.android.material:material:1.2.1'
+    dependencyHandler.implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+}
+
+ext.androidxBasicDependencies = this.&androidxBasicDependencies
+
+/**
+ * Junit4测试依赖
+ * 包含：
+ *     junit
+ *     junit.ext
+ *     espresso-core
+ *
+ * @param dependencyHandler
+ * @return
+ */
+static def junitDependencies(DependencyHandler dependencyHandler) {
+    dependencyHandler.testImplementation 'junit:junit:4.13.2'
+    dependencyHandler.androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    dependencyHandler.androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+ext.junitDependencies = this.&junitDependencies
