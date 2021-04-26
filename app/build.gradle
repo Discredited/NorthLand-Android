@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 android {
@@ -39,11 +38,6 @@ android {
         viewBinding = true
         dataBinding = true
     }
-
-    //使用Kotlin实验特性
-    androidExtensions {
-        experimental = true
-    }
 }
 
 dependencies {
@@ -57,6 +51,8 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.2.5'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.recyclerview:recyclerview-selection:1.1.0-rc03'
+
+    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'

@@ -1,13 +1,12 @@
 package com.june.northland.feature.equipment
 
+import android.os.Parcel
 import android.os.Parcelable
 import com.june.northland.R
 import com.june.northland.common.PropertyHelper
 import com.june.northland.feature.equipment.strengthen.StrengthAdditionVo
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-class EquipmentVo(
+data class EquipmentVo(
     val coverIcon: Int = R.drawable.ic_attack,
     val name: String = "一点黛眉刀",
     var value: Int = 100,
@@ -23,7 +22,51 @@ class EquipmentVo(
     val strengthenAdditions: MutableList<StrengthAdditionVo> = mutableListOf()
 ) : Parcelable {
 
+    constructor(parcel: Parcel) : this(
+        parcel.readInt(),
+        parcel.readString() ?: "",
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString() ?: "",
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readInt(),
+        parcel.readInt(),
+        //parcel.readParcelableList(mutableListOf(),StrengthAdditionVo::class.java.classLoader)
+    )
+
     fun enableStrength(): Boolean = strengthen < strengthenMax
 
     fun isQualityMax() = quality >= 5
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(coverIcon)
+        parcel.writeString(name)
+        parcel.writeInt(value)
+        parcel.writeInt(part)
+        parcel.writeString(id)
+        parcel.writeInt(quality)
+        parcel.writeInt(valueUpgrade)
+        parcel.writeInt(property)
+        parcel.writeString(basicDesc)
+        parcel.writeString(extraDesc.toString())
+        parcel.writeInt(strengthenMax)
+        parcel.writeInt(strengthen)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<EquipmentVo> {
+        override fun createFromParcel(parcel: Parcel): EquipmentVo {
+            return EquipmentVo(parcel)
+        }
+
+        override fun newArray(size: Int): Array<EquipmentVo?> {
+            return arrayOfNulls(size)
+        }
+    }
 }

@@ -1,19 +1,21 @@
 package com.june.northland.feature.store
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.june.northland.R
-import kotlinx.android.synthetic.main.activity_store.*
+import com.june.northland.base.component.BaseActivity
+import com.june.northland.databinding.ActivityStoreBinding
 
-class StoreActivity : AppCompatActivity() {
+class StoreActivity : BaseActivity<ActivityStoreBinding>() {
 
     private lateinit var mAdapter: StoreAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_store)
+    override fun viewBinding(): ActivityStoreBinding {
+        return ActivityStoreBinding.inflate(layoutInflater)
+    }
 
+    override fun initView() {
         mAdapter = StoreAdapter(supportFragmentManager, lifecycle)
-        vpStore.adapter = mAdapter
+        mBinding.vpStore.adapter = mAdapter
+    }
+
+    override fun loadData() {
     }
 }

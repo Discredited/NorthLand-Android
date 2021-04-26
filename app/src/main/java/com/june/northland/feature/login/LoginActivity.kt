@@ -9,7 +9,6 @@ import com.june.northland.base.ext.click
 import com.june.northland.databinding.ActivityLoginBinding
 import com.june.northland.utils.Toast
 import com.june.northland.utils.cache.UserDataCache
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
@@ -18,13 +17,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     override fun initView() {
-        btLogin.click {
-            val account = etAccount.text.toString()
+        mBinding.btLogin.click {
+            val account = mBinding.etAccount.text.toString()
             if (account.isEmpty()) {
                 Toast.toastShort(getString(R.string.prompt_input_account))
                 return@click
             }
-            val password = etPassword.text.toString()
+            val password = mBinding.etPassword.text.toString()
             if (password.isEmpty()) {
                 Toast.toastShort(getString(R.string.prompt_input_password))
                 return@click
@@ -39,7 +38,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     private fun requestLogin(account: String, password: String) {
         showLoading(false)
 
-        btLogin.postDelayed({
+        mBinding.btLogin.postDelayed({
             hideLoading()
 
             UserDataCache.getInstance().saveToken("1111")

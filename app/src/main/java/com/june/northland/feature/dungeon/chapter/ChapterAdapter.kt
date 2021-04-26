@@ -2,21 +2,25 @@ package com.june.northland.feature.dungeon.chapter
 
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
-import kotlinx.android.synthetic.main.item_chapter.view.*
+import com.june.northland.databinding.ItemChapterBinding
 
-class ChapterAdapter : BaseQuickAdapter<ChapterVo, BaseViewHolder>(R.layout.item_chapter) {
+class ChapterAdapter :
+    BaseQuickAdapter<ChapterVo, BaseDataBindingHolder<ItemChapterBinding>>(R.layout.item_chapter) {
 
-    override fun convert(holder: BaseViewHolder, item: ChapterVo) {
-        holder.itemView.ivChapterCover.setImageResource(item.icon)
-        holder.itemView.tvChapterName.text = item.title
-        holder.itemView.tvChapterSubtitle.text = item.subtitle
-        holder.itemView.tvChapterProcess.text = item.progress
-        if (item.isUnlock) {
-            holder.itemView.tvChapterMask.visibility = View.GONE
-        } else {
-            holder.itemView.tvChapterMask.visibility = View.VISIBLE
+    override fun convert(holder: BaseDataBindingHolder<ItemChapterBinding>, item: ChapterVo) {
+        holder.dataBinding?.apply {
+            ivChapterCover.setImageResource(item.icon)
+            tvChapterName.text = item.title
+            tvChapterSubtitle.text = item.subtitle
+            tvChapterProcess.text = item.progress
+
+            if (item.isUnlock) {
+                tvChapterMask.visibility = View.GONE
+            } else {
+                tvChapterMask.visibility = View.VISIBLE
+            }
         }
     }
 }

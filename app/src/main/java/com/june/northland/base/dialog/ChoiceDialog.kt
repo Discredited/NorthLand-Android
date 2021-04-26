@@ -3,13 +3,15 @@ package com.june.northland.base.dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDialog
+import android.view.LayoutInflater
 import com.june.northland.R
+import com.june.northland.base.component.BaseDialog
 import com.june.northland.base.ext.click
-import kotlinx.android.synthetic.main.dialog_choice.*
+import com.june.northland.databinding.DialogChoiceBinding
 import timber.log.Timber
 
-class ChoiceDialog(context: Context, theme: Int = 0) : AppCompatDialog(context, theme) {
+class ChoiceDialog(context: Context, theme: Int = 0) :
+    BaseDialog<DialogChoiceBinding>(context, theme) {
 
     private var mTitle: CharSequence? = null
     private var mContent: CharSequence? = null
@@ -23,19 +25,23 @@ class ChoiceDialog(context: Context, theme: Int = 0) : AppCompatDialog(context, 
 
         Timber.w("ChoiceDialog -- onCreate")
 
-        btSure.click { mSureClickListener?.onClick(this, it.id) }
-        btCancel.click {
+        mBinding.btSure.click { mSureClickListener?.onClick(this, it.id) }
+        mBinding.btCancel.click {
             mCancelClickListener?.onClick(this, it.id)
             dismiss()
         }
+    }
+
+    override fun viewBinding(inflater: LayoutInflater): DialogChoiceBinding {
+        return DialogChoiceBinding.inflate(layoutInflater)
     }
 
     override fun show() {
         Timber.w("ChoiceDialog -- show before")
         super.show()
         Timber.w("ChoiceDialog -- show after")
-        tvTitle.text = mTitle
-        tvContent.text = mContent
+        mBinding.tvTitle.text = mTitle
+        mBinding.tvContent.text = mContent
     }
 
     fun setChoiceTitle(title: CharSequence) {

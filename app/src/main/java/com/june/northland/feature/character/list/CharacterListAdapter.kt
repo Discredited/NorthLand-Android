@@ -2,32 +2,35 @@ package com.june.northland.feature.character.list
 
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
 import com.june.northland.base.ext.setDrawable
+import com.june.northland.databinding.ItemCharacterBinding
 import com.june.northland.feature.character.CharacterVo
 import com.june.northland.utils.ColorUtils
-import kotlinx.android.synthetic.main.item_character.view.*
 
-class CharacterListAdapter : BaseQuickAdapter<CharacterVo, BaseViewHolder>(R.layout.item_character) {
+class CharacterListAdapter :
+    BaseQuickAdapter<CharacterVo, BaseDataBindingHolder<ItemCharacterBinding>>(R.layout.item_character) {
 
-    override fun convert(holder: BaseViewHolder, item: CharacterVo) {
+    override fun convert(holder: BaseDataBindingHolder<ItemCharacterBinding>, item: CharacterVo) {
         val realm = holder.layoutPosition % 10
-        val realmColor = ContextCompat.getColor(holder.itemView.context, ColorUtils.getPowerColor(realm))
-        holder.itemView.ivAvatar.setDrawable(strokeColor = realmColor)
-        if (holder.layoutPosition < 6) {
-            holder.itemView.tvLineUp.text = "已上阵"
-        } else {
-            holder.itemView.tvLineUp.text = ""
+        val realmColor =
+            ContextCompat.getColor(holder.itemView.context, ColorUtils.getPowerColor(realm))
+        holder.dataBinding?.apply {
+            ivAvatar.setDrawable(strokeColor = realmColor)
+            if (holder.layoutPosition < 6) {
+                tvLineUp.text = "已上阵"
+            } else {
+                tvLineUp.text = ""
+            }
+            ivAvatar.setImageResource(item.avatarIcon)
+            tvName.text = item.name
+            tvName.setTextColor(realmColor)
+            tvLevel.text = "Lv.${holder.layoutPosition}"
+            tvHealth.text = "${holder.layoutPosition * 33}"
+            tvSpeed.text = "${holder.layoutPosition * 3}"
+            tvAttack.text = "${holder.layoutPosition * 23}"
+            tvDefense.text = "${holder.layoutPosition * 13}"
         }
-
-        holder.itemView.ivAvatar.setImageResource(item.avatarIcon)
-        holder.itemView.tvName.text = item.name
-        holder.itemView.tvName.setTextColor(realmColor)
-        holder.itemView.tvLevel.text = "Lv.${holder.layoutPosition}"
-        holder.itemView.tvHealth.text = "${holder.layoutPosition * 33}"
-        holder.itemView.tvSpeed.text = "${holder.layoutPosition * 3}"
-        holder.itemView.tvAttack.text = "${holder.layoutPosition * 23}"
-        holder.itemView.tvDefense.text = "${holder.layoutPosition * 13}"
     }
 }

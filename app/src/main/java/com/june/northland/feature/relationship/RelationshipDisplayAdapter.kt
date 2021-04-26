@@ -1,14 +1,20 @@
 package com.june.northland.feature.relationship
 
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
-import kotlinx.android.synthetic.main.item_relationship_display.view.*
+import com.june.northland.databinding.ItemRelationshipDisplayBinding
 
 class RelationshipDisplayAdapter :
-    BaseQuickAdapter<RelationshipVo, BaseViewHolder>(R.layout.item_relationship_display) {
-    override fun convert(holder: BaseViewHolder, item: RelationshipVo) {
-        holder.itemView.relationshipName.text = item.name
-        holder.itemView.relationshipName.isSelected = item.isActive
+    BaseQuickAdapter<RelationshipVo, BaseDataBindingHolder<ItemRelationshipDisplayBinding>>(R.layout.item_relationship_display) {
+
+    override fun convert(
+        holder: BaseDataBindingHolder<ItemRelationshipDisplayBinding>,
+        item: RelationshipVo
+    ) {
+        holder.dataBinding?.apply {
+            relationshipName.text = item.name
+            relationshipName.isSelected = item.isActive
+        }
     }
 }

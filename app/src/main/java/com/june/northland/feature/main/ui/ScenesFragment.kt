@@ -87,7 +87,7 @@ class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
             setHasFixedSize(true)
         }
 
-        mBinding.vPlayerSection.getAvatarView()?.click {
+        mBinding.vPlayerSection.getAvatarView().click {
             activity?.let {
                 if (it is MainActivity) {
                     it.openDrawLayout()

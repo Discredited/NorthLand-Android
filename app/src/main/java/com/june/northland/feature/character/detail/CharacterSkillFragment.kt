@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.june.northland.base.component.BaseFragment
 import com.june.northland.databinding.FragmentCharacterSkillBinding
-import kotlinx.android.synthetic.main.fragment_character_skill.*
 
 /**
  * 技能
@@ -24,8 +23,8 @@ class CharacterSkillFragment : BaseFragment<FragmentCharacterSkillBinding>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        vSkillPassive.setSkill()
-        vSkillInitiative.setSkill()
+        mBinding.vSkillPassive.setSkill()
+        mBinding.vSkillInitiative.setSkill()
     }
 
     companion object {
