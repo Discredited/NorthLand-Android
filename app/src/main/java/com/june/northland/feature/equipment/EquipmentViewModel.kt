@@ -31,7 +31,7 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
             extraDesc = extraDesc
         )
 
-        equipment.strengthenAdditions.addAll(
+        equipment.strengthenAdditions?.addAll(
             mutableListOf(
                 StrengthAdditionVo("攻击+5%", 0, "激活", true),
                 StrengthAdditionVo("暴击+5%", -1, "未激活", false),

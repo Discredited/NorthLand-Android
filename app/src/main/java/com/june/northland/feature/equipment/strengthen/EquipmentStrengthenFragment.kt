@@ -59,7 +59,9 @@ class EquipmentStrengthenFragment : BaseFragment<FragmentEquipmentStrengthenBind
         mBinding.tvStrengthenValue.text = "当前强化属性:攻击力+${equipment.strengthen * equipment.valueUpgrade}"
         mBinding.tvStrengthenNextValue.text = "下次强化属性:攻击力+${equipment.valueUpgrade}"
 
-        mBinding.vStrengthenAddition.initAddition(equipment.strengthenAdditions)
+        equipment.strengthenAdditions?.let {
+            mBinding.vStrengthenAddition.initAddition(it)
+        }
     }
 
     //强化
@@ -91,8 +93,8 @@ class EquipmentStrengthenFragment : BaseFragment<FragmentEquipmentStrengthenBind
 
     //激活强化加成激活
     private fun additionActive(position: Int) {
-        mEquipmentVo?.let {
-            val addition = it.strengthenAdditions[position]
+        mEquipmentVo?.strengthenAdditions?.let {
+            val addition = it[position]
             addition.status = 1
             addition.statusString = getString(R.string.str_activated)
             addition.statusEnable = false

@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/view_toolbar_layout"
-        android:id="@+id/i_toolbar"/>
+    <include
+        android:id="@+id/i_toolbar"
+        layout="@layout/view_toolbar_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEmail"
@@ -17,6 +18,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/i_toolbar"
         tools:listitem="@layout/item_email" />
 </androidx.constraintlayout.widget.ConstraintLayout>

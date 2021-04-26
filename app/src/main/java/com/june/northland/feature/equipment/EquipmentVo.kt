@@ -19,8 +19,12 @@ data class EquipmentVo(
     val extraDesc: CharSequence = "",
     val strengthenMax: Int = 100,
     var strengthen: Int = 0,
-    val strengthenAdditions: MutableList<StrengthAdditionVo> = mutableListOf()
+    val strengthenAdditions: MutableList<StrengthAdditionVo>? = mutableListOf()
 ) : Parcelable {
+
+    fun enableStrength(): Boolean = strengthen < strengthenMax
+
+    fun isQualityMax() = quality >= 5
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -35,12 +39,11 @@ data class EquipmentVo(
         parcel.readString() ?: "",
         parcel.readInt(),
         parcel.readInt(),
-        //parcel.readParcelableList(mutableListOf(),StrengthAdditionVo::class.java.classLoader)
+        arrayListOf<StrengthAdditionVo>().apply {
+            parcel.readArrayList(StrengthAdditionVo::class.java.classLoader)
+        }
     )
 
-    fun enableStrength(): Boolean = strengthen < strengthenMax
-
-    fun isQualityMax() = quality >= 5
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(coverIcon)
         parcel.writeString(name)
@@ -54,6 +57,7 @@ data class EquipmentVo(
         parcel.writeString(extraDesc.toString())
         parcel.writeInt(strengthenMax)
         parcel.writeInt(strengthen)
+        parcel.writeList(strengthenAdditions)
     }
 
     override fun describeContents(): Int {
