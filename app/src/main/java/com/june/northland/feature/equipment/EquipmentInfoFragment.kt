@@ -7,7 +7,7 @@ import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.june.northland.R
-import com.june.northland.base.component.BaseDialogFragment
+import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setDrawable
 import com.june.northland.databinding.FragmentDialogEquipmentInfoBinding

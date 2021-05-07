@@ -10,7 +10,7 @@ import com.blankj.utilcode.util.ZipUtils
 import com.june.network.download.DownloadHelper
 import com.june.network.download.ProgressListener
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.common.FilePathHelper
 import com.june.northland.databinding.FragmentResourceUpdateBinding
 import kotlinx.coroutines.Dispatchers

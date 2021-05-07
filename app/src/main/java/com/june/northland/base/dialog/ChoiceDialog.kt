@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.june.base.basic.part.BaseDialog
 import com.june.northland.R
-import com.june.northland.base.component.BaseDialog
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.DialogChoiceBinding
 import timber.log.Timber

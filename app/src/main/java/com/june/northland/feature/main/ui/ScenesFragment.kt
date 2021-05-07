@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick

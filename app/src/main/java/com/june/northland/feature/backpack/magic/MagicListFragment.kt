@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.setLinearManager

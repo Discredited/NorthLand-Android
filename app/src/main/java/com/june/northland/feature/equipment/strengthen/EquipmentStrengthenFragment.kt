@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentEquipmentStrengthenBinding
 import com.june.northland.feature.equipment.EquipmentViewModel

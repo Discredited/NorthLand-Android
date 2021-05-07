@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.loadAvatar
 import com.june.northland.databinding.FragmentMainSettingBinding

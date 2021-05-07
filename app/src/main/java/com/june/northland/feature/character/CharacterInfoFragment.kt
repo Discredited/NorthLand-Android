@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.june.northland.R
-import com.june.northland.base.component.BaseDialogFragment
+import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentDialogCharacterInfoBinding
 import com.june.northland.feature.magic.MagicVo

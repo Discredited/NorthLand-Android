@@ -2,7 +2,7 @@ package com.june.northland.feature.character.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.databinding.FragmentCharacterTaoismBinding
 
 /**

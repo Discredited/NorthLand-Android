@@ -13,7 +13,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
-import com.june.northland.base.component.BaseFragment
+import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity

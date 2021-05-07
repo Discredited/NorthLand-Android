@@ -5,7 +5,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
-import com.june.northland.base.component.BaseDialogFragment
+import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentDialogBattleResultFailBinding
 
