@@ -1,8 +1,8 @@
 package com.june.northland.feature.store
 
 import android.view.View
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
 import com.june.northland.databinding.ActivityRecruitResultBinding
 import me.samlss.bloom.Bloom
 import me.samlss.bloom.effector.BloomEffector

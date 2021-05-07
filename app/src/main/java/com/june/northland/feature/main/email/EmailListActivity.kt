@@ -1,8 +1,8 @@
 package com.june.northland.feature.main.email
 
-import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.setLinearManager
+import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.setLinearManager
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityEmailListBinding
 
 class EmailListActivity : BaseActivity<ActivityEmailListBinding>() {

@@ -2,12 +2,12 @@ package com.june.northland.feature.equipment.choose
 
 import android.app.Activity
 import android.content.Intent
+import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.click
+import com.june.base.basic.ext.setLinearManager
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.ActivityEquipmentChooseBinding
 import com.june.northland.feature.equipment.EquipmentHelper
 import com.june.northland.feature.equipment.EquipmentVo

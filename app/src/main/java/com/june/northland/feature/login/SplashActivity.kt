@@ -2,7 +2,7 @@ package com.june.northland.feature.login
 
 import android.animation.ObjectAnimator
 import android.content.Intent
-import com.june.northland.base.component.BaseActivity
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivitySplashBinding
 import com.june.northland.feature.login.start.StartUpActivity
 

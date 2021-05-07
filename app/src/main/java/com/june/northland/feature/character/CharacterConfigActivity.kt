@@ -2,7 +2,7 @@ package com.june.northland.feature.character
 
 import android.text.SpannableStringBuilder
 import com.blankj.utilcode.util.SpanUtils
-import com.june.northland.base.component.BaseActivity
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityCharacterConfigBinding
 
 class CharacterConfigActivity : BaseActivity<ActivityCharacterConfigBinding>() {

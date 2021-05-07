@@ -2,9 +2,9 @@ package com.june.northland.feature.dungeon.plot
 
 import android.content.Intent
 import android.view.View
+import com.june.base.basic.ext.click
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.click
 import com.june.northland.databinding.ActivityPlotDisplayBinding
 import com.june.northland.feature.dungeon.DungeonBattleActivity
 import com.june.northland.widget.text.VerbatimListener

@@ -4,6 +4,7 @@ apply from: 'deploy.gradle'
 buildscript {
     ext.kotlin_version = "1.4.32"
     repositories {
+        mavenLocal()
         google()
         jcenter()
         mavenCentral()
@@ -20,6 +21,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
         google()
         jcenter()
         mavenCentral()

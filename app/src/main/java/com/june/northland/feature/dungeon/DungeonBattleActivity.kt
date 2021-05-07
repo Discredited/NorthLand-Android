@@ -1,8 +1,8 @@
 package com.june.northland.feature.dungeon
 
 import androidx.activity.viewModels
-import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.click
+import com.june.base.basic.ext.click
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityPlotBattleBinding
 import com.june.northland.feature.battle.BattleProcedureListener
 import com.june.northland.feature.battle.BattleResultFailFragment

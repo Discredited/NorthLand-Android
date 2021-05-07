@@ -1,6 +1,6 @@
 package com.june.northland.feature.store
 
-import com.june.northland.base.component.BaseActivity
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityStoreBinding
 
 class StoreActivity : BaseActivity<ActivityStoreBinding>() {

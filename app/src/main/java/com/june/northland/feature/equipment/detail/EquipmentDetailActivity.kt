@@ -7,8 +7,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.setDrawable
 import com.june.northland.common.PropertyHelper
 import com.june.northland.databinding.ActivityEquipmentDetailBinding

@@ -1,10 +1,10 @@
 package com.june.northland.feature.dungeon
 
 import android.content.Intent
+import com.june.base.basic.ext.setLinearManager
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.itemChildClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.ActivityDungeonListBinding
 import com.june.northland.feature.dungeon.plot.PlotDisplayActivity
 import com.june.northland.widget.res.ResourceVo

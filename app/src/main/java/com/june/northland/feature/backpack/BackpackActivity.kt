@@ -3,8 +3,8 @@ package com.june.northland.feature.backpack
 import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.ActivityBackpackBinding
 import com.june.northland.feature.equipment.EquipmentViewModel

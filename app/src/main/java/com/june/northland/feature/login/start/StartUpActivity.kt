@@ -3,9 +3,9 @@ package com.june.northland.feature.login.start
 import android.text.format.DateUtils
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.june.base.basic.ext.click
+import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.component.BaseActivity
-import com.june.northland.base.ext.click
 import com.june.northland.base.ext.commitFragment
 import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
