@@ -1,4 +1,3 @@
-include ':network'
-include ':style'
 include ':app'
+include ':style'
 rootProject.name = "NorthLand"

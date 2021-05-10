@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion androidConfig.compileSdkVersion
-    buildToolsVersion androidConfig.buildToolsVersion
+    compileSdkVersion Versions.compileSDK
+    buildToolsVersion Versions.buildTools
 
     defaultConfig {
         applicationId "com.june.northland"
-        minSdkVersion androidConfig.minSdkVersion
-        targetSdkVersion androidConfig.targetSdkVersion
-        versionCode androidConfig.versionCode
-        versionName androidConfig.versionName
+        minSdkVersion Versions.minSDK
+        targetSdkVersion Versions.targetSDK
+        versionCode 1
+        versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,21 +60,21 @@ dependencies {
     rootProject.junitDependencies(dependencies)
 
     implementation('com.june.base:component:0.0.1')
+    implementation('com.june.function:network:0.0.1')
 
     implementation project(path: ':style')
-    implementation project(path: ':network')
 
-    implementation 'androidx.fragment:fragment-ktx:1.2.5'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0-rc03'
+    implementation Dependencies.fragmentKtx
+    implementation Dependencies.recyclerView
+    implementation Dependencies.recyclerViewSelection
 
     implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
 
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
 
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-    implementation 'com.blankj:utilcodex:1.30.6'
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
