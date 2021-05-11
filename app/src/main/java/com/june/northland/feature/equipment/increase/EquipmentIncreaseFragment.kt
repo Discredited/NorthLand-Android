@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.setLinearManager
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
-import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.FragmentEquipmentIncreaseBinding
 import com.june.northland.feature.equipment.EquipmentViewModel
 import com.june.northland.feature.equipment.IncreaseVo

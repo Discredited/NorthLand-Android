@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
+import com.june.base.basic.ext.click
+import com.june.base.basic.ext.setLinearManager
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.FragmentMainSceneBinding
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment

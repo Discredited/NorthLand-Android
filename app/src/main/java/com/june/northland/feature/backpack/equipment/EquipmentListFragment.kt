@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseFragment
 import com.june.northland.R
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.click
 import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.QualityHelper
 import com.june.northland.databinding.FragmentEquipmentListBinding
 import com.june.northland.feature.equipment.EquipmentHelper

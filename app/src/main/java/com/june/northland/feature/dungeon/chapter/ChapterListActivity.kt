@@ -1,11 +1,11 @@
 package com.june.northland.feature.dungeon.chapter
 
 import android.content.Intent
+import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.base.ext.addLinearItemDecoration
 import com.june.northland.base.ext.itemClick
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.ActivityChapterListBinding
 import com.june.northland.feature.dungeon.DungeonListActivity
 import com.june.northland.utils.Toast

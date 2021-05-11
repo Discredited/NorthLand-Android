@@ -1,11 +1,11 @@
 package com.june.northland.feature.taoism.arena
 
 import androidx.recyclerview.widget.RecyclerView
+import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.click
+import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.ActivityArenaListBinding
 
 /**

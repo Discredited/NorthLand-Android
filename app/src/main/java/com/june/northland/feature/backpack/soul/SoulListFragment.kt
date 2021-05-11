@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import com.june.base.basic.ext.click
+import com.june.base.basic.ext.setLinearManager
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
 import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.common.AttributeHelper
 import com.june.northland.common.QualityHelper
 import com.june.northland.databinding.FragmentSoulListBinding

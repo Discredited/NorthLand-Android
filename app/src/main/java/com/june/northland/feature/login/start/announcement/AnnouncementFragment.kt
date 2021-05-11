@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
+import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.click
+import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseDialogFragment
-import com.june.northland.base.ext.addLinearItemDecoration
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.setLinearManager
 import com.june.northland.databinding.FragmentDialogAnnouncementBinding
 
 class AnnouncementFragment : BaseDialogFragment<FragmentDialogAnnouncementBinding>() {
