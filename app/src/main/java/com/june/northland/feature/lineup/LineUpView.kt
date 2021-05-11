@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.june.northland.base.ext.setGridManager
+import com.june.base.basic.ext.setGridManager
 import com.june.northland.common.GridItemDecoration
 import timber.log.Timber
 import java.util.*

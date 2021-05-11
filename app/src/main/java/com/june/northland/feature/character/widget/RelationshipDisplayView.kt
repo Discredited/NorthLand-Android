@@ -3,7 +3,7 @@ package com.june.northland.feature.character.widget
 import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.RecyclerView
-import com.june.northland.base.ext.setGridManager
+import com.june.base.basic.ext.setGridManager
 import com.june.northland.feature.relationship.RelationshipDisplayAdapter
 import com.june.northland.feature.relationship.RelationshipVo
 

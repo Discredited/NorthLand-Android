@@ -60,9 +60,9 @@ class EquipmentBuildFragment : BaseDialogFragment<FragmentEquipmentBuildBinding>
     }
 
     private fun buildEquipment() {
-        showLoading()
+        //showLoading()
         mBinding.tvBuildTitle.postDelayed({
-            hideLoading()
+            //hideLoading()
             val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_WEAPON
             val equipment = mEquipmentViewModel.equipmentBuild(part)
             mEquipmentViewModel.mEquipmentLive.value = equipment

@@ -140,9 +140,9 @@ class CharacterPotentialFragment : BaseDialogFragment<FragmentCharacterPotential
     }
 
     private fun requestPotential() {
-        showLoading()
+        //showLoading()
         mBinding.tvAttackTitle.postDelayed({
-            hideLoading()
+            //hideLoading()
             dismiss()
         }, 1000)
     }

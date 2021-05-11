@@ -68,9 +68,9 @@ class StartEntranceFragment : BaseFragment<FragmentStartEntranceBinding>() {
     }
 
     private fun requestEntrance() {
-        showLoading(false)
+        //showLoading(false)
         mBinding.btGoIn.postDelayed({
-            hideLoading()
+            //hideLoading()
             startActivity(Intent(requireActivity(), MainActivity::class.java))
             activity?.finish()
         }, 1200)
