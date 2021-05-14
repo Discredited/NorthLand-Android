@@ -17,6 +17,7 @@ import com.june.northland.base.component.NLBaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity
+import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache
 
 class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
@@ -67,12 +68,12 @@ class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
     }
 
     private fun requestEntrance() {
-        showLoading(true)
-//        mBinding.btGoIn.postDelayed({
-//            hideLoading()
-//            startActivity(Intent(requireActivity(), MainActivity::class.java))
-//            activity?.finish()
-//        }, 5000)
+        showLoading(false)
+        mBinding.btGoIn.postDelayed({
+            hideLoading()
+            startActivity(Intent(requireActivity(), MainActivity::class.java))
+            activity?.finish()
+        }, 5000)
     }
 
     private fun getUserAccount(account: String): SpannableStringBuilder {

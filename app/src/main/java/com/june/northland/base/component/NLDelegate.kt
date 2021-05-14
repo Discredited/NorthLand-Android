@@ -1,12 +1,19 @@
 package com.june.northland.base.component
 
-import android.app.Activity
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.june.northland.R
 import com.june.northland.base.ext.click
 
-class NLDelegate(val activity: Activity) {
+class NLDelegate(val activity: AppCompatActivity) : LifecycleObserver {
+
+    init {
+        activity.lifecycle.addObserver(this)
+    }
 
     private var mLoadingView: LoadingView? = null
 
@@ -48,5 +55,10 @@ class NLDelegate(val activity: Activity) {
         if (mLoadingView?.isShowing() == true) {
             mLoadingView?.hide()
         }
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun onDestroy() {
+        mLoadingView = null
     }
 }

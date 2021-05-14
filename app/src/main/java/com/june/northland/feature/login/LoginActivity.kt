@@ -4,13 +4,13 @@ import android.app.Activity
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
+import com.june.northland.base.component.NLBaseActivity
 import com.june.northland.databinding.ActivityLoginBinding
 import com.june.northland.utils.Toast
 import com.june.northland.utils.cache.UserDataCache
 
-class LoginActivity : BaseActivity<ActivityLoginBinding>() {
+class LoginActivity : NLBaseActivity<ActivityLoginBinding>() {
 
     override fun viewBinding(): ActivityLoginBinding {
         return ActivityLoginBinding.inflate(layoutInflater)
@@ -36,10 +36,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun requestLogin(account: String, password: String) {
-        //showLoading(false)
+        showLoading(isAllowDismiss = false)
 
         mBinding.btLogin.postDelayed({
-            //hideLoading()
+            hideLoading()
 
             UserDataCache.getInstance().saveToken("1111")
             UserDataCache.getInstance().saveUserId("1111")
