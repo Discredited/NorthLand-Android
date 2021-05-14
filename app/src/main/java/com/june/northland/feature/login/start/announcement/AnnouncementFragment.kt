@@ -10,6 +10,9 @@ import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.databinding.FragmentDialogAnnouncementBinding
 
+/**
+ * 公告
+ */
 class AnnouncementFragment : BaseDialogFragment<FragmentDialogAnnouncementBinding>() {
 
     private val mAdapter = AnnouncementAdapter()

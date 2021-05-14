@@ -59,8 +59,9 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
-    implementation('com.june.base:component:0.0.1')
-    implementation('com.june.function:network:0.0.1')
+    implementation Dependencies.juneComponent
+    implementation Dependencies.juneNetwork
+    implementation Dependencies.juneLoading
 
     implementation project(path: ':style')
 

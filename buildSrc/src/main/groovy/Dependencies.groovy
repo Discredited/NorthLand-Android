@@ -66,6 +66,12 @@ interface Dependencies {
     def roomTesting = "androidx.room:room-testing:2.2.5"
     ////////////////////  Android ktx  End  ////////////////////
 
+    ////////////////////  June的三方库  Begin  ////////////////////
+    def juneVersion = "0.0.1"
+    def juneComponent = "com.june.base:component:$juneVersion"
+    def juneNetwork = "com.june.function:network:$juneVersion"
+    def juneLoading = "com.june.widget:loading:$juneVersion"
+    ////////////////////  June的三方库  End  ////////////////////
 
     ////////////////////  第三方类库  Begin  ////////////////////
     // Timber 日志

@@ -13,14 +13,13 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.northland.R
-import com.june.base.basic.part.BaseFragment
+import com.june.northland.base.component.NLBaseFragment
 import com.june.northland.base.ext.click
 import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity
-import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache
 
-class StartEntranceFragment : BaseFragment<FragmentStartEntranceBinding>() {
+class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
 
     private var mUserLogin: Boolean = false
 
@@ -68,12 +67,12 @@ class StartEntranceFragment : BaseFragment<FragmentStartEntranceBinding>() {
     }
 
     private fun requestEntrance() {
-        //showLoading(false)
-        mBinding.btGoIn.postDelayed({
-            //hideLoading()
-            startActivity(Intent(requireActivity(), MainActivity::class.java))
-            activity?.finish()
-        }, 1200)
+        showLoading(true)
+//        mBinding.btGoIn.postDelayed({
+//            hideLoading()
+//            startActivity(Intent(requireActivity(), MainActivity::class.java))
+//            activity?.finish()
+//        }, 5000)
     }
 
     private fun getUserAccount(account: String): SpannableStringBuilder {
