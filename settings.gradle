@@ -1,3 +1,4 @@
 include ':app'
 include ':style'
 rootProject.name = "NorthLand"
+include ':base:component'

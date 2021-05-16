@@ -1,4 +1,4 @@
-package com.june.northland.base.component
+package com.nl.component
 
 import androidx.viewbinding.ViewBinding
 import com.june.base.basic.part.BaseActivity

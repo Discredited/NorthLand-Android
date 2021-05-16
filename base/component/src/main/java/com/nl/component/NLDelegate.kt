@@ -1,4 +1,4 @@
-package com.june.northland.base.component
+package com.nl.component
 
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -6,10 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import com.june.northland.R
-import com.june.northland.base.ext.click
+import com.june.base.basic.ext.click
 
-class NLDelegate(val activity: AppCompatActivity) : LifecycleObserver {
+class NLDelegate(private val activity: AppCompatActivity) : LifecycleObserver {
 
     init {
         activity.lifecycle.addObserver(this)

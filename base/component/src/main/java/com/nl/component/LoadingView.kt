@@ -1,10 +1,10 @@
-package com.june.northland.base.component
+package com.nl.component
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import com.june.northland.databinding.WidgetLoadingLayoutBinding
+import com.nl.component.databinding.WidgetLoadingLayoutBinding
 
 class LoadingView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

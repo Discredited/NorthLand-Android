@@ -1,4 +1,4 @@
-package com.june.northland.base.component
+package com.nl.component
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
