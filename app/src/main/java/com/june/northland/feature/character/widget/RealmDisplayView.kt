@@ -10,7 +10,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.june.northland.R
-import com.june.northland.utils.ColorUtils
+import com.nl.component.common.ColorUtils
 
 /**
  * realm View
@@ -130,7 +130,7 @@ class RealmDisplayView @JvmOverloads constructor(
     fun setRealm(realm: Int, realmName: String) {
         mRealm = realm
         mRealmName = realmName
-        val realmColor = ColorUtils.getPowerColor(realm)
+        val realmColor = com.nl.component.common.ColorUtils.getPowerColor(realm)
         textPaint.color = ContextCompat.getColor(context, realmColor)
         invalidate()
     }

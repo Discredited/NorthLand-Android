@@ -3,7 +3,7 @@ package com.june.northland.feature.main
 import androidx.core.view.GravityCompat
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.ext.commitFragment
+import com.nl.component.ext.commitFragment
 import com.june.northland.databinding.ActivityMainBinding
 import com.june.northland.feature.main.ui.ScenesFragment
 import com.june.northland.feature.main.ui.SettingFragment

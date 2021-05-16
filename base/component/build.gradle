@@ -44,12 +44,22 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
+    implementation project(path: ':style')
+
     implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
+
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
+
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
+
+    implementation Dependencies.quickAdapter
 }
 
 apply from: rootDir.absolutePath + '/maven-push.gradle'

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.loadAvatar
+import com.nl.component.ext.click
+import com.nl.component.ext.loadAvatar
 import com.june.northland.databinding.FragmentMainSettingBinding
 
 class SettingFragment : BaseFragment<FragmentMainSettingBinding>() {

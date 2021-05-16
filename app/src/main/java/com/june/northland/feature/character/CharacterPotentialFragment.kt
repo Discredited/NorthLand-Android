@@ -6,8 +6,8 @@ import android.view.*
 import androidx.appcompat.widget.AppCompatTextView
 import com.june.northland.R
 import com.june.base.basic.part.BaseDialogFragment
-import com.june.northland.base.dialog.ChoiceDialog
-import com.june.northland.base.ext.click
+import com.nl.component.dialog.ChoiceDialog
+import com.nl.component.ext.click
 import com.june.northland.databinding.FragmentCharacterPotentialBinding
 import kotlin.math.abs
 

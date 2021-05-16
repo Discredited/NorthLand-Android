@@ -100,5 +100,9 @@ interface Dependencies {
     // RxJava2
     def rxJava = "io.reactivex.rxjava2:rxjava:2.2.14"
     def rxJavaAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    // BaseRecyclerViewAdapterHelper
+    def quickAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
+
     ////////////////////  第三方类库  End  ////////////////////
 }

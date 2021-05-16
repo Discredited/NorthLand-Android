@@ -12,7 +12,7 @@ import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
-import com.june.northland.base.ext.itemClick
+import com.nl.component.ext.itemClick
 import com.june.northland.databinding.FragmentMainSceneBinding
 import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.character.CharacterInfoFragment

@@ -7,11 +7,11 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import com.june.northland.R
-import com.june.northland.base.ext.loadImage
-import com.june.northland.base.ext.setDrawable
+import com.nl.component.ext.loadImage
+import com.nl.component.ext.setDrawable
 import com.june.northland.databinding.WidgetBattleViewBinding
 import com.june.northland.feature.battle.vo.BattleVo
-import com.june.northland.utils.ColorUtils
+import com.nl.component.common.ColorUtils
 
 class BattleView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -29,7 +29,7 @@ class BattleView @JvmOverloads constructor(
         strokeWidth: Int = resources.getDimensionPixelSize(R.dimen.dp_2),
         radius: Float = resources.getDimension(R.dimen.dp_2)
     ) {
-        val powerColor = ContextCompat.getColor(context, ColorUtils.getPowerColor(battler.power))
+        val powerColor = ContextCompat.getColor(context, com.nl.component.common.ColorUtils.getPowerColor(battler.power))
         mBinding.ivAvatar.loadImage(battler.avatar)
         mBinding.vHealthView.initHealth(battler.health, battler.health)
         mBinding.tvPosition.text = battler.lineupPosition.toString()

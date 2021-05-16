@@ -10,15 +10,15 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseActivity
-import com.june.northland.common.ConstantUtils
 import com.june.northland.databinding.ActivityCharacterDetailBinding
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.equipment.EquipmentViewModel
-import com.june.northland.feature.equipment.EquipmentVo
-import com.june.northland.feature.equipment.choose.EquipmentChooseActivity
-import com.june.northland.utils.ColorUtils
+import com.nl.module.equipment.EquipmentViewModel
+import com.nl.module.equipment.EquipmentVo
+import com.nl.module.equipment.choose.EquipmentChooseActivity
+import com.nl.component.common.ColorUtils
+import com.nl.module.equipment.ConstantUtils
 
 /**
  * 人物详情
@@ -87,7 +87,7 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
     }
 
     private fun setCharacter(character: CharacterVo) {
-        val powerColor = ContextCompat.getColor(this, ColorUtils.getPowerColor(character.power))
+        val powerColor = ContextCompat.getColor(this, com.nl.component.common.ColorUtils.getPowerColor(character.power))
         mBinding.vCollapsing.setContentScrimColor(powerColor)
 
         mBinding.tvCharacterName.text = character.name

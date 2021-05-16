@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenProTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/strengthen_property"
+        android:textColor="@color/color_text_title"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenLevel"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_yellow_light"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/common_margin"
+        android:paddingEnd="@dimen/common_margin"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenProTitle"
+        tools:text="当前强化等级:100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenValue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/common_margin"
+        android:paddingEnd="@dimen/common_margin"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenLevel"
+        tools:text="当前强化属性:攻击力+10000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenNextValue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/color_yellow_light"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/common_margin"
+        android:paddingEnd="@dimen/common_margin"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenValue"
+        tools:text="下次强化属性:攻击力+100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenAddTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/strengthen_addition"
+        android:textColor="@color/color_text_title"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenNextValue" />
+
+    <com.nl.module.equipment.widget.StrengthenAdditionView
+        android:id="@+id/vStrengthenAddition"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthenAddTitle"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_strengthen_addition"
+        tools:orientation="vertical" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btStrengthenMin"
+        style="@style/CommonButton"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:text="@string/str_strengthen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btStrengthenMax"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenMinCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="@string/strengthen_cost"
+        app:layout_constraintEnd_toEndOf="@+id/btStrengthenMin"
+        app:layout_constraintStart_toStartOf="@+id/btStrengthenMin"
+        app:layout_constraintTop_toBottomOf="@+id/btStrengthenMin" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btStrengthenMax"
+        style="@style/CommonButton"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_36"
+        android:text="@string/strengthen_max"
+        app:layout_constraintBottom_toBottomOf="@+id/btStrengthenMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btStrengthenMin"
+        app:layout_constraintTop_toTopOf="@+id/btStrengthenMin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStrengthenMaxCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="@string/strengthen_cost"
+        app:layout_constraintEnd_toEndOf="@+id/btStrengthenMax"
+        app:layout_constraintStart_toStartOf="@+id/btStrengthenMax"
+        app:layout_constraintTop_toBottomOf="@+id/btStrengthenMax" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,6 +52,10 @@ android {
         viewBinding = true
         dataBinding = true
     }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
 }
 
 dependencies {
@@ -64,6 +68,7 @@ dependencies {
     implementation Dependencies.recyclerViewSelection
 
     implementation project(path: ':style')
+    implementation project(path: ':module:equipment')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
@@ -79,7 +84,7 @@ dependencies {
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
 
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation Dependencies.quickAdapter
 
     //粒子爆炸效果
     implementation 'me.samlss:bloom:1.0.0'

@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.june.northland.R
-import com.june.northland.base.ext.loadAvatar
-import com.june.northland.common.FilePathHelper
+import com.nl.component.ext.loadAvatar
+import com.nl.component.common.FilePathHelper
 import com.june.northland.databinding.WidgetPlayerSectionLayoutBinding
 import com.june.northland.utils.cache.UserDataCache
 
@@ -26,7 +26,7 @@ class PlayerSectionView @JvmOverloads constructor(
 
     fun setPlayerInfo() {
         mBinding.apply {
-            ivAvatar.loadAvatar(FilePathHelper.getCharacterAvatar("gan_ning_zhen.png"))
+            ivAvatar.loadAvatar(com.nl.component.common.FilePathHelper.getCharacterAvatar("gan_ning_zhen.png"))
             tvName.text = UserDataCache.getInstance().userName()
             tvCombatPower.text = "战力:1200万"
             tvFatigue.text = "体力:500"

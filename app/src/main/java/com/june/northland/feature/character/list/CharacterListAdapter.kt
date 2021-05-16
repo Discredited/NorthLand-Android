@@ -4,10 +4,10 @@ import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
-import com.june.northland.base.ext.setDrawable
+import com.nl.component.ext.setDrawable
 import com.june.northland.databinding.ItemCharacterBinding
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.utils.ColorUtils
+import com.nl.component.common.ColorUtils
 
 class CharacterListAdapter :
     BaseQuickAdapter<CharacterVo, BaseDataBindingHolder<ItemCharacterBinding>>(R.layout.item_character) {
@@ -15,7 +15,7 @@ class CharacterListAdapter :
     override fun convert(holder: BaseDataBindingHolder<ItemCharacterBinding>, item: CharacterVo) {
         val realm = holder.layoutPosition % 10
         val realmColor =
-            ContextCompat.getColor(holder.itemView.context, ColorUtils.getPowerColor(realm))
+            ContextCompat.getColor(holder.itemView.context, com.nl.component.common.ColorUtils.getPowerColor(realm))
         holder.dataBinding?.apply {
             ivAvatar.setDrawable(strokeColor = realmColor)
             if (holder.layoutPosition < 6) {

@@ -3,9 +3,9 @@ package com.june.northland.feature.character.widget
 import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.RecyclerView
+import com.june.base.basic.decoration.GridItemDecoration
 import com.june.base.basic.ext.setGridManager
 import com.june.northland.R
-import com.june.northland.common.GridItemDecoration
 import com.june.northland.feature.magic.MagicDisplayAdapter
 import com.june.northland.feature.magic.MagicVo
 

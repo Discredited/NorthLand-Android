@@ -10,15 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import com.june.northland.R
-import com.june.northland.base.ext.click
-import com.june.northland.base.ext.setDrawable
+import com.nl.component.ext.click
+import com.nl.component.ext.setDrawable
 import com.june.northland.databinding.WidgetCharacterDisplayLayoutBinding
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.equipment.EquipmentHelper
-import com.june.northland.feature.equipment.EquipmentInfoFragment
-import com.june.northland.feature.equipment.EquipmentVo
-import com.june.northland.feature.equipment.detail.EquipmentBuildFragment
-import com.june.northland.utils.ColorUtils
+import com.nl.module.equipment.EquipmentHelper
+import com.nl.module.equipment.EquipmentInfoFragment
+import com.nl.module.equipment.EquipmentVo
+import com.nl.module.equipment.detail.EquipmentBuildFragment
+import com.nl.component.common.ColorUtils
 
 class CharacterDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -28,16 +28,16 @@ class CharacterDisplayView @JvmOverloads constructor(
         WidgetCharacterDisplayLayoutBinding.inflate(LayoutInflater.from(context), this)
 
     private var mCharacter: CharacterVo? = null
-    private var mWeapon: EquipmentVo? = null
-    private var mArmor: EquipmentVo? = null
-    private var mShoes: EquipmentVo? = null
-    private var mJewelry: EquipmentVo? = null
+    private var mWeapon: com.nl.module.equipment.EquipmentVo? = null
+    private var mArmor: com.nl.module.equipment.EquipmentVo? = null
+    private var mShoes: com.nl.module.equipment.EquipmentVo? = null
+    private var mJewelry: com.nl.module.equipment.EquipmentVo? = null
 
     init {
         View.inflate(context, R.layout.widget_character_display_layout, this)
     }
 
-    fun wearEquipment(equipment: EquipmentVo) {
+    fun wearEquipment(equipment: com.nl.module.equipment.EquipmentVo) {
         val view: AppCompatImageView? = when (equipment.part) {
             1 -> {
                 mWeapon = equipment
@@ -60,9 +60,9 @@ class CharacterDisplayView @JvmOverloads constructor(
         setEquipment(view, equipment)
     }
 
-    private fun setEquipment(view: AppCompatImageView?, equipment: EquipmentVo?) {
+    private fun setEquipment(view: AppCompatImageView?, equipment: com.nl.module.equipment.EquipmentVo?) {
         val quality =
-            ColorUtils.equipmentQualityColor(equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL)
+            com.nl.component.common.ColorUtils.equipmentQualityColor(equipment?.quality ?: com.nl.module.equipment.EquipmentHelper.QUALITY_NORMAL)
         val qualityColor = ContextCompat.getColor(context, quality)
         view?.setDrawable(strokeColor = qualityColor)
         equipment?.let {
@@ -73,10 +73,10 @@ class CharacterDisplayView @JvmOverloads constructor(
     fun setCharacterAndEquipment(
         powerColor: Int,
         character: CharacterVo?,
-        weapon: EquipmentVo? = null,
-        armor: EquipmentVo? = null,
-        shoes: EquipmentVo? = null,
-        jewelry: EquipmentVo? = null
+        weapon: com.nl.module.equipment.EquipmentVo? = null,
+        armor: com.nl.module.equipment.EquipmentVo? = null,
+        shoes: com.nl.module.equipment.EquipmentVo? = null,
+        jewelry: com.nl.module.equipment.EquipmentVo? = null
     ) {
         mCharacter = character
         mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
@@ -99,7 +99,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentInfo(it.id)
                 }
                 if (null == mWeapon) {
-                    equipmentBuild(EquipmentHelper.PART_WEAPON)
+                    equipmentBuild(com.nl.module.equipment.EquipmentHelper.PART_WEAPON)
                 }
             }
             mBinding.ivCharacterArmor.click {
@@ -107,7 +107,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentInfo(it.id)
                 }
                 if (null == mArmor) {
-                    equipmentBuild(EquipmentHelper.PART_ARMOR)
+                    equipmentBuild(com.nl.module.equipment.EquipmentHelper.PART_ARMOR)
                 }
             }
             mBinding.ivCharacterShoes.click {
@@ -115,7 +115,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentInfo(it.id)
                 }
                 if (null == mShoes) {
-                    equipmentBuild(EquipmentHelper.PART_SHOES)
+                    equipmentBuild(com.nl.module.equipment.EquipmentHelper.PART_SHOES)
                 }
             }
             mBinding.ivCharacterJewelry.click {
@@ -123,7 +123,7 @@ class CharacterDisplayView @JvmOverloads constructor(
                     equipmentInfo(it.id)
                 }
                 if (null == mJewelry) {
-                    equipmentBuild(EquipmentHelper.PART_JEWELRY)
+                    equipmentBuild(com.nl.module.equipment.EquipmentHelper.PART_JEWELRY)
                 }
             }
         }
@@ -131,18 +131,18 @@ class CharacterDisplayView @JvmOverloads constructor(
 
     private fun equipmentInfo(id: String) {
         if (context is AppCompatActivity) {
-            EquipmentInfoFragment.newInstance(id).show(
+            com.nl.module.equipment.EquipmentInfoFragment.newInstance(id).show(
                 (context as AppCompatActivity).supportFragmentManager,
-                EquipmentInfoFragment::class.java.name
+                com.nl.module.equipment.EquipmentInfoFragment::class.java.name
             )
         }
     }
 
     private fun equipmentBuild(part: Int) {
         if (context is AppCompatActivity) {
-            EquipmentBuildFragment.newInstance(part).show(
+            com.nl.module.equipment.detail.EquipmentBuildFragment.newInstance(part).show(
                 (context as AppCompatActivity).supportFragmentManager,
-                EquipmentBuildFragment::class.java.name
+                com.nl.module.equipment.detail.EquipmentBuildFragment::class.java.name
             )
         }
     }

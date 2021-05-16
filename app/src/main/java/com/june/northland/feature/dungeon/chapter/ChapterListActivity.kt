@@ -5,7 +5,7 @@ import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.june.northland.base.ext.itemClick
+import com.nl.component.ext.itemClick
 import com.june.northland.databinding.ActivityChapterListBinding
 import com.june.northland.feature.dungeon.DungeonListActivity
 import com.june.northland.utils.Toast

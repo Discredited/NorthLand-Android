@@ -3,10 +3,10 @@ package com.june.northland.feature.backpack.goods
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.june.base.basic.decoration.GridItemDecoration
 import com.june.base.basic.ext.setGridManager
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
-import com.june.northland.common.GridItemDecoration
 import com.june.northland.databinding.FragmentGoodsListBinding
 
 class GoodsListFragment : BaseFragment<FragmentGoodsListBinding>() {

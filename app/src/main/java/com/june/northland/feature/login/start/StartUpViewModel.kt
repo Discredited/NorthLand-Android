@@ -3,17 +3,16 @@ package com.june.northland.feature.login.start
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.GsonUtils
-import com.june.northland.base.component.AppViewModel
-import com.june.northland.common.FilePathHelper
+import com.nl.component.common.FilePathHelper
 import java.io.FileInputStream
 
-class StartUpViewModel(application: Application) : AppViewModel(application) {
+class StartUpViewModel(application: Application) : com.nl.component.AppViewModel(application) {
 
     val mEntranceLive: MutableLiveData<Int> = MutableLiveData()
 
     //检查是否需要更新资源
     fun checkUpdateResource(remoteConfig: ResourceConfig): Boolean {
-        val resConfigFile = FilePathHelper.getResourceConfigFile()
+        val resConfigFile = com.nl.component.common.FilePathHelper.getResourceConfigFile()
         resConfigFile?.let { config ->
             val inputStream = FileInputStream(config)
             val json = inputStream.use {

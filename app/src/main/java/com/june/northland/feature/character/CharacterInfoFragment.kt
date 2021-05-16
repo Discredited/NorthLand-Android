@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.june.base.basic.part.BaseDialogFragment
-import com.june.northland.base.ext.click
+import com.nl.component.ext.click
 import com.june.northland.databinding.FragmentDialogCharacterInfoBinding
 import com.june.northland.feature.magic.MagicVo
 import com.june.northland.feature.relationship.RelationshipVo
-import com.june.northland.utils.ColorUtils
 
 class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBinding>() {
 
@@ -54,7 +53,7 @@ class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBind
 
     private fun setCharacter(character: CharacterVo) {
         val realm = arguments?.getInt("REALM", 8) ?: 8
-        val realmColor = ContextCompat.getColor(requireContext(), ColorUtils.getPowerColor(realm))
+        val realmColor = ContextCompat.getColor(requireContext(), com.nl.component.common.ColorUtils.getPowerColor(realm))
         mBinding.vCollapsing.setContentScrimColor(realmColor)
 
         mBinding.vCharacterDisplay.setCharacterAndEquipment(realmColor, character)

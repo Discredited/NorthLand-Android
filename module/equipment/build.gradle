@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'maven-publish'
+}
+
+android {
+    compileSdkVersion Versions.compileSDK
+    buildToolsVersion Versions.buildTools
+
+    defaultConfig {
+        minSdkVersion Versions.minSDK
+        targetSdkVersion Versions.targetSDK
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    rootProject.androidxBasicDependencies(dependencies)
+    rootProject.junitDependencies(dependencies)
+
+    implementation project(path: ':style')
+
+    implementation Dependencies.fragmentKtx
+
+    implementation Dependencies.lifecycleExt
+    implementation Dependencies.lifecycleRuntimeKtx
+
+    implementation Dependencies.juneComponent
+    implementation Dependencies.juneNetwork
+    implementation Dependencies.juneLoading
+
+    implementation Dependencies.nlComponent
+
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
+
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
+
+    implementation Dependencies.quickAdapter
+}
+
+apply from: rootDir.absolutePath + '/maven-push.gradle'
+
+project.ext {
+    publishingGroupId = 'com.nl.base'
+    publishingArtifactId = 'component'
+    publishingVersion = '0.0.1'
+}

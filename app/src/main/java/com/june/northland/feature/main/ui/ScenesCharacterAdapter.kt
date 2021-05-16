@@ -4,10 +4,10 @@ import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
-import com.june.northland.base.ext.setDrawable
+import com.nl.component.ext.setDrawable
 import com.june.northland.databinding.ItemMainScenesCharacterBinding
 import com.june.northland.feature.character.CharacterVo
-import com.june.northland.utils.ColorUtils
+import com.nl.component.common.ColorUtils
 
 class ScenesCharacterAdapter :
     BaseQuickAdapter<CharacterVo, BaseDataBindingHolder<ItemMainScenesCharacterBinding>>(R.layout.item_main_scenes_character) {
@@ -16,7 +16,7 @@ class ScenesCharacterAdapter :
         holder: BaseDataBindingHolder<ItemMainScenesCharacterBinding>,
         item: CharacterVo
     ) {
-        val realm = ColorUtils.getPowerColor(item.realm)
+        val realm = com.nl.component.common.ColorUtils.getPowerColor(item.realm)
         val realmColor = ContextCompat.getColor(holder.itemView.context, realm)
         holder.dataBinding?.apply {
             ivCharacter.setDrawable(

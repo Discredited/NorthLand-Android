@@ -1,7 +1,7 @@
 package com.june.northland.feature.battle
 
 import android.app.Application
-import com.june.northland.base.component.AppViewModel
+import com.nl.component.AppViewModel
 import com.june.northland.common.ConstantUtils
 import com.june.northland.feature.battle.vo.BattleDataVo
 import com.june.northland.feature.battle.vo.BattleResultVo
@@ -9,7 +9,7 @@ import com.june.northland.feature.battle.vo.BattleVo
 import com.june.northland.feature.battle.vo.RoundVo
 import timber.log.Timber
 
-class BattleViewModel(application: Application) : AppViewModel(application) {
+class BattleViewModel(application: Application) : com.nl.component.AppViewModel(application) {
 
     fun battleResult(): BattleResultVo {
         val battleList = mutableListOf<Int>()

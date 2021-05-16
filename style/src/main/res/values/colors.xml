@@ -36,6 +36,8 @@
     <color name="color_health">#F26D6D</color>
     <color name="color_speed">#BB66FF</color>
 
+    <color name="color_bg_alpha_black">#99000000</color>
+
     <!-- 颜色品质 -->
     <!-- 普通 -->
     <color name="color_quality_ordinary">#7D7E7E</color>
