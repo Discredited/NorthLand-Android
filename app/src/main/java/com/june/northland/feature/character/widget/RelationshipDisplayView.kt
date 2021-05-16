@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import androidx.recyclerview.widget.RecyclerView
 import com.june.base.basic.ext.setGridManager
 import com.june.northland.feature.relationship.RelationshipDisplayAdapter
-import com.june.northland.feature.relationship.RelationshipVo
+import com.nl.module.relationship.RelationshipVo
 
 class RelationshipDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -21,7 +21,7 @@ class RelationshipDisplayView @JvmOverloads constructor(
         setHasFixedSize(true)
     }
 
-    fun setRelationship(relationships: MutableList<RelationshipVo>) {
+    fun setRelationship(relationships: MutableList<com.nl.module.relationship.RelationshipVo>) {
         mAdapter.setNewInstance(relationships)
     }
 }

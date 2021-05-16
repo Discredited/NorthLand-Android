@@ -4,6 +4,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.june.northland.R
 import com.june.northland.databinding.ItemRelationshipDisplayBinding
+import com.nl.module.relationship.RelationshipVo
 
 class RelationshipDisplayAdapter :
     BaseQuickAdapter<RelationshipVo, BaseDataBindingHolder<ItemRelationshipDisplayBinding>>(R.layout.item_relationship_display) {

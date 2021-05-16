@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
 import com.june.northland.databinding.FragmentCharacterInfoBinding
-import com.june.northland.feature.relationship.RelationshipVo
+import com.nl.module.relationship.RelationshipVo
 
 /**
  * 基本信息
@@ -50,27 +50,27 @@ class CharacterInfoFragment : BaseFragment<FragmentCharacterInfoBinding>() {
 
         mBinding.vRelationshipDisplay.setRelationship(
             mutableListOf(
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "丽人行",
                     true
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "青梅竹马",
                     true
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "道心羁绊",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "轮回毒誓",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "同为人妖",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "七窍雪莲",
                     true
                 )

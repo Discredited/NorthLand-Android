@@ -9,7 +9,7 @@ import com.june.base.basic.part.BaseDialogFragment
 import com.nl.component.ext.click
 import com.june.northland.databinding.FragmentDialogCharacterInfoBinding
 import com.june.northland.feature.magic.MagicVo
-import com.june.northland.feature.relationship.RelationshipVo
+import com.nl.module.relationship.RelationshipVo
 
 class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBinding>() {
 
@@ -76,27 +76,27 @@ class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBind
 
         mBinding.vRelationshipDisplay.setRelationship(
             mutableListOf(
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "丽人行",
                     true
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "青梅竹马",
                     true
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "道心羁绊",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "轮回毒誓",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "同为人妖",
                     false
                 ),
-                RelationshipVo(
+                com.nl.module.relationship.RelationshipVo(
                     "七窍雪莲",
                     true
                 )

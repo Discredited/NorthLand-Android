@@ -68,7 +68,9 @@ dependencies {
     implementation Dependencies.recyclerViewSelection
 
     implementation project(path: ':style')
+    implementation project(path: ':base:component')
     implementation project(path: ':module:equipment')
+    implementation project(path: ':module:relationship')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork

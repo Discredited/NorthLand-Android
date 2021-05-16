@@ -1,3 +1,4 @@
+include ':module:relationship'
 rootProject.name = "NorthLand"
 include ':app'
 include ':style'
