@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
+import com.june.base.basic.ext.click
 import com.june.northland.R
 import com.nl.component.NLBaseFragment
 import com.june.northland.databinding.FragmentStartEntranceBinding

@@ -59,15 +59,17 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
+    implementation Dependencies.fragmentKtx
+    implementation Dependencies.recyclerView
+    implementation Dependencies.recyclerViewSelection
+
+    implementation project(path: ':style')
+
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
 
-    implementation project(path: ':style')
-
-    implementation Dependencies.fragmentKtx
-    implementation Dependencies.recyclerView
-    implementation Dependencies.recyclerViewSelection
+    implementation Dependencies.nlComponent
 
     implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
 
