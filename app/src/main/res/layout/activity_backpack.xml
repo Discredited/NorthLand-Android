@@ -27,14 +27,4 @@
     <include
         android:id="@+id/i_close"
         layout="@layout/view_close_image" />
-
-
-    <com.nl.module.relationship.RelationshipView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_100"
-        android:background="@color/color_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

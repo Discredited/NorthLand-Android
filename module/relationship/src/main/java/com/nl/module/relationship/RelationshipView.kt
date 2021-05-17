@@ -22,6 +22,8 @@ class RelationshipView @JvmOverloads constructor(
     private var mMaxWidth = 0F
     private var mMaxHeight = 0F
 
+    private var mColumnGap = 50F
+
     private var mActiveColor = 0
     private var mNegativeColor = 0
 
@@ -29,6 +31,8 @@ class RelationshipView @JvmOverloads constructor(
     private val mRect = Rect()
 
     init {
+        mPaint.textSize = 80F
+
         mActiveColor = Color.parseColor("#FF0000")
         mNegativeColor = Color.parseColor("#CCCCCC")
 
@@ -45,11 +49,13 @@ class RelationshipView @JvmOverloads constructor(
                 RelationshipVo("七窍雪莲", true)
             )
         )
+
+        measureRelationshipSpec(mRelationshipList)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val measureWidth = MeasureSpec.getSize(widthMeasureSpec)
-        val measureHeight = MeasureSpec.getSize(heightMeasureSpec)
+        //val measureHeight = MeasureSpec.getSize(heightMeasureSpec)
 
         val row = if (mRelationshipList.size % column == 0) {
             mRelationshipList.size / column
@@ -57,15 +63,16 @@ class RelationshipView @JvmOverloads constructor(
             mRelationshipList.size / column + 1
         }
 
-        var expectWidth: Int = (mMaxWidth * column).toInt()
-        var expectHeight: Int = (mMaxHeight * row).toInt()
+        var expectWidth: Int = (mMaxWidth * column).toInt() + paddingStart + paddingEnd
+        val expectHeight: Int =
+            (mMaxHeight * row + mColumnGap * (row - 1)).toInt() + paddingTop + paddingBottom
 
         if (expectWidth < measureWidth) {
             expectWidth = measureWidth
         }
-        if (expectHeight < measureHeight) {
-            expectHeight = measureHeight
-        }
+//        if (expectHeight < measureHeight) {
+//            expectHeight = measureHeight
+//        }
         setMeasuredDimension(expectWidth, expectHeight)
     }
 
@@ -74,11 +81,12 @@ class RelationshipView @JvmOverloads constructor(
         mRelationshipList.forEachIndexed { index, relationshipVo ->
             val row = index / column
             val textX = if (index % column == 0) {
-                width shr 2 - mRelationshipWidthList[index] shr 1
+                (width shr 2).toFloat() - (mRelationshipWidthList[index] shr 1)
             } else {
-                width shr 1 + mRelationshipWidthList[index] shr 1
-            }.toFloat()
-            val textY = row * (mPaint.descent() - mPaint.ascent()) + mRelationshipHeightList[index]
+                (width shr 2) * 3F - (mRelationshipWidthList[index] shr 1)
+            }
+            val textY = paddingTop + row * mMaxHeight + mColumnGap * row + mRelationshipHeightList[index]
+
             mPaint.color = if (relationshipVo.isActive) {
                 mActiveColor
             } else {
