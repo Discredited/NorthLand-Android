@@ -3,10 +3,9 @@ package com.june.northland.feature.character.detail
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.june.northland.R
 import com.june.base.basic.part.BaseFragment
+import com.june.northland.R
 import com.june.northland.databinding.FragmentCharacterInfoBinding
-import com.nl.module.relationship.RelationshipVo
 
 /**
  * 基本信息
@@ -48,7 +47,7 @@ class CharacterInfoFragment : BaseFragment<FragmentCharacterInfoBinding>() {
         mBinding.vBasicAttribute.setAttributeValue("2500", "110", "950", "600")
         mBinding.vExtraAttribute.setAttributeValue("35", "10", "200", "75")
 
-        mBinding.vRelationshipDisplay.setRelationship(
+        mBinding.vRelationshipDisplay.setRelationships(
             mutableListOf(
                 com.nl.module.relationship.RelationshipVo(
                     "丽人行",

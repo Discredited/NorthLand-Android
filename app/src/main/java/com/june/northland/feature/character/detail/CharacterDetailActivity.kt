@@ -3,9 +3,7 @@ package com.june.northland.feature.character.detail
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.ext.click
@@ -14,18 +12,16 @@ import com.june.northland.databinding.ActivityCharacterDetailBinding
 import com.june.northland.feature.character.AttributeExplanationFragment
 import com.june.northland.feature.character.CharacterPotentialFragment
 import com.june.northland.feature.character.CharacterVo
-import com.nl.module.equipment.EquipmentViewModel
+import com.nl.module.equipment.ConstantUtils
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.choose.EquipmentChooseActivity
-import com.nl.component.common.ColorUtils
-import com.nl.module.equipment.ConstantUtils
 
 /**
  * 人物详情
  */
 class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
 
-    private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
+    //private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
     private val mPagerTitleList = mutableListOf<String>()
 
     override fun viewBinding(): ActivityCharacterDetailBinding {
@@ -51,9 +47,9 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
     }
 
     override fun loadData() {
-        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
-            mBinding.vCharacterDisplay.wearEquipment(it)
-        })
+//        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
+//            mBinding.vCharacterDisplay.wearEquipment(it)
+//        })
         mBinding.vCharacterDisplay.equipmentClick()
         setCharacter(CharacterVo(power = intent?.getIntExtra("REALM", 8) ?: 8))
 
@@ -63,10 +59,10 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
         //mPageTitleList.add("道心")
         TabLayoutMediator(
             mBinding.tlCharacter,
-            mBinding.vpCharacter,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text = mPagerTitleList[position]
-            }).attach()
+            mBinding.vpCharacter
+        ) { tab, position ->
+            tab.text = mPagerTitleList[position]
+        }.attach()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -87,7 +83,10 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
     }
 
     private fun setCharacter(character: CharacterVo) {
-        val powerColor = ContextCompat.getColor(this, com.nl.component.common.ColorUtils.getPowerColor(character.power))
+        val powerColor = ContextCompat.getColor(
+            this,
+            com.nl.component.common.ColorUtils.getPowerColor(character.power)
+        )
         mBinding.vCollapsing.setContentScrimColor(powerColor)
 
         mBinding.tvCharacterName.text = character.name

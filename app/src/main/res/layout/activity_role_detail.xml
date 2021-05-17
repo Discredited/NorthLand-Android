@@ -86,7 +86,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vRoleSkillPassive" />
 
-    <com.june.northland.feature.character.widget.RelationshipDisplayView
+    <com.nl.module.relationship.RelationshipView
         android:id="@+id/vRoleRelationship"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

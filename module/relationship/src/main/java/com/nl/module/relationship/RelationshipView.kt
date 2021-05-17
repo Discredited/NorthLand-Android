@@ -31,7 +31,7 @@ class RelationshipView @JvmOverloads constructor(
     private val mRect = Rect()
 
     init {
-        mPaint.textSize = 80F
+        mPaint.textSize = 48F
 
         mActiveColor = Color.parseColor("#FF0000")
         mNegativeColor = Color.parseColor("#CCCCCC")
@@ -85,7 +85,8 @@ class RelationshipView @JvmOverloads constructor(
             } else {
                 (width shr 2) * 3F - (mRelationshipWidthList[index] shr 1)
             }
-            val textY = paddingTop + row * mMaxHeight + mColumnGap * row + mRelationshipHeightList[index]
+            val textY =
+                paddingTop + row * mMaxHeight + mColumnGap * row + mRelationshipHeightList[index]
 
             mPaint.color = if (relationshipVo.isActive) {
                 mActiveColor

@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import com.june.northland.R
 import com.june.base.basic.part.BaseDialogFragment
-import com.nl.component.ext.click
+import com.june.northland.R
 import com.june.northland.databinding.FragmentDialogCharacterInfoBinding
 import com.june.northland.feature.magic.MagicVo
+import com.nl.component.ext.click
 import com.nl.module.relationship.RelationshipVo
 
 class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBinding>() {
@@ -53,7 +53,10 @@ class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBind
 
     private fun setCharacter(character: CharacterVo) {
         val realm = arguments?.getInt("REALM", 8) ?: 8
-        val realmColor = ContextCompat.getColor(requireContext(), com.nl.component.common.ColorUtils.getPowerColor(realm))
+        val realmColor = ContextCompat.getColor(
+            requireContext(),
+            com.nl.component.common.ColorUtils.getPowerColor(realm)
+        )
         mBinding.vCollapsing.setContentScrimColor(realmColor)
 
         mBinding.vCharacterDisplay.setCharacterAndEquipment(realmColor, character)
@@ -74,29 +77,29 @@ class CharacterInfoFragment : BaseDialogFragment<FragmentDialogCharacterInfoBind
             )
         )
 
-        mBinding.vRelationshipDisplay.setRelationship(
+        mBinding.vRelationshipDisplay.setRelationships(
             mutableListOf(
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "丽人行",
                     true
                 ),
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "青梅竹马",
                     true
                 ),
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "道心羁绊",
                     false
                 ),
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "轮回毒誓",
                     false
                 ),
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "同为人妖",
                     false
                 ),
-                com.nl.module.relationship.RelationshipVo(
+                RelationshipVo(
                     "七窍雪莲",
                     true
                 )

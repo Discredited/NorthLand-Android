@@ -68,14 +68,10 @@
             android:textColor="@color/color_white"
             android:textSize="@dimen/sp_14" />
 
-        <com.june.northland.feature.character.widget.RelationshipDisplayView
+        <com.nl.module.relationship.RelationshipView
             android:id="@+id/vRelationshipDisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            tools:itemCount="6"
-            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/item_relationship_display"
-            tools:orientation="vertical" />
+            android:layout_marginTop="@dimen/dp_10" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>
