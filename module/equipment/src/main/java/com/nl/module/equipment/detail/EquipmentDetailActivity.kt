@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.part.BaseActivity
 import com.nl.component.common.ColorUtils
@@ -18,6 +19,7 @@ import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ActivityEquipmentDetailBinding
 
+@Route(path = "/equipment/detail")
 class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()

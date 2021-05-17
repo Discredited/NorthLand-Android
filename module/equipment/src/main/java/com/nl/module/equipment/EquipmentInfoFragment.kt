@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import com.alibaba.android.arouter.launcher.ARouter
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseDialogFragment
 import com.nl.component.common.ColorUtils
 import com.nl.component.ext.setDrawable
-import com.nl.module.equipment.detail.EquipmentDetailActivity
 import com.nl.module.equipment.databinding.FragmentDialogEquipmentInfoBinding
+import com.nl.module.equipment.detail.EquipmentDetailActivity
 
 class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBinding>() {
 
@@ -26,7 +27,8 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
 
     override fun initView() {
         mBinding.btStrengthen.click {
-            EquipmentDetailActivity.start(requireActivity(), "")
+            //EquipmentDetailActivity.start(requireActivity(), "")
+            ARouter.getInstance().build("/equipment/detail").navigation()
             dismiss()
         }
         mBinding.btForging.click {
