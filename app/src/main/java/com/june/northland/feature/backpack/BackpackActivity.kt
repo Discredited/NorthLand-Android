@@ -1,17 +1,13 @@
 package com.june.northland.feature.backpack
 
-import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.nl.component.ext.click
 import com.june.northland.databinding.ActivityBackpackBinding
-import com.nl.module.equipment.EquipmentViewModel
+import com.nl.component.ext.click
 
 class BackpackActivity : BaseActivity<ActivityBackpackBinding>() {
-
-    private val mEquipmentViewModel by viewModels<com.nl.module.equipment.EquipmentViewModel>()
 
     private lateinit var mAdapter: BackpackAdapter
     private val mPagerTitleList = mutableListOf<String>()
