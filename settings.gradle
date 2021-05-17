@@ -1,3 +1,4 @@
+include ':module:magic'
 include ':module:relationship'
 rootProject.name = "NorthLand"
 include ':app'

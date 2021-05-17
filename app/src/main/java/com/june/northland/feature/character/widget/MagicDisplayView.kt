@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.june.base.basic.decoration.GridItemDecoration
 import com.june.base.basic.ext.setGridManager
 import com.june.northland.R
-import com.june.northland.feature.magic.MagicDisplayAdapter
-import com.june.northland.feature.magic.MagicVo
+import com.nl.module.magic.MagicDisplayAdapter
+import com.nl.module.magic.MagicVo
 
 class MagicDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : RecyclerView(context, attrs, defStyleAttr) {
 
-    private val mAdapter = MagicDisplayAdapter()
+    private val mAdapter = com.nl.module.magic.MagicDisplayAdapter()
 
     override fun onFinishInflate() {
         super.onFinishInflate()
@@ -23,7 +23,7 @@ class MagicDisplayView @JvmOverloads constructor(
         addItemDecoration(GridItemDecoration(3, resources.getDimensionPixelSize(R.dimen.dp_10)))
     }
 
-    fun setMagic(magics: MutableList<MagicVo>) {
+    fun setMagic(magics: MutableList<com.nl.module.magic.MagicVo>) {
         mAdapter.setNewInstance(magics)
     }
 }

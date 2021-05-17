@@ -1,12 +1,10 @@
-package com.june.northland.feature.magic
+package com.nl.module.magic
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.june.northland.R
-import com.june.northland.databinding.ItemMagicDisplayBinding
+import com.nl.module.magic.databinding.ItemMagicDisplayBinding
 
-class MagicDisplayAdapter :
-    BaseQuickAdapter<MagicVo, BaseDataBindingHolder<ItemMagicDisplayBinding>>(R.layout.item_magic_display) {
+class MagicDisplayAdapter : BaseQuickAdapter<MagicVo, BaseDataBindingHolder<ItemMagicDisplayBinding>>(R.layout.item_magic_display) {
 
     override fun convert(holder: BaseDataBindingHolder<ItemMagicDisplayBinding>, item: MagicVo) {
         holder.dataBinding?.apply {

@@ -12,7 +12,7 @@
             android:id="@+id/ivMagicIcon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:src="@drawable/ic_magic_3" />
+            tools:src="@drawable/ic_attack" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvMagicName"
