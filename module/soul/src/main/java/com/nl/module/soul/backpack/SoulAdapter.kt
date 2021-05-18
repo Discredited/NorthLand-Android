@@ -1,15 +1,17 @@
-package com.june.northland.feature.backpack.soul
+package com.nl.module.soul.backpack
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.june.northland.R
-import com.june.northland.databinding.ItemSoulBinding
-import com.june.northland.feature.soul.SoulVo
+import com.nl.module.soul.R
+import com.nl.module.soul.databinding.ItemSoulBinding
 
 class SoulAdapter :
-    BaseQuickAdapter<SoulVo, BaseDataBindingHolder<ItemSoulBinding>>(R.layout.item_soul) {
+    BaseQuickAdapter<com.nl.module.soul.SoulVo, BaseDataBindingHolder<ItemSoulBinding>>(R.layout.item_soul) {
 
-    override fun convert(holder: BaseDataBindingHolder<ItemSoulBinding>, item: SoulVo) {
+    override fun convert(
+        holder: BaseDataBindingHolder<ItemSoulBinding>,
+        item: com.nl.module.soul.SoulVo
+    ) {
         holder.dataBinding?.apply {
             ivCover.setImageResource(item.icon)
             tvName.text = item.name

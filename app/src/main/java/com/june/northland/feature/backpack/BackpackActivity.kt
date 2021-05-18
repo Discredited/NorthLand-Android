@@ -32,9 +32,9 @@ class BackpackActivity : BaseActivity<ActivityBackpackBinding>() {
 
         TabLayoutMediator(
             mBinding.tlCategory,
-            mBinding.vpGoods,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text = mPagerTitleList[position]
-            }).attach()
+            mBinding.vpGoods
+        ) { tab, position ->
+            tab.text = mPagerTitleList[position]
+        }.attach()
     }
 }

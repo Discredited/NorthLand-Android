@@ -78,6 +78,7 @@ dependencies {
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')
     implementation project(path: ':module:magic')
+    implementation project(path: ':module:soul')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
