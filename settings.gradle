@@ -1,3 +1,4 @@
+include ':module:role'
 include ':module:soul'
 include ':module:magic'
 include ':module:relationship'
