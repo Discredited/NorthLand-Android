@@ -67,9 +67,6 @@
             android:name=".feature.store.RecruitResultActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.role.RoleDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".feature.dungeon.plot.PlotDisplayActivity"
             android:screenOrientation="portrait" />
         <activity

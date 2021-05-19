@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.june.northland.feature.character.widget.SkillDisplayView
+    <com.jojoread.skill.SkillDisplayView
         android:id="@+id/vSkillPassive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10" />
 
-    <com.june.northland.feature.character.widget.SkillDisplayView
+    <com.jojoread.skill.SkillDisplayView
         android:id="@+id/vSkillInitiative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,12 +1,11 @@
-package com.june.northland.feature.character.widget
+package com.jojoread.skill
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import com.june.northland.R
-import com.june.northland.databinding.WidgetSkillDisplayLayoutBinding
+import com.jojoread.skill.databinding.WidgetSkillDisplayLayoutBinding
 
 class SkillDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

@@ -52,6 +52,6 @@ apply from: rootDir.absolutePath + '/maven-push.gradle'
 
 project.ext {
     publishingGroupId = 'com.nl.module'
-    publishingArtifactId = 'role'
+    publishingArtifactId = 'skill'
     publishingVersion = '0.0.1'
 }

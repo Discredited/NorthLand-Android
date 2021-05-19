@@ -130,7 +130,7 @@
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/sp_14" />
 
-            <com.june.northland.feature.character.widget.SkillDisplayView
+            <com.jojoread.skill.SkillDisplayView
                 android:id="@+id/vSkillView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
