@@ -30,7 +30,7 @@
             tools:text="楚度"
             tools:textColor="@color/color_quality_epic" />
 
-        <com.june.northland.feature.character.widget.RealmDisplayView
+        <com.nl.module.characters.widget.RealmDisplayView
             android:id="@+id/vPower"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             app:realm_text="阿赖耶"
             app:realm_text_size="@dimen/sp_16" />
 
-        <com.june.northland.feature.character.widget.RealmDisplayView
+        <com.nl.module.characters.widget.RealmDisplayView
             android:id="@+id/vReal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

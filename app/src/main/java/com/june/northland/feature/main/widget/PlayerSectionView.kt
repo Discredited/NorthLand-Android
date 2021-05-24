@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.june.northland.R
-import com.nl.component.ext.loadAvatar
-import com.nl.component.common.FilePathHelper
 import com.june.northland.databinding.WidgetPlayerSectionLayoutBinding
 import com.june.northland.utils.cache.UserDataCache
+import com.nl.component.ext.loadAvatar
 
 class PlayerSectionView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRoleRace"
         tools:text="阵营:清虚天" />
 
-<!--    <com.june.northland.feature.character.widget.AttributeDisplayView-->
+<!--    <com.nl.module.characters.AttributeDisplayView-->
 <!--        android:id="@+id/vBaseAttr"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->
@@ -57,7 +57,7 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/ivRoleAvatar" />-->
 
-<!--    <com.june.northland.feature.character.widget.AttributeDisplayView-->
+<!--    <com.nl.module.characters.AttributeDisplayView-->
 <!--        android:id="@+id/vExtraAttr"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->

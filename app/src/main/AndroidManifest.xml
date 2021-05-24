@@ -36,7 +36,7 @@
             android:name=".feature.main.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.character.CharacterConfigActivity"
+            android:name="com.nl.module.characters.CharacterConfigActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".feature.backpack.BackpackActivity"
@@ -54,10 +54,10 @@
             android:name=".feature.dungeon.DungeonBattleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.character.list.CharacterListActivity"
+            android:name="com.nl.module.characters.list.CharacterListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.character.detail.CharacterDetailActivity"
+            android:name="com.nl.module.characters.detail.CharacterDetailActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.nl.module.equipment.choose.EquipmentChooseActivity" />
         <activity

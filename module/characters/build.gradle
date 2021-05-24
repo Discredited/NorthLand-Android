@@ -1,7 +1,8 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'maven-publish'
 }
 
 android {
@@ -9,58 +10,32 @@ android {
     buildToolsVersion Versions.buildTools
 
     defaultConfig {
-        applicationId "com.june.northland"
         minSdkVersion Versions.minSDK
         targetSdkVersion Versions.targetSDK
         versionCode 1
-        versionName "0.0.1"
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
-    }
-
-    signingConfigs {
-        config {
-            storeFile file('northland.jks')
-            storePassword "june123456"
-            keyAlias "NorthLand"
-            keyPassword "june123456"
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.config
-        }
-
         release {
             minifyEnabled false
-            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
     }
 
     buildFeatures {
         viewBinding = true
         dataBinding = true
-    }
-
-    packagingOptions {
-        exclude 'META-INF/*'
     }
 }
 
@@ -69,13 +44,15 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
-    implementation Dependencies.fragmentKtx
-    implementation Dependencies.recyclerView
-    implementation Dependencies.recyclerViewSelection
-
     implementation project(path: ':style')
+
+    implementation Dependencies.fragmentKtx
+
+    implementation Dependencies.lifecycleExt
+    implementation Dependencies.lifecycleRuntimeKtx
+
     implementation project(path: ':base:component')
-    implementation project(path: ':module:characters')
+    implementation project(path: ':base:component')
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')
     implementation project(path: ':module:magic')
@@ -86,21 +63,11 @@ dependencies {
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
 
-    implementation Dependencies.nlComponent
-
-    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
 
-    implementation Dependencies.timber
-    implementation Dependencies.androidUtils
-
     implementation Dependencies.quickAdapter
-
-    implementation Dependencies.aRouter
-    kapt Dependencies.aRouterCompiler
-
-    //粒子爆炸效果
-    implementation 'me.samlss:bloom:1.0.0'
 }

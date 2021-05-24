@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_black">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/vCollapsing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="false"
+            app:contentScrim="@color/color_quality_epic"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <com.nl.module.characters.widget.CharacterDisplayView
+                android:id="@+id/vCharacterDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_margin"
+                android:paddingTop="@dimen/dp_60"
+                android:paddingEnd="@dimen/common_margin"
+                android:paddingBottom="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCharacterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:shadowColor="@color/color_bg_alpha_black"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="8"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp_30"
+                    android:textStyle="bold"
+                    tools:text="甘柠真" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHelper"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/common_margin"
+                    android:src="@drawable/ic_help" />
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlCharacter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/color_transparent"
+            app:tabSelectedTextColor="@color/color_text_logo"
+            app:tabTextColor="@color/color_gray" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpCharacter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharacterRealm">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_gravity="bottom"
+        android:background="@color/color_bg_alpha_black"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btBringUp"
+            style="@style/TextButton"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/common_margin"
+            android:gravity="center"
+            android:text="@string/str_bring_up"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/TextButton"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_15"
+            android:gravity="center"
+            android:text="@string/str_refine"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/TextButton"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_15"
+            android:gravity="center"
+            android:text="@string/str_evolution"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/TextButton"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_15"
+            android:gravity="center"
+            android:text="@string/str_advanced"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_20" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

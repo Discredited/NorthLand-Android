@@ -15,9 +15,9 @@ import com.june.base.basic.part.BaseFragment
 import com.nl.component.ext.itemClick
 import com.june.northland.databinding.FragmentMainSceneBinding
 import com.june.northland.feature.backpack.BackpackActivity
-import com.june.northland.feature.character.CharacterInfoFragment
-import com.june.northland.feature.character.CharacterVo
-import com.june.northland.feature.character.list.CharacterListActivity
+import com.nl.module.characters.CharacterInfoFragment
+import com.nl.module.characters.CharacterVo
+import com.nl.module.characters.list.CharacterListActivity
 import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
 import com.june.northland.feature.lineup.LineUpActivity
@@ -44,8 +44,8 @@ class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
     override fun initView() {
         //阵容人物
         mCharacterAdapter.itemClick { _, _, position ->
-            val characterInfoFragment = CharacterInfoFragment.newInstance(position)
-            characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
+            val characterInfoFragment = com.nl.module.characters.CharacterInfoFragment.newInstance(position)
+            characterInfoFragment.show(childFragmentManager, com.nl.module.characters.CharacterInfoFragment::javaClass.name)
         }
 
         mBinding.rvCharacter.apply {
@@ -69,7 +69,7 @@ class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
         //底部菜单
         mMenuAdapter.itemClick { _, _, position ->
             when (position) {
-                0 -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
+                0 -> startActivity(Intent(requireActivity(), com.nl.module.characters.list.CharacterListActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 3 -> startActivity(Intent(requireActivity(), ChapterListActivity::class.java))
@@ -111,12 +111,30 @@ class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
     private fun requestCharacter() {
         mCharacterAdapter.setNewInstance(
             mutableListOf(
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_gan_ning_zhen, realm = 0),
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_hai_ji, realm = 1),
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_jiu_dan_mei, realm = 4),
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_lin_fei, realm = 6),
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_gan_ning_zhen_1, realm = 8),
-                CharacterVo(avatarIcon = R.drawable.ic_avatar_hai_ji, realm = 9)
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_gan_ning_zhen,
+                    realm = 0
+                ),
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_hai_ji,
+                    realm = 1
+                ),
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_jiu_dan_mei,
+                    realm = 4
+                ),
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_lin_fei,
+                    realm = 6
+                ),
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_gan_ning_zhen_1,
+                    realm = 8
+                ),
+                com.nl.module.characters.CharacterVo(
+                    avatarIcon = R.drawable.ic_avatar_hai_ji,
+                    realm = 9
+                )
             )
         )
     }

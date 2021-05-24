@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvHerb"
         tools:text="1234567" />
 
-    <com.june.northland.feature.character.widget.ExperienceView
+    <com.nl.module.characters.widget.ExperienceView
         android:id="@+id/vExperience"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="0dp"
