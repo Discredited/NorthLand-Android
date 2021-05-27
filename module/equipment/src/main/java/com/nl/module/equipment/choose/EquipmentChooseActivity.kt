@@ -79,32 +79,32 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                     )
                 )
             }
-            EquipmentHelper.PART_ARMOR -> {
+            EquipmentHelper.PART_TOPS -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "恒河沙数盾",
                             300,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "锁子甲",
                             200,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "荆棘甲",
                             150,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "碧落道袍",
                             100,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         )
                     )
                 )
@@ -139,32 +139,32 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                     )
                 )
             }
-            EquipmentHelper.PART_JEWELRY -> {
+            EquipmentHelper.PART_RING -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "麻痹戒指",
                             200,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "永恒项链",
                             300,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "海上明月吊坠",
                             10,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "勇者徽章",
                             500,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         )
                     )
                 )
@@ -200,25 +200,25 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                             R.drawable.ic_defense,
                             "恒河沙数盾",
                             300,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "锁子甲",
                             200,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "荆棘甲",
                             150,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_defense,
                             "碧落道袍",
                             100,
-                            EquipmentHelper.PART_ARMOR
+                            EquipmentHelper.PART_TOPS
                         ),
                         EquipmentVo(
                             R.drawable.ic_speed,
@@ -248,25 +248,25 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                             R.drawable.ic_menu_practice,
                             "麻痹戒指",
                             200,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "永恒项链",
                             300,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "海上明月吊坠",
                             10,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
                             R.drawable.ic_menu_practice,
                             "勇者徽章",
                             500,
-                            EquipmentHelper.PART_JEWELRY
+                            EquipmentHelper.PART_RING
                         )
                     )
                 )

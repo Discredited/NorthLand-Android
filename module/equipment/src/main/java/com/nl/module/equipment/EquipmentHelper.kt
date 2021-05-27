@@ -4,11 +4,13 @@ import com.blankj.utilcode.util.Utils
 
 object EquipmentHelper {
 
-    const val PART_ALL = 0  //所有部位
-    const val PART_WEAPON = 1  //武器
-    const val PART_ARMOR = 2  //防具
-    const val PART_SHOES = 3  //鞋子
-    const val PART_JEWELRY = 4  //首饰
+    const val PART_ALL = 0  // 所有部位
+    const val PART_WEAPON = 1  // 武器
+    const val PART_TOPS = 2  // 防具上装
+    const val PART_BOTTOMS = 3 // 防具下装
+    const val PART_SHOES = 4  //鞋子
+    const val PART_RING = 5  //戒指
+    const val PART_NECKLACE = 6  //项链
 
     const val QUALITY_NORMAL = 0  // 普通
     const val QUALITY_REFINE = 1  // 精炼

@@ -53,8 +53,7 @@ class EquipmentBuildFragment : BaseDialogFragment<FragmentEquipmentBuildBinding>
             strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_3)
         )
         mBinding.ivEquipmentName.text = equipment.name
-        mBinding.ivEquipmentQuality.text =
-            "品质 ${EquipmentHelper.equipmentQuality(equipment.quality)}"
+        mBinding.ivEquipmentQuality.text = "品质 ${EquipmentHelper.equipmentQuality(equipment.quality)}"
         mBinding.tvEquipmentValue.text = "攻击+${equipment.value}"
         mBinding.tvEquipmentCost.text = "打造石：2000"
     }

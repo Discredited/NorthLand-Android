@@ -6,12 +6,12 @@ object ConstantUtils {
 
     fun randomEquipment(part: Int): EquipmentVo {
         return when (part) {
-            EquipmentHelper.PART_ARMOR -> {
+            EquipmentHelper.PART_TOPS -> {
                 EquipmentVo(
                     R.drawable.ic_defense,
                     "防具",
                     100,
-                    EquipmentHelper.PART_ARMOR,
+                    EquipmentHelper.PART_TOPS,
                     "222222",
                     0,
                     100,
@@ -34,12 +34,12 @@ object ConstantUtils {
                     ""
                 )
             }
-            EquipmentHelper.PART_JEWELRY -> {
+            EquipmentHelper.PART_RING -> {
                 EquipmentVo(
                     R.drawable.ic_menu_practice,
                     "首饰",
                     100,
-                    EquipmentHelper.PART_JEWELRY,
+                    EquipmentHelper.PART_RING,
                     "444444",
                     0,
                     100,

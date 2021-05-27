@@ -13,6 +13,8 @@ import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
+import com.nl.module.equipment.EquipmentHelper
+import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.FragmentEquipmentListBinding
 
@@ -21,9 +23,9 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
     private val mEquipmentViewModel by activityViewModels<com.nl.module.equipment.EquipmentViewModel>()
 
     private val mAdapter = EquipmentAdapter()
-    private val mEquipmentList = mutableListOf<com.nl.module.equipment.EquipmentVo>()
+    private val mEquipmentList = mutableListOf<EquipmentVo>()
 
-    private var mPart = com.nl.module.equipment.EquipmentHelper.PART_ALL
+    private var mPart = EquipmentHelper.PART_ALL
     private var mQuality = com.nl.component.common.QualityHelper.QUALITY_ALL
     private var mPartMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
@@ -55,7 +57,7 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
         mBinding.tvTypeQuality.click { showQualityMenu(it) }
         mBinding.tvBuild.click { showBuildMenu(it) }
         mBinding.tvTypeReset.click {
-            mPart = com.nl.module.equipment.EquipmentHelper.PART_ALL
+            mPart = EquipmentHelper.PART_ALL
             mQuality = com.nl.component.common.QualityHelper.QUALITY_ALL
             mBinding.tvTypePart.text = getString(R.string.str_all)
             mBinding.tvTypeQuality.text = getString(R.string.str_all)
@@ -72,110 +74,110 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
         requestEquipment(mPart, mQuality)
     }
 
-    private fun requestEquipment(part: Int = com.nl.module.equipment.EquipmentHelper.PART_ALL, quality: Int = 0) {
+    private fun requestEquipment(part: Int = EquipmentHelper.PART_ALL, quality: Int = 0) {
         if (mEquipmentList.isEmpty()) {
             mEquipmentList.addAll(
                 mutableListOf(
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_attack,
                         "一点黛眉刀",
                         500,
-                        com.nl.module.equipment.EquipmentHelper.PART_WEAPON
+                        EquipmentHelper.PART_WEAPON
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_attack,
                         "无量刀",
                         300,
-                        com.nl.module.equipment.EquipmentHelper.PART_WEAPON
+                        EquipmentHelper.PART_WEAPON
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_attack,
                         "劫灰剑",
                         200,
-                        com.nl.module.equipment.EquipmentHelper.PART_WEAPON
+                        EquipmentHelper.PART_WEAPON
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_attack,
                         "射日弓",
                         100,
-                        com.nl.module.equipment.EquipmentHelper.PART_WEAPON
+                        EquipmentHelper.PART_WEAPON
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_defense,
                         "恒河沙数盾",
                         300,
-                        com.nl.module.equipment.EquipmentHelper.PART_ARMOR
+                        EquipmentHelper.PART_TOPS
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_defense,
                         "锁子甲",
                         200,
-                        com.nl.module.equipment.EquipmentHelper.PART_ARMOR
+                        EquipmentHelper.PART_TOPS
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_defense,
                         "荆棘甲",
                         150,
-                        com.nl.module.equipment.EquipmentHelper.PART_ARMOR
+                        EquipmentHelper.PART_TOPS
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_defense,
                         "碧落道袍",
                         100,
-                        com.nl.module.equipment.EquipmentHelper.PART_ARMOR
+                        EquipmentHelper.PART_TOPS
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_speed,
                         "闪电靴",
                         200,
-                        com.nl.module.equipment.EquipmentHelper.PART_SHOES
+                        EquipmentHelper.PART_SHOES
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_speed,
                         "潮生海落",
                         300,
-                        com.nl.module.equipment.EquipmentHelper.PART_SHOES
+                        EquipmentHelper.PART_SHOES
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_speed,
                         "屠戮战靴",
                         10,
-                        com.nl.module.equipment.EquipmentHelper.PART_SHOES
+                        EquipmentHelper.PART_SHOES
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_speed,
                         "浮光掠影",
                         500,
-                        com.nl.module.equipment.EquipmentHelper.PART_SHOES
+                        EquipmentHelper.PART_SHOES
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_menu_practice,
                         "麻痹戒指",
                         200,
-                        com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
+                        EquipmentHelper.PART_RING
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_menu_practice,
                         "永恒项链",
                         300,
-                        com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
+                        EquipmentHelper.PART_RING
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_menu_practice,
                         "海上明月吊坠",
                         10,
-                        com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
+                        EquipmentHelper.PART_RING
                     ),
-                    com.nl.module.equipment.EquipmentVo(
+                    EquipmentVo(
                         R.drawable.ic_menu_practice,
                         "勇者徽章",
                         500,
-                        com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
+                        EquipmentHelper.PART_RING
                     )
                 )
             )
         }
-        if (part == com.nl.module.equipment.EquipmentHelper.PART_ALL) {
+        if (part == EquipmentHelper.PART_ALL) {
             mAdapter.setNewInstance(mEquipmentList)
         } else {
             val list = mEquipmentList.filter { it.part == part }.toMutableList()
@@ -189,11 +191,11 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
             mPartMenu?.menuInflater?.inflate(R.menu.menu_equipment_part, mPartMenu?.menu)
             mPartMenu?.setOnMenuItemClickListener {
                 mPart = when (it.itemId) {
-                    R.id.part_weapon -> com.nl.module.equipment.EquipmentHelper.PART_WEAPON
-                    R.id.part_armor -> com.nl.module.equipment.EquipmentHelper.PART_ARMOR
-                    R.id.part_shoes -> com.nl.module.equipment.EquipmentHelper.PART_SHOES
-                    R.id.part_jewelry -> com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
-                    else -> com.nl.module.equipment.EquipmentHelper.PART_ALL
+                    R.id.part_weapon -> EquipmentHelper.PART_WEAPON
+                    R.id.part_armor -> EquipmentHelper.PART_TOPS
+                    R.id.part_shoes -> EquipmentHelper.PART_SHOES
+                    R.id.part_jewelry -> EquipmentHelper.PART_RING
+                    else -> EquipmentHelper.PART_ALL
                 }
                 mBinding.tvTypePart.text = it.title
                 requestEquipment(mPart, mQuality)
@@ -229,11 +231,11 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
             mBuildMenu?.menuInflater?.inflate(R.menu.menu_equipment_part, mBuildMenu?.menu)
             mBuildMenu?.setOnMenuItemClickListener {
                 val part = when (it.itemId) {
-                    R.id.part_weapon -> com.nl.module.equipment.EquipmentHelper.PART_WEAPON
-                    R.id.part_armor -> com.nl.module.equipment.EquipmentHelper.PART_ARMOR
-                    R.id.part_shoes -> com.nl.module.equipment.EquipmentHelper.PART_SHOES
-                    R.id.part_jewelry -> com.nl.module.equipment.EquipmentHelper.PART_JEWELRY
-                    else -> com.nl.module.equipment.EquipmentHelper.PART_WEAPON
+                    R.id.part_weapon -> EquipmentHelper.PART_WEAPON
+                    R.id.part_armor -> EquipmentHelper.PART_TOPS
+                    R.id.part_shoes -> EquipmentHelper.PART_SHOES
+                    R.id.part_jewelry -> EquipmentHelper.PART_RING
+                    else -> EquipmentHelper.PART_WEAPON
                 }
                 com.nl.module.equipment.detail.EquipmentBuildFragment.newInstance(part).show(
                     childFragmentManager,
