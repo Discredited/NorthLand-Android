@@ -33,8 +33,10 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
         mBinding.vpCharacter.adapter = CharacterDetailAdapter(supportFragmentManager, lifecycle)
 
         mBinding.btBringUp.click {
-            CharacterPotentialFragment.newInstance()
-                .show(supportFragmentManager, CharacterPotentialFragment::javaClass.name)
+            CharacterPotentialFragment.newInstance().show(
+                supportFragmentManager,
+                CharacterPotentialFragment::javaClass.name
+            )
         }
 
         mBinding.ivHelper.click {

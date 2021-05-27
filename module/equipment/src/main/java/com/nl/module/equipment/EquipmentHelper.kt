@@ -10,12 +10,12 @@ object EquipmentHelper {
     const val PART_SHOES = 3  //鞋子
     const val PART_JEWELRY = 4  //首饰
 
-    const val QUALITY_NORMAL = 0
-    const val QUALITY_REFINE = 1
-    const val QUALITY_FLAWLESS = 2
-    const val QUALITY_EXTRAORDINARY = 3
-    const val QUALITY_EXTREME = 4
-    const val QUALITY_PEERLESS = 5
+    const val QUALITY_NORMAL = 0  // 普通
+    const val QUALITY_REFINE = 1  // 精炼
+    const val QUALITY_FLAWLESS = 2  // 无暇
+    const val QUALITY_EXTRAORDINARY = 3  // 非凡
+    const val QUALITY_EXTREME = 4  // 至臻
+    const val QUALITY_PEERLESS = 5  // 绝世
 
     const val OPERATE_STRENGTHEN = 0//强化
     const val OPERATE_FORGING = 1//锻造
