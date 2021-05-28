@@ -7,94 +7,109 @@
     tools:background="@color/color_bg_alpha_black"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
+    <!-- android:tools="@drawable/ic_avatar_gan_ning_zhen" -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterAvatar"
+        android:id="@+id/iv_character_avatar"
         android:layout_width="@dimen/dp_150"
         android:layout_height="@dimen/dp_150"
         android:padding="@dimen/dp_5"
-        android:src="@drawable/ic_avatar_gan_ning_zhen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@drawable/shape_rect_realm_radius_2" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_character_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:lines="1"
+        android:textSize="@dimen/sp_24"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/iv_character_avatar"
+        app:layout_constraintStart_toStartOf="@+id/iv_character_avatar"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_avatar"
+        tools:text="甘柠真"
+        tools:textColor="@color/color_quality_epic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <!-- 武器 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterWeapon"
+        android:id="@+id/iv_character_weapon"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
-        app:layout_constraintEnd_toStartOf="@id/ivCharacterAvatar"
+        app:layout_constraintEnd_toStartOf="@id/iv_character_avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 上装 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterTops"
+        android:id="@+id/iv_character_tops"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivCharacterAvatar"
+        app:layout_constraintStart_toEndOf="@id/iv_character_avatar"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 下装 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterBottoms"
+        android:id="@+id/iv_character_bottoms"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginTop="@dimen/dp_20"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
-        app:layout_constraintEnd_toStartOf="@id/ivCharacterAvatar"
+        app:layout_constraintEnd_toStartOf="@id/iv_character_avatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivCharacterWeapon"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_weapon"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 鞋子 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterShoes"
+        android:id="@+id/iv_character_shoes"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginTop="@dimen/dp_20"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivCharacterAvatar"
-        app:layout_constraintTop_toBottomOf="@id/ivCharacterTops"
+        app:layout_constraintStart_toEndOf="@id/iv_character_avatar"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_tops"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 戒指 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterRing"
+        android:id="@+id/iv_character_ring"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginTop="@dimen/dp_20"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
-        app:layout_constraintEnd_toStartOf="@id/ivCharacterAvatar"
+        app:layout_constraintEnd_toStartOf="@id/iv_character_avatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivCharacterBottoms"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_bottoms"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 项链 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivCharacterNecklace"
+        android:id="@+id/iv_character_necklace"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginTop="@dimen/dp_20"
         android:padding="@dimen/dp_5"
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivCharacterAvatar"
-        app:layout_constraintTop_toBottomOf="@id/ivCharacterBottoms"
+        app:layout_constraintStart_toEndOf="@id/iv_character_avatar"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_bottoms"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 </merge>

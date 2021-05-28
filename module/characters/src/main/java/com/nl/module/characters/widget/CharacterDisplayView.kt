@@ -84,6 +84,7 @@ class CharacterDisplayView @JvmOverloads constructor(
     ) {
         mCharacter = character
         mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
+        mBinding.tvCharacterName.text = character?.name
 
         mWeapon = weapon
         mTops = tops
