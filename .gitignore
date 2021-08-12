@@ -5,9 +5,8 @@ build
 /.gradle
 /.idea
 /build
-
+build/
 /app/build
-
 /style/build
 
 /local.properties
