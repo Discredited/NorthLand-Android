@@ -15,7 +15,7 @@ class MainActivity : NLBaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView() {
-
+        // drawLayout center布局顶部自有一个间距的问题
     }
 
     override fun loadData() {
