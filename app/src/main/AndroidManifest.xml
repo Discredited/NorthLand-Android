@@ -20,12 +20,7 @@
         <activity
             android:name=".feature.login.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/SplashTheme" />
 
         <activity
             android:name=".feature.login.start.StartUpActivity"
@@ -34,7 +29,12 @@
 
         <activity
             android:name=".feature.main.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.nl.module.characters.CharacterConfigActivity"
             android:screenOrientation="portrait" />
@@ -81,9 +81,15 @@
         <activity
             android:name=".feature.taoism.arena.ArenaListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".feature.taoism.ladder.LadderListActivity" />
-        <activity android:name=".feature.main.email.EmailListActivity" />
-        <activity android:name="com.nl.module.equipment.detail.EquipmentDetailActivity" />
+        <activity
+            android:name=".feature.taoism.ladder.LadderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feature.main.email.EmailListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.nl.module.equipment.detail.EquipmentDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

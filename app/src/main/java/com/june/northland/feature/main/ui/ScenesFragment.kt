@@ -11,13 +11,8 @@ import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.june.northland.R
-import com.june.base.basic.part.BaseFragment
-import com.nl.component.ext.itemClick
 import com.june.northland.databinding.FragmentMainSceneBinding
 import com.june.northland.feature.backpack.BackpackActivity
-import com.nl.module.characters.CharacterInfoFragment
-import com.nl.module.characters.CharacterVo
-import com.nl.module.characters.list.CharacterListActivity
 import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
 import com.june.northland.feature.lineup.LineUpActivity
@@ -27,8 +22,11 @@ import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import com.june.northland.feature.taoism.TaoismActivity
+import com.nl.component.NLBaseFragment
+import com.nl.component.ext.itemClick
+import com.nl.module.characters.CharacterInfoFragment
 
-class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
+class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
 
     private val mCharacterAdapter = ScenesCharacterAdapter()
     private val mMenuAdapter = ScenesMenuAdapter()
@@ -44,8 +42,8 @@ class ScenesFragment : BaseFragment<FragmentMainSceneBinding>() {
     override fun initView() {
         //阵容人物
         mCharacterAdapter.itemClick { _, _, position ->
-            val characterInfoFragment = com.nl.module.characters.CharacterInfoFragment.newInstance(position)
-            characterInfoFragment.show(childFragmentManager, com.nl.module.characters.CharacterInfoFragment::javaClass.name)
+            val characterInfoFragment = CharacterInfoFragment.newInstance(position)
+            characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
         }
 
         mBinding.rvCharacter.apply {

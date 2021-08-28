@@ -1,14 +1,14 @@
 package com.june.northland.feature.main
 
 import androidx.core.view.GravityCompat
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.nl.component.ext.commitFragment
 import com.june.northland.databinding.ActivityMainBinding
 import com.june.northland.feature.main.ui.ScenesFragment
 import com.june.northland.feature.main.ui.SettingFragment
+import com.nl.component.NLBaseActivity
+import com.nl.component.ext.commitFragment
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : NLBaseActivity<ActivityMainBinding>() {
 
     override fun viewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)

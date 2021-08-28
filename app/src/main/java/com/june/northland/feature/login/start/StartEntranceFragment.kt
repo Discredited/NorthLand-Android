@@ -14,11 +14,11 @@ import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.base.basic.ext.click
 import com.june.northland.R
-import com.nl.component.NLBaseFragment
 import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache
+import com.nl.component.NLBaseFragment
 
 class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
 
@@ -73,7 +73,7 @@ class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
             hideLoading()
             startActivity(Intent(requireActivity(), MainActivity::class.java))
             activity?.finish()
-        }, 5000)
+        }, 2000)
     }
 
     private fun getUserAccount(account: String): SpannableStringBuilder {

@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
-import com.june.base.basic.part.BaseFragment
+import com.june.northland.databinding.FragmentMainSettingBinding
+import com.nl.component.NLBaseFragment
 import com.nl.component.ext.click
 import com.nl.component.ext.loadAvatar
-import com.june.northland.databinding.FragmentMainSettingBinding
 
-class SettingFragment : BaseFragment<FragmentMainSettingBinding>() {
+class SettingFragment : NLBaseFragment<FragmentMainSettingBinding>() {
 
     override fun viewBinding(
         inflater: LayoutInflater,

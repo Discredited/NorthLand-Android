@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- 去掉ActionBar -->
@@ -7,15 +7,19 @@
         <!-- AppCompat does not support the current theme features -->
         <item name="windowNoTitle">true</item>
 
-        <!-- 设置window全屏显示 没有状态栏 -->
-        <item name="android:windowFullscreen">true</item>
-
         <!-- 沉侵至状态栏  windowTranslucentStatus属性设置以后  状态其他相关设置都会受影响 -->
         <!-- 比如：statusBarColor颜色设置就会失效 -->
         <!-- 但是不设置，视图又不能沉侵至状态栏 -->
         <item name="android:windowTranslucentStatus">true</item>
-        <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>-->
-        <!--        <item name="android:statusBarColor">@color/color_transparent</item>-->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@color/color_transparent</item>
+
+        <!-- 刘海屏沉浸式适配 -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+
+        <!-- 设置window全屏显示 没有状态栏 -->
+        <item name="android:windowFullscreen">true</item>
+
         <!-- 窗口背景颜色 -->
         <item name="android:windowBackground">@color/color_white</item>
         <!-- actionMode  true-弹出时覆盖部分布局 false-不符盖将原有布局下移 -->
