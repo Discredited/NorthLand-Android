@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.base.basic.ext.click
 import com.nl.component.common.ColorUtils
@@ -20,7 +20,7 @@ import com.nl.module.equipment.detail.EquipmentBuildFragment
 
 class CharacterDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     private val mBinding: WidgetCharacterDisplayLayoutBinding =
         WidgetCharacterDisplayLayoutBinding.inflate(LayoutInflater.from(context), this)
@@ -84,6 +84,10 @@ class CharacterDisplayView @JvmOverloads constructor(
     ) {
         mCharacter = character
         mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
+//        mBinding.ivCharacterAvatar.loadRoundAvatar(
+//            R.drawable.ic_avatar_gan_ning_zhen,
+//            resources.getDimensionPixelSize(R.dimen.dp_5)
+//        )
         mBinding.tvCharacterName.text = character?.name
 
         mWeapon = weapon

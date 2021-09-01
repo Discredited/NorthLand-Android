@@ -16,14 +16,15 @@ import com.june.northland.feature.backpack.BackpackActivity
 import com.june.northland.feature.dungeon.DungeonVo
 import com.june.northland.feature.dungeon.chapter.ChapterListActivity
 import com.june.northland.feature.lineup.LineUpActivity
-import com.june.northland.feature.main.MainActivity
 import com.june.northland.feature.main.email.EmailListActivity
+import com.june.northland.feature.main.user.UserInfoDialogFragment
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
 import com.june.northland.feature.store.StoreActivity
 import com.june.northland.feature.taoism.TaoismActivity
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
+import com.nl.component.ext.simpleName
 import com.nl.module.characters.CharacterInfoFragment
 
 class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
@@ -67,7 +68,12 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
         //底部菜单
         mMenuAdapter.itemClick { _, _, position ->
             when (position) {
-                0 -> startActivity(Intent(requireActivity(), com.nl.module.characters.list.CharacterListActivity::class.java))
+                0 -> startActivity(
+                    Intent(
+                        requireActivity(),
+                        com.nl.module.characters.list.CharacterListActivity::class.java
+                    )
+                )
                 1 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 3 -> startActivity(Intent(requireActivity(), ChapterListActivity::class.java))
@@ -86,11 +92,7 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
         }
 
         mBinding.vPlayerSection.getAvatarView().click {
-            activity?.let {
-                if (it is MainActivity) {
-                    it.openDrawLayout()
-                }
-            }
+            UserInfoDialogFragment.newInstance().show(childFragmentManager, UserInfoDialogFragment.simpleName())
         }
 
         mBinding.ivEmail.click {

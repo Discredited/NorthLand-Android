@@ -1,6 +1,6 @@
 package com.nl.module.characters
 
-class CharacterVo(
+data class CharacterVo(
     val id: String = "111111",
     val name: String = "甘柠真",
     val avatar: String = "",

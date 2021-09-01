@@ -52,7 +52,6 @@ dependencies {
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation project(path: ':base:component')
-    implementation project(path: ':base:component')
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')
     implementation project(path: ':module:magic')

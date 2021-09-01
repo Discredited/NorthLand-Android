@@ -9,10 +9,24 @@ object ConstantUtils {
             EquipmentHelper.PART_TOPS -> {
                 EquipmentVo(
                     R.drawable.ic_defense,
-                    "防具",
+                    "寂灭战甲",
                     100,
                     EquipmentHelper.PART_TOPS,
                     "222222",
+                    0,
+                    100,
+                    PropertyHelper.PRO_HEALTH,
+                    "",
+                    ""
+                )
+            }
+            EquipmentHelper.PART_BOTTOMS -> {
+                EquipmentVo(
+                    R.drawable.ic_defense,
+                    "寂灭腿甲",
+                    100,
+                    EquipmentHelper.PART_BOTTOMS,
+                    "333333",
                     0,
                     100,
                     PropertyHelper.PRO_DEFENSE,
@@ -26,7 +40,7 @@ object ConstantUtils {
                     "鞋子",
                     100,
                     EquipmentHelper.PART_SHOES,
-                    "333333",
+                    "444444",
                     0,
                     100,
                     PropertyHelper.PRO_SPEED,
@@ -37,13 +51,27 @@ object ConstantUtils {
             EquipmentHelper.PART_RING -> {
                 EquipmentVo(
                     R.drawable.ic_menu_practice,
-                    "首饰",
+                    "戒指",
                     100,
                     EquipmentHelper.PART_RING,
-                    "444444",
+                    "555555",
                     0,
                     100,
-                    PropertyHelper.PRO_ATTACK,
+                    PropertyHelper.PRO_CRITICAL,
+                    "",
+                    ""
+                )
+            }
+            EquipmentHelper.PART_NECKLACE -> {
+                EquipmentVo(
+                    R.drawable.ic_menu_practice,
+                    "项链",
+                    100,
+                    EquipmentHelper.PART_NECKLACE,
+                    "555555",
+                    0,
+                    100,
+                    PropertyHelper.PRO_CRITICAL,
                     "",
                     ""
                 )

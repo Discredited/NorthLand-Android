@@ -5,14 +5,14 @@ import com.nl.component.R
 
 object PropertyHelper {
 
-    const val PRO_ATTACK = 1
-    const val PRO_DEFENSE = 2
-    const val PRO_HEALTH = 3
-    const val PRO_SPEED = 4
-    const val PRO_CRITICAL = 5
-    const val PRO_RESISTER = 6
-    const val PRO_HIT = 7
-    const val PRO_DODGE = 8
+    const val PRO_ATTACK = 1  // 攻击
+    const val PRO_DEFENSE = 2  // 防御
+    const val PRO_HEALTH = 3  // 生命
+    const val PRO_SPEED = 4  // 速度
+    const val PRO_CRITICAL = 5  // 暴击
+    const val PRO_RESISTER = 6  // 抵抗
+    const val PRO_HIT = 7  // 命中
+    const val PRO_DODGE = 8  // 闪避
 
     fun getPropertyName(property: Int): String {
         val strId = when (property) {
