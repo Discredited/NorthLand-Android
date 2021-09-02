@@ -72,8 +72,7 @@ class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
     }
 
     private fun initEquipment(equipment: EquipmentVo) {
-        val qualityColor =
-            ContextCompat.getColor(this, ColorUtils.equipmentQualityColor(equipment.quality))
+        val qualityColor = ContextCompat.getColor(this, ColorUtils.equipmentQualityColor(equipment.quality))
         mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
         mBinding.tvEquipmentName.setTextColor(qualityColor)
         mBinding.tvEquipmentName.text = equipment.name

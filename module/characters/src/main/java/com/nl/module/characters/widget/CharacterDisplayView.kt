@@ -10,8 +10,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.base.basic.ext.click
 import com.nl.component.common.ColorUtils
+import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.module.characters.CharacterVo
+import com.nl.module.characters.R
 import com.nl.module.characters.databinding.WidgetCharacterDisplayLayoutBinding
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentInfoFragment
@@ -84,10 +86,10 @@ class CharacterDisplayView @JvmOverloads constructor(
     ) {
         mCharacter = character
         mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
-//        mBinding.ivCharacterAvatar.loadRoundAvatar(
-//            R.drawable.ic_avatar_gan_ning_zhen,
-//            resources.getDimensionPixelSize(R.dimen.dp_5)
-//        )
+        mBinding.ivCharacterAvatar.loadAvatar(
+            R.drawable.ic_avatar_gan_ning_zhen,
+            resources.getDimensionPixelSize(R.dimen.dp_5)
+        )
         mBinding.tvCharacterName.text = character?.name
 
         mWeapon = weapon

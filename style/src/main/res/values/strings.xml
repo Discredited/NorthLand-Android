@@ -32,6 +32,8 @@
     <string name="equipment_extraordinary">非凡</string>
     <string name="equipment_extreme">至臻</string>
     <string name="equipment_peerless">绝世</string>
+    <string name="equipment_name_less">無名</string>
+
     <string name="str_attribute">属性</string>
     <string name="str_quality">品质</string>
     <string name="str_reset">重置</string>

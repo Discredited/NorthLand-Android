@@ -8,7 +8,7 @@ import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseDialogFragment
+import com.nl.component.NLBaseDialogFragment
 import com.nl.component.ext.setDrawable
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
@@ -18,7 +18,7 @@ import com.nl.module.equipment.databinding.FragmentEquipmentBuildBinding
 /**
  * 初次锻造装备
  */
-class EquipmentBuildFragment : BaseDialogFragment<FragmentEquipmentBuildBinding>() {
+class EquipmentBuildFragment : NLBaseDialogFragment<FragmentEquipmentBuildBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
@@ -59,9 +59,9 @@ class EquipmentBuildFragment : BaseDialogFragment<FragmentEquipmentBuildBinding>
     }
 
     private fun buildEquipment() {
-        //showLoading()
+        showLoading()
         mBinding.tvBuildTitle.postDelayed({
-            //hideLoading()
+            hideLoading()
             val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_WEAPON
             val equipment = mEquipmentViewModel.equipmentBuild(part)
             mEquipmentViewModel.mEquipmentLive.value = equipment

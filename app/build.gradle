@@ -74,7 +74,9 @@ dependencies {
     implementation Dependencies.recyclerViewSelection
 
     implementation project(path: ':style')
-    implementation project(path: ':base:component')
+    //implementation project(path: ':base:component')
+    implementation Dependencies.nlComponent
+
     implementation project(path: ':module:characters')
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')

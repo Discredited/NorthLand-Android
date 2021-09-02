@@ -11,7 +11,7 @@ fun ImageView.loadAvatar(resourceId: Int) {
     Glide.with(this).load(resourceId).transform(CircleCrop()).into(this)
 }
 
-fun ImageView.loadRoundAvatar(
+fun ImageView.loadAvatar(
     resourceId: Int = R.drawable.ic_avatar_gan_ning_zhen,
     corners: Int = resources.getDimensionPixelSize(R.dimen.dp_5)
 ) {

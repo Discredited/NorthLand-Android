@@ -9,11 +9,11 @@ data class EquipmentVo(
     val coverIcon: Int = R.drawable.ic_attack,
     val name: String = "一点黛眉刀",
     var value: Int = 100,
-    val part: Int = EquipmentHelper.PART_ALL,
+    val part: Int = EquipmentHelper.PART_ALL,  // 部位
     val id: String = "111111",
-    val quality: Int = 0,
-    val valueUpgrade: Int = 100,
-    val property: Int = PropertyHelper.PRO_ATTACK,
+    val quality: Int = 0,  // 品质
+    val valueUpgrade: Int = 100,  // 增长属性
+    val property: Int = PropertyHelper.PRO_ATTACK,  // 属性
     val basicDesc: String = "",
     val extraDesc: CharSequence = "",
     val strengthenMax: Int = 100,
