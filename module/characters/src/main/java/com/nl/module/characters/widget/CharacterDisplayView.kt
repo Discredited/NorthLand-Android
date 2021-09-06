@@ -9,7 +9,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.base.basic.ext.click
-import com.nl.component.common.ColorUtils
 import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.module.characters.CharacterVo
@@ -68,7 +67,7 @@ class CharacterDisplayView @JvmOverloads constructor(
 
     private fun setEquipment(view: AppCompatImageView?, equipment: EquipmentVo?) {
         val qualityDefault = equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL
-        val quality = ColorUtils.equipmentQualityColor(qualityDefault)
+        val quality = EquipmentHelper.equipmentQualityColor(qualityDefault)
         val qualityColor = ContextCompat.getColor(context, quality)
         view?.setDrawable(strokeColor = qualityColor)
         equipment?.let { view?.setImageResource(it.coverIcon) }

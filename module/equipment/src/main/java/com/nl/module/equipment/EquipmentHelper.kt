@@ -17,9 +17,10 @@ object EquipmentHelper {
     const val PART_WEAPON = 1  // 武器
     const val PART_TOPS = 2  // 防具上装
     const val PART_BOTTOMS = 3 // 防具下装
-    const val PART_SHOES = 4  //鞋子
-    const val PART_RING = 5  //戒指
-    const val PART_NECKLACE = 6  //项链
+    const val PART_SHOES = 4  // 鞋子
+    const val PART_RING = 5  // 戒指
+    const val PART_NECKLACE = 6  // 项链
+    const val PART_AID = 6  // 辅助装备
 
     /**
      * 品质
@@ -48,5 +49,22 @@ object EquipmentHelper {
             else -> R.string.equipment_normal
         }
         return Utils.getApp().getString(qualityId)
+    }
+
+    fun equipmentQualityColor(quality: Int): Int {
+        return when (quality) {
+            //精炼
+            1 -> R.color.color_equipment_refine
+            //无暇
+            2 -> R.color.color_equipment_flawless
+            //非凡
+            3 -> R.color.color_equipment_extraordinary
+            //至臻
+            4 -> R.color.color_equipment_extreme
+            //绝世
+            5 -> R.color.color_equipment_peerless
+            //普通
+            else -> R.color.color_equipment_normal
+        }
     }
 }
