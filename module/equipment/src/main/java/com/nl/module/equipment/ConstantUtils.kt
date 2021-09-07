@@ -6,12 +6,12 @@ object ConstantUtils {
 
     fun randomEquipment(part: Int): EquipmentVo {
         return when (part) {
-            EquipmentHelper.PART_TOPS -> {
+            EquipmentHelper.PART_CLOTHING -> {
                 EquipmentVo(
-                    R.drawable.ic_defense,
                     "寂灭战甲",
+                    "1_normal/clothing.png",
                     100,
-                    EquipmentHelper.PART_TOPS,
+                    EquipmentHelper.PART_CLOTHING,
                     "222222",
                     0,
                     100,
@@ -20,12 +20,12 @@ object ConstantUtils {
                     ""
                 )
             }
-            EquipmentHelper.PART_BOTTOMS -> {
+            EquipmentHelper.PART_ARMOR -> {
                 EquipmentVo(
-                    R.drawable.ic_defense,
-                    "寂灭腿甲",
+                    "寂灭盾牌",
+                    "1_normal/armor.png",
                     100,
-                    EquipmentHelper.PART_BOTTOMS,
+                    EquipmentHelper.PART_ARMOR,
                     "333333",
                     0,
                     100,
@@ -36,8 +36,8 @@ object ConstantUtils {
             }
             EquipmentHelper.PART_SHOES -> {
                 EquipmentVo(
-                    R.drawable.ic_speed,
-                    "鞋子",
+                    "寂灭之靴",
+                    "1_normal/shoes.png",
                     100,
                     EquipmentHelper.PART_SHOES,
                     "444444",
@@ -50,8 +50,8 @@ object ConstantUtils {
             }
             EquipmentHelper.PART_RING -> {
                 EquipmentVo(
-                    R.drawable.ic_menu_practice,
-                    "戒指",
+                    "寂灭戒指",
+                    "1_normal/ring.png",
                     100,
                     EquipmentHelper.PART_RING,
                     "555555",
@@ -64,8 +64,8 @@ object ConstantUtils {
             }
             EquipmentHelper.PART_NECKLACE -> {
                 EquipmentVo(
-                    R.drawable.ic_menu_practice,
-                    "项链",
+                    "寂灭项链",
+                    "1_normal/necklace.png",
                     100,
                     EquipmentHelper.PART_NECKLACE,
                     "555555",
@@ -76,10 +76,24 @@ object ConstantUtils {
                     ""
                 )
             }
+            EquipmentHelper.PART_AID -> {
+                EquipmentVo(
+                    "寂灭徽章",
+                    "1_normal/aid.png",
+                    100,
+                    EquipmentHelper.PART_AID,
+                    "666666",
+                    0,
+                    100,
+                    PropertyHelper.PRO_CRITICAL,
+                    "",
+                    ""
+                )
+            }
             else -> {
                 EquipmentVo(
-                    R.drawable.ic_attack,
                     "武器",
+                    "1_normal/weapon.png",
                     100,
                     EquipmentHelper.PART_WEAPON,
                     "111111",

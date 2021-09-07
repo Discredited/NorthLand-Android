@@ -79,98 +79,98 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
             mEquipmentList.addAll(
                 mutableListOf(
                     EquipmentVo(
-                        R.drawable.ic_attack,
                         "一点黛眉刀",
+                        "1_normal/weapon.png",
                         500,
                         EquipmentHelper.PART_WEAPON
                     ),
                     EquipmentVo(
-                        R.drawable.ic_attack,
                         "无量刀",
+                        "1_normal/weapon.png",
                         300,
                         EquipmentHelper.PART_WEAPON
                     ),
                     EquipmentVo(
-                        R.drawable.ic_attack,
                         "劫灰剑",
+                        "1_normal/weapon.png",
                         200,
                         EquipmentHelper.PART_WEAPON
                     ),
                     EquipmentVo(
-                        R.drawable.ic_attack,
                         "射日弓",
+                        "1_normal/weapon.png",
                         100,
                         EquipmentHelper.PART_WEAPON
                     ),
                     EquipmentVo(
-                        R.drawable.ic_defense,
                         "恒河沙数盾",
+                        "1_normal/weapon.png",
                         300,
-                        EquipmentHelper.PART_TOPS
+                        EquipmentHelper.PART_CLOTHING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_defense,
                         "锁子甲",
+                        "1_normal/weapon.png",
                         200,
-                        EquipmentHelper.PART_TOPS
+                        EquipmentHelper.PART_CLOTHING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_defense,
                         "荆棘甲",
+                        "1_normal/weapon.png",
                         150,
-                        EquipmentHelper.PART_TOPS
+                        EquipmentHelper.PART_CLOTHING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_defense,
                         "碧落道袍",
+                        "1_normal/weapon.png",
                         100,
-                        EquipmentHelper.PART_TOPS
+                        EquipmentHelper.PART_CLOTHING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_speed,
                         "闪电靴",
+                        "1_normal/weapon.png",
                         200,
                         EquipmentHelper.PART_SHOES
                     ),
                     EquipmentVo(
-                        R.drawable.ic_speed,
                         "潮生海落",
+                        "1_normal/weapon.png",
                         300,
                         EquipmentHelper.PART_SHOES
                     ),
                     EquipmentVo(
-                        R.drawable.ic_speed,
                         "屠戮战靴",
+                        "1_normal/weapon.png",
                         10,
                         EquipmentHelper.PART_SHOES
                     ),
                     EquipmentVo(
-                        R.drawable.ic_speed,
                         "浮光掠影",
+                        "1_normal/weapon.png",
                         500,
                         EquipmentHelper.PART_SHOES
                     ),
                     EquipmentVo(
-                        R.drawable.ic_menu_practice,
                         "麻痹戒指",
+                        "1_normal/weapon.png",
                         200,
                         EquipmentHelper.PART_RING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_menu_practice,
                         "永恒项链",
+                        "1_normal/weapon.png",
                         300,
                         EquipmentHelper.PART_RING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_menu_practice,
                         "海上明月吊坠",
+                        "1_normal/weapon.png",
                         10,
                         EquipmentHelper.PART_RING
                     ),
                     EquipmentVo(
-                        R.drawable.ic_menu_practice,
                         "勇者徽章",
+                        "1_normal/weapon.png",
                         500,
                         EquipmentHelper.PART_RING
                     )
@@ -192,7 +192,7 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
             mPartMenu?.setOnMenuItemClickListener {
                 mPart = when (it.itemId) {
                     R.id.part_weapon -> EquipmentHelper.PART_WEAPON
-                    R.id.part_armor -> EquipmentHelper.PART_TOPS
+                    R.id.part_armor -> EquipmentHelper.PART_CLOTHING
                     R.id.part_shoes -> EquipmentHelper.PART_SHOES
                     R.id.part_jewelry -> EquipmentHelper.PART_RING
                     else -> EquipmentHelper.PART_ALL
@@ -232,7 +232,7 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
             mBuildMenu?.setOnMenuItemClickListener {
                 val part = when (it.itemId) {
                     R.id.part_weapon -> EquipmentHelper.PART_WEAPON
-                    R.id.part_armor -> EquipmentHelper.PART_TOPS
+                    R.id.part_armor -> EquipmentHelper.PART_CLOTHING
                     R.id.part_shoes -> EquipmentHelper.PART_SHOES
                     R.id.part_jewelry -> EquipmentHelper.PART_RING
                     else -> EquipmentHelper.PART_WEAPON

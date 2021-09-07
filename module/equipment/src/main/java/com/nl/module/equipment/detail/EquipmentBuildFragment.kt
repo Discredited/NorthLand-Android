@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import com.june.base.basic.ext.click
 import com.nl.component.NLBaseDialogFragment
+import com.nl.component.common.FilePathHelper
+import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
@@ -44,7 +46,7 @@ class EquipmentBuildFragment : NLBaseDialogFragment<FragmentEquipmentBuildBindin
         val equipment = mEquipmentViewModel.equipmentBuildInfo(part)
 
         mBinding.tvBuildTitle.text = "打造${equipment.name}"
-        mBinding.ivEquipmentIcon.setImageResource(equipment.coverIcon)
+        mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
         mBinding.ivEquipmentIcon.setDrawable(
             strokeColor = ContextCompat.getColor(
                 requireContext(),

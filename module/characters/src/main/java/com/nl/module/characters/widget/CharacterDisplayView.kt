@@ -40,11 +40,11 @@ class CharacterDisplayView @JvmOverloads constructor(
                 mWeapon = equipment
                 mBinding.ivCharacterWeapon
             }
-            EquipmentHelper.PART_TOPS -> {
+            EquipmentHelper.PART_CLOTHING -> {
                 mTops = equipment
                 mBinding.ivCharacterTops
             }
-            EquipmentHelper.PART_BOTTOMS -> {
+            EquipmentHelper.PART_ARMOR -> {
                 mBottoms = equipment
                 mBinding.ivCharacterBottoms
             }
@@ -70,7 +70,7 @@ class CharacterDisplayView @JvmOverloads constructor(
         val quality = EquipmentHelper.equipmentQualityColor(qualityDefault)
         val qualityColor = ContextCompat.getColor(context, quality)
         view?.setDrawable(strokeColor = qualityColor)
-        equipment?.let { view?.setImageResource(it.coverIcon) }
+        equipment?.let { view?.loadAvatar(equipment.icon) }
     }
 
     fun setCharacterAndEquipment(
@@ -117,13 +117,13 @@ class CharacterDisplayView @JvmOverloads constructor(
             mBinding.ivCharacterTops.click {
                 mTops?.let { equipmentInfo(it.id) }
                 if (null == mTops) {
-                    equipmentBuild(EquipmentHelper.PART_TOPS)
+                    equipmentBuild(EquipmentHelper.PART_CLOTHING)
                 }
             }
             mBinding.ivCharacterBottoms.click {
                 mBottoms?.let { equipmentInfo(it.id) }
                 if (null == mBottoms) {
-                    equipmentBuild(EquipmentHelper.PART_BOTTOMS)
+                    equipmentBuild(EquipmentHelper.PART_ARMOR)
                 }
             }
             mBinding.ivCharacterShoes.click {

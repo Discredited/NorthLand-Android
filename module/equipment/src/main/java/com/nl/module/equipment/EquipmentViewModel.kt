@@ -66,7 +66,6 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
         val forgingValue = (forgingQuality + 1) * 1000 + (equipment?.strengthen ?: 0 * forgingValueUpgrade)
 
         val forgingEquipment = EquipmentVo(
-            coverIcon = equipment?.coverIcon ?: R.drawable.ic_attack,
             name = forgingName,
             value = forgingValue,
             part = equipment?.part ?: 0,

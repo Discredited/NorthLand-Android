@@ -38,4 +38,8 @@ object FilePathHelper {
     fun getCharacterAvatar(avatar: String): String {
         return "${getCharacterAvatarDirectory()}/$avatar/"
     }
+
+    fun getEquipmentIcon(icon: String): String {
+        return "${getCharacterAvatarDirectory()}/equipment/${icon}"
+    }
 }

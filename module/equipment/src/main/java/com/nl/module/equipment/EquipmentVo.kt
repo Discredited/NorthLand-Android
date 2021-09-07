@@ -6,8 +6,8 @@ import com.nl.component.common.PropertyHelper
 import com.nl.module.equipment.strengthen.StrengthAdditionVo
 
 data class EquipmentVo(
-    val coverIcon: Int = R.drawable.ic_attack,
     val name: String = "一点黛眉刀",
+    val icon: String = "",
     var value: Int = 100,
     val part: Int = EquipmentHelper.PART_ALL,  // 部位
     val id: String = "111111",
@@ -26,7 +26,7 @@ data class EquipmentVo(
     fun isQualityMax() = quality >= 5
 
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
+        parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readInt(),
         parcel.readInt(),
@@ -44,8 +44,8 @@ data class EquipmentVo(
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(coverIcon)
         parcel.writeString(name)
+        parcel.writeString(icon)
         parcel.writeInt(value)
         parcel.writeInt(part)
         parcel.writeString(id)

@@ -3,13 +3,12 @@ package com.nl.module.equipment.choose
 import android.app.Activity
 import android.content.Intent
 import com.june.base.basic.ext.addLinearItemDecoration
-import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseActivity
+import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentVo
-import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ActivityEquipmentChooseBinding
 import timber.log.Timber
 
@@ -53,58 +52,58 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "一点黛眉刀",
+                            "1_normal/weapon.png",
                             500,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "无量刀",
+                            "1_normal/weapon.png",
                             300,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "劫灰剑",
+                            "1_normal/weapon.png",
                             200,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "射日弓",
+                            "1_normal/weapon.png",
                             100,
                             EquipmentHelper.PART_WEAPON
                         )
                     )
                 )
             }
-            EquipmentHelper.PART_TOPS -> {
+            EquipmentHelper.PART_CLOTHING -> {
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "恒河沙数盾",
+                            "1_normal/armor.png",
                             300,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "锁子甲",
+                            "1_normal/armor.png",
                             200,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "荆棘甲",
+                            "1_normal/armor.png",
                             150,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "碧落道袍",
+                            "1_normal/armor.png",
                             100,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         )
                     )
                 )
@@ -113,26 +112,26 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "闪电靴",
+                            "1_normal/shoes.png",
                             200,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "潮生海落",
+                            "1_normal/shoes.png",
                             300,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "屠戮战靴",
+                            "1_normal/shoes.png",
                             10,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "浮光掠影",
+                            "1_normal/shoes.png",
                             500,
                             EquipmentHelper.PART_SHOES
                         )
@@ -143,26 +142,26 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "麻痹戒指",
+                            "1_normal/ring.png",
                             200,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "永恒项链",
+                            "1_normal/ring.png",
                             300,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "海上明月吊坠",
+                            "1_normal/ring.png",
                             10,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "勇者徽章",
+                            "1_normal/ring.png",
                             500,
                             EquipmentHelper.PART_RING
                         )
@@ -173,98 +172,98 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
                 mAdapter.setNewInstance(
                     mutableListOf(
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "一点黛眉刀",
+                            "1_normal/weapon.png",
                             500,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "无量刀",
+                            "1_normal/weapon.png",
                             300,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "劫灰剑",
+                            "1_normal/weapon.png",
                             200,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_attack,
                             "射日弓",
+                            "1_normal/weapon.png",
                             100,
                             EquipmentHelper.PART_WEAPON
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "恒河沙数盾",
+                            "1_normal/weapon.png",
                             300,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "锁子甲",
+                            "1_normal/weapon.png",
                             200,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "荆棘甲",
+                            "1_normal/weapon.png",
                             150,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_defense,
                             "碧落道袍",
+                            "1_normal/weapon.png",
                             100,
-                            EquipmentHelper.PART_TOPS
+                            EquipmentHelper.PART_CLOTHING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "闪电靴",
+                            "1_normal/weapon.png",
                             200,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "潮生海落",
+                            "1_normal/weapon.png",
                             300,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "屠戮战靴",
+                            "1_normal/weapon.png",
                             10,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_speed,
                             "浮光掠影",
+                            "1_normal/weapon.png",
                             500,
                             EquipmentHelper.PART_SHOES
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "麻痹戒指",
+                            "1_normal/weapon.png",
                             200,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "永恒项链",
+                            "1_normal/weapon.png",
                             300,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "海上明月吊坠",
+                            "1_normal/weapon.png",
                             10,
                             EquipmentHelper.PART_RING
                         ),
                         EquipmentVo(
-                            R.drawable.ic_menu_practice,
                             "勇者徽章",
+                            "1_normal/weapon.png",
                             500,
                             EquipmentHelper.PART_RING
                         )

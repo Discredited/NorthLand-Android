@@ -7,16 +7,16 @@ object EquipmentHelper {
     /**
      * 装备部位
      * 武器：固定属性攻击
-     * 上装：固定属性生命
-     * 下装：固定属性防御
+     * 服装：固定属性生命
+     * 防具：固定属性防御
      * 鞋子：固定属性速度
      * 戒指：固定属性攻击、生命、防御
      * 项链：固定属性攻击、生命、防御
      */
     const val PART_ALL = 0  // 所有部位
     const val PART_WEAPON = 1  // 武器
-    const val PART_TOPS = 2  // 防具上装
-    const val PART_BOTTOMS = 3 // 防具下装
+    const val PART_CLOTHING = 2  // 服装
+    const val PART_ARMOR = 3 // 防具
     const val PART_SHOES = 4  // 鞋子
     const val PART_RING = 5  // 戒指
     const val PART_NECKLACE = 6  // 项链
