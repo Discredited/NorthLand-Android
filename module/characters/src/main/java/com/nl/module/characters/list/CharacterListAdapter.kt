@@ -3,6 +3,9 @@ package com.nl.module.characters.list
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.nl.component.common.ColorUtils
+import com.nl.component.common.FilePathHelper
+import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.module.characters.CharacterVo
 import com.nl.module.characters.R
@@ -13,8 +16,10 @@ class CharacterListAdapter :
 
     override fun convert(holder: BaseDataBindingHolder<ItemCharacterBinding>, item: CharacterVo) {
         val realm = holder.layoutPosition % 10
-        val realmColor =
-            ContextCompat.getColor(holder.itemView.context, com.nl.component.common.ColorUtils.getPowerColor(realm))
+        val realmColor = ContextCompat.getColor(
+            holder.itemView.context,
+            ColorUtils.getPowerColor(realm)
+        )
         holder.dataBinding?.apply {
             ivAvatar.setDrawable(strokeColor = realmColor)
             if (holder.layoutPosition < 6) {
@@ -22,7 +27,8 @@ class CharacterListAdapter :
             } else {
                 tvLineUp.text = ""
             }
-            ivAvatar.setImageResource(item.avatarIcon)
+            //ivAvatar.setImageResource(item.avatarIcon)
+            ivAvatar.loadAvatar(FilePathHelper.getCharacterAvatar(item.avatar))
             tvName.text = item.name
             tvName.setTextColor(realmColor)
             tvLevel.text = "Lv.${holder.layoutPosition}"

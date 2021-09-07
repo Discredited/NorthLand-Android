@@ -8,7 +8,7 @@ object FilePathHelper {
     private const val RESOURCE_DIRECTORY = ".resource"
 
     fun getResourceDirectory(): String {
-        return "${PathUtils.getExternalAppDataPath()}/$RESOURCE_DIRECTORY"
+        return "${PathUtils.getExternalAppDataPath()}/$RESOURCE_DIRECTORY/resource"
     }
 
     fun getResourceZipPath(): String {
@@ -36,6 +36,6 @@ object FilePathHelper {
     }
 
     fun getCharacterAvatar(avatar: String): String {
-        return "${getCharacterAvatarDirectory()}/$avatar"
+        return "${getCharacterAvatarDirectory()}/$avatar/"
     }
 }

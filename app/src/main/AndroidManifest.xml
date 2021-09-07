@@ -20,7 +20,12 @@
         <activity
             android:name=".feature.login.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".feature.login.start.StartUpActivity"
@@ -30,12 +35,7 @@
         <activity
             android:name=".feature.main.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme"/>
         <activity
             android:name="com.nl.module.characters.CharacterConfigActivity"
             android:screenOrientation="portrait" />

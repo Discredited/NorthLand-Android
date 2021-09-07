@@ -6,9 +6,9 @@ import androidx.lifecycle.Observer
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.nl.component.ext.commitFragment
 import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
+import com.nl.component.ext.commitFragment
 
 /**
  * 启动页面
@@ -28,7 +28,7 @@ class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
     }
 
     override fun loadData() {
-        mStartUpViewModel.mEntranceLive.observe(this, Observer {
+        mStartUpViewModel.mEntranceLive.observe(this, {
             startEntrance()
         })
 
@@ -42,8 +42,7 @@ class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
 
     private fun requestConfigParams() {
         val timestamp = System.currentTimeMillis()
-        val date =
-            DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
+        val date = DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
         val remoteConfig = ResourceConfig(0, "0.0.1", timestamp, date)
         val needUpdate = mStartUpViewModel.checkUpdateResource(remoteConfig)
         if (needUpdate) {
