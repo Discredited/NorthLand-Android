@@ -1,9 +1,11 @@
 package com.june.northland.feature.main.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
@@ -25,10 +27,14 @@ import com.june.northland.feature.taoism.TaoismActivity
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
 import com.nl.component.ext.simpleName
-import com.nl.module.characters.CharacterInfoFragment
+import com.nl.module.characters.CharacterViewModel
+import com.nl.module.characters.detail.CharacterDetailActivity
+import com.nl.module.characters.list.CharacterListActivity
+import kotlinx.coroutines.flow.collect
 
 class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
 
+    private val mCharacterViewModel by viewModels<CharacterViewModel>()
     private val mCharacterAdapter = ScenesCharacterAdapter()
     private val mMenuAdapter = ScenesMenuAdapter()
     private val mPlotAdapter = ScenesPlotAdapter()
@@ -42,9 +48,8 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
 
     override fun initView() {
         //阵容人物
-        mCharacterAdapter.itemClick { _, _, position ->
-            val characterInfoFragment = CharacterInfoFragment.newInstance(position)
-            characterInfoFragment.show(childFragmentManager, CharacterInfoFragment::javaClass.name)
+        mCharacterAdapter.itemClick { _, _, _ ->
+            CharacterDetailActivity.starter(requireActivity(), "111111")
         }
 
         mBinding.rvCharacter.apply {
@@ -53,7 +58,6 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
             setHasFixedSize(true)
             addLinearItemDecoration(orientation = RecyclerView.HORIZONTAL)
         }
-
 
         //剧情关卡
         mBinding.rvPlot.apply {
@@ -64,25 +68,17 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
         }
         PagerSnapHelper().attachToRecyclerView(mBinding.rvPlot)
 
-
         //底部菜单
         mMenuAdapter.itemClick { _, _, position ->
             when (position) {
-                0 -> startActivity(
-                    Intent(
-                        requireActivity(),
-                        com.nl.module.characters.list.CharacterListActivity::class.java
-                    )
-                )
+                0 -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
                 1 -> startActivity(Intent(requireActivity(), BackpackActivity::class.java))
                 2 -> startActivity(Intent(requireActivity(), LineUpActivity::class.java))
                 3 -> startActivity(Intent(requireActivity(), ChapterListActivity::class.java))
                 4 -> startActivity(Intent(requireActivity(), TaoismActivity::class.java))
                 5 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 7 -> startActivity(Intent(requireActivity(), PracticeActivity::class.java))
-                else -> {
-                    ToastUtils.showShort(getString(R.string.prompt_coming_soon))
-                }
+                else -> ToastUtils.showShort(getString(R.string.prompt_coming_soon))
             }
         }
         mBinding.rvMenu.apply {
@@ -100,6 +96,7 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mBinding.vPlayerSection.setPlayerInfo()
@@ -109,34 +106,9 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
     }
 
     private fun requestCharacter() {
-        mCharacterAdapter.setNewInstance(
-            mutableListOf(
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_gan_ning_zhen,
-                    realm = 0
-                ),
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_hai_ji,
-                    realm = 1
-                ),
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_jiu_dan_mei,
-                    realm = 4
-                ),
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_lin_fei,
-                    realm = 6
-                ),
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_gan_ning_zhen_1,
-                    realm = 8
-                ),
-                com.nl.module.characters.CharacterVo(
-                    avatarIcon = R.drawable.ic_avatar_hai_ji,
-                    realm = 9
-                )
-            )
-        )
+//        mCharacterViewModel.characterOnline().collect {
+//            mCharacterAdapter.setNewInstance(it)
+//        }
     }
 
     private fun requestPlot() {

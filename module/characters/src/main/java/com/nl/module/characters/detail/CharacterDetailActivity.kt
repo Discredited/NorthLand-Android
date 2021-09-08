@@ -57,7 +57,8 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
             mBinding.vCharacterDisplay.wearEquipment(it)
         })
         mBinding.vCharacterDisplay.equipmentClick()
-        setCharacter(CharacterVo(power = intent?.getIntExtra("REALM", 8) ?: 8))
+        val power = (Math.random() * 33).toInt() % 9
+        setCharacter(CharacterVo(power = power))
 
         mPagerTitleList.add("属性")
         mPagerTitleList.add("技能")
@@ -108,7 +109,6 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
         fun starter(context: Context, id: String) {
             val intent = Intent(context, CharacterDetailActivity::class.java)
             intent.putExtra("ID", id)
-            intent.putExtra("REALM", id.toInt())
             context.startActivity(intent)
         }
     }

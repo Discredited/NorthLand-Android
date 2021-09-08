@@ -1,5 +1,6 @@
 package com.nl.module.characters.detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -38,6 +39,7 @@ class CharacterInfoFragment : BaseFragment<FragmentCharacterInfoBinding>() {
         )
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mBinding.tvCharacterPower.setRealm(8, "末那")
