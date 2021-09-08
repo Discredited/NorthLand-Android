@@ -20,7 +20,7 @@ object EquipmentHelper {
     const val PART_SHOES = 4  // 鞋子
     const val PART_RING = 5  // 戒指
     const val PART_NECKLACE = 6  // 项链
-    const val PART_AID = 6  // 辅助装备
+    const val PART_AID = 7  // 辅助装备
 
     /**
      * 品质
@@ -54,17 +54,36 @@ object EquipmentHelper {
     fun equipmentQualityColor(quality: Int): Int {
         return when (quality) {
             //精炼
-            1 -> R.color.color_equipment_refine
+            QUALITY_REFINE -> R.color.color_equipment_refine
             //无暇
-            2 -> R.color.color_equipment_flawless
+            QUALITY_FLAWLESS -> R.color.color_equipment_flawless
             //非凡
-            3 -> R.color.color_equipment_extraordinary
+            QUALITY_EXTRAORDINARY -> R.color.color_equipment_extraordinary
             //至臻
-            4 -> R.color.color_equipment_extreme
+            QUALITY_EXTREME -> R.color.color_equipment_extreme
             //绝世
-            5 -> R.color.color_equipment_peerless
+            QUALITY_PEERLESS -> R.color.color_equipment_peerless
             //普通
             else -> R.color.color_equipment_normal
+        }
+    }
+
+    fun equipmentIcon(quality: Int): String {
+        return when (quality) {
+            // 精炼
+            QUALITY_REFINE -> "2_refine/weapon.png"
+            // 无暇
+            QUALITY_FLAWLESS -> "3_flawless/weapon.png"
+            // 非凡
+            QUALITY_EXTRAORDINARY -> "4_extraordinary/weapon.png"
+            // 至臻
+            QUALITY_EXTREME -> "5_extreme/weapon.png"
+            // 绝世
+            QUALITY_PEERLESS -> "6_peerless/weapon.png"
+            // 無名
+            QUALITY_NAMELESS -> "7_nameless/weapon.png"
+            // 普通
+            else -> "1_normal/weapon.png"
         }
     }
 }

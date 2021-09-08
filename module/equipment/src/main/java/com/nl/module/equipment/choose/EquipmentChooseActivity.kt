@@ -2,17 +2,18 @@ package com.nl.module.equipment.choose
 
 import android.app.Activity
 import android.content.Intent
+import androidx.activity.viewModels
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseActivity
 import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
-import com.nl.module.equipment.EquipmentHelper
-import com.nl.module.equipment.EquipmentVo
+import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.databinding.ActivityEquipmentChooseBinding
-import timber.log.Timber
 
 class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>() {
+
+    private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
 
     private val mAdapter = EquipmentChooseAdapter()
 
@@ -24,7 +25,6 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
         mAdapter.itemClick { _, _, i ->
             val weapon = mAdapter.getItem(i)
             val intent = Intent()
-            Timber.e("weapon:${weapon.name}    ${weapon.value}")
             intent.putExtra(RESPONSE_WEAPON_CHOOSE, weapon)
             setResult(RESULT_OK, intent)
             finish()
@@ -41,236 +41,13 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
     }
 
     override fun loadData() {
-        //equipment 部位 1-武器  2-防具  3-鞋子  4-首饰
+        //equipment 部位 1-武器 2-服饰 3-防具 4-鞋子 4-戒指 5-项链
         val part = intent?.getIntExtra("PART", 0) ?: 0
         requestWeaponList(part)
     }
 
     private fun requestWeaponList(part: Int) {
-        when (part) {
-            EquipmentHelper.PART_WEAPON -> {
-                mAdapter.setNewInstance(
-                    mutableListOf(
-                        EquipmentVo(
-                            "一点黛眉刀",
-                            "1_normal/weapon.png",
-                            500,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "无量刀",
-                            "1_normal/weapon.png",
-                            300,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "劫灰剑",
-                            "1_normal/weapon.png",
-                            200,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "射日弓",
-                            "1_normal/weapon.png",
-                            100,
-                            EquipmentHelper.PART_WEAPON
-                        )
-                    )
-                )
-            }
-            EquipmentHelper.PART_CLOTHING -> {
-                mAdapter.setNewInstance(
-                    mutableListOf(
-                        EquipmentVo(
-                            "恒河沙数盾",
-                            "1_normal/armor.png",
-                            300,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "锁子甲",
-                            "1_normal/armor.png",
-                            200,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "荆棘甲",
-                            "1_normal/armor.png",
-                            150,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "碧落道袍",
-                            "1_normal/armor.png",
-                            100,
-                            EquipmentHelper.PART_CLOTHING
-                        )
-                    )
-                )
-            }
-            EquipmentHelper.PART_SHOES -> {
-                mAdapter.setNewInstance(
-                    mutableListOf(
-                        EquipmentVo(
-                            "闪电靴",
-                            "1_normal/shoes.png",
-                            200,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "潮生海落",
-                            "1_normal/shoes.png",
-                            300,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "屠戮战靴",
-                            "1_normal/shoes.png",
-                            10,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "浮光掠影",
-                            "1_normal/shoes.png",
-                            500,
-                            EquipmentHelper.PART_SHOES
-                        )
-                    )
-                )
-            }
-            EquipmentHelper.PART_RING -> {
-                mAdapter.setNewInstance(
-                    mutableListOf(
-                        EquipmentVo(
-                            "麻痹戒指",
-                            "1_normal/ring.png",
-                            200,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "永恒项链",
-                            "1_normal/ring.png",
-                            300,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "海上明月吊坠",
-                            "1_normal/ring.png",
-                            10,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "勇者徽章",
-                            "1_normal/ring.png",
-                            500,
-                            EquipmentHelper.PART_RING
-                        )
-                    )
-                )
-            }
-            else -> {
-                mAdapter.setNewInstance(
-                    mutableListOf(
-                        EquipmentVo(
-                            "一点黛眉刀",
-                            "1_normal/weapon.png",
-                            500,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "无量刀",
-                            "1_normal/weapon.png",
-                            300,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "劫灰剑",
-                            "1_normal/weapon.png",
-                            200,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "射日弓",
-                            "1_normal/weapon.png",
-                            100,
-                            EquipmentHelper.PART_WEAPON
-                        ),
-                        EquipmentVo(
-                            "恒河沙数盾",
-                            "1_normal/weapon.png",
-                            300,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "锁子甲",
-                            "1_normal/weapon.png",
-                            200,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "荆棘甲",
-                            "1_normal/weapon.png",
-                            150,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "碧落道袍",
-                            "1_normal/weapon.png",
-                            100,
-                            EquipmentHelper.PART_CLOTHING
-                        ),
-                        EquipmentVo(
-                            "闪电靴",
-                            "1_normal/weapon.png",
-                            200,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "潮生海落",
-                            "1_normal/weapon.png",
-                            300,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "屠戮战靴",
-                            "1_normal/weapon.png",
-                            10,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "浮光掠影",
-                            "1_normal/weapon.png",
-                            500,
-                            EquipmentHelper.PART_SHOES
-                        ),
-                        EquipmentVo(
-                            "麻痹戒指",
-                            "1_normal/weapon.png",
-                            200,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "永恒项链",
-                            "1_normal/weapon.png",
-                            300,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "海上明月吊坠",
-                            "1_normal/weapon.png",
-                            10,
-                            EquipmentHelper.PART_RING
-                        ),
-                        EquipmentVo(
-                            "勇者徽章",
-                            "1_normal/weapon.png",
-                            500,
-                            EquipmentHelper.PART_RING
-                        )
-                    )
-                )
-            }
-        }
+        mAdapter.setNewInstance(mEquipmentViewModel.equipmentList(part))
     }
 
     companion object {

@@ -44,6 +44,7 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
+    //implementation Dependencies.nlComponent
     implementation project(path: ':base:component')
     implementation Dependencies.juneComponent
 }

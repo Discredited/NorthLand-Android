@@ -45,8 +45,9 @@ dependencies {
     rootProject.junitDependencies(dependencies)
 
     implementation project(path: ':style')
-    implementation project(path: ':base:component')
 
+    //implementation Dependencies.nlComponent
+    implementation project(path: ':base:component')
     implementation Dependencies.juneComponent
 
     implementation Dependencies.quickAdapter

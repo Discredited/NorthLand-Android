@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.june.base.basic.ext.click
+import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.module.characters.CharacterVo
@@ -28,8 +29,8 @@ class CharacterDisplayView @JvmOverloads constructor(
 
     private var mCharacter: CharacterVo? = null
     private var mWeapon: EquipmentVo? = null
-    private var mTops: EquipmentVo? = null
-    private var mBottoms: EquipmentVo? = null
+    private var mClothing: EquipmentVo? = null
+    private var mArmor: EquipmentVo? = null
     private var mShoes: EquipmentVo? = null
     private var mRing: EquipmentVo? = null
     private var mNecklace: EquipmentVo? = null
@@ -41,12 +42,12 @@ class CharacterDisplayView @JvmOverloads constructor(
                 mBinding.ivCharacterWeapon
             }
             EquipmentHelper.PART_CLOTHING -> {
-                mTops = equipment
-                mBinding.ivCharacterTops
+                mClothing = equipment
+                mBinding.ivCharacterClothing
             }
             EquipmentHelper.PART_ARMOR -> {
-                mBottoms = equipment
-                mBinding.ivCharacterBottoms
+                mArmor = equipment
+                mBinding.ivCharacterArmor
             }
             EquipmentHelper.PART_SHOES -> {
                 mShoes = equipment
@@ -70,7 +71,7 @@ class CharacterDisplayView @JvmOverloads constructor(
         val quality = EquipmentHelper.equipmentQualityColor(qualityDefault)
         val qualityColor = ContextCompat.getColor(context, quality)
         view?.setDrawable(strokeColor = qualityColor)
-        equipment?.let { view?.loadAvatar(equipment.icon) }
+        equipment?.let { view?.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon)) }
     }
 
     fun setCharacterAndEquipment(
@@ -92,15 +93,15 @@ class CharacterDisplayView @JvmOverloads constructor(
         mBinding.tvCharacterName.text = character?.name
 
         mWeapon = weapon
-        mTops = tops
-        mBottoms = bottoms
+        mClothing = tops
+        mArmor = bottoms
         mShoes = shoes
         mRing = ring
         mNecklace = necklace
 
         setEquipment(mBinding.ivCharacterWeapon, weapon)
-        setEquipment(mBinding.ivCharacterTops, tops)
-        setEquipment(mBinding.ivCharacterBottoms, bottoms)
+        setEquipment(mBinding.ivCharacterClothing, tops)
+        setEquipment(mBinding.ivCharacterArmor, bottoms)
         setEquipment(mBinding.ivCharacterShoes, shoes)
         setEquipment(mBinding.ivCharacterRing, ring)
         setEquipment(mBinding.ivCharacterNecklace, necklace)
@@ -109,37 +110,37 @@ class CharacterDisplayView @JvmOverloads constructor(
     fun equipmentClick() {
         if (context is Activity) {
             mBinding.ivCharacterWeapon.click {
-                mWeapon?.let { equipmentInfo(it.id) }
+                mWeapon?.let { equipmentInfo(it.id, EquipmentHelper.PART_WEAPON) }
                 if (null == mWeapon) {
                     equipmentBuild(EquipmentHelper.PART_WEAPON)
                 }
             }
-            mBinding.ivCharacterTops.click {
-                mTops?.let { equipmentInfo(it.id) }
-                if (null == mTops) {
+            mBinding.ivCharacterClothing.click {
+                mClothing?.let { equipmentInfo(it.id, EquipmentHelper.PART_CLOTHING) }
+                if (null == mClothing) {
                     equipmentBuild(EquipmentHelper.PART_CLOTHING)
                 }
             }
-            mBinding.ivCharacterBottoms.click {
-                mBottoms?.let { equipmentInfo(it.id) }
-                if (null == mBottoms) {
+            mBinding.ivCharacterArmor.click {
+                mArmor?.let { equipmentInfo(it.id, EquipmentHelper.PART_ARMOR) }
+                if (null == mArmor) {
                     equipmentBuild(EquipmentHelper.PART_ARMOR)
                 }
             }
             mBinding.ivCharacterShoes.click {
-                mShoes?.let { equipmentInfo(it.id) }
+                mShoes?.let { equipmentInfo(it.id, EquipmentHelper.PART_SHOES) }
                 if (null == mShoes) {
                     equipmentBuild(EquipmentHelper.PART_SHOES)
                 }
             }
             mBinding.ivCharacterRing.click {
-                mRing?.let { equipmentInfo(it.id) }
+                mRing?.let { equipmentInfo(it.id, EquipmentHelper.PART_RING) }
                 if (null == mRing) {
                     equipmentBuild(EquipmentHelper.PART_RING)
                 }
             }
             mBinding.ivCharacterNecklace.click {
-                mNecklace?.let { equipmentInfo(it.id) }
+                mNecklace?.let { equipmentInfo(it.id, EquipmentHelper.PART_NECKLACE) }
                 if (null == mNecklace) {
                     equipmentBuild(EquipmentHelper.PART_NECKLACE)
                 }
@@ -147,9 +148,9 @@ class CharacterDisplayView @JvmOverloads constructor(
         }
     }
 
-    private fun equipmentInfo(id: String) {
+    private fun equipmentInfo(id: String, part: Int) {
         if (context is AppCompatActivity) {
-            EquipmentInfoFragment.newInstance(id).show(
+            EquipmentInfoFragment.newInstance(id, part).show(
                 (context as AppCompatActivity).supportFragmentManager,
                 EquipmentInfoFragment::class.java.name
             )

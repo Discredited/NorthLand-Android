@@ -11,6 +11,10 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
     val mEquipmentLive: MutableLiveData<EquipmentVo> = MutableLiveData()
 
+    fun equipmentList(part: Int): MutableList<EquipmentVo> {
+        return ConstantUtils.randomEquipmentList(part)
+    }
+
     fun equipmentDetail(id: String): EquipmentVo {
         val quality = (Math.random() * 10 % 6).toInt()
         val qualityString = EquipmentHelper.equipmentQuality(quality)
@@ -23,9 +27,11 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
         val equipment = EquipmentVo(
             name = "${qualityString}长剑",
+            icon = EquipmentHelper.equipmentIcon(quality),
             value = 1000,
             quality = quality,
             basicDesc = "攻击力+1000",
+            id = id,
             extraDesc = extraDesc
         )
 
@@ -87,7 +93,7 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
     }
 
     //洗练
-    fun increaseRefine(){
+    fun increaseRefine() {
 
     }
 }

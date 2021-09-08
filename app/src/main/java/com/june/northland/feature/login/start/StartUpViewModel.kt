@@ -40,12 +40,12 @@ class StartUpViewModel(application: Application) : com.nl.component.AppViewModel
      */
     fun unzipResource(): Int {
         val zipFilePath = FilePathHelper.getResourceZipPath()
-        val unzipDirectory = FilePathHelper.getResourceDirectory()
         val zipFile = File(zipFilePath)
         if (!zipFile.exists()) {
             //资源压缩包不存在
             return UNZIP_FILE_NOT_EXIST
         }
+        val unzipDirectory = FilePathHelper.getResourceDirectory()
         val fileList = ZipUtils.unzipFile(zipFilePath, unzipDirectory)
         //解压完成删除zip文件
         zipFile.delete()

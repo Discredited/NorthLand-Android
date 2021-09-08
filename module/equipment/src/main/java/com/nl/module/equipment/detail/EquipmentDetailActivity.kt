@@ -43,7 +43,7 @@ class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
     }
 
     override fun loadData() {
-        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
+        mEquipmentViewModel.mEquipmentLive.observe(this, {
             initEquipment(it)
         })
 

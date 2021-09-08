@@ -1,5 +1,6 @@
 package com.nl.module.equipment.backpack
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
 import com.nl.module.equipment.EquipmentHelper
+import com.nl.module.equipment.EquipmentInfoFragment
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.FragmentEquipmentListBinding
@@ -41,9 +43,9 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
     override fun initView() {
         mAdapter.itemClick { _, _, position ->
             val equipment = mEquipmentList[position]
-            com.nl.module.equipment.EquipmentInfoFragment
+            EquipmentInfoFragment
                 .newInstance(equipment.id)
-                .show(childFragmentManager, com.nl.module.equipment.EquipmentInfoFragment::class.java.name)
+                .show(childFragmentManager, EquipmentInfoFragment::class.java.name)
         }
         mBinding.rvEquipment.apply {
             setLinearManager()
@@ -65,9 +67,10 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, Observer {
+        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, {
             mAdapter.addData(0, it)
         })
 

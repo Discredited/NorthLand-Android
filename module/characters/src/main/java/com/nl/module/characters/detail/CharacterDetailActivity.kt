@@ -3,16 +3,19 @@ package com.nl.module.characters.detail
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseActivity
+import com.nl.component.common.ColorUtils
 import com.nl.module.characters.AttributeExplanationFragment
 import com.nl.module.characters.CharacterPotentialFragment
 import com.nl.module.characters.CharacterVo
 import com.nl.module.characters.databinding.ActivityCharacterDetailBinding
 import com.nl.module.equipment.ConstantUtils
+import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.choose.EquipmentChooseActivity
 
@@ -21,7 +24,8 @@ import com.nl.module.equipment.choose.EquipmentChooseActivity
  */
 class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
 
-    //private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
+    private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
+
     private val mPagerTitleList = mutableListOf<String>()
 
     override fun viewBinding(): ActivityCharacterDetailBinding {
@@ -49,9 +53,9 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
     }
 
     override fun loadData() {
-//        mEquipmentViewModel.mEquipmentLive.observe(this, Observer {
-//            mBinding.vCharacterDisplay.wearEquipment(it)
-//        })
+        mEquipmentViewModel.mEquipmentLive.observe(this, {
+            mBinding.vCharacterDisplay.wearEquipment(it)
+        })
         mBinding.vCharacterDisplay.equipmentClick()
         setCharacter(CharacterVo(power = intent?.getIntExtra("REALM", 8) ?: 8))
 
@@ -87,7 +91,7 @@ class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
     private fun setCharacter(character: CharacterVo) {
         val powerColor = ContextCompat.getColor(
             this,
-            com.nl.component.common.ColorUtils.getPowerColor(character.power)
+            ColorUtils.getPowerColor(character.power)
         )
         mBinding.vCollapsing.setContentScrimColor(powerColor)
 

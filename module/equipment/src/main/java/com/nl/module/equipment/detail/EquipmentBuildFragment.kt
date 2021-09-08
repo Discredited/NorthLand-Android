@@ -1,5 +1,6 @@
 package com.nl.module.equipment.detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class EquipmentBuildFragment : NLBaseDialogFragment<FragmentEquipmentBuildBindin
         mBinding.btBuild.click { buildEquipment() }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initEquipmentBuild()

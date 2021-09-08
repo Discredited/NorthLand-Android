@@ -1,16 +1,19 @@
 package com.nl.module.equipment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import com.alibaba.android.arouter.launcher.ARouter
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseDialogFragment
 import com.nl.component.common.ColorUtils
+import com.nl.component.common.FilePathHelper
+import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
+import com.nl.module.equipment.choose.EquipmentChooseActivity
 import com.nl.module.equipment.databinding.FragmentDialogEquipmentInfoBinding
 import com.nl.module.equipment.detail.EquipmentDetailActivity
 
@@ -27,8 +30,8 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
 
     override fun initView() {
         mBinding.btStrengthen.click {
-            //EquipmentDetailActivity.start(requireActivity(), "")
-            ARouter.getInstance().build("/equipment/detail").navigation()
+            //ARouter.getInstance().build("/equipment/detail").navigation()
+            EquipmentDetailActivity.start(requireActivity(), "")
             dismiss()
         }
         mBinding.btForging.click {
@@ -43,8 +46,13 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
             EquipmentDetailActivity.start(requireActivity(), "", EquipmentHelper.OPERATE_SPELL)
             dismiss()
         }
+        mBinding.tvExchange.click {
+            val part = arguments?.getInt("PART") ?: EquipmentHelper.PART_ALL
+            EquipmentChooseActivity.starter(requireActivity(), part)
+        }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requestEquipment()
@@ -57,7 +65,7 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
             ColorUtils.equipmentQualityColor(equipment.quality)
         )
         mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
-        mBinding.ivEquipmentIcon.setImageResource(R.drawable.ic_attack)
+        mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
         mBinding.tvEquipmentName.text = equipment.name
         mBinding.tvEquipmentName.setTextColor(qualityColor)
         mBinding.tvBasic.text = equipment.basicDesc
@@ -74,10 +82,11 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
     }
 
     companion object {
-        fun newInstance(id: String): EquipmentInfoFragment {
+        fun newInstance(id: String, part: Int = EquipmentHelper.PART_ALL): EquipmentInfoFragment {
             val fragment = EquipmentInfoFragment()
             val arguments = Bundle()
             arguments.putString("ID", id)
+            arguments.putInt("PART", part)
             fragment.arguments = arguments
             return fragment
         }

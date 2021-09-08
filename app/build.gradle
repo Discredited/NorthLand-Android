@@ -73,10 +73,13 @@ dependencies {
     implementation Dependencies.recyclerView
     implementation Dependencies.recyclerViewSelection
 
-    implementation project(path: ':style')
-    //implementation project(path: ':base:component')
-    implementation Dependencies.nlComponent
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
 
+    implementation project(path: ':base:component')
+    //implementation Dependencies.nlComponent
+
+    implementation project(path: ':style')
     implementation project(path: ':module:characters')
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')
@@ -88,15 +91,10 @@ dependencies {
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
 
-    implementation Dependencies.nlComponent
-
     implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
-
-    implementation Dependencies.timber
-    implementation Dependencies.androidUtils
 
     implementation Dependencies.quickAdapter
 

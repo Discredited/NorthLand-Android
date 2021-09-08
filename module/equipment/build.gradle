@@ -56,9 +56,9 @@ dependencies {
 
     implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
-    
-    implementation project(path: ':base:component')
+
     //implementation Dependencies.nlComponent
+    implementation project(path: ':base:component')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork

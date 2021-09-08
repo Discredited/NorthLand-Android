@@ -51,14 +51,8 @@ dependencies {
     implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
-    //implementation project(path: ':base:component')
-    implementation Dependencies.nlComponent
-
-    implementation project(path: ':module:equipment')
-    implementation project(path: ':module:relationship')
-    implementation project(path: ':module:magic')
-    implementation project(path: ':module:soul')
-    implementation project(path: ':module:skill')
+    //implementation Dependencies.nlComponent
+    implementation project(path: ':base:component')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
@@ -66,6 +60,12 @@ dependencies {
 
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
+
+    implementation project(path: ':module:equipment')
+    implementation project(path: ':module:relationship')
+    implementation project(path: ':module:magic')
+    implementation project(path: ':module:soul')
+    implementation project(path: ':module:skill')
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler

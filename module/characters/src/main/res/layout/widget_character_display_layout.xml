@@ -51,7 +51,7 @@
 
     <!-- 上装 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_character_tops"
+        android:id="@+id/iv_character_clothing"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:padding="@dimen/dp_5"
@@ -63,7 +63,7 @@
 
     <!-- 下装 -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_character_bottoms"
+        android:id="@+id/iv_character_armor"
         android:layout_width="@dimen/dp_60"
         android:layout_height="@dimen/dp_60"
         android:layout_marginTop="@dimen/dp_20"
@@ -84,7 +84,7 @@
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_character_avatar"
-        app:layout_constraintTop_toBottomOf="@id/iv_character_tops"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_clothing"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 戒指 -->
@@ -97,7 +97,7 @@
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toStartOf="@id/iv_character_avatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_character_bottoms"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_armor"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 
     <!-- 项链 -->
@@ -110,6 +110,6 @@
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_character_avatar"
-        app:layout_constraintTop_toBottomOf="@id/iv_character_bottoms"
+        app:layout_constraintTop_toBottomOf="@id/iv_character_armor"
         tools:background="@drawable/shape_rect_white_stroke_radius_5" />
 </merge>
