@@ -26,10 +26,9 @@ class ForgingDisplayView @JvmOverloads constructor(
 
     fun initForgingDisplay(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(context, EquipmentHelper.equipmentQualityColor(equipment.quality))
-        val qualityString = EquipmentHelper.equipmentQuality(equipment.quality)
         mBinding.ivEquipment.setDrawable(strokeColor = qualityColor)
         mBinding.ivEquipment.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
-        mBinding.ivEquipmentName.text = "${qualityString}长剑"
+        mBinding.ivEquipmentName.text = equipment.name
         mBinding.ivEquipmentName.setTextColor(qualityColor)
 
         if (equipment.isQualityMax()) {
@@ -38,10 +37,7 @@ class ForgingDisplayView @JvmOverloads constructor(
             mBinding.tvEquipmentForgingName.visibility = GONE
         } else {
             val equipmentForging = EquipmentHelper.equipmentNextQuality(equipment)
-            val forgingQualityColor = ContextCompat.getColor(
-                context,
-                EquipmentHelper.equipmentQualityColor(equipmentForging.quality)
-            )
+            val forgingQualityColor = ContextCompat.getColor(context, EquipmentHelper.equipmentQualityColor(equipmentForging.quality))
             mBinding.ivEquipmentForging.setDrawable(strokeColor = forgingQualityColor)
             mBinding.ivEquipmentForging.loadAvatar(FilePathHelper.getEquipmentIcon(equipmentForging.icon))
             mBinding.tvEquipmentForgingName.text = equipmentForging.name

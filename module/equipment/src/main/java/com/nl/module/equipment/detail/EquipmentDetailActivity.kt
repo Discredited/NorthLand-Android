@@ -4,13 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.part.BaseActivity
 import com.nl.component.common.ColorUtils
+import com.nl.component.common.FilePathHelper
 import com.nl.component.common.PropertyHelper
+import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.component.widget.res.ResourceVo
 import com.nl.module.equipment.EquipmentHelper
@@ -73,6 +74,7 @@ class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
 
     private fun initEquipment(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(this, ColorUtils.equipmentQualityColor(equipment.quality))
+        mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
         mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
         mBinding.tvEquipmentName.setTextColor(qualityColor)
         mBinding.tvEquipmentName.text = equipment.name
