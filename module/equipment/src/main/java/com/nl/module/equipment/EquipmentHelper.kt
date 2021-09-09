@@ -86,4 +86,26 @@ object EquipmentHelper {
             else -> "1_normal/weapon.png"
         }
     }
+
+    fun equipmentNextQuality(equipment: EquipmentVo): EquipmentVo {
+        val quality = equipment.quality + 1
+        val name = "${equipmentQuality(quality)}长剑"
+        val icon = equipmentIcon(quality)
+
+        return EquipmentVo(
+            name = name,
+            icon = icon,
+            value = equipment.value,
+            part = equipment.part,
+            id = equipment.id,
+            quality = quality,
+            valueUpgrade = equipment.valueUpgrade,
+            property = equipment.property,
+            basicDesc = equipment.basicDesc,
+            extraDesc = equipment.extraDesc,
+            strengthenMax = equipment.strengthenMax,
+            strengthen = equipment.strengthen,
+            strengthenAdditions = equipment.strengthenAdditions
+        )
+    }
 }

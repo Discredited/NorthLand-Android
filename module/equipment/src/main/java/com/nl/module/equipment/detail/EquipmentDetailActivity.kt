@@ -54,10 +54,10 @@ class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
 
         TabLayoutMediator(
             mBinding.tlEquipment,
-            mBinding.vpEquipment,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text = mPagerTitleList[position]
-            }).attach()
+            mBinding.vpEquipment
+        ) { tab, position ->
+            tab.text = mPagerTitleList[position]
+        }.attach()
 
         requestEquipment()
 

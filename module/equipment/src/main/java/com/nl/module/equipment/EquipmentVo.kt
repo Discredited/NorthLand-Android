@@ -23,7 +23,7 @@ data class EquipmentVo(
 
     fun enableStrength(): Boolean = strengthen < strengthenMax
 
-    fun isQualityMax() = quality >= 5
+    fun isQualityMax() = quality >= EquipmentHelper.QUALITY_PEERLESS
 
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",

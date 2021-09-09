@@ -73,6 +73,12 @@ dependencies {
     implementation Dependencies.recyclerView
     implementation Dependencies.recyclerViewSelection
 
+    implementation Dependencies.lifecycleExt
+    implementation Dependencies.lifecycleRuntimeKtx
+    implementation Dependencies.lifecycleCommonJava8
+    implementation Dependencies.lifecycleViewModelKtx
+    implementation Dependencies.lifecycleLiveDataKtx
+
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
 

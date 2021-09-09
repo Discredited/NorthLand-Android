@@ -34,7 +34,7 @@ class EquipmentForgingFragment : BaseFragment<FragmentEquipmentForgingBinding>()
     @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, Observer {
+        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, {
             requestForgingInfo(it)
         })
     }

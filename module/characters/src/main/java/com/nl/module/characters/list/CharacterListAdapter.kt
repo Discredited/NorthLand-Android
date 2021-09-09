@@ -27,7 +27,6 @@ class CharacterListAdapter :
             } else {
                 tvLineUp.text = ""
             }
-            //ivAvatar.setImageResource(item.avatarIcon)
             ivAvatar.loadAvatar(FilePathHelper.getCharacterAvatar(item.avatar))
             tvName.text = item.name
             tvName.setTextColor(realmColor)

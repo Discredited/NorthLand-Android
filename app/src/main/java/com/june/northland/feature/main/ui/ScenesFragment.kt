@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
@@ -31,6 +32,7 @@ import com.nl.module.characters.CharacterViewModel
 import com.nl.module.characters.detail.CharacterDetailActivity
 import com.nl.module.characters.list.CharacterListActivity
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
 
@@ -106,9 +108,11 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
     }
 
     private fun requestCharacter() {
-//        mCharacterViewModel.characterOnline().collect {
-//            mCharacterAdapter.setNewInstance(it)
-//        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            mCharacterViewModel.characterOnline().collect {
+                mCharacterAdapter.setNewInstance(it)
+            }
+        }
     }
 
     private fun requestPlot() {

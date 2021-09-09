@@ -6,8 +6,9 @@ data class CharacterVo(
     val avatar: String = "",
     val avatarIcon: Int = 0,
     val quality: Int = 3,  //品质
-    val power: Int = 0, //妖力
-    val realm: Int = 0,  //境界
+    val realm: Int = 0,  // 境界
+    val power: Int = 0, // 妖力|术力
+    val intellect: Int = 0, // 道境
     var level: Int = 0,
     var experience: Long = 0,  //总经验
     var expLevel: Long = 20,  //单级经验

@@ -12,7 +12,13 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
      */
     fun characterOnline(): Flow<MutableList<CharacterVo>> {
         return flow {
-            emit(mutableListOf())
+            emit(ConstantUtils.randomCharacterList(6))
+        }
+    }
+
+    fun characterList(): Flow<MutableList<CharacterVo>> {
+        return flow {
+            emit(ConstantUtils.characterList())
         }
     }
 }
