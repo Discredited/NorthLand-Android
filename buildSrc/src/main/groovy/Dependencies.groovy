@@ -105,7 +105,7 @@ interface Dependencies {
     def quickAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
 
     // ARouter
-    def aRouter = "com.alibaba:arouter-api:1.5.1"
-    def aRouterCompiler = "com.alibaba:arouter-compiler:1.5.1"
+    def aRouter = "com.alibaba:arouter-api:1.5.2"
+    def aRouterCompiler = "com.alibaba:arouter-compiler:1.5.2"
     ////////////////////  第三方类库  End  ////////////////////
 }

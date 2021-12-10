@@ -16,10 +16,16 @@ android {
         versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        // Java代码的配置声明
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        // Kotlin代码的配置声明
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
     }
@@ -108,5 +114,5 @@ dependencies {
     kapt Dependencies.aRouterCompiler
 
     //粒子爆炸效果
-    implementation 'me.samlss:bloom:1.0.0'
+    //implementation 'me.samlss:bloom:1.0.0'
 }
