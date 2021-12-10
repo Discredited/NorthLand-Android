@@ -1,5 +1,6 @@
 package com.june.northland.feature.login.start
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -16,6 +17,7 @@ import com.june.base.basic.ext.click
 import com.june.northland.R
 import com.june.northland.databinding.FragmentStartEntranceBinding
 import com.june.northland.feature.login.LoginActivity
+import com.june.northland.feature.login.start.announcement.AnnouncementFragment
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache
 import com.nl.component.NLBaseFragment
@@ -41,6 +43,7 @@ class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -65,6 +68,13 @@ class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
             mBinding.tvUserAccount.text = getUserAccount(account)
             mUserLogin = true
         }
+
+        requestAnnouncement()
+    }
+
+    //获取公告
+    private fun requestAnnouncement() {
+        AnnouncementFragment.newInstance().show(childFragmentManager, "AnnouncementFragment")
     }
 
     private fun requestEntrance() {

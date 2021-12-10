@@ -66,5 +66,9 @@ class StartUpViewModel(application: Application) : com.nl.component.AppViewModel
         const val UNZIP_FILE_NOT_EXIST = -1
         const val UNZIP_FILE_ERROR = -2
         const val UNZIP_FILE_SUCCESS = 0
+
+        const val GRAPH_START_ENTRANCE = 1
+        const val GRAPH_RESOURCE_UPDATE = 2
+        const val GRAPH_DATABASE_CHECK = 3
     }
 }

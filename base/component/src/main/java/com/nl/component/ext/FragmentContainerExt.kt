@@ -6,11 +6,10 @@ import androidx.fragment.app.FragmentManager
 
 fun FragmentContainerView.commitFragment(
     fragmentManager: FragmentManager,
-    containerId: Int,
     fragment: Fragment
 ) {
     fragmentManager
         .beginTransaction()
-        .replace(containerId, fragment, fragment::javaClass.name)
+        .replace(id, fragment, fragment::javaClass.name)
         .commitNow()
 }

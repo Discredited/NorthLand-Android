@@ -1,6 +1,5 @@
 package com.june.northland.feature.main
 
-import com.june.northland.R
 import com.june.northland.databinding.ActivityMainBinding
 import com.june.northland.feature.main.ui.ScenesFragment
 import com.nl.component.NLBaseActivity
@@ -16,10 +15,6 @@ class MainActivity : NLBaseActivity<ActivityMainBinding>() {
     }
 
     override fun loadData() {
-        mBinding.fcScenesContainer.commitFragment(
-            supportFragmentManager,
-            R.id.fcScenesContainer,
-            ScenesFragment()
-        )
+        mBinding.fcScenesContainer.commitFragment(supportFragmentManager, ScenesFragment())
     }
 }

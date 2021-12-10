@@ -2,10 +2,8 @@ package com.june.northland.feature.login.start
 
 import android.text.format.DateUtils
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseActivity
-import com.june.northland.R
 import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
 import com.nl.component.ext.commitFragment
@@ -29,7 +27,11 @@ class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
 
     override fun loadData() {
         mStartUpViewModel.mEntranceLive.observe(this, {
-            startEntrance()
+            when (it) {
+                StartUpViewModel.GRAPH_DATABASE_CHECK -> databaseCheck()
+                StartUpViewModel.GRAPH_RESOURCE_UPDATE -> updateResource()
+                else -> startEntrance()
+            }
         })
 
         //检查更新和配置参数
@@ -44,29 +46,29 @@ class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
         val timestamp = System.currentTimeMillis()
         val date = DateUtils.formatDateTime(applicationContext, timestamp, DateUtils.FORMAT_SHOW_TIME)
         val remoteConfig = ResourceConfig(0, "0.0.1", timestamp, date)
+
         val needUpdate = mStartUpViewModel.checkUpdateResource(remoteConfig)
         if (needUpdate) {
             updateResource()
         } else {
-            startEntrance()
+            databaseCheck()
         }
     }
 
     //更新游戏资源
     private fun updateResource() {
         val fragment = ResourceUpdateFragment.newInstance("")
-        mBinding.fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
+        mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
+    }
+
+    private fun databaseCheck() {
+        val fragment = DataBaseCheckFragment.newInstance()
+        mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
     }
 
     //进入游戏
     private fun startEntrance() {
         val fragment = StartEntranceFragment.newInstance()
-        mBinding.fcStartUp.commitFragment(supportFragmentManager, R.id.fcStartUp, fragment)
-        requestAnnouncement()
-    }
-
-    //获取公告
-    private fun requestAnnouncement() {
-        AnnouncementFragment.newInstance().show(supportFragmentManager, "AnnouncementFragment")
+        mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
     }
 }

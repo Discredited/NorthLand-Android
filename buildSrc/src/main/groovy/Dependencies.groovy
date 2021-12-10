@@ -58,12 +58,13 @@ interface Dependencies {
     def lifecycleLiveDataKtx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
 
     // room
-    def roomRuntime = "androidx.room:room-runtime:2.2.5"
-    def roomCompiler = "androidx.room:room-compiler:2.2.5"
+    def room_version = "2.3.0"
+    def roomRuntime = "androidx.room:room-runtime:${room_version}"
+    def roomCompiler = "androidx.room:room-compiler:${room_version}"
     // optional - Kotlin Extensions and Coroutines support for Room
-    def roomKtx = "androidx.room:room-ktx:2.2.5"
+    def roomKtx = "androidx.room:room-ktx:${room_version}"
     // optional - Test helpers
-    def roomTesting = "androidx.room:room-testing:2.2.5"
+    def roomTesting = "androidx.room:room-testing:${room_version}"
     ////////////////////  Android ktx  End  ////////////////////
 
     ////////////////////  June的三方库  Begin  ////////////////////

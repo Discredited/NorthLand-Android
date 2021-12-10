@@ -19,13 +19,18 @@ android {
         // Java代码的配置声明
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [
+                        AROUTER_MODULE_NAME: project.getName(),
+                        "room.schemaLocation": "$projectDir/schemas".toString()
+                ]
+
             }
         }
         // Kotlin代码的配置声明
         kapt {
             arguments {
                 arg("AROUTER_MODULE_NAME", project.getName())
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
             }
         }
     }
@@ -99,6 +104,8 @@ dependencies {
     implementation project(path: ':module:soul')
     implementation project(path: ':module:skill')
 
+    implementation project(path: ':module:room')
+
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
@@ -113,6 +120,6 @@ dependencies {
     implementation Dependencies.aRouter
     kapt Dependencies.aRouterCompiler
 
-    //粒子爆炸效果
-    //implementation 'me.samlss:bloom:1.0.0'
+    implementation Dependencies.roomRuntime
+    kapt Dependencies.roomCompiler
 }

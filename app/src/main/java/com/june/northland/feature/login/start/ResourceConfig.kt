@@ -1,6 +1,6 @@
 package com.june.northland.feature.login.start
 
-class ResourceConfig(
+data class ResourceConfig(
     val version: Int = 0,
     val name: String = "",
     val timestamp: Long = 0,
