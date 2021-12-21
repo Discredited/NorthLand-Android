@@ -1,6 +1,6 @@
 package com.nl.room.source
 
-import com.nl.lib.role.RoleEntity
+import com.nl.lib.element.role.RoleEntity
 
 object TestDataSource {
 

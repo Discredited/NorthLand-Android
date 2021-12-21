@@ -1,4 +1,4 @@
-package com.nl.lib.role
+package com.nl.lib.element.role
 
 import androidx.room.*
 

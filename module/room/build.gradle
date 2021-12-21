@@ -49,7 +49,7 @@ dependencies {
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
 
-    implementation project(path: ':lib:role')
+    implementation project(path: ':lib:element')
 }
 
 apply from: rootDir.absolutePath + '/maven-push.gradle'

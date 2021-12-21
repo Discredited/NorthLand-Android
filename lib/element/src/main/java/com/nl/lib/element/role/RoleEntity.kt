@@ -1,4 +1,4 @@
-package com.nl.lib.role
+package com.nl.lib.element.role
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
  * Bean  是一种JAVA语言写成的可重用组件，所有属性为private，提供无参数的构造器，属性使用getter和setter来访问，可序列化，可以封装一些简单逻辑
  * Entity  就是属性类，通常定义在model层里面，一般的实体类对应一个数据表，其中的属性对应数据表中的字段
  * 三者的区别
+ *
+ * 角色实体
  */
 @Entity(tableName = "roles")
 data class RoleEntity(

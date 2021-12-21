@@ -14,6 +14,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * 数据资源检查
+ * 2021年12月21日20:53:30
+ */
 class DataBaseCheckFragment : BaseFragment<FragmentDatabaseCheckBinding>() {
 
     private val mStartUpViewModel by activityViewModels<StartUpViewModel>()
