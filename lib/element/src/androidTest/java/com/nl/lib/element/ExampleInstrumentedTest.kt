@@ -1,4 +1,4 @@
-package com.nl.lib.role
+package com.nl.lib.element
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

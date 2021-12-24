@@ -6,17 +6,17 @@ import androidx.room.*
 interface EquipmentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEquipment(vararg role: EquipmentEntity)
+    suspend fun insertEquipment(vararg equipment: EquipmentEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEquipments(roles: MutableList<EquipmentEntity>)
+    suspend fun insertEquipments(equipments: MutableList<EquipmentEntity>)
 
     @Delete
-    suspend fun deleteEquipments(vararg roles: EquipmentEntity)
+    suspend fun deleteEquipments(vararg equipments: EquipmentEntity)
 
     @Update
-    suspend fun updateEquipments(vararg roles: EquipmentEntity)
+    suspend fun updateEquipments(vararg equipments: EquipmentEntity)
 
-    @Query("SELECT * FROM roles")
+    @Query("SELECT * FROM equipments")
     suspend fun loadEquipments(): List<EquipmentEntity>
 }

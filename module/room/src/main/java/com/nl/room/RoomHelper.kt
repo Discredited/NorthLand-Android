@@ -2,7 +2,8 @@ package com.nl.room
 
 import android.content.Context
 import androidx.room.Room
-import com.nl.room.source.TestDataSource
+import com.nl.room.source.EquipmentDataSource
+import com.nl.room.source.RoleDataSource
 import timber.log.Timber
 
 class RoomHelper {
@@ -20,12 +21,19 @@ class RoomHelper {
     suspend fun checkDataBase(): Boolean {
         // 检查角色数据
         val roles = mDatabase.roleDao().loadRoles()
+        val equipments = mDatabase.equipmentDao().loadEquipments()
         Timber.e("角色数据:${roles.size}")
-        return roles.isNotEmpty()
+        Timber.e("装备数据:${equipments.size}")
+        return roles.isNotEmpty() && equipments.isNotEmpty()
     }
 
     suspend fun mockDataBase() {
-        mDatabase.roleDao().insertRoles(TestDataSource.mockRoles())
+        if (mDatabase.roleDao().loadRoles().isEmpty()) {
+            mDatabase.roleDao().insertRoles(RoleDataSource.mockRoles())
+        }
+        if (mDatabase.equipmentDao().loadEquipments().isEmpty()) {
+            mDatabase.equipmentDao().insertEquipments(EquipmentDataSource.mockEquipments())
+        }
     }
 
     companion object {
