@@ -44,30 +44,29 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
-    implementation project(path: ':style')
-
-    implementation Dependencies.fragmentKtx
-
     implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation Dependencies.juneComponent
-    implementation Dependencies.juneNetwork
-    implementation Dependencies.juneLoading
+
+    implementation project(path: ':style')
+    implementation project(path: ':base:component')
+    implementation project(path: ':lib:element')
+    implementation project(path: ':module:room')
 
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
-
-    //implementation Dependencies.nlComponent
-    implementation project(path: ':base:component')
-    implementation project(path: ':module:equipment')
-    implementation project(path: ':module:relationship')
-    implementation project(path: ':module:magic')
-    implementation project(path: ':module:soul')
-    implementation project(path: ':module:skill')
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
 
     implementation Dependencies.quickAdapter
+}
+
+apply from: rootDir.absolutePath + '/maven-push.gradle'
+
+project.ext {
+    publishingGroupId = 'com.nl.module'
+    publishingArtifactId = 'pokedex'
+    publishingVersion = '0.0.1'
 }

@@ -18,6 +18,8 @@ class RoomHelper {
         ).allowMainThreadQueries().build()
     }
 
+    fun database() = mDatabase
+
     suspend fun checkDataBase(): Boolean {
         // 检查角色数据
         val roles = mDatabase.roleDao().loadRoles()
