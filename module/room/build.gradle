@@ -39,12 +39,11 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
-    implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
-    implementation Dependencies.roomRuntime
+    api Dependencies.roomRuntime
     kapt Dependencies.roomCompiler
-    implementation Dependencies.roomKtx
+    api Dependencies.roomKtx
 
     implementation Dependencies.timber
     implementation Dependencies.androidUtils

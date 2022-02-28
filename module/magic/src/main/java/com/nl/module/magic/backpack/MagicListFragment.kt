@@ -25,13 +25,6 @@ class MagicListFragment : NLBaseFragment<FragmentMagicListBinding>() {
     private var mAttributeMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentMagicListBinding {
-        return FragmentMagicListBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
         mBinding.rvMagic.apply {
             setLinearManager()

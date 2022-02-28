@@ -48,7 +48,6 @@ dependencies {
 
     implementation Dependencies.fragmentKtx
 
-    implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation Dependencies.juneComponent

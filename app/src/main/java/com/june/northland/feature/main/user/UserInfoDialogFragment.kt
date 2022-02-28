@@ -1,8 +1,6 @@
 package com.june.northland.feature.main.user
 
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
 import com.june.northland.databinding.FragmentDialogUserInfoBinding
 import com.nl.component.NLBaseDialogFragment
@@ -12,10 +10,6 @@ class UserInfoDialogFragment : NLBaseDialogFragment<FragmentDialogUserInfoBindin
 
     override fun initView() {
         mBinding.tvLogout.click { dismiss() }
-    }
-
-    override fun viewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentDialogUserInfoBinding {
-        return FragmentDialogUserInfoBinding.inflate(inflater, container, false)
     }
 
     override fun layoutParamsWidth(): Int = WindowManager.LayoutParams.WRAP_CONTENT

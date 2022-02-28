@@ -11,13 +11,6 @@ import com.nl.component.ext.loadAvatar
 
 class SettingFragment : NLBaseFragment<FragmentMainSettingBinding>() {
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentMainSettingBinding {
-        return FragmentMainSettingBinding.inflate(layoutInflater, container, false)
-    }
-
     override fun initView() {
         mBinding.ivAvatar.loadAvatar(R.drawable.ic_avatar_gan_ning_zhen_1)
         mBinding.tvLogout.click { ToastUtils.showShort("登出") }

@@ -46,7 +46,6 @@ dependencies {
 
     implementation project(path: ':style')
 
-    implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation Dependencies.juneComponent

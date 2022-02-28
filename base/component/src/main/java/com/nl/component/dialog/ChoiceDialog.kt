@@ -3,7 +3,6 @@ package com.nl.component.dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.LayoutInflater
 import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseDialog
 import com.nl.component.R
@@ -30,10 +29,6 @@ class ChoiceDialog(context: Context, theme: Int = 0) :
             mCancelClickListener?.onClick(this, it.id)
             dismiss()
         }
-    }
-
-    override fun viewBinding(inflater: LayoutInflater): DialogChoiceBinding {
-        return DialogChoiceBinding.inflate(layoutInflater)
     }
 
     override fun show() {

@@ -84,7 +84,6 @@ dependencies {
     implementation Dependencies.recyclerView
     implementation Dependencies.recyclerViewSelection
 
-    implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
     implementation Dependencies.lifecycleCommonJava8
     implementation Dependencies.lifecycleViewModelKtx
@@ -110,7 +109,7 @@ dependencies {
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
 
-    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:${Dependencies.kotlin_version}"
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler

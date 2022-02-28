@@ -7,10 +7,6 @@ import com.nl.component.ext.commitFragment
 
 class MainActivity : NLBaseActivity<ActivityMainBinding>() {
 
-    override fun viewBinding(): ActivityMainBinding {
-        return ActivityMainBinding.inflate(layoutInflater)
-    }
-
     override fun initView() {
     }
 

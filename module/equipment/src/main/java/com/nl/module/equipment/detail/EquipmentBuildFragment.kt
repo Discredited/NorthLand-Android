@@ -25,13 +25,6 @@ class EquipmentBuildFragment : NLBaseDialogFragment<FragmentEquipmentBuildBindin
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentEquipmentBuildBinding {
-        return FragmentEquipmentBuildBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
         mBinding.btCancel.click { dismiss() }
         mBinding.btBuild.click { buildEquipment() }

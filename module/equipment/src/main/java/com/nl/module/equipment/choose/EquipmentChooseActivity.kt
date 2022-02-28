@@ -17,10 +17,6 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
 
     private val mAdapter = EquipmentChooseAdapter()
 
-    override fun viewBinding(): ActivityEquipmentChooseBinding {
-        return ActivityEquipmentChooseBinding.inflate(layoutInflater)
-    }
-
     override fun initView() {
         mAdapter.itemClick { _, _, i ->
             val weapon = mAdapter.getItem(i)

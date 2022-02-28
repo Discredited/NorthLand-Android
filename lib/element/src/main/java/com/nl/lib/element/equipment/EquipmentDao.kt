@@ -18,5 +18,5 @@ interface EquipmentDao {
     suspend fun updateEquipments(vararg equipments: EquipmentEntity)
 
     @Query("SELECT * FROM equipments")
-    suspend fun loadEquipments(): List<EquipmentEntity>
+    suspend fun loadEquipments(): MutableList<EquipmentEntity>
 }

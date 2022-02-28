@@ -1,8 +1,6 @@
 package com.nl.module.equipment.strengthen
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.june.base.basic.ext.click
@@ -20,13 +18,6 @@ class EquipmentStrengthenFragment : NLBaseFragment<FragmentEquipmentStrengthenBi
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
     private var mEquipmentVo: EquipmentVo? = null
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentEquipmentStrengthenBinding {
-        return FragmentEquipmentStrengthenBinding.inflate(inflater, container, false)
-    }
 
     override fun initView() {
         mBinding.vStrengthenAddition.initAdditionActive(object : AdditionActiveListener {

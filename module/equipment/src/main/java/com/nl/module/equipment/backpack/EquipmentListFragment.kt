@@ -33,13 +33,6 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
     private var mQualityMenu: PopupMenu? = null
     private var mBuildMenu: PopupMenu? = null
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentEquipmentListBinding {
-        return FragmentEquipmentListBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
         mAdapter.itemClick { _, _, position ->
             val equipment = mEquipmentList[position]

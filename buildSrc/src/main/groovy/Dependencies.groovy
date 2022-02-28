@@ -3,25 +3,26 @@
  */
 interface Versions {
 
-    def compileSDK = 30 // 编译SDK版本
-    def buildTools = "30.0.3" // Gradle编译项目工具版本
+    def compileSDK = 31 // 编译SDK版本
+    def buildTools = "30.0.0" // Gradle编译项目工具版本
 
     def minSDK = 21 // 最低兼容Android版本
-    def targetSDK = 30 // 最高兼容Android版本
+    def targetSDK = 31 // 最高兼容Android版本
 }
 
 interface Dependencies {
 
     // 插件 ClassPath
-    def androidGradle = "com.android.tools.build:gradle:3.4.1"
-    def kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
+    def kotlin_version = "1.5.20"
+    def androidGradle = "com.android.tools.build:gradle:7.0.0"
+    def kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
 
     // 基本配置
-    def kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
-    def coreKtx = "androidx.core:core-ktx:1.3.2"
-    def appcompat = "androidx.appcompat:appcompat:1.2.0"
-    def material = "com.google.android.material:material:1.2.1"
-    def constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+    def kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+    def coreKtx = "androidx.core:core-ktx:1.7.0"
+    def appcompat = "androidx.appcompat:appcompat:1.4.1"
+    def material = "com.google.android.material:material:1.5.0"
+    def constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.3"
 
     // 测试项
     def junit = "junit:junit:4.13.2"
@@ -30,8 +31,8 @@ interface Dependencies {
 
     ////////////////////  Kotlin  Begin  ////////////////////
     // Coroutines 协程
-    def kotlinCoroutinesCore = 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
-    def kotlinCoroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    def kotlinCoroutinesCore = 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    def kotlinCoroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
     def kotlinCoroutinesTest = 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7'
     ////////////////////  Kotlin  End  ////////////////////
 
@@ -40,22 +41,22 @@ interface Dependencies {
     def fragmentKtx = 'androidx.fragment:fragment-ktx:1.2.5'
 
     // navigation
-    def navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    def navigationUiKtx = 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    def navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    def navigationUiKtx = 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     // recyclerView
-    def recyclerView = 'androidx.recyclerview:recyclerview:1.1.0'
-    def recyclerViewSelection = 'androidx.recyclerview:recyclerview-selection:1.1.0-rc03'
+    def recyclerView = 'androidx.recyclerview:recyclerview:1.2.1'
+    def recyclerViewSelection = 'androidx.recyclerview:recyclerview-selection:1.2.0-alpha01'
 
     // swipeRefreshLayout
     def swipeRefreshLayout = 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // lifecycle
-    def lifecycleExt = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    def lifecycleRuntimeKtx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
-    def lifecycleCommonJava8 = 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
-    def lifecycleViewModelKtx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    def lifecycleLiveDataKtx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    def lifecycle_version = "2.5.0-alpha02"
+    def lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycle_version}"
+    def lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${lifecycle_version}"
+    def lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle_version}"
+    def lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle_version}"
 
     // room
     def room_version = "2.3.0"
@@ -68,7 +69,7 @@ interface Dependencies {
     ////////////////////  Android ktx  End  ////////////////////
 
     ////////////////////  June的三方库  Begin  ////////////////////
-    def juneVersion = "0.0.1"
+    def juneVersion = "0.0.2"
     def juneComponent = "com.june.base:component:$juneVersion"
     def juneNetwork = "com.june.function:network:$juneVersion"
     def juneLoading = "com.june.widget:loading:$juneVersion"

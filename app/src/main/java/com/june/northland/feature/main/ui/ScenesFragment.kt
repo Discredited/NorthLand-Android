@@ -41,13 +41,6 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
     private val mMenuAdapter = ScenesMenuAdapter()
     private val mPlotAdapter = ScenesPlotAdapter()
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentMainSceneBinding {
-        return FragmentMainSceneBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
         //阵容人物
         mCharacterAdapter.itemClick { _, _, _ ->

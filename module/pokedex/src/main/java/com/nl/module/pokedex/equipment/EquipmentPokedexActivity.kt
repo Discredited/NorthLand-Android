@@ -19,8 +19,4 @@ class EquipmentPokedexActivity : NLBaseActivity<ActivityEquipmentPokedexBinding>
     override fun loadData() {
 
     }
-
-    override fun viewBinding(): ActivityEquipmentPokedexBinding {
-        return ActivityEquipmentPokedexBinding.inflate(layoutInflater)
-    }
 }

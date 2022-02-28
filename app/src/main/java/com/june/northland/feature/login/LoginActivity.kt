@@ -5,16 +5,12 @@ import android.content.Intent
 import androidx.fragment.app.Fragment
 import com.june.base.basic.ext.click
 import com.june.northland.R
-import com.nl.component.NLBaseActivity
 import com.june.northland.databinding.ActivityLoginBinding
 import com.june.northland.utils.Toast
 import com.june.northland.utils.cache.UserDataCache
+import com.nl.component.NLBaseActivity
 
 class LoginActivity : NLBaseActivity<ActivityLoginBinding>() {
-
-    override fun viewBinding(): ActivityLoginBinding {
-        return ActivityLoginBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.btLogin.click {

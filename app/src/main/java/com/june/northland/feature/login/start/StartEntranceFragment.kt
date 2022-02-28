@@ -8,9 +8,7 @@ import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.SpanUtils
 import com.june.base.basic.ext.click
@@ -25,13 +23,6 @@ import com.nl.component.NLBaseFragment
 class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
 
     private var mUserLogin: Boolean = false
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentStartEntranceBinding {
-        return FragmentStartEntranceBinding.inflate(inflater, container, false)
-    }
 
     override fun initView() {
         mBinding.btGoIn.click {

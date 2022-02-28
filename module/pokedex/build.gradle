@@ -44,7 +44,6 @@ dependencies {
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
 
-    implementation Dependencies.lifecycleExt
     implementation Dependencies.lifecycleRuntimeKtx
 
     implementation Dependencies.juneComponent
