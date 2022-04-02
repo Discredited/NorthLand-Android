@@ -10,12 +10,9 @@ class NorthLandApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         Timber.plant(Timber.DebugTree())
         UserDataCache.getInstance().init(this)
-
         RoomHelper.getInstance().initialize(applicationContext,"NorthLand")
-
         if (BuildConfig.DEBUG) {
             ARouter.openLog()
             ARouter.openDebug()
