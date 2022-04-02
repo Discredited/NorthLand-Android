@@ -1,18 +1,9 @@
 package com.june.northland.feature.store
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
 import com.june.northland.databinding.FragmentRecruitNormalBinding
+import com.nl.component.NLBaseFragment
 
-class RecruitActivityFragment : BaseFragment<FragmentRecruitNormalBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentRecruitNormalBinding {
-        return FragmentRecruitNormalBinding.inflate(layoutInflater, container, false)
-    }
+class RecruitActivityFragment : NLBaseFragment<FragmentRecruitNormalBinding>() {
 
     override fun initView() {
     }

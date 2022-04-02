@@ -1,23 +1,14 @@
 package com.nl.module.characters.detail
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.module.characters.R
 import com.nl.module.characters.databinding.FragmentCharacterMagicBinding
 
 /**
  * 秘籍
  */
-class CharacterMagicFragment : BaseFragment<FragmentCharacterMagicBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCharacterMagicBinding {
-        return FragmentCharacterMagicBinding.inflate(inflater, container, false)
-    }
+class CharacterMagicFragment : NLBaseFragment<FragmentCharacterMagicBinding>() {
 
     override fun initView() {
     }

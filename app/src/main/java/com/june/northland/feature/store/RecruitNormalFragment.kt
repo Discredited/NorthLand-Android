@@ -3,21 +3,12 @@ package com.june.northland.feature.store
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
-import com.nl.component.ext.click
 import com.june.northland.databinding.FragmentRecruitNormalBinding
+import com.nl.component.NLBaseFragment
+import com.nl.component.ext.click
 
-class RecruitNormalFragment : BaseFragment<FragmentRecruitNormalBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentRecruitNormalBinding {
-        return FragmentRecruitNormalBinding.inflate(inflater, container, false)
-    }
+class RecruitNormalFragment : NLBaseFragment<FragmentRecruitNormalBinding>() {
 
     override fun initView() {
         mBinding.btRecruitOnce.click {

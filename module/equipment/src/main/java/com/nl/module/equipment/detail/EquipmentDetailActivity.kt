@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.tabs.TabLayoutMediator
-import com.june.base.basic.part.BaseActivity
+import com.nl.component.NLBaseActivity
 import com.nl.component.common.ColorUtils
 import com.nl.component.common.FilePathHelper
 import com.nl.component.common.PropertyHelper
@@ -21,14 +21,10 @@ import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ActivityEquipmentDetailBinding
 
 @Route(path = "/equipment/detail")
-class EquipmentDetailActivity : BaseActivity<ActivityEquipmentDetailBinding>() {
+class EquipmentDetailActivity : NLBaseActivity<ActivityEquipmentDetailBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
     private val mPagerTitleList = mutableListOf<String>()
-
-    override fun viewBinding(): ActivityEquipmentDetailBinding {
-        return ActivityEquipmentDetailBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.vEquipmentResource.apply {

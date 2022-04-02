@@ -1,7 +1,5 @@
 package com.june.northland.feature.main.ui
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import com.blankj.utilcode.util.ToastUtils
 import com.june.northland.R
 import com.june.northland.databinding.FragmentMainSettingBinding

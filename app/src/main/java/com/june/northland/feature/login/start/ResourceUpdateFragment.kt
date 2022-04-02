@@ -2,32 +2,23 @@ package com.june.northland.feature.login.start
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import com.june.base.basic.part.BaseFragment
 import com.june.network.download.DownloadHelper
 import com.june.network.download.ProgressListener
 import com.june.northland.R
 import com.june.northland.databinding.FragmentResourceUpdateBinding
+import com.nl.component.NLBaseFragment
 import com.nl.component.common.FilePathHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.FileOutputStream
 
-class ResourceUpdateFragment : BaseFragment<FragmentResourceUpdateBinding>() {
+class ResourceUpdateFragment : NLBaseFragment<FragmentResourceUpdateBinding>() {
 
     private val mStartUpViewModel by activityViewModels<StartUpViewModel>()
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentResourceUpdateBinding {
-        return FragmentResourceUpdateBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mBinding.tvProgress.text = getString(R.string.str_download_progress, 0)

@@ -2,20 +2,13 @@ package com.nl.module.characters.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.module.characters.databinding.FragmentCharacterTaoismBinding
 
 /**
  * 道心
  */
-class CharacterTaoismFragment : BaseFragment<FragmentCharacterTaoismBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCharacterTaoismBinding {
-        return FragmentCharacterTaoismBinding.inflate(inflater, container, false)
-    }
+class CharacterTaoismFragment : NLBaseFragment<FragmentCharacterTaoismBinding>() {
 
     override fun initView() {
     }

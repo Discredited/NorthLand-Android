@@ -1,22 +1,13 @@
 package com.nl.module.characters.detail
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.module.characters.databinding.FragmentCharacterSkillBinding
 
 /**
  * 技能
  */
-class CharacterSkillFragment : BaseFragment<FragmentCharacterSkillBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCharacterSkillBinding {
-        return FragmentCharacterSkillBinding.inflate(inflater, container, false)
-    }
+class CharacterSkillFragment : NLBaseFragment<FragmentCharacterSkillBinding>() {
 
     override fun initView() {
     }

@@ -2,12 +2,9 @@ package com.nl.module.equipment.forging
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.EquipmentVo
@@ -16,16 +13,9 @@ import com.nl.module.equipment.databinding.FragmentEquipmentForgingBinding
 /**
  * 装备锻造
  */
-class EquipmentForgingFragment : BaseFragment<FragmentEquipmentForgingBinding>() {
+class EquipmentForgingFragment : NLBaseFragment<FragmentEquipmentForgingBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentEquipmentForgingBinding {
-        return FragmentEquipmentForgingBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mBinding.btForging.click { forgingEquipment("") }

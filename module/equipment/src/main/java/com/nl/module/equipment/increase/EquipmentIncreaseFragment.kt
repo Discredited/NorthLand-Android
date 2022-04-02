@@ -1,31 +1,22 @@
 package com.nl.module.equipment.increase
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.IncreaseVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.FragmentEquipmentIncreaseBinding
 
-class EquipmentIncreaseFragment : BaseFragment<FragmentEquipmentIncreaseBinding>() {
+class EquipmentIncreaseFragment : NLBaseFragment<FragmentEquipmentIncreaseBinding>() {
 
     private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
     private val mAdapter = EquipmentIncreaseAdapter()
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentEquipmentIncreaseBinding {
-        return FragmentEquipmentIncreaseBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mAdapter.addChildLongClickViewIds(R.id.btIncreaseRefine, R.id.btIncreasePromote)

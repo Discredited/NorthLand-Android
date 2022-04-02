@@ -10,12 +10,13 @@ import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.component.common.AttributeHelper
 import com.nl.component.common.QualityHelper
 import com.nl.module.soul.R
 import com.nl.module.soul.databinding.FragmentSoulListBinding
 
-class SoulListFragment : BaseFragment<FragmentSoulListBinding>() {
+class SoulListFragment : NLBaseFragment<FragmentSoulListBinding>() {
 
     private val mAdapter = SoulAdapter()
     private val mSoulList = mutableListOf<com.nl.module.soul.SoulVo>()
@@ -24,13 +25,6 @@ class SoulListFragment : BaseFragment<FragmentSoulListBinding>() {
     private var mQuality = QualityHelper.QUALITY_ALL
     private var mAttributeMenu: PopupMenu? = null
     private var mQualityMenu: PopupMenu? = null
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentSoulListBinding {
-        return FragmentSoulListBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mBinding.rvSoul.apply {

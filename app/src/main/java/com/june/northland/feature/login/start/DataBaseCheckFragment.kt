@@ -2,13 +2,11 @@ package com.june.northland.feature.login.start
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import com.june.base.basic.part.BaseFragment
 import com.june.northland.R
 import com.june.northland.databinding.FragmentDatabaseCheckBinding
+import com.nl.component.NLBaseFragment
 import com.nl.room.RoomHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,16 +16,9 @@ import kotlinx.coroutines.withContext
  * 数据资源检查
  * 2021年12月21日20:53:30
  */
-class DataBaseCheckFragment : BaseFragment<FragmentDatabaseCheckBinding>() {
+class DataBaseCheckFragment : NLBaseFragment<FragmentDatabaseCheckBinding>() {
 
     private val mStartUpViewModel by activityViewModels<StartUpViewModel>()
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDatabaseCheckBinding {
-        return FragmentDatabaseCheckBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mBinding.tvProgress.text = getString(R.string.str_loading_progress, 30)

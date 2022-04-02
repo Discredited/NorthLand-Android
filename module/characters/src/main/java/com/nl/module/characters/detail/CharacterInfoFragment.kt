@@ -2,23 +2,14 @@ package com.nl.module.characters.detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.june.base.basic.part.BaseFragment
+import com.nl.component.NLBaseFragment
 import com.nl.module.characters.R
 import com.nl.module.characters.databinding.FragmentCharacterInfoBinding
 
 /**
  * 基本信息
  */
-class CharacterInfoFragment : BaseFragment<FragmentCharacterInfoBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCharacterInfoBinding {
-        return FragmentCharacterInfoBinding.inflate(layoutInflater, container, false)
-    }
+class CharacterInfoFragment : NLBaseFragment<FragmentCharacterInfoBinding>() {
 
     override fun initView() {
 
