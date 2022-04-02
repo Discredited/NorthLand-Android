@@ -21,13 +21,6 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDialogEquipmentInfoBinding {
-        return FragmentDialogEquipmentInfoBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
         mBinding.btStrengthen.click {
             //ARouter.getInstance().build("/equipment/detail").navigation()

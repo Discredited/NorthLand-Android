@@ -1,5 +1,6 @@
 package com.june.northland.feature.battle
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -10,16 +11,10 @@ import com.june.northland.databinding.FragmentDialogBattleResultSuccessBinding
 
 class BattleResultSuccessFragment : BaseDialogFragment<FragmentDialogBattleResultSuccessBinding>() {
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDialogBattleResultSuccessBinding {
-        return FragmentDialogBattleResultSuccessBinding.inflate(inflater, container, false)
-    }
-
     override fun initView() {
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mBinding.tvResult.text = "战斗成功"

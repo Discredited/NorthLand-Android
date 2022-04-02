@@ -1,27 +1,20 @@
 package com.june.northland.feature.battle
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
 import com.june.base.basic.part.BaseDialogFragment
-import com.nl.component.ext.click
 import com.june.northland.databinding.FragmentDialogBattleResultFailBinding
+import com.nl.component.ext.click
 
 class BattleResultFailFragment : BaseDialogFragment<FragmentDialogBattleResultFailBinding>() {
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDialogBattleResultFailBinding {
-        return FragmentDialogBattleResultFailBinding.inflate(inflater, container, false)
-    }
 
     override fun initView() {
         mBinding.btSure.click { dismiss() }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mBinding.tvResult.text = "战斗失败"

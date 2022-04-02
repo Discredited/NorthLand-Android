@@ -1,5 +1,6 @@
 package com.june.northland.feature.login.start.announcement
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -17,13 +18,6 @@ class AnnouncementFragment : BaseDialogFragment<FragmentDialogAnnouncementBindin
 
     private val mAdapter = AnnouncementAdapter()
 
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDialogAnnouncementBinding {
-        return FragmentDialogAnnouncementBinding.inflate(layoutInflater, container, false)
-    }
-
     override fun initView() {
         mBinding.rvAnnouncement.apply {
             setLinearManager()
@@ -35,6 +29,7 @@ class AnnouncementFragment : BaseDialogFragment<FragmentDialogAnnouncementBindin
         mBinding.btSure.click { dismiss() }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mAdapter.setNewInstance(

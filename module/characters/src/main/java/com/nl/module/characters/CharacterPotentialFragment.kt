@@ -1,5 +1,6 @@
 package com.nl.module.characters
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.*
@@ -16,13 +17,6 @@ class CharacterPotentialFragment : BaseDialogFragment<FragmentCharacterPotential
     private var mPotential = 1000
     private var mSelectedType = 0 // 0-attack 1-defense 2-health
     private var mSelectedView: AppCompatTextView? = null
-
-    override fun viewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCharacterPotentialBinding {
-        return FragmentCharacterPotentialBinding.inflate(layoutInflater, container, false)
-    }
 
     override fun initView() {
         mBinding.tvAttackTitle.click {
@@ -76,6 +70,7 @@ class CharacterPotentialFragment : BaseDialogFragment<FragmentCharacterPotential
         mBinding.tvCancel.click { dismiss() }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mBinding.tvPotentialTitle.text = "当前潜力点："
