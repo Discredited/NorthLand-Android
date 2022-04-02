@@ -3,8 +3,8 @@ package com.june.northland.feature.taoism.ladder
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityLadderListBinding
+import com.nl.component.NLBaseActivity
 
 /**
  * @author June
@@ -12,13 +12,9 @@ import com.june.northland.databinding.ActivityLadderListBinding
  * @version 1.0.0
  * @time 2020/8/6 15:36
  */
-class LadderListActivity : BaseActivity<ActivityLadderListBinding>() {
+class LadderListActivity : NLBaseActivity<ActivityLadderListBinding>() {
 
     private val mAdapter = LadderAdapter()
-
-    override fun viewBinding(): ActivityLadderListBinding {
-        return ActivityLadderListBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.rvLadder.apply {

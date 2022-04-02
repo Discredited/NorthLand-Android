@@ -2,7 +2,6 @@ package com.june.northland.feature.dungeon
 
 import androidx.activity.viewModels
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityPlotBattleBinding
 import com.june.northland.feature.battle.BattleProcedureListener
 import com.june.northland.feature.battle.BattleResultFailFragment
@@ -10,6 +9,7 @@ import com.june.northland.feature.battle.BattleResultSuccessFragment
 import com.june.northland.feature.battle.BattleViewModel
 import com.june.northland.feature.battle.vo.RoundVo
 import com.june.northland.utils.Toast
+import com.nl.component.NLBaseActivity
 
 /**
  * @author June
@@ -17,13 +17,9 @@ import com.june.northland.utils.Toast
  * @version
  * @time 2020/7/28 15:51
  */
-class DungeonBattleActivity : BaseActivity<ActivityPlotBattleBinding>() {
+class DungeonBattleActivity : NLBaseActivity<ActivityPlotBattleBinding>() {
 
     private val mBattleViewModel by viewModels<BattleViewModel>()
-
-    override fun viewBinding(): ActivityPlotBattleBinding {
-        return ActivityPlotBattleBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.vBattleground.bindSkillEffectView(mBinding.tvSkillEffect)

@@ -2,12 +2,12 @@ package com.june.northland.feature.taoism
 
 import android.content.Intent
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.databinding.ActivityTaoismBinding
 import com.june.northland.feature.taoism.arena.ArenaListActivity
 import com.june.northland.feature.taoism.ladder.LadderListActivity
 import com.june.northland.utils.Toast
+import com.nl.component.NLBaseActivity
 
 /**
  * @author June
@@ -15,11 +15,7 @@ import com.june.northland.utils.Toast
  * @version 1.0.0
  * @time 2020/8/6 14:47
  */
-class TaoismActivity : BaseActivity<ActivityTaoismBinding>() {
-
-    override fun viewBinding(): ActivityTaoismBinding {
-        return ActivityTaoismBinding.inflate(layoutInflater)
-    }
+class TaoismActivity : NLBaseActivity<ActivityTaoismBinding>() {
 
     override fun initView() {
         mBinding.cdArena.click {

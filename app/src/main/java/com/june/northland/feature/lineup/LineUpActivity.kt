@@ -1,19 +1,15 @@
 package com.june.northland.feature.lineup
 
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.databinding.ActivityLineUpBinding
+import com.nl.component.NLBaseActivity
 import timber.log.Timber
 
 /**
  * 阵容
  */
-class LineUpActivity : BaseActivity<ActivityLineUpBinding>() {
-
-    override fun viewBinding(): ActivityLineUpBinding {
-        return ActivityLineUpBinding.inflate(layoutInflater)
-    }
+class LineUpActivity : NLBaseActivity<ActivityLineUpBinding>() {
 
     override fun initView() {
 

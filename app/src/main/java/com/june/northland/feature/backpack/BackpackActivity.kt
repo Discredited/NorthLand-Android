@@ -2,19 +2,15 @@ package com.june.northland.feature.backpack
 
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.databinding.ActivityBackpackBinding
+import com.nl.component.NLBaseActivity
 import com.nl.component.ext.click
 
-class BackpackActivity : BaseActivity<ActivityBackpackBinding>() {
+class BackpackActivity : NLBaseActivity<ActivityBackpackBinding>() {
 
     private lateinit var mAdapter: BackpackAdapter
     private val mPagerTitleList = mutableListOf<String>()
-
-    override fun viewBinding(): ActivityBackpackBinding {
-        return ActivityBackpackBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mAdapter = BackpackAdapter(supportFragmentManager, lifecycle)

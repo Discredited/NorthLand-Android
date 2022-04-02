@@ -2,16 +2,12 @@ package com.june.northland.feature.main.email
 
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityEmailListBinding
+import com.nl.component.NLBaseActivity
 
-class EmailListActivity : BaseActivity<ActivityEmailListBinding>() {
+class EmailListActivity : NLBaseActivity<ActivityEmailListBinding>() {
 
     private val mAdapter = EmailAdapter()
-
-    override fun viewBinding(): ActivityEmailListBinding {
-        return ActivityEmailListBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.rvEmail.apply {

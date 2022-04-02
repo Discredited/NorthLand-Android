@@ -2,16 +2,12 @@ package com.nl.module.characters
 
 import android.text.SpannableStringBuilder
 import com.blankj.utilcode.util.SpanUtils
-import com.june.base.basic.part.BaseActivity
+import com.nl.component.NLBaseActivity
 import com.nl.module.characters.databinding.ActivityCharacterConfigBinding
 
-class CharacterConfigActivity : BaseActivity<ActivityCharacterConfigBinding>() {
+class CharacterConfigActivity : NLBaseActivity<ActivityCharacterConfigBinding>() {
 
     private val mLevelVo = CharacterVo()
-
-    override fun viewBinding(): ActivityCharacterConfigBinding {
-        return ActivityCharacterConfigBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.tvSure.setOnClickListener {

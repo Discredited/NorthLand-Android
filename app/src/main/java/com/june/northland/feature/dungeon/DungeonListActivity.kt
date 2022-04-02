@@ -2,23 +2,19 @@ package com.june.northland.feature.dungeon
 
 import android.content.Intent
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.nl.component.ext.itemChildClick
 import com.june.northland.databinding.ActivityDungeonListBinding
 import com.june.northland.feature.dungeon.plot.PlotDisplayActivity
+import com.nl.component.NLBaseActivity
+import com.nl.component.ext.itemChildClick
 import com.nl.component.widget.res.ResourceVo
 
 /**
  * 剧情列表
  */
-class DungeonListActivity : BaseActivity<ActivityDungeonListBinding>() {
+class DungeonListActivity : NLBaseActivity<ActivityDungeonListBinding>() {
 
     private val mAdapter = DungeonAdapter()
-
-    override fun viewBinding(): ActivityDungeonListBinding {
-        return ActivityDungeonListBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.vResource.addResource(ResourceVo(R.drawable.ic_herb, 9999))

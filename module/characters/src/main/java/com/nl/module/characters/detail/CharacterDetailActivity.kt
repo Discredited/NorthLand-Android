@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
+import com.nl.component.NLBaseActivity
 import com.nl.component.common.ColorUtils
 import com.nl.module.characters.AttributeExplanationFragment
 import com.nl.module.characters.CharacterPotentialFragment
@@ -22,15 +22,11 @@ import com.nl.module.equipment.choose.EquipmentChooseActivity
 /**
  * 人物详情
  */
-class CharacterDetailActivity : BaseActivity<ActivityCharacterDetailBinding>() {
+class CharacterDetailActivity : NLBaseActivity<ActivityCharacterDetailBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
 
     private val mPagerTitleList = mutableListOf<String>()
-
-    override fun viewBinding(): ActivityCharacterDetailBinding {
-        return ActivityCharacterDetailBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.vpCharacter.orientation = ViewPager2.ORIENTATION_HORIZONTAL

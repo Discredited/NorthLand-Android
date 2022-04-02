@@ -3,12 +3,12 @@ package com.june.northland.feature.dungeon.chapter
 import android.content.Intent
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
-import com.nl.component.ext.itemClick
 import com.june.northland.databinding.ActivityChapterListBinding
 import com.june.northland.feature.dungeon.DungeonListActivity
 import com.june.northland.utils.Toast
+import com.nl.component.NLBaseActivity
+import com.nl.component.ext.itemClick
 
 /**
  * @author June
@@ -16,13 +16,9 @@ import com.june.northland.utils.Toast
  * @version 1.0.0
  * @time 2020/7/29 11:30
  */
-class ChapterListActivity : BaseActivity<ActivityChapterListBinding>() {
+class ChapterListActivity : NLBaseActivity<ActivityChapterListBinding>() {
 
     private val mAdapter = ChapterAdapter()
-
-    override fun viewBinding(): ActivityChapterListBinding {
-        return ActivityChapterListBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
 

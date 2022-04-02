@@ -4,7 +4,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
+import com.nl.component.NLBaseActivity
 import com.nl.component.ext.itemClick
 import com.nl.module.characters.CharacterViewModel
 import com.nl.module.characters.databinding.ActivityCharacterListBinding
@@ -15,14 +15,10 @@ import kotlinx.coroutines.launch
 /**
  * 人物列表
  */
-class CharacterListActivity : BaseActivity<ActivityCharacterListBinding>() {
+class CharacterListActivity : NLBaseActivity<ActivityCharacterListBinding>() {
 
     private val mCharacterViewModel by viewModels<CharacterViewModel>()
     private val mAdapter = CharacterListAdapter()
-
-    override fun viewBinding(): ActivityCharacterListBinding {
-        return ActivityCharacterListBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mAdapter.itemClick { _, _, position ->

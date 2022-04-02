@@ -7,7 +7,7 @@ interface Versions {
     def buildTools = "30.0.0" // Gradle编译项目工具版本
 
     def minSDK = 21 // 最低兼容Android版本
-    def targetSDK = 31 // 最高兼容Android版本
+    def targetSDK = 30 // 最高兼容Android版本
 }
 
 interface Dependencies {
