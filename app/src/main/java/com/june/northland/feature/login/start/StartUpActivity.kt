@@ -31,7 +31,7 @@ class StartUpActivity : NLBaseActivity<ActivityStartUpBinding>() {
             }
         })
 
-        //检查更新和配置参数
+        // 检查更新和配置参数
         requestConfigParams()
     }
 
