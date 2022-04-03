@@ -3,17 +3,13 @@ package com.june.northland.feature.practice
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.databinding.ActivityPracticeBinding
+import com.nl.component.NLBaseActivity
 
-class PracticeActivity : BaseActivity<ActivityPracticeBinding>() {
+class PracticeActivity : NLBaseActivity<ActivityPracticeBinding>() {
 
     private val mAdapter = PracticeAdapter()
-
-    override fun viewBinding(): ActivityPracticeBinding {
-        return ActivityPracticeBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.rvPractice.apply {

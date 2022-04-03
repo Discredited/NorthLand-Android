@@ -4,12 +4,9 @@ import android.view.View
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.R
 import com.june.northland.databinding.ActivityRecruitResultBinding
+import com.nl.component.NLBaseActivity
 
-class RecruitResultActivity : BaseActivity<ActivityRecruitResultBinding>() {
-
-    override fun viewBinding(): ActivityRecruitResultBinding {
-        return ActivityRecruitResultBinding.inflate(layoutInflater)
-    }
+class RecruitResultActivity : NLBaseActivity<ActivityRecruitResultBinding>() {
 
     override fun initView() {
     }

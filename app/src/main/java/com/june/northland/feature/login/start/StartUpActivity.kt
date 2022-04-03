@@ -6,18 +6,15 @@ import com.june.base.basic.ext.click
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
+import com.nl.component.NLBaseActivity
 import com.nl.component.ext.commitFragment
 
 /**
  * 启动页面
  */
-class StartUpActivity : BaseActivity<ActivityStartUpBinding>() {
+class StartUpActivity : NLBaseActivity<ActivityStartUpBinding>() {
 
     private val mStartUpViewModel by viewModels<StartUpViewModel>()
-
-    override fun viewBinding(): ActivityStartUpBinding {
-        return ActivityStartUpBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.tvAnnouncement.click {

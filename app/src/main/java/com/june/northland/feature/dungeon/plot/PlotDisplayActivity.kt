@@ -8,6 +8,7 @@ import com.june.northland.R
 import com.june.northland.databinding.ActivityPlotDisplayBinding
 import com.june.northland.feature.dungeon.DungeonBattleActivity
 import com.june.northland.widget.text.VerbatimListener
+import com.nl.component.NLBaseActivity
 
 /**
  * @author June
@@ -15,14 +16,10 @@ import com.june.northland.widget.text.VerbatimListener
  * @version 1.0.0
  * @time 2020/7/28 15:48
  */
-class PlotDisplayActivity : BaseActivity<ActivityPlotDisplayBinding>() {
+class PlotDisplayActivity : NLBaseActivity<ActivityPlotDisplayBinding>() {
 
     private var mStoryIndex: Int = 0
     private val mStoryList = mutableListOf<PlotVo>()
-
-    override fun viewBinding(): ActivityPlotDisplayBinding {
-        return ActivityPlotDisplayBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
         mBinding.tvVerbatim.setVerbatimListener(object : VerbatimListener {

@@ -5,14 +5,11 @@ import android.content.Intent
 import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivitySplashBinding
 import com.june.northland.feature.login.start.StartUpActivity
+import com.nl.component.NLBaseActivity
 
-class SplashActivity : BaseActivity<ActivitySplashBinding>() {
+class SplashActivity : NLBaseActivity<ActivitySplashBinding>() {
 
     private var mAdviceAnimator: ObjectAnimator? = null
-
-    override fun viewBinding(): ActivitySplashBinding {
-        return ActivitySplashBinding.inflate(layoutInflater)
-    }
 
     override fun initView() {
     }
