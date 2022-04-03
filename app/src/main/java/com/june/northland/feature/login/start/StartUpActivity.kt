@@ -1,13 +1,16 @@
 package com.june.northland.feature.login.start
 
 import android.text.format.DateUtils
+import android.view.View
 import androidx.activity.viewModels
 import com.june.base.basic.ext.click
-import com.june.base.basic.part.BaseActivity
 import com.june.northland.databinding.ActivityStartUpBinding
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
+import com.june.northland.feature.login.start.debug.DebugListDialogFragment
+import com.nl.component.BuildConfig
 import com.nl.component.NLBaseActivity
 import com.nl.component.ext.commitFragment
+import com.nl.component.ext.simpleName
 
 /**
  * 启动页面
@@ -17,6 +20,15 @@ class StartUpActivity : NLBaseActivity<ActivityStartUpBinding>() {
     private val mStartUpViewModel by viewModels<StartUpViewModel>()
 
     override fun initView() {
+        // 调试模式开关
+        if (BuildConfig.DEBUG) {
+            mBinding.btDebug.visibility = View.VISIBLE
+            mBinding.btDebug.click {
+                DebugListDialogFragment.newInstance().show(supportFragmentManager, DebugListDialogFragment.simpleName())
+            }
+        } else {
+            mBinding.btDebug.visibility = View.GONE
+        }
         mBinding.tvAnnouncement.click {
             AnnouncementFragment.newInstance().show(supportFragmentManager, "AnnouncementFragment")
         }

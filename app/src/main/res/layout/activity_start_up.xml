@@ -32,4 +32,15 @@
         android:textColor="@color/color_text_logo"
         android:textSize="@dimen/sp_16"
         android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btDebug"
+        style="@style/CommonButton"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/str_debug"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_20" />
 </FrameLayout>

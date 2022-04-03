@@ -2,6 +2,7 @@ package com.june.northland.feature.login.start
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.june.northland.R
@@ -24,9 +25,8 @@ class DataBaseCheckFragment : NLBaseFragment<FragmentDatabaseCheckBinding>() {
         mBinding.tvProgress.text = getString(R.string.str_loading_progress, 30)
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         checkDatabase()
     }
 
