@@ -12,6 +12,8 @@ abstract class NLBaseActivity<V : ViewBinding> : BaseActivity<V>() {
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initView()
+        loadData()
     }
 
     abstract fun initView()
