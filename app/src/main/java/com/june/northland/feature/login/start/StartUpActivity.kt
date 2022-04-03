@@ -52,18 +52,19 @@ class StartUpActivity : NLBaseActivity<ActivityStartUpBinding>() {
         }
     }
 
-    //更新游戏资源
+    // 更新游戏资源
     private fun updateResource() {
         val fragment = ResourceUpdateFragment.newInstance("")
         mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
     }
 
+    // 数据资源检查
     private fun databaseCheck() {
         val fragment = DataBaseCheckFragment.newInstance()
         mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
     }
 
-    //进入游戏
+    // 进入游戏
     private fun startEntrance() {
         val fragment = StartEntranceFragment.newInstance()
         mBinding.fcStartUp.commitFragment(supportFragmentManager, fragment)
