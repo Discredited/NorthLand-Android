@@ -16,6 +16,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.FileOutputStream
 
+/**
+ * 资源更新
+ */
 class ResourceUpdateFragment : NLBaseFragment<FragmentResourceUpdateBinding>() {
 
     private val mStartUpViewModel by activityViewModels<StartUpViewModel>()

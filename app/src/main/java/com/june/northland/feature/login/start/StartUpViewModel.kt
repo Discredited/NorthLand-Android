@@ -8,6 +8,9 @@ import com.nl.component.common.FilePathHelper
 import java.io.File
 import java.io.FileInputStream
 
+/**
+ * 游戏启动首页
+ */
 class StartUpViewModel(application: Application) : com.nl.component.AppViewModel(application) {
 
     val mEntranceLive: MutableLiveData<Int> = MutableLiveData()
