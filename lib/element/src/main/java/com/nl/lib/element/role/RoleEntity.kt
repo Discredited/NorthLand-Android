@@ -2,6 +2,7 @@ package com.nl.lib.element.role
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.nl.lib.element.base.AttrBasicEntity
 
 /**
  * POJO  简单的Java对象，其中有一些属性及其getter、setter方法的类，没有业务逻辑，不允许有业务方法
@@ -14,26 +15,37 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "roles")
 data class RoleEntity(
     @PrimaryKey val id: String,
-    val name: String,  // 名称
-    val avatar: String,  // 头像
-    val image: String,  // 形象
-    val desc: String,  // 描述
-    val faction: Int,  // 阵营
-    val race: Int,  // 种族
-    val quality: Int,
-    val realm: Int,
-    val power: Int,
-    val intellect: Int,
-    val level: Int,
-    val experience: Int,
-    val expNextLevel: Long = 20, //下一级所需总经验
-    val expFactor: Int = 20,  //经验系数
-    val attack: Int = 195,
-    val defense: Int = 120,
-    val health: Int = 220,
-    val potential: Int = 0,
-    val attackUpgrade: Int = 30,
-    val defenseUpgrade: Int = 22,
-    val healthUpgrade: Int = 95,
-    val potentialUpgrade: Int = 40
+    val name: String,     // 名称
+    val avatar: String,   // 头像
+    val image: String,    // 形象
+    val desc: String,     // 描述
+    val faction: Int,     // 阵营
+    val race: Int,        // 种族
+    val quality: Int,     // 品质
+    val realm: Int,       // 境界
+    val power: Int,       // 妖力|法力
+    val intellect: Int,   // 智力
+    val level: Int,       // 等级
+    val experience: Int,           // 经验
+    val expNextLevel: Long = 20,   // 下一级所需总经验
+    val expFactor: Int = 20,       // 经验系数
+    //  基础属性
+    val attackInit: Int = 195,         // 初始攻击
+    val defenseInit: Int = 120,        // 初始防御
+    val healthInit: Int = 220,         // 初始生命
+    val speedInit: Int = 90,           // 初始速度，只有初始速度，没有成长值
+    val potential: Int = 0,            // 初始潜力
+    val attackUpgrade: Int = 30,       // 攻击成长
+    val defenseUpgrade: Int = 22,      // 防御成长
+    val healthUpgrade: Int = 95,       // 生命成长
+    val potentialUpgrade: Int = 40,    // 潜力成长
+    //  额外属性
+    val critInit: Int = 0,             // 初始暴击
+    val resistInit: Int = 0,           // 初始抵抗
+    val hitInit: Int= 0,               // 初始命中
+    val dodgeInit: Int = 0,            // 初始闪避
+    val critUpragde: Int = 0,          // 暴击成长
+    val resistUpragde: Int = 0,        // 抵抗成长
+    val hitUpragde: Int= 0,            // 命中成长
+    val dodgeUpragde: Int = 0          // 闪避成长
 )
