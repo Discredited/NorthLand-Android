@@ -6,6 +6,7 @@ import android.view.View
 import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.databinding.FragmentDialogDebugListBinding
+import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.characters.list.CharacterListActivity
 
@@ -23,8 +24,7 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
         mAdapter.itemClick { _, _, position ->
             when (position) {
                 1 -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
-                else -> {
-                }
+                else -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
             }
         }
         mBinding.rvDebugList.apply {
@@ -32,6 +32,7 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
             setHasFixedSize(true)
             adapter = mAdapter
         }
+        mBinding.btClose.click { dismiss() }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
