@@ -1,0 +1,51 @@
+// 该 gradle 主要用于 library module 配置的统一
+// 配置文件中不能直接使用 plugin { id "xxx" },
+// 所以使用了 apply { plugin 'xxx' }
+// 该配置中，尽量提取共有的属性，有变动的配置项，
+// 可以让每个module自行实现或者覆盖
+apply {
+    plugin 'com.android.library'
+    plugin 'kotlin-android'
+    plugin 'kotlin-kapt'
+    plugin 'maven-publish'
+}
+
+android {
+    compileSdkVersion Versions.compileSDK
+    buildToolsVersion Versions.buildTools
+
+    defaultConfig {
+        minSdkVersion Versions.minSDK
+        targetSdkVersion Versions.targetSDK
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation Dependencies.kotlinStdlib
+    implementation Dependencies.coreKtx
+
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.junitExt
+    androidTestImplementation Dependencies.espressoCore
+}
