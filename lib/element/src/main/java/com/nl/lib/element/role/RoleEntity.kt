@@ -2,7 +2,6 @@ package com.nl.lib.element.role
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.nl.lib.element.base.AttrBasicEntity
 
 /**
  * POJO  简单的Java对象，其中有一些属性及其getter、setter方法的类，没有业务逻辑，不允许有业务方法
@@ -24,9 +23,9 @@ data class RoleEntity(
     val quality: Int,     // 品质
     val realm: Int,       // 境界
     val power: Int,       // 妖力|法力
-    val intellect: Int,   // 智力
-    val level: Int,       // 等级
-    val experience: Int,           // 经验
+    val intellect: Int = 1,   // 智力
+    val level: Int = 1,       // 等级
+    val experience: Int = 0,           // 经验
     val expNextLevel: Long = 20,   // 下一级所需总经验
     val expFactor: Int = 20,       // 经验系数
     //  基础属性
@@ -42,10 +41,10 @@ data class RoleEntity(
     //  额外属性
     val critInit: Int = 0,             // 初始暴击
     val resistInit: Int = 0,           // 初始抵抗
-    val hitInit: Int= 0,               // 初始命中
+    val hitInit: Int = 0,               // 初始命中
     val dodgeInit: Int = 0,            // 初始闪避
-    val critUpragde: Int = 0,          // 暴击成长
-    val resistUpragde: Int = 0,        // 抵抗成长
-    val hitUpragde: Int= 0,            // 命中成长
-    val dodgeUpragde: Int = 0          // 闪避成长
+    val critUpgrade: Int = 0,          // 暴击成长
+    val resistUpgrade: Int = 0,        // 抵抗成长
+    val hitUpgrade: Int = 0,            // 命中成长
+    val dodgeUpgrade: Int = 0          // 闪避成长
 )

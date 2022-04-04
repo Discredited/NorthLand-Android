@@ -3,6 +3,7 @@ include ':app'
 include ':style'
 include ':base:component'
 include ':lib:element'
+
 include ':module:equipment'
 include ':module:skill'
 include ':module:element'

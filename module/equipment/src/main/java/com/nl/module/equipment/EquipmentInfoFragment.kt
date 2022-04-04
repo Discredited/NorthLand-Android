@@ -2,8 +2,6 @@ package com.nl.module.equipment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -12,7 +10,7 @@ import com.june.base.basic.part.BaseDialogFragment
 import com.nl.component.common.ColorUtils
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.equipment.choose.EquipmentChooseActivity
 import com.nl.module.equipment.databinding.FragmentDialogEquipmentInfoBinding
 import com.nl.module.equipment.detail.EquipmentDetailActivity
@@ -57,7 +55,7 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
             requireContext(),
             ColorUtils.equipmentQualityColor(equipment.quality)
         )
-        mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
+        mBinding.ivEquipmentIcon.setDrawableWithStroke(strokeColor = qualityColor)
         mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
         mBinding.tvEquipmentName.text = equipment.name
         mBinding.tvEquipmentName.setTextColor(qualityColor)

@@ -102,6 +102,7 @@ dependencies {
     implementation project(path: ':module:magic')
     implementation project(path: ':module:soul')
     implementation project(path: ':module:skill')
+    implementation project(path: ':module:role')
 
     implementation project(path: ':module:room')
 

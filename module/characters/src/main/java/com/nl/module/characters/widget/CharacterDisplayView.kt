@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 import com.june.base.basic.ext.click
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.characters.CharacterVo
 import com.nl.module.characters.R
 import com.nl.module.characters.databinding.WidgetCharacterDisplayLayoutBinding
@@ -70,7 +70,7 @@ class CharacterDisplayView @JvmOverloads constructor(
         val qualityDefault = equipment?.quality ?: EquipmentHelper.QUALITY_NORMAL
         val quality = EquipmentHelper.equipmentQualityColor(qualityDefault)
         val qualityColor = ContextCompat.getColor(context, quality)
-        view?.setDrawable(strokeColor = qualityColor)
+        view?.setDrawableWithStroke(strokeColor = qualityColor)
         equipment?.let { view?.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon)) }
     }
 
@@ -85,7 +85,7 @@ class CharacterDisplayView @JvmOverloads constructor(
         necklace: EquipmentVo? = null
     ) {
         mCharacter = character
-        mBinding.ivCharacterAvatar.setDrawable(strokeColor = powerColor)
+        mBinding.ivCharacterAvatar.setDrawableWithStroke(strokeColor = powerColor)
         mBinding.ivCharacterAvatar.loadAvatar(
             R.drawable.ic_avatar_gan_ning_zhen,
             resources.getDimensionPixelSize(R.dimen.dp_5)

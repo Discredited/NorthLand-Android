@@ -7,7 +7,7 @@ import com.june.northland.R
 import com.june.northland.databinding.ItemMainScenesCharacterBinding
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.characters.CharacterHelper
 import com.nl.module.characters.CharacterVo
 
@@ -21,7 +21,7 @@ class ScenesCharacterAdapter :
         val realm = CharacterHelper.getRealmColor(item.realm)
         val realmColor = ContextCompat.getColor(holder.itemView.context, realm)
         holder.dataBinding?.apply {
-            ivCharacter.setDrawable(
+            ivCharacter.setDrawableWithStroke(
                 strokeColor = realmColor,
                 strokeWidth = holder.itemView.resources.getDimensionPixelSize(R.dimen.dp_3)
             )

@@ -1,5 +1,7 @@
 package com.nl.lib.element.enum
 
+import com.nl.lib.element.R
+
 object PowerEnum {
 
     const val POWER_0 = 0
@@ -35,6 +37,17 @@ object PowerEnum {
             POWER_8 -> POWER_8_NAME
             POWER_9 -> POWER_9_NAME
             else -> POWER_0_NAME
+        }
+    }
+
+    fun getPowerColor(power: Int): Int {
+        return when (power) {
+            POWER_1, POWER_2, POWER_3 -> R.color.color_quality_n
+            POWER_4, POWER_5 -> R.color.color_quality_r
+            POWER_6, POWER_7 -> R.color.color_quality_sr
+            POWER_8 -> R.color.color_quality_ssr
+            POWER_9 -> R.color.color_quality_ur
+            else -> R.color.color_quality_ordinary
         }
     }
 }

@@ -19,4 +19,7 @@ interface RoleDao {
 
     @Query("SELECT * FROM roles")
     suspend fun loadRoles(): List<RoleEntity>
+
+    @Query("SELECT * FROM roles WHERE id = :roleId")
+    suspend fun findRoleById(roleId: String): RoleEntity?
 }

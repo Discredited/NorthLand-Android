@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
@@ -26,7 +26,7 @@ class ForgingDisplayView @JvmOverloads constructor(
 
     fun initForgingDisplay(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(context, EquipmentHelper.equipmentQualityColor(equipment.quality))
-        mBinding.ivEquipment.setDrawable(strokeColor = qualityColor)
+        mBinding.ivEquipment.setDrawableWithStroke(strokeColor = qualityColor)
         mBinding.ivEquipment.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
         mBinding.ivEquipmentName.text = equipment.name
         mBinding.ivEquipmentName.setTextColor(qualityColor)
@@ -38,7 +38,7 @@ class ForgingDisplayView @JvmOverloads constructor(
         } else {
             val equipmentForging = EquipmentHelper.equipmentNextQuality(equipment)
             val forgingQualityColor = ContextCompat.getColor(context, EquipmentHelper.equipmentQualityColor(equipmentForging.quality))
-            mBinding.ivEquipmentForging.setDrawable(strokeColor = forgingQualityColor)
+            mBinding.ivEquipmentForging.setDrawableWithStroke(strokeColor = forgingQualityColor)
             mBinding.ivEquipmentForging.loadAvatar(FilePathHelper.getEquipmentIcon(equipmentForging.icon))
             mBinding.tvEquipmentForgingName.text = equipmentForging.name
             mBinding.tvEquipmentForgingName.setTextColor(forgingQualityColor)

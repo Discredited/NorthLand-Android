@@ -3,8 +3,6 @@ package com.nl.module.equipment.detail
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
@@ -12,7 +10,7 @@ import com.june.base.basic.ext.click
 import com.nl.component.NLBaseDialogFragment
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.R
@@ -42,7 +40,7 @@ class EquipmentBuildFragment : NLBaseDialogFragment<FragmentEquipmentBuildBindin
 
         mBinding.tvBuildTitle.text = "打造${equipment.name}"
         mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
-        mBinding.ivEquipmentIcon.setDrawable(
+        mBinding.ivEquipmentIcon.setDrawableWithStroke(
             strokeColor = ContextCompat.getColor(
                 requireContext(),
                 R.color.color_equipment_normal

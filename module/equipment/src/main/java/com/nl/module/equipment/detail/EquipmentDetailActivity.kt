@@ -12,7 +12,7 @@ import com.nl.component.common.ColorUtils
 import com.nl.component.common.FilePathHelper
 import com.nl.component.common.PropertyHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.component.widget.res.ResourceVo
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
@@ -71,7 +71,7 @@ class EquipmentDetailActivity : NLBaseActivity<ActivityEquipmentDetailBinding>()
     private fun initEquipment(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(this, ColorUtils.equipmentQualityColor(equipment.quality))
         mBinding.ivEquipmentIcon.loadAvatar(FilePathHelper.getEquipmentIcon(equipment.icon))
-        mBinding.ivEquipmentIcon.setDrawable(strokeColor = qualityColor)
+        mBinding.ivEquipmentIcon.setDrawableWithStroke(strokeColor = qualityColor)
         mBinding.tvEquipmentName.setTextColor(qualityColor)
         mBinding.tvEquipmentName.text = equipment.name
         mBinding.tvEquipmentValue.text = "${PropertyHelper.getPropertyName(equipment.property)}+${equipment.value}"

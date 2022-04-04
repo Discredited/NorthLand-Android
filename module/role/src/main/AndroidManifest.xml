@@ -3,8 +3,11 @@
     package="com.nl.module.role">
 
     <application>
-    <activity
-        android:name=".RoleDetailActivity"
-        android:screenOrientation="portrait" />
+        <activity
+            android:name=".RoleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".detail.RoleDetailFragment"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

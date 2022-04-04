@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_role"
+    app:startDestination="@id/roleList">
+
+    <fragment
+        android:id="@+id/roleList"
+        android:name="com.nl.module.role.list.RoleListFragment"
+        android:label="RoleListFragment"
+        tools:layout="@layout/fragment_role_list" >
+        <action
+            android:id="@+id/action_roleList_to_roleDetail"
+            app:destination="@id/roleDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roleDetail"
+        android:name="com.nl.module.role.detail.RoleDetailFragment"
+        android:label="RoleDetailFragment" />
+</navigation>

@@ -8,10 +8,9 @@ import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import com.june.northland.R
 import com.nl.component.ext.loadImage
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.june.northland.databinding.WidgetBattleViewBinding
 import com.june.northland.feature.battle.vo.BattleVo
-import com.nl.component.common.ColorUtils
 
 class BattleView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -33,7 +32,7 @@ class BattleView @JvmOverloads constructor(
         mBinding.ivAvatar.loadImage(battler.avatar)
         mBinding.vHealthView.initHealth(battler.health, battler.health)
         mBinding.tvPosition.text = battler.lineupPosition.toString()
-        setDrawable(strokeColor = powerColor, strokeWidth = strokeWidth, cornerRadius = radius)
+        setDrawableWithStroke(strokeColor = powerColor, strokeWidth = strokeWidth, cornerRadius = radius)
     }
 
     fun damage(damage: Int, damageType: Int, isAnimator: Boolean = true) {

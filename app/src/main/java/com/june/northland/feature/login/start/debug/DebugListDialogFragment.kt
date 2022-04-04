@@ -9,6 +9,7 @@ import com.june.northland.databinding.FragmentDialogDebugListBinding
 import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.characters.list.CharacterListActivity
+import com.nl.module.role.RoleActivity
 
 /**
  * 调试功能列表
@@ -21,9 +22,10 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
     private val mAdapter by lazy { DebugListAdapter() }
 
     override fun initView() {
+
         mAdapter.itemClick { _, _, position ->
             when (position) {
-                1 -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
+                1 -> startActivity(Intent(requireActivity(), RoleActivity::class.java))
                 else -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
             }
         }
@@ -45,6 +47,10 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
             mutableListOf(
                 DebugVo(
                     name = "人物列表",
+                    url = "/////"
+                ),
+                DebugVo(
+                    name = "角色列表",
                     url = "/////"
                 )
             )

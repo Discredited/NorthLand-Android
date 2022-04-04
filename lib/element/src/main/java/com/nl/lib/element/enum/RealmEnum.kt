@@ -1,5 +1,7 @@
 package com.nl.lib.element.enum
 
+import com.nl.lib.element.R
+
 /**
  * 境界枚举
  */
@@ -26,6 +28,17 @@ object RealmEnum {
             REALM_4 -> REALM_4_NAME
             REALM_5 -> REALM_5_NAME
             else -> REALM_0_NAME
+        }
+    }
+
+    fun getRealmColor(realm: Int): Int {
+        return when (realm) {
+            REALM_1 -> R.color.color_quality_n
+            REALM_2 -> R.color.color_quality_r
+            REALM_3 -> R.color.color_quality_sr
+            REALM_4 -> R.color.color_quality_ssr
+            REALM_5 -> R.color.color_quality_ur
+            else -> R.color.color_quality_ordinary
         }
     }
 }

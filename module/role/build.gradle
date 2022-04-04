@@ -1,11 +1,26 @@
 apply from: rootDir.absolutePath + '/default-library.gradle'
 
+android {
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
 dependencies {
     rootProject.androidxBasicDependencies(dependencies)
 
-    //implementation Dependencies.nlComponent
     implementation project(path: ':base:component')
+    implementation project(path: ':lib:element')
+
+    implementation project(path: ':module:room')
     implementation Dependencies.juneComponent
+    implementation Dependencies.fragmentKtx
+    implementation Dependencies.navigationFragmentKtx
+    implementation Dependencies.navigationUiKtx
+    implementation Dependencies.lifecycleRuntimeKtx
+    implementation Dependencies.lifecycleViewModelKtx
+    implementation Dependencies.quickAdapter
 }
 
 apply from: rootDir.absolutePath + '/maven-push.gradle'

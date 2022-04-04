@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.nl.component.common.ColorUtils
 import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
-import com.nl.component.ext.setDrawable
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.characters.CharacterVo
 import com.nl.module.characters.R
 import com.nl.module.characters.databinding.ItemCharacterBinding
@@ -21,7 +21,7 @@ class CharacterListAdapter :
             ColorUtils.getPowerColor(realm)
         )
         holder.dataBinding?.apply {
-            ivAvatar.setDrawable(strokeColor = realmColor)
+            ivAvatar.setDrawableWithStroke(strokeColor = realmColor)
             if (holder.layoutPosition < 6) {
                 tvLineUp.text = "已上阵"
             } else {
