@@ -43,6 +43,8 @@ class RoleDetailView @JvmOverloads constructor(
         mBinding.tvRoleRace.text = "种族:${RaceEnum.getRaceName(role.race)}"
         mBinding.tvRoleFaction.text = "阵营:${FactionEnum.getFactionName(role.faction)}"
 
+        mBinding.tvDesc.text = role.desc
+
         val powerColor = ContextCompat.getColor(context, PowerEnum.getPowerColor(role.power))
         val powerSpan = buildSpan("妖力", PowerEnum.getPowerName((role.power)), powerColor)
         mBinding.tvRolePower.text = powerSpan
@@ -57,7 +59,7 @@ class RoleDetailView @JvmOverloads constructor(
         val spannableString = SpannableString(data)
         spannableString.setSpan(
             ForegroundColorSpan(color),
-            title.length,
+            title.length + 1,
             data.length,
             Spanned.SPAN_INCLUSIVE_EXCLUSIVE
         )
