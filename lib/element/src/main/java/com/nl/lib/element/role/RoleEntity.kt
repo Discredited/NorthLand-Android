@@ -14,18 +14,18 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "roles")
 data class RoleEntity(
     @PrimaryKey val id: String,
-    val name: String,     // 名称
-    val avatar: String,   // 头像
-    val image: String,    // 形象
-    val desc: String,     // 描述
-    val faction: Int,     // 阵营
-    val race: Int,        // 种族
-    val quality: Int,     // 品质
-    val realm: Int,       // 境界
-    val power: Int,       // 妖力|法力
-    val intellect: Int = 1,   // 智力
-    val level: Int = 1,       // 等级
-    val experience: Int = 0,           // 经验
+    val name: String,              // 名称
+    val avatar: String,            // 头像
+    val image: String,             // 形象
+    val desc: String,              // 描述
+    val faction: Int,              // 阵营
+    val race: Int,                 // 种族
+    val quality: Int,              // 品质
+    val realm: Int,                // 境界
+    val power: Int,                // 妖力|法力
+    val intellect: Int = 1,        // 智力
+    val level: Int = 1,            // 等级
+    val experience: Int = 0,       // 经验
     val expNextLevel: Long = 20,   // 下一级所需总经验
     val expFactor: Int = 20,       // 经验系数
     //  基础属性
