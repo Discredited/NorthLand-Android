@@ -19,12 +19,12 @@ object FilePathHelper {
 
     // storage/emulated/0/Android/data/com.june.northland/.resource
     fun getResourceDirectory(): String {
-        return "${getAppExternalDirectory()}/$RESOURCE_DIRECTORY"
+        return "${getAppExternalDirectory()}/${RESOURCE_DIRECTORY}/resource/"
     }
 
     //获取资源配置文件
     fun getResourceConfigFile(): File? {
-        val resConfigPath = "${getResourceDirectory()}/resource/resourceConfig.txt"
+        val resConfigPath = "${getResourceDirectory()}/resourceConfig.txt"
         val resConfigFile = File(resConfigPath)
         if (resConfigFile.exists()) {
             return resConfigFile
@@ -34,7 +34,7 @@ object FilePathHelper {
 
 
     fun getCharacterAvatarDirectory(): String {
-        return "${getResourceDirectory()}/resource/characters"
+        return "${getResourceDirectory()}/characters"
     }
 
     fun getCharacterAvatar(avatar: String): String {
@@ -42,6 +42,10 @@ object FilePathHelper {
     }
 
     fun getEquipmentIcon(icon: String): String {
-        return "${getResourceDirectory()}/resource/equipment/${icon}"
+        return "${getResourceDirectory()}/equipments/${icon}"
+    }
+
+    fun getSkillIcon(icon: String): String {
+        return "${getResourceDirectory()}/skills/${icon}"
     }
 }
