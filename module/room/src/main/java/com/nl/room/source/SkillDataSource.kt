@@ -8,7 +8,7 @@ object SkillDataSource {
     fun mockSkills(): MutableList<SkillEntity> {
         return mutableListOf(
             SkillEntity(
-                "10001",
+                "100011",
                 "10001",
                 SkillEnum.TYPE_PASSIVE,
                 "术法无双",
@@ -17,7 +17,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10002",
+                "100012",
                 "10001",
                 SkillEnum.TYPE_INITIATIVE,
                 "镜花水月",
@@ -27,7 +27,7 @@ object SkillDataSource {
             ),
             // 晏采子
             SkillEntity(
-                "10003",
+                "100021",
                 "10002",
                 SkillEnum.TYPE_PASSIVE,
                 "共时交点",
@@ -36,7 +36,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10004",
+                "100022",
                 "10002",
                 SkillEnum.TYPE_INITIATIVE,
                 "超脱物外",
@@ -46,7 +46,7 @@ object SkillDataSource {
             ),
             // 道轮
             SkillEntity(
-                "10005",
+                "100031",
                 "10003",
                 SkillEnum.TYPE_PASSIVE,
                 "天地意志",
@@ -55,7 +55,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10006",
+                "100032",
                 "10003",
                 SkillEnum.TYPE_INITIATIVE,
                 "超脱物外",
@@ -65,7 +65,7 @@ object SkillDataSource {
             ),
             // 公子樱
             SkillEntity(
-                "10007",
+                "200011",
                 "20001",
                 SkillEnum.TYPE_PASSIVE,
                 "绕",
@@ -74,7 +74,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10008",
+                "200012",
                 "20001",
                 SkillEnum.TYPE_INITIATIVE,
                 "刀光",
@@ -84,7 +84,7 @@ object SkillDataSource {
             ),
             // 拓跋峰
             SkillEntity(
-                "10009",
+                "200021",
                 "20002",
                 SkillEnum.TYPE_PASSIVE,
                 "豪放不羁",
@@ -93,7 +93,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10010",
+                "200022",
                 "20002",
                 SkillEnum.TYPE_INITIATIVE,
                 "破坏真诀",
@@ -103,7 +103,7 @@ object SkillDataSource {
             ),
             // 庄梦
             SkillEntity(
-                "10011",
+                "200031",
                 "20003",
                 SkillEnum.TYPE_PASSIVE,
                 "星卜",
@@ -112,7 +112,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10012",
+                "200032",
                 "20003",
                 SkillEnum.TYPE_INITIATIVE,
                 "星罗棋布",
@@ -122,7 +122,7 @@ object SkillDataSource {
             ),
             // 阿萝
             SkillEntity(
-                "10013",
+                "200041",
                 "20004",
                 SkillEnum.TYPE_PASSIVE,
                 "宿命",
@@ -131,7 +131,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10014",
+                "200042",
                 "20004",
                 SkillEnum.TYPE_INITIATIVE,
                 "会心一击",
@@ -141,7 +141,7 @@ object SkillDataSource {
             ),
             // 悲喜和尚
             SkillEntity(
-                "10015",
+                "200051",
                 "20005",
                 SkillEnum.TYPE_PASSIVE,
                 "元力",
@@ -150,7 +150,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10016",
+                "200052",
                 "20005",
                 SkillEnum.TYPE_INITIATIVE,
                 "孤注一掷",
@@ -160,7 +160,7 @@ object SkillDataSource {
             ),
             // 碧潮戈
             SkillEntity(
-                "10017",
+                "200061",
                 "20006",
                 SkillEnum.TYPE_PASSIVE,
                 "孤傲龙王",
@@ -169,7 +169,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10018",
+                "200062",
                 "20006",
                 SkillEnum.TYPE_INITIATIVE,
                 "刀气",
@@ -179,7 +179,7 @@ object SkillDataSource {
             ),
             // 珠穆朗玛
             SkillEntity(
-                "10019",
+                "200071",
                 "20007",
                 SkillEnum.TYPE_PASSIVE,
                 "浮光掠影",
@@ -188,7 +188,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10020",
+                "200072",
                 "20007",
                 SkillEnum.TYPE_INITIATIVE,
                 "璀璨光华",
@@ -198,7 +198,7 @@ object SkillDataSource {
             ),
             // 无痕
             SkillEntity(
-                "10021",
+                "200081",
                 "20008",
                 SkillEnum.TYPE_PASSIVE,
                 "沙脉",
@@ -207,7 +207,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10022",
+                "200082",
                 "20008",
                 SkillEnum.TYPE_INITIATIVE,
                 "沙咒",
@@ -217,7 +217,7 @@ object SkillDataSource {
             ),
             // 海妃
             SkillEntity(
-                "10023",
+                "200091",
                 "20009",
                 SkillEnum.TYPE_PASSIVE,
                 "脉经",
@@ -226,7 +226,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10024",
+                "200092",
                 "20009",
                 SkillEnum.TYPE_INITIATIVE,
                 "海上明月",
@@ -236,7 +236,7 @@ object SkillDataSource {
             ),
             // 梵摩
             SkillEntity(
-                "10025",
+                "200101",
                 "20010",
                 SkillEnum.TYPE_PASSIVE,
                 "易形残玄",
@@ -245,26 +245,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10026",
-                "20010",
-                SkillEnum.TYPE_INITIATIVE,
-                "龙象般若",
-                "fan_mo/long_xiang_bo_re.png",
-                "对地方前排造成自身攻击150%的伤害",
-                1,
-            ),
-            // 梵摩
-            SkillEntity(
-                "10025",
-                "20010",
-                SkillEnum.TYPE_PASSIVE,
-                "易形残玄",
-                "fan_mo/yi_xing_can_xuan.png",
-                "每损失5%生命值提升对敌方造成的伤害增加10%",
-                1,
-            ),
-            SkillEntity(
-                "10026",
+                "200102",
                 "20010",
                 SkillEnum.TYPE_INITIATIVE,
                 "龙象般若",
@@ -274,7 +255,7 @@ object SkillDataSource {
             ),
             // 天刑
             SkillEntity(
-                "10027",
+                "200111",
                 "20011",
                 SkillEnum.TYPE_PASSIVE,
                 "时光之咒",
@@ -283,7 +264,7 @@ object SkillDataSource {
                 1,
             ),
             SkillEntity(
-                "10028",
+                "200112",
                 "20011",
                 SkillEnum.TYPE_INITIATIVE,
                 "天道刑法",
@@ -310,100 +291,99 @@ object SkillDataSource {
                 "对敌方后排造成自身攻击150%伤害",
                 1,
             ),
-            // todo 这里还未完成
             // 甘柠真
             SkillEntity(
                 "300021",
                 "30002",
                 SkillEnum.TYPE_PASSIVE,
-                "执念",
-                "lin_fei/zhi_nian.png",
-                "每损失5%生命值提升自身5%攻击力",
+                "莲心眼",
+                "gan_ning_zhen/lian_xin_yan.png",
+                "攻击无视敌方20%防御力",
                 1,
             ),
             SkillEntity(
                 "300022",
                 "30002",
                 SkillEnum.TYPE_INITIATIVE,
-                "弦线",
-                "lin_fei/xuan_xian.png",
-                "对敌方后排造成自身攻击150%伤害",
+                "弱水出鞘",
+                "gan_ning_zhen/ruo_shui_chu_qiao.png",
+                "对敌方全体造成自身攻击105%伤害",
                 1,
             ),
             // 海姬
             SkillEntity(
-                "30001",
-                "30001",
+                "300031",
+                "30003",
                 SkillEnum.TYPE_PASSIVE,
-                "执念",
-                "lin_fei/zhi_nian.png",
-                "每损失5%生命值提升自身5%攻击力",
+                "流光金甲",
+                "hai_ji/liu_guang_jin_jia.png",
+                "受到攻击时，减少20%伤害，并将最终承受伤害的20%反弹给攻击者",
                 1,
             ),
             SkillEntity(
-                "30002",
-                "30001",
+                "300032",
+                "30003",
                 SkillEnum.TYPE_INITIATIVE,
-                "弦线",
-                "lin_fei/xuan_xian.png",
-                "对敌方后排造成自身攻击150%伤害",
+                "脉经盾",
+                "hai_ji/mai_jing_dun.png",
+                "给同行队友(包括自身)制造一个自身生命值20%的护盾",
                 1,
             ),
             // 鸠丹媚
             SkillEntity(
-                "30001",
-                "30001",
+                "300041",
+                "30004",
                 SkillEnum.TYPE_PASSIVE,
-                "执念",
-                "lin_fei/zhi_nian.png",
-                "每损失5%生命值提升自身5%攻击力",
+                "天命蝎尾",
+                "jiu_dan_mei/tian_ming_xie_wei.png",
+                "对目标周围敌人造成自身攻击20%的溅射伤害",
                 1,
             ),
             SkillEntity(
-                "30002",
-                "30001",
+                "300042",
+                "30004",
                 SkillEnum.TYPE_INITIATIVE,
-                "弦线",
-                "lin_fei/xuan_xian.png",
-                "对敌方后排造成自身攻击150%伤害",
+                "丹蝎九尾",
+                "jiu_dan_mei/dan_xie_jiu_wei.png",
+                "对敌方单体造成5段攻击，每段攻击造成自身攻击40%伤害",
                 1,
             ),
             // 无颜
             SkillEntity(
-                "30001",
-                "30001",
+                "300051",
+                "30005",
                 SkillEnum.TYPE_PASSIVE,
-                "执念",
-                "lin_fei/zhi_nian.png",
-                "每损失5%生命值提升自身5%攻击力",
+                "天生沙脉",
+                "wu_yan/tian_sheng_sha_mai.png",
+                "受到攻击时对攻击方造成自身防御力20%的伤害",
                 1,
             ),
             SkillEntity(
-                "30002",
-                "30001",
+                "300052",
+                "30005",
                 SkillEnum.TYPE_INITIATIVE,
-                "弦线",
-                "lin_fei/xuan_xian.png",
-                "对敌方后排造成自身攻击150%伤害",
+                "时光之沙",
+                "wu_yan/shi_guang_zhi_sha.png",
+                "对敌方全体造成自身防御70%的伤害",
                 1,
             ),
             // 龙碟
             SkillEntity(
-                "30001",
-                "30001",
+                "300061",
+                "30006",
                 SkillEnum.TYPE_PASSIVE,
-                "执念",
-                "lin_fei/zhi_nian.png",
-                "每损失5%生命值提升自身5%攻击力",
+                "诡诈",
+                "long_die/gui_zha.png",
+                "受到攻击时50%几率减免80%伤害",
                 1,
             ),
             SkillEntity(
-                "30002",
-                "30001",
+                "300062",
+                "30006",
                 SkillEnum.TYPE_INITIATIVE,
-                "弦线",
-                "lin_fei/xuan_xian.png",
-                "对敌方后排造成自身攻击150%伤害",
+                "垂死坚持",
+                "long_die/chui_si_jian_chi.png",
+                "对方后排造成自身生命值30%真实伤害",
                 1,
             )
         )

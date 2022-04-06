@@ -12,6 +12,7 @@ import com.nl.component.ext.itemClick
 import com.nl.lib.element.role.RoleEntity
 import com.nl.module.role.R
 import com.nl.module.role.RoleViewModel
+import com.nl.module.role.RoleVo
 import com.nl.module.role.databinding.FragmentRoleListBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -29,8 +30,8 @@ class RoleListFragment : NLBaseFragment<FragmentRoleListBinding>() {
 
     override fun initView() {
         mAdapter.itemClick { adapter, _, position ->
-            val role = adapter.getItem(position) as RoleEntity
-            val arguments = Bundle().apply { putString("ROLE_ID", role.id) }
+            val roleVo = adapter.getItem(position) as RoleVo
+            val arguments = Bundle().apply { putString("ROLE_ID", roleVo.role.id) }
             findNavController().navigate(R.id.action_roleList_to_roleDetail, arguments)
         }
 

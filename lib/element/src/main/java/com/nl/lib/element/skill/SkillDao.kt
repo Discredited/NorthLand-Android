@@ -24,11 +24,11 @@ interface SkillDao {
     suspend fun updateSkills(vararg skills: SkillEntity)
 
     @Query("SELECT * FROM skills")
-    suspend fun loadSKills(): List<SkillEntity>
+    suspend fun loadSkills(): List<SkillEntity>
 
-    @Query("SELECT * FROM roles WHERE id = :id")
+    @Query("SELECT * FROM skills WHERE id = :id")
     suspend fun findSkillById(id: String): SkillEntity?
 
-    @Query("SELECT * FROM roles WHERE id = :roleId")
+    @Query("SELECT * FROM skills WHERE id = :roleId")
     suspend fun findSkillByRoleId(roleId: String): MutableList<SkillEntity>?
 }

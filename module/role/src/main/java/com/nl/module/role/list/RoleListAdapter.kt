@@ -7,8 +7,8 @@ import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadImage
 import com.nl.component.ext.setDrawable
 import com.nl.lib.element.enum.QualityEnum
-import com.nl.lib.element.role.RoleEntity
 import com.nl.module.role.R
+import com.nl.module.role.RoleVo
 import com.nl.module.role.databinding.ItemRoleBinding
 
 /**
@@ -17,14 +17,15 @@ import com.nl.module.role.databinding.ItemRoleBinding
  * 2022/4/4
  * @author June
  */
-class RoleListAdapter : BaseQuickAdapter<RoleEntity, BaseDataBindingHolder<ItemRoleBinding>>(R.layout.item_role) {
+class RoleListAdapter : BaseQuickAdapter<RoleVo, BaseDataBindingHolder<ItemRoleBinding>>(R.layout.item_role) {
 
-    override fun convert(holder: BaseDataBindingHolder<ItemRoleBinding>, item: RoleEntity) {
+    override fun convert(holder: BaseDataBindingHolder<ItemRoleBinding>, item: RoleVo) {
         holder.dataBinding?.apply {
-            val color = ContextCompat.getColor(holder.itemView.context, QualityEnum.getQualityColor(item.quality))
-            ivAvatar.loadImage(FilePathHelper.getCharacterAvatar(item.avatar))
+            val role = item.role
+            val color = ContextCompat.getColor(holder.itemView.context, QualityEnum.getQualityColor(role.quality))
+            ivAvatar.loadImage(FilePathHelper.getCharacterAvatar(role.avatar))
             ivPower.setDrawable(bgColor = color)
-            tvName.text = item.name
+            tvName.text = role.name
         }
     }
 }

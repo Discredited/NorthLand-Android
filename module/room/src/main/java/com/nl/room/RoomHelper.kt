@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.nl.room.source.EquipmentDataSource
 import com.nl.room.source.RoleDataSource
+import com.nl.room.source.SkillDataSource
 import timber.log.Timber
 
 class RoomHelper {
@@ -30,11 +31,17 @@ class RoomHelper {
     }
 
     suspend fun mockDataBase() {
+        // 角色数据mock
         if (mDatabase.roleDao().loadRoles().isEmpty()) {
             mDatabase.roleDao().insertRoles(RoleDataSource.mockRoles())
         }
+        // 装备数据mock
         if (mDatabase.equipmentDao().loadEquipments().isEmpty()) {
             mDatabase.equipmentDao().insertEquipments(EquipmentDataSource.mockEquipments())
+        }
+        // 技能数据mock
+        if (mDatabase.skillDao().loadSkills().isEmpty()) {
+            mDatabase.skillDao().insertSkills(SkillDataSource.mockSkills())
         }
     }
 

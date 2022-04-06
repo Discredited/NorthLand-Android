@@ -19,16 +19,22 @@ import kotlinx.coroutines.withContext
 class RoleViewModel : ViewModel() {
 
     private val roleDao by lazy { RoomHelper.getInstance().database().roleDao() }
+    private val skillDao by lazy { RoomHelper.getInstance().database().skillDao() }
 
-    val roleListFlow: MutableStateFlow<MutableList<RoleEntity>> = MutableStateFlow(mutableListOf())
+    val roleListFlow: MutableStateFlow<MutableList<RoleVo>> = MutableStateFlow(mutableListOf())
 
     /**
      * 加载角色列表
      */
     fun loadRoleList() {
         viewModelScope.launch {
-            val roleList = withContext(Dispatchers.IO) {
-                roleDao.loadRoles()
+            val roleList: MutableList<RoleVo> = withContext(Dispatchers.IO) {
+                val roles = mutableListOf<RoleVo>()
+                roleDao.loadRoles().forEach { role ->
+                    val skills = skillDao.findSkillByRoleId(roleId = role.id) ?: mutableListOf()
+                    roles.add(RoleVo(role, skills))
+                }
+                roles
             }
             roleListFlow.emit(roleList.toMutableList())
         }
