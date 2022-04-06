@@ -32,13 +32,8 @@ object FilePathHelper {
         return null
     }
 
-
-    fun getCharacterAvatarDirectory(): String {
-        return "${getResourceDirectory()}/characters"
-    }
-
     fun getCharacterAvatar(avatar: String): String {
-        return "${getCharacterAvatarDirectory()}/$avatar/"
+        return "${getResourceDirectory()}/characters/$avatar/"
     }
 
     fun getEquipmentIcon(icon: String): String {
