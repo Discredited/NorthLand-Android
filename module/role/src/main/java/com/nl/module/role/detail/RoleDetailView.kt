@@ -12,8 +12,8 @@ import com.nl.component.common.FilePathHelper
 import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawable
 import com.nl.lib.element.enum.*
-import com.nl.lib.element.role.RoleEntity
 import com.nl.module.role.R
+import com.nl.module.role.RoleVo
 import com.nl.module.role.databinding.WidgetRoleDetailLayoutBinding
 
 /**
@@ -28,7 +28,8 @@ class RoleDetailView @JvmOverloads constructor(
 
     private val mBinding = WidgetRoleDetailLayoutBinding.inflate(LayoutInflater.from(context), this)
 
-    fun setRole(role: RoleEntity) {
+    fun setRole(roleVo: RoleVo) {
+        val role = roleVo.role
         val qualityColor = ContextCompat.getColor(context, QualityEnum.getQualityColor(role.quality))
         mBinding.flAvatar.setDrawable(qualityColor, cornerRadius = 0F)
         mBinding.ivRoleAvatar.loadAvatar(FilePathHelper.getCharacterAvatar(role.avatar))

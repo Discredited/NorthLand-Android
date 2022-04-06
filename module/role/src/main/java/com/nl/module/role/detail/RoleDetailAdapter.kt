@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.nl.component.ext.setDrawable
 import com.nl.module.role.R
 import com.nl.module.role.databinding.ItemRoleAttributeBinding
+import com.nl.module.role.detail.attr.RoleAttrVo
 
 /**
  * 角色详情适配器

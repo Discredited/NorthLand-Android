@@ -1,4 +1,4 @@
-package com.nl.module.role.detail
+package com.nl.module.role.detail.attr
 
 data class RoleAttrVo(
     val name: String,

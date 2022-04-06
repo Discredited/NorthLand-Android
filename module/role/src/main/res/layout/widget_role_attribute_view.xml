@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttack"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_attack"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="攻击:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDefense"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_defense"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvAttack"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="防御:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHealth"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_health"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAttack"
+        tools:text="生命:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_speed"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvAttack"
+        app:layout_constraintTop_toBottomOf="@id/tvDefense"
+        tools:text="速度:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPotential"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_text_logo"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHealth"
+        tools:text="潜力:2000" />
+</merge>

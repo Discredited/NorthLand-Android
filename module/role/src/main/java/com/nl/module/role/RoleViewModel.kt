@@ -3,7 +3,7 @@ package com.nl.module.role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nl.lib.element.role.RoleEntity
-import com.nl.module.role.detail.RoleAttrVo
+import com.nl.module.role.detail.attr.RoleAttrVo
 import com.nl.room.RoomHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,6 +22,8 @@ class RoleViewModel : ViewModel() {
     private val skillDao by lazy { RoomHelper.getInstance().database().skillDao() }
 
     val roleListFlow: MutableStateFlow<MutableList<RoleVo>> = MutableStateFlow(mutableListOf())
+
+    val roleDetail: MutableStateFlow<RoleVo?> = MutableStateFlow(null)
 
     /**
      * 加载角色列表
@@ -43,10 +45,10 @@ class RoleViewModel : ViewModel() {
     /**
      * 通过roleId查找角色
      */
-    fun findRoleById(id: String, response: (role: RoleEntity?) -> Unit) {
+    fun findRoleById(id: String, response: (role: RoleVo?) -> Unit) {
         viewModelScope.launch(Dispatchers.Main) {
             val role = withContext(Dispatchers.IO) {
-                roleDao.findRoleById(id)
+                roleListFlow.value.find { it.role.id == id }
             }
             response(role)
         }
