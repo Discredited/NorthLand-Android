@@ -18,11 +18,16 @@ object FilePathHelper {
     }
 
     // storage/emulated/0/Android/data/com.june.northland/.resource
-    fun getResourceDirectory(): String {
-        return "${getAppExternalDirectory()}/${RESOURCE_DIRECTORY}/resource/"
+    fun getResourceUnZipDir(): String {
+        return "${getAppExternalDirectory()}/${RESOURCE_DIRECTORY}"
+    }
+
+    private fun getResourceDirectory(): String {
+        return "${getAppExternalDirectory()}/${RESOURCE_DIRECTORY}/resource"
     }
 
     //获取资源配置文件
+    // storage/emulated/0/Android/data/com.june.northland/.resource/resource/resourceConfig.txt
     fun getResourceConfigFile(): File? {
         val resConfigPath = "${getResourceDirectory()}/resourceConfig.txt"
         val resConfigFile = File(resConfigPath)

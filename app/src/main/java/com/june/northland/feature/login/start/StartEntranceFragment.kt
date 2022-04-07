@@ -1,6 +1,5 @@
 package com.june.northland.feature.login.start
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -34,10 +33,8 @@ class StartEntranceFragment : NLBaseFragment<FragmentStartEntranceBinding>() {
         }
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         //判断用户是否登录
         mUserLogin = UserDataCache.getInstance().isUserLogin()
         if (mUserLogin) {

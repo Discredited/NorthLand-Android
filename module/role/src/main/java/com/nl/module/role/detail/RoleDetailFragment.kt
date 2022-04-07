@@ -26,8 +26,8 @@ class RoleDetailFragment : NLBaseFragment<FragmentRoleDetailBinding>() {
         val roleId = arguments?.getString("ROLE_ID") ?: return
         viewModel.findRoleById(roleId) { role ->
             role?.let {
-                mBinding.vRoleDetail.setRole(it.role)
-                mBinding.vRoleAttr.setAttrs(role)
+                mBinding.vRoleDetail.setRole(it)
+                mBinding.vRoleAttr.setAttrs(it)
             }
         }
     }
