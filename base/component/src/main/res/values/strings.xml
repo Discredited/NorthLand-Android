@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_attack_explain">攻击:%d</string>
+    <string name="str_defense_explain">防御:%d</string>
+    <string name="str_health_explain">生命:%d</string>
+    <string name="str_speed_explain">速度:%d</string>
+    <string name="str_potential_explain">潜力:%d</string>
+</resources>

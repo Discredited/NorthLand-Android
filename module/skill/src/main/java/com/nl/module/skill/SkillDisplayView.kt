@@ -1,4 +1,4 @@
-package com.jojoread.skill
+package com.nl.module.skill
 
 import android.content.Context
 import android.util.AttributeSet

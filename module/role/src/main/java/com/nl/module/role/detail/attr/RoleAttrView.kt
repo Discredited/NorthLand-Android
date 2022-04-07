@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.nl.module.role.R
 import com.nl.module.role.RoleVo
 import com.nl.module.role.databinding.WidgetRoleAttributeViewBinding
 
@@ -21,10 +22,10 @@ class RoleAttrView @JvmOverloads constructor(
 
     fun setAttrs(roleVo: RoleVo) {
         val role = roleVo.role
-        mBinding.tvAttack.text = role.attackInit.toString()
-        mBinding.tvDefense.text = role.defenseInit.toString()
-        mBinding.tvHealth.text = role.healthInit.toString()
-        mBinding.tvSpeed.text = role.speedInit.toString()
-        mBinding.tvPotential.text = role.potential.toString()
+        mBinding.tvAttack.text = context.getString(R.string.str_attack_explain, role.attackInit)
+        mBinding.tvDefense.text = context.getString(R.string.str_defense_explain, role.defenseInit)
+        mBinding.tvHealth.text = context.getString(R.string.str_health_explain, role.healthInit)
+        mBinding.tvSpeed.text = context.getString(R.string.str_speed_explain, role.speedInit)
+        mBinding.tvPotential.text = context.getString(R.string.str_potential_explain, role.potential)
     }
 }

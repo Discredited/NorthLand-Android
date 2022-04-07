@@ -1,0 +1,19 @@
+apply from: rootDir.absolutePath + '/default-library.gradle'
+
+dependencies {
+    rootProject.androidxBasicDependencies(dependencies)
+
+    implementation project(path: ':base:component')
+    implementation project(path: ':lib:element')
+
+    implementation project(path: ':module:room')
+    implementation Dependencies.juneComponent
+}
+
+apply from: rootDir.absolutePath + '/maven-push.gradle'
+
+project.ext {
+    publishingGroupId = 'com.nl.module'
+    publishingArtifactId = 'effect'
+    publishingVersion = '0.0.1'
+}
