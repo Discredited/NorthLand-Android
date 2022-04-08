@@ -19,6 +19,6 @@ data class SkillEntity(
     val desc: String,                             // 技能描述
     val level: Int = 1,                           // 技能等级
     val maxLevel: Int = 10,                       // 技能最大等级
-    val triggerProbability: Float = 0F,           // 技能触发概率
-    val triggerProbabilityGrowth: Float = 0.3F,   // 技能触发概率成长值
+    val triggerProbability: Float = 0.3F,           // 技能触发概率
+    val triggerProbabilityGrowth: Float = 0.03F,   // 技能触发概率成长值
 )
