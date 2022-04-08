@@ -32,7 +32,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -47,7 +47,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -62,7 +62,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -77,7 +77,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的战靴",
                 extraDesc = "战靴战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -92,7 +92,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的戒指",
                 extraDesc = "戒指戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -107,7 +107,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的项链",
                 extraDesc = "项链项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -122,7 +122,7 @@ object EquipmentDataSource {
                 basicDesc = "普普通通的胸章",
                 extraDesc = "胸章胸章胸章胸章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -145,7 +145,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -160,7 +160,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -175,7 +175,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -190,7 +190,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的战靴",
                 extraDesc = "战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -205,7 +205,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的长剑",
                 extraDesc = "戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -220,7 +220,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的项链",
                 extraDesc = "项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -235,7 +235,7 @@ object EquipmentDataSource {
                 basicDesc = "精炼的胸章",
                 extraDesc = "胸章胸章胸章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -258,7 +258,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -273,7 +273,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -288,7 +288,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -303,7 +303,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的战靴",
                 extraDesc = "战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -318,7 +318,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的长剑",
                 extraDesc = "戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -333,7 +333,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的项链",
                 extraDesc = "项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -348,7 +348,7 @@ object EquipmentDataSource {
                 basicDesc = "无暇的徽章",
                 extraDesc = "徽章徽章徽章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -371,7 +371,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -386,7 +386,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -401,7 +401,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -416,7 +416,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的战靴",
                 extraDesc = "战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -431,7 +431,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的长剑",
                 extraDesc = "戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -446,7 +446,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的项链",
                 extraDesc = "项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -461,7 +461,7 @@ object EquipmentDataSource {
                 basicDesc = "非凡的徽章",
                 extraDesc = "徽章徽章徽章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -484,7 +484,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -499,7 +499,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -514,7 +514,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -529,7 +529,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的战靴",
                 extraDesc = "战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -544,7 +544,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的长剑",
                 extraDesc = "戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -559,7 +559,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的项链",
                 extraDesc = "项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -574,7 +574,7 @@ object EquipmentDataSource {
                 basicDesc = "至臻的徽章",
                 extraDesc = "徽章徽章徽章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -597,7 +597,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的长剑",
                 extraDesc = "长剑长剑长剑长剑",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -612,7 +612,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的战甲",
                 extraDesc = "战甲战甲战甲",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -627,7 +627,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的盾牌",
                 extraDesc = "盾牌盾牌盾牌盾牌",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -642,7 +642,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的战靴",
                 extraDesc = "战靴战靴战靴",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -657,7 +657,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的长剑",
                 extraDesc = "戒指戒指戒指",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -672,7 +672,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的项链",
                 extraDesc = "项链项链项链",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5
@@ -687,7 +687,7 @@ object EquipmentDataSource {
                 basicDesc = "绝世的徽章",
                 extraDesc = "徽章徽章徽章",
                 value = 30,
-                valueUpgrade = 4,
+                valueGrowth = 4,
                 strength = 0,
                 strengthMax = 100,
                 strengthValue = 5

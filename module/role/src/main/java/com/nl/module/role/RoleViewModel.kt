@@ -67,15 +67,15 @@ class RoleViewModel : ViewModel() {
             RoleAttrVo(name = "初始命中:", role.hitInit.toString()),
             RoleAttrVo(name = "初始闪避:", role.dodgeInit.toString()),
 
-            RoleAttrVo(name = "生命成长:", role.attackUpgrade.toString()),
-            RoleAttrVo(name = "防御成长:", role.defenseUpgrade.toString()),
-            RoleAttrVo(name = "生命成长:", role.healthUpgrade.toString()),
+            RoleAttrVo(name = "生命成长:", role.attackGrowth.toString()),
+            RoleAttrVo(name = "防御成长:", role.defenseGrowth.toString()),
+            RoleAttrVo(name = "生命成长:", role.healthGrowth.toString()),
             RoleAttrVo(name = "速度成长:", "0"),
 
-            RoleAttrVo(name = "暴击成长:", role.critUpgrade.toString()),
-            RoleAttrVo(name = "抵抗成长:", role.resistUpgrade.toString()),
-            RoleAttrVo(name = "命中成长:", role.hitUpgrade.toString()),
-            RoleAttrVo(name = "闪避成长:", role.dodgeUpgrade.toString())
+            RoleAttrVo(name = "暴击成长:", role.critGrowth.toString()),
+            RoleAttrVo(name = "抵抗成长:", role.resistGrowth.toString()),
+            RoleAttrVo(name = "命中成长:", role.hitGrowth.toString()),
+            RoleAttrVo(name = "闪避成长:", role.dodgeGrowth.toString())
         )
     }
 }

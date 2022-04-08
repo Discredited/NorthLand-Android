@@ -34,17 +34,17 @@ data class RoleEntity(
     val healthInit: Int = 220,         // 初始生命
     val speedInit: Int = 90,           // 初始速度，只有初始速度，没有成长值
     val potential: Int = 0,            // 初始潜力
-    val attackUpgrade: Int = 30,       // 攻击成长
-    val defenseUpgrade: Int = 22,      // 防御成长
-    val healthUpgrade: Int = 95,       // 生命成长
-    val potentialUpgrade: Int = 40,    // 潜力成长
+    val attackGrowth: Int = 30,       // 攻击成长
+    val defenseGrowth: Int = 22,      // 防御成长
+    val healthGrowth: Int = 95,       // 生命成长
+    val potentialGrowth: Int = 40,    // 潜力成长
     //  额外属性
     val critInit: Int = 0,             // 初始暴击
     val resistInit: Int = 0,           // 初始抵抗
     val hitInit: Int = 0,               // 初始命中
     val dodgeInit: Int = 0,            // 初始闪避
-    val critUpgrade: Int = 0,          // 暴击成长
-    val resistUpgrade: Int = 0,        // 抵抗成长
-    val hitUpgrade: Int = 0,            // 命中成长
-    val dodgeUpgrade: Int = 0          // 闪避成长
+    val critGrowth: Int = 0,          // 暴击成长
+    val resistGrowth: Int = 0,        // 抵抗成长
+    val hitGrowth: Int = 0,            // 命中成长
+    val dodgeGrowth: Int = 0          // 闪避成长
 )
