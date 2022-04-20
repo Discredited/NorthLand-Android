@@ -14,5 +14,12 @@ object PropertyEnum {
     const val PRO_HIT = 7         // 命中
     const val PRO_DODGE = 8       // 闪避
 
-    const val PRO_SHIELD = 9      // 护盾
+    const val PRO_SHIELD = 9         // 护盾
+
+    const val PRO_DAMAGE = 101       // 伤害
+    const val PRO_DAMAGE_TRUE = 102  // 真实伤害
+
+    const val PRO_ACTION = 200       // 行动
+
+    const val PRO_REVIVE = 300       // 复活
 }

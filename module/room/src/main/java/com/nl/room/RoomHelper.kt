@@ -2,6 +2,8 @@ package com.nl.room
 
 import android.content.Context
 import androidx.room.Room
+import com.blankj.utilcode.util.GsonUtils
+import com.nl.room.source.EffectDataSource
 import com.nl.room.source.EquipmentDataSource
 import com.nl.room.source.RoleDataSource
 import com.nl.room.source.SkillDataSource
@@ -42,6 +44,11 @@ class RoomHelper {
         // 技能数据mock
         if (mDatabase.skillDao().loadSkills().isEmpty()) {
             mDatabase.skillDao().insertSkills(SkillDataSource.mockSkills())
+        }
+        // 效果数据mock
+        if (mDatabase.effectDao().loadEffects().isEmpty()) {
+            //mDatabase.effectDao().insertEffects(EffectDataSource.mockEffects())
+            Timber.e(GsonUtils.toJson(EffectDataSource.mockEffects()))
         }
     }
 
