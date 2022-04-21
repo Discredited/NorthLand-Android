@@ -184,7 +184,7 @@ object SkillDataSource {
                 SkillEnum.TYPE_PASSIVE,
                 "浮光掠影",
                 "zhu_mu_lang_ma/fu_guang_lue_ying.png",
-                "被攻击时有40%的几率闪避敌人的攻击",
+                "被攻击时有30%的几率闪避敌人的攻击",
                 1,
             ),
             SkillEntity(
@@ -203,7 +203,7 @@ object SkillDataSource {
                 SkillEnum.TYPE_PASSIVE,
                 "沙脉",
                 "wu_hen/sha_mai.png",
-                "受到攻击时有40%的概率减少70%的伤害",
+                "受到攻击时有30%的概率减少60%的伤害",
                 1,
             ),
             SkillEntity(

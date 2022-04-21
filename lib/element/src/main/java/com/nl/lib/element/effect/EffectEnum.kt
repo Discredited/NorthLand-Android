@@ -7,6 +7,7 @@ object EffectEnum {
     const val EFFECT_MODE_DAMAGE_TRUE = 2       // 真实伤害效果
     const val EFFECT_MODE_ACTION = 3            // 行动效果
     const val EFFECT_MODE_REVIVE = 4            // 复活效果
+    const val EFFECT_MODE_DODGE = 4             // 闪避效果
 
     ////////// 效果作用
     const val EFFECT_ACTION_BUFF = 1            // 增益
@@ -26,6 +27,7 @@ object EffectEnum {
     const val EFFECT_SCOPE_AROUND = 5           // 周围（十字范围）
     const val EFFECT_SCOPE_ATTACK_HIGH = 6      // 攻击最高
     const val EFFECT_SCOPE_HEALTH_LOW = 7       // 生命最低
+    const val EFFECT_SCOPE_DODGE = 8            // 闪避值
 
     ////////// 效果优先级
     const val EFFECT_PRIORITY_LOW = 1           // 优先级低
