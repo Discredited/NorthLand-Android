@@ -2,7 +2,6 @@ package com.nl.room
 
 import android.content.Context
 import androidx.room.Room
-import com.blankj.utilcode.util.GsonUtils
 import com.nl.room.source.EffectDataSource
 import com.nl.room.source.EquipmentDataSource
 import com.nl.room.source.RoleDataSource
@@ -27,9 +26,13 @@ class RoomHelper {
         // 检查角色数据
         val roles = mDatabase.roleDao().loadRoles()
         val equipments = mDatabase.equipmentDao().loadEquipments()
+        val skills = mDatabase.skillDao().loadSkills()
+        val effects = mDatabase.effectDao().loadEffects()
         Timber.e("角色数据:${roles.size}")
         Timber.e("装备数据:${equipments.size}")
-        return roles.isNotEmpty() && equipments.isNotEmpty()
+        Timber.e("技能数据:${skills.size}")
+        Timber.e("效果数据:${effects.size}")
+        return roles.isNotEmpty() && equipments.isNotEmpty() && skills.isNotEmpty() && effects.isNotEmpty()
     }
 
     suspend fun mockDataBase() {
@@ -47,8 +50,7 @@ class RoomHelper {
         }
         // 效果数据mock
         if (mDatabase.effectDao().loadEffects().isEmpty()) {
-            //mDatabase.effectDao().insertEffects(EffectDataSource.mockEffects())
-            Timber.e(GsonUtils.toJson(EffectDataSource.mockEffects()))
+            mDatabase.effectDao().insertEffects(EffectDataSource.mockEffects())
         }
     }
 

@@ -5,6 +5,8 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import com.nl.component.common.FilePathHelper
+import com.nl.component.ext.loadImage
 import com.nl.module.skill.databinding.WidgetSkillDisplayLayoutBinding
 
 class SkillDisplayView @JvmOverloads constructor(
@@ -22,5 +24,11 @@ class SkillDisplayView @JvmOverloads constructor(
         mBinding.ivSkillIcon.setImageResource(R.drawable.ic_default_skill)
         mBinding.tvSkillName.text = context.getString(R.string.str_skill_name_and_level, "弱水三千", "1")
         mBinding.tvSkillDesc.text = "三千弱水剑化作三千弱水，攻击伤害值增加10%"
+    }
+
+    fun setSkill(skill: SkillVo) {
+        mBinding.ivSkillIcon.loadImage(FilePathHelper.getSkillIcon(skill.icon))
+        mBinding.tvSkillName.text = context.getString(R.string.str_skill_name_and_level, skill.name, "1")
+        mBinding.tvSkillDesc.text = skill.desc
     }
 }

@@ -1136,6 +1136,29 @@ object EffectDataSource {
             ),
 
             // 天命蝎尾
+            EffectEntity(
+                id = "3000411",
+                relationType = CommonEnum.OBJECT_SKILL,
+                relationId = "300041",
+                relationName = "天命蝎尾",
+                desc = "对目标周围敌人造成自身攻击20%的溅射伤害",
+                activeLevel = 1,
+                isActive = false,
+                priority = EffectEnum.EFFECT_PRIORITY_HIGH,
+                effectFrom = PropertyEnum.PRO_DAMAGE,
+                effectTarget = PropertyEnum.PRO_DAMAGE,
+                effectMode = EffectEnum.EFFECT_MODE_PROPERTY,
+                effectAction = EffectEnum.EFFECT_ACTION_BUFF,
+                effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
+                effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
+                effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
+                percentage = 0.2F,
+                percentageGrowth = 0.02F,
+                value = 0,
+                valueGrowth = 0,
+                triggerProbability = 1F,
+                triggerProbabilityGrowth = 1F
+            ),
 
             // 丹蝎九尾
             EffectEntity(
@@ -1163,6 +1186,29 @@ object EffectDataSource {
             ),
 
             // 天生沙脉
+            EffectEntity(
+                id = "3000511",
+                relationType = CommonEnum.OBJECT_SKILL,
+                relationId = "300051",
+                relationName = "天生沙脉",
+                desc = "受到攻击时对攻击方造成自身防御力20%的伤害",
+                activeLevel = 1,
+                isActive = false,
+                priority = EffectEnum.EFFECT_PRIORITY_HIGH,
+                effectFrom = PropertyEnum.PRO_DAMAGE,
+                effectTarget = PropertyEnum.PRO_DAMAGE,
+                effectMode = EffectEnum.EFFECT_MODE_PROPERTY,
+                effectAction = EffectEnum.EFFECT_ACTION_BUFF,
+                effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
+                effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
+                effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
+                percentage = 0.2F,
+                percentageGrowth = 0.02F,
+                value = 0,
+                valueGrowth = 0,
+                triggerProbability = 1F,
+                triggerProbabilityGrowth = 1F
+            ),
 
             // 时光之沙
             EffectEntity(
@@ -1190,6 +1236,29 @@ object EffectDataSource {
             ),
 
             // 诡诈
+            EffectEntity(
+                id = "3000611",
+                relationType = CommonEnum.OBJECT_SKILL,
+                relationId = "300061",
+                relationName = "诡诈",
+                desc = "受到攻击时50%几率减免80%伤害",
+                activeLevel = 1,
+                isActive = false,
+                priority = EffectEnum.EFFECT_PRIORITY_MIDDLE,
+                effectFrom = PropertyEnum.PRO_DAMAGE,
+                effectTarget = PropertyEnum.PRO_DAMAGE,
+                effectMode = EffectEnum.EFFECT_MODE_PROPERTY,
+                effectAction = EffectEnum.EFFECT_ACTION_BUFF,
+                effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
+                effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
+                effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
+                percentage = 0.2F,
+                percentageGrowth = 0.02F,
+                value = 0,
+                valueGrowth = 0,
+                triggerProbability = 1F,
+                triggerProbabilityGrowth = 1F
+            ),
 
             // 垂死坚持
             EffectEntity(
