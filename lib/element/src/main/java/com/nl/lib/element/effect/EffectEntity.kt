@@ -1,5 +1,9 @@
 package com.nl.lib.element.effect
 
+import android.graphics.Color
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.nl.lib.element.enum.PropertyEnum

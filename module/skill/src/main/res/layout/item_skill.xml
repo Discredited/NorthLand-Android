@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.nl.module.skill.SkillDisplayView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/color_bg_alpha_black" />
+<layout>
+
+    <com.nl.module.skill.SkillDisplayView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/v_skill_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_alpha_black" />
+</layout>

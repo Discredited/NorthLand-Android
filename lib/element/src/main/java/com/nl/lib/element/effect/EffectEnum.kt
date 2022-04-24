@@ -7,7 +7,7 @@ object EffectEnum {
     const val EFFECT_MODE_DAMAGE_TRUE = 2       // 真实伤害效果
     const val EFFECT_MODE_ACTION = 3            // 行动效果
     const val EFFECT_MODE_REVIVE = 4            // 复活效果
-    const val EFFECT_MODE_DODGE = 4             // 闪避效果
+    const val EFFECT_MODE_DODGE = 5             // 闪避效果
 
     ////////// 效果作用
     const val EFFECT_ACTION_BUFF = 1            // 增益
