@@ -35,7 +35,7 @@ class SkillViewModel : ViewModel() {
 
                     val stringBuilder = SpannableStringBuilder()
                     effects?.forEach { effect->
-                        stringBuilder.append(effect.getEffectStr())
+                        stringBuilder.append("")
                     }
 
                     skills.add(
