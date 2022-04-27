@@ -1,5 +1,6 @@
 package com.nl.component.common
 
+import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.Utils
 import com.nl.component.R
 
@@ -31,5 +32,20 @@ object PropertyHelper {
         } else {
             Utils.getApp().getString(strId)
         }
+    }
+
+    fun getPropertyColor(property: Int): Int {
+        val colorId = when (property) {
+            PRO_ATTACK -> R.color.color_attack
+            PRO_DEFENSE -> R.color.color_defense
+            PRO_HEALTH -> R.color.color_health
+            PRO_SPEED -> R.color.color_speed
+            PRO_CRITICAL -> R.color.color_health
+            PRO_RESISTER -> R.color.color_health
+            PRO_HIT -> R.color.color_health
+            PRO_DODGE -> R.color.color_health
+            else -> R.color.color_text_1E2E50
+        }
+        return ContextCompat.getColor(Utils.getApp(), colorId)
     }
 }

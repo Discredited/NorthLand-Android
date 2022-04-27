@@ -10,6 +10,7 @@ import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.characters.list.CharacterListActivity
 import com.nl.module.role.RoleActivity
+import com.nl.module.skill.list.SkillListActivity
 
 /**
  * 调试功能列表
@@ -26,6 +27,7 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
         mAdapter.itemClick { _, _, position ->
             when (position) {
                 1 -> startActivity(Intent(requireActivity(), RoleActivity::class.java))
+                2 -> startActivity(Intent(requireActivity(), SkillListActivity::class.java))
                 else -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
             }
         }
@@ -51,6 +53,10 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
                 ),
                 DebugVo(
                     name = "角色列表",
+                    url = "/////"
+                ),
+                DebugVo(
+                    name = "技能列表",
                     url = "/////"
                 )
             )

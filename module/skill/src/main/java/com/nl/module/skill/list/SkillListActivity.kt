@@ -3,6 +3,7 @@ package com.nl.module.skill.list
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.june.base.basic.ext.addLinearItemDecoration
+import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseActivity
 import com.nl.module.skill.SkillViewModel
@@ -23,6 +24,7 @@ class SkillListActivity : NLBaseActivity<ActivitySkillListBinding>() {
     private val mAdapter: SkillListAdapter by lazy { SkillListAdapter() }
 
     override fun initView() {
+        mBinding.iClose.ivClose.click { finish() }
         mBinding.rvSkill.apply {
             setLinearManager()
             adapter = mAdapter
@@ -37,5 +39,7 @@ class SkillListActivity : NLBaseActivity<ActivitySkillListBinding>() {
                 mAdapter.setNewInstance(skills)
             }
         }
+
+        mViewModel.loadSkillList()
     }
 }

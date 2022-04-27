@@ -1,8 +1,14 @@
 package com.nl.module.skill
 
+import android.text.SpannableString
 import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nl.component.common.PropertyHelper
+import com.nl.lib.element.effect.EffectEntity
+import com.nl.lib.element.effect.EffectEnum
 import com.nl.lib.element.enum.CommonEnum
 import com.nl.room.RoomHelper
 import kotlinx.coroutines.Dispatchers
@@ -34,8 +40,8 @@ class SkillViewModel : ViewModel() {
                     )
 
                     val stringBuilder = SpannableStringBuilder()
-                    effects?.forEach { effect->
-                        stringBuilder.append("")
+                    effects?.forEach { effect ->
+                        stringBuilder.append(buildEffectStr(effect))
                     }
 
                     skills.add(
@@ -50,6 +56,25 @@ class SkillViewModel : ViewModel() {
                 skills
             }
             skillListFlow.emit(skillList.toMutableList())
+        }
+    }
+
+    private fun buildEffectStr(effect: EffectEntity): SpannableString {
+        val descStr = effect.desc
+        val valueStr = if (effect.effectType == EffectEnum.EFFECT_TYPE_PERCENTAGE) {
+            "${(effect.percentage * 100).toInt()}%"
+        } else {
+            "${effect.value}"
+        }
+        val valueStrStart = descStr.indexOf(valueStr)
+        return if (valueStrStart >= 0) {
+            val valueStrEnd = valueStrStart + valueStr.length
+            val valueColor = PropertyHelper.getPropertyColor(effect.effectFrom)
+            SpannableString(descStr).apply {
+                setSpan(ForegroundColorSpan(valueColor), valueStrStart, valueStrEnd, Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+            }
+        } else {
+            SpannableString(descStr)
         }
     }
 }

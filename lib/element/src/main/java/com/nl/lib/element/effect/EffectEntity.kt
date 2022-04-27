@@ -19,7 +19,7 @@ data class EffectEntity(
     val priority: Int = EffectEnum.EFFECT_PRIORITY_MIDDLE,      // 效果优先级：0-high,5-middle,10-low
     val effectFrom: Int = PropertyEnum.PRO_NULL,                // 效果来源：攻防血速爆抗命闪护盾
     val effectTarget: Int = PropertyEnum.PRO_NULL,              // 效果目标：攻防血速爆抗命闪护盾
-    val effectMode: Int = EffectEnum.EFFECT_MODE_PROPERTY,          // 效果模式：0-buff,1-普通伤害,2-真实伤害
+    val effectMode: Int = EffectEnum.EFFECT_MODE_PROPERTY,      // 效果模式：0-buff,1-普通伤害,2-真实伤害
     val effectAction: Int = EffectEnum.EFFECT_ACTION_NULL,      // 效果作用：1-增益、-1-减益 0-无效
     val effectObject: Int = EffectEnum.EFFECT_OBJECT_OTHERS,    // 效果作用对象
     val effectScope: Int = EffectEnum.EFFECT_SCOPE_SINGLE,      // 效果作用范围
