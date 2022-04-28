@@ -110,6 +110,7 @@ dependencies {
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
+    implementation Dependencies.juneExplosion
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler

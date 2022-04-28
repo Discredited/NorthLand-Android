@@ -74,6 +74,7 @@ interface Dependencies {
     def juneComponent = "com.june.base:component:$juneVersion"
     def juneNetwork = "com.june.function:network:$juneVersion"
     def juneLoading = "com.june.widget:loading:$juneVersion"
+    def juneExplosion = "com.june.widget:explosion:$juneVersion"
 
     def nlVersion = "0.0.1"
     def nlComponent = "com.nl.base:component:$nlVersion"
