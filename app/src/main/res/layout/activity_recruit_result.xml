@@ -59,6 +59,7 @@
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
         android:visibility="gone"
         tools:text="沙罗铁树，只为自己盛开"
         tools:visibility="visible" />

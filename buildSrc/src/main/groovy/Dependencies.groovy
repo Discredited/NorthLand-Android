@@ -19,6 +19,7 @@ interface Dependencies {
 
     // 基本配置
     def kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+    def kotlinAndroidExtensionsRuntime = "org.jetbrains.kotlin:kotlin-android-extensions-runtime:${kotlin_version}"
     def coreKtx = "androidx.core:core-ktx:1.7.0"
     def appcompat = "androidx.appcompat:appcompat:1.4.1"
     def material = "com.google.android.material:material:1.5.0"

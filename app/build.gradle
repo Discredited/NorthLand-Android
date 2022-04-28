@@ -79,6 +79,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     rootProject.androidxBasicDependencies(dependencies)
     rootProject.junitDependencies(dependencies)
+    implementation Dependencies.kotlinAndroidExtensionsRuntime
 
     implementation Dependencies.fragmentKtx
     implementation Dependencies.recyclerView
@@ -109,8 +110,6 @@ dependencies {
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
-
-    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:${Dependencies.kotlin_version}"
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
