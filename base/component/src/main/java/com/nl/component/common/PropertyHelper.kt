@@ -14,6 +14,7 @@ object PropertyHelper {
     const val PRO_RESISTER = 6  // 抵抗
     const val PRO_HIT = 7  // 命中
     const val PRO_DODGE = 8  // 闪避
+    const val PRO_POTENTIAL = 9  // 暴击
 
     fun getPropertyName(property: Int): String {
         val strId = when (property) {

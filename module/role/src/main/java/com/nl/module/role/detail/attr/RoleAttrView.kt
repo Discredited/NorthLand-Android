@@ -27,5 +27,10 @@ class RoleAttrView @JvmOverloads constructor(
         mBinding.tvHealth.text = context.getString(R.string.str_health_explain, role.healthInit)
         mBinding.tvSpeed.text = context.getString(R.string.str_speed_explain, role.speedInit)
         mBinding.tvPotential.text = context.getString(R.string.str_potential_explain, role.potential)
+
+        mBinding.tvCritical.text = context.getString(R.string.str_critical_explain, role.critInit)
+        mBinding.tvResister.text = context.getString(R.string.str_resister_explain, role.resistInit)
+        mBinding.tvHit.text = context.getString(R.string.str_hit_explain, role.hitInit)
+        mBinding.tvDodge.text = context.getString(R.string.str_dodge_explain, role.dodgeInit)
     }
 }

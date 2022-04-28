@@ -5,4 +5,9 @@
     <string name="str_health_explain">生命:%d</string>
     <string name="str_speed_explain">速度:%d</string>
     <string name="str_potential_explain">潜力:%d</string>
+
+    <string name="str_critical_explain">暴击:%d</string>
+    <string name="str_resister_explain">抵抗:%d</string>
+    <string name="str_hit_explain">命中:%d</string>
+    <string name="str_dodge_explain">闪避:%d</string>
 </resources>

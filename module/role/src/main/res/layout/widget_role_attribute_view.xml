@@ -6,6 +6,13 @@
     android:layout_height="wrap_content"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vGuideLine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAttack"
         android:layout_width="0dp"
@@ -14,7 +21,7 @@
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintEnd_toStartOf="@id/vGuideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="攻击:2000" />
@@ -28,7 +35,7 @@
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvAttack"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="防御:2000" />
 
@@ -40,7 +47,7 @@
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintEnd_toStartOf="@id/vGuideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAttack"
         tools:text="生命:2000" />
@@ -54,7 +61,7 @@
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvAttack"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
         app:layout_constraintTop_toBottomOf="@id/tvDefense"
         tools:text="速度:2000" />
 
@@ -62,12 +69,72 @@
         android:id="@+id/tvPotential"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_50"
-        android:background="@color/color_text_logo"
+        android:background="@color/color_potential"
         android:gravity="center"
         android:textColor="@color/color_white"
         android:textSize="@dimen/sp_16"
-        app:layout_constraintEnd_toStartOf="@id/tvDefense"
+        app:layout_constraintEnd_toStartOf="@id/vGuideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHealth"
         tools:text="潜力:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCritical"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_0_5"
+        android:background="@color/color_critical"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/vGuideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPotential"
+        tools:text="暴击:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvResister"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginStart="@dimen/dp_0_5"
+        android:background="@color/color_resister"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCritical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
+        app:layout_constraintTop_toTopOf="@id/tvCritical"
+        tools:text="抵抗:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_1"
+        android:layout_marginEnd="@dimen/dp_0_5"
+        android:background="@color/color_critical"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/vGuideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCritical"
+        tools:text="命中:2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDodge"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginStart="@dimen/dp_0_5"
+        android:background="@color/color_critical"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vGuideLine"
+        app:layout_constraintTop_toTopOf="@+id/tvHit"
+        tools:text="闪避:2000" />
 </merge>

@@ -35,6 +35,12 @@
     <color name="color_defense">#3A7EC4</color>
     <color name="color_health">#F26D6D</color>
     <color name="color_speed">#BB66FF</color>
+    <color name="color_potential">#223253</color>
+
+    <color name="color_critical">#FF8585</color>
+    <color name="color_resister">#FF8585</color>
+    <color name="color_hit">#FF8585</color>
+    <color name="color_dodge">#FF8585</color>
 
     <color name="color_bg_alpha_black">#99000000</color>
 
