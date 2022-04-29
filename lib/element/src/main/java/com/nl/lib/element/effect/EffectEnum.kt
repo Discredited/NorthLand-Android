@@ -1,13 +1,43 @@
 package com.nl.lib.element.effect
 
+/**
+ * 效果枚举
+ *
+ * 2022年04月28日23:14:48
+ *
+ * @author:June
+ */
 object EffectEnum {
 
+    /**
+     * ## 效果模式
+     * 属性效果：增加|减少属性，一般是以自身属性为基数提升多少百分比或者数值。如：增加自身20%攻击力、无视敌方30%防御力
+     * 伤害效果：对敌方|自身造成伤害，一般是基于自身属性造成多少百分比伤害。如：造成自身攻击140%的伤害、造成自身防御70%的伤害
+     * 真实伤害效果：对敌方|自身造成真实伤害，同上
+     * 行动效果：增加自身行动|限制敌方行动
+     * 复活效果：复活自身
+     * 闪避效果：闪避敌方攻击
+     */
     const val EFFECT_MODE_PROPERTY = 0          // 属性效果
     const val EFFECT_MODE_DAMAGE = 1            // 伤害效果
     const val EFFECT_MODE_DAMAGE_TRUE = 2       // 真实伤害效果
     const val EFFECT_MODE_ACTION = 3            // 行动效果
     const val EFFECT_MODE_REVIVE = 4            // 复活效果
     const val EFFECT_MODE_DODGE = 5             // 闪避效果
+
+    /**
+     * ## 效果触发时机
+     */
+    const val EFFECT_TIMING_IMMEDIATE = 0       // 立即触发
+    const val EFFECT_TIMING_ATTACK = 1          // 进攻时触发
+    const val EFFECT_TIMING_DEFEND = 1          // 防守时触发
+    const val EFFECT_TIMING_INJURED = 1         // 受到伤害时触发
+    const val EFFECT_TIMING_ROUND_START = 1     // 回合开始时触发
+    const val EFFECT_TIMING_ROUND_END = 1       // 回合结束时触发
+    const val EFFECT_TIMING_KILL = 1            // 击杀时触发
+    const val EFFECT_TIMING_DEATH = 1           // 死亡时触发
+    const val EFFECT_TIMING_CRITICAL = 1        // 暴击时触发
+    const val EFFECT_TIMING_DODGE = 1           // 闪避时触发
 
     ////////// 效果作用
     const val EFFECT_ACTION_BUFF = 1            // 增益
