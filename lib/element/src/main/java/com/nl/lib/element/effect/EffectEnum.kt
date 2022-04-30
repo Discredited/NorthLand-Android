@@ -39,13 +39,22 @@ object EffectEnum {
     const val EFFECT_TIMING_CRITICAL = 1        // 暴击时触发
     const val EFFECT_TIMING_DODGE = 1           // 闪避时触发
 
-    ////////// 效果作用
+    /**
+     * ## 效果作用
+     * 增益
+     * 减益
+     * 无效
+     */
     const val EFFECT_ACTION_BUFF = 1            // 增益
     const val EFFECT_ACTION_NULL = 0            // 无效
     const val EFFECT_ACTION_DEBUFF = -1         // 减益
 
 
-    ////////// 作用对象
+    /**
+     * ## 作用对象
+     * 己方
+     * 敌方
+     */
     const val EFFECT_OBJECT_SELF = 1            // 己方
     const val EFFECT_OBJECT_OTHERS = 2          // 敌方
 
