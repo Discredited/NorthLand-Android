@@ -30,12 +30,15 @@ object EffectEnum {
      */
     const val EFFECT_TIMING_IMMEDIATE = 0       // 立即触发
     const val EFFECT_TIMING_ATTACK = 1          // 进攻时触发
-    const val EFFECT_TIMING_DEFEND = 1          // 防守时触发
+    const val EFFECT_TIMING_DEFENSE = 1         // 防守时触发
     const val EFFECT_TIMING_INJURED = 1         // 受到伤害时触发
     const val EFFECT_TIMING_ROUND_START = 1     // 回合开始时触发
     const val EFFECT_TIMING_ROUND_END = 1       // 回合结束时触发
     const val EFFECT_TIMING_KILL = 1            // 击杀时触发
     const val EFFECT_TIMING_DEATH = 1           // 死亡时触发
+    const val EFFECT_TIMING_IMMUNITY = 1        // 免疫伤害时触发
+    const val EFFECT_TIMING_ACTION_OTHER = 1    // 敌方行动时触发
+    const val EFFECT_TIMING_ACTION_SELF = 1     // 己方行动时触发
     const val EFFECT_TIMING_CRITICAL = 1        // 暴击时触发
     const val EFFECT_TIMING_DODGE = 1           // 闪避时触发
 
@@ -58,7 +61,9 @@ object EffectEnum {
     const val EFFECT_OBJECT_SELF = 1            // 己方
     const val EFFECT_OBJECT_OTHERS = 2          // 敌方
 
-    ////////// 作用范围
+    /**
+     * ## 作用范围
+     */
     const val EFFECT_SCOPE_SINGLE = 1           // 单体
     const val EFFECT_SCOPE_ALL = 2              // 全体
     const val EFFECT_SCOPE_ROW = 3              // 行
@@ -68,13 +73,17 @@ object EffectEnum {
     const val EFFECT_SCOPE_HEALTH_LOW = 7       // 生命最低
     const val EFFECT_SCOPE_DODGE = 8            // 闪避值
 
-    ////////// 效果优先级
+    /**
+     * 效果优先级
+     */
     const val EFFECT_PRIORITY_LOW = 1           // 优先级低
     const val EFFECT_PRIORITY_NORMAL = 3        // 优先级一般
     const val EFFECT_PRIORITY_MIDDLE = 5        // 优先级中等
     const val EFFECT_PRIORITY_HIGH = 10         // 优先级高
 
-    ////////// 效果类型
+    /**
+     * 效果类型
+     */
     const val EFFECT_TYPE_PERCENTAGE = 0        // 百分比类型
     const val EFFECT_TYPE_VALUE = 1             // 固定值类型
 }

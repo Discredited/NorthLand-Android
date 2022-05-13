@@ -3,12 +3,11 @@ package com.nl.component
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.june.base.basic.ext.click
 
-class NLDelegate(private val activity: AppCompatActivity) : LifecycleObserver {
+class NLDelegate(private val activity: AppCompatActivity) : DefaultLifecycleObserver {
 
     init {
         activity.lifecycle.addObserver(this)
@@ -56,8 +55,7 @@ class NLDelegate(private val activity: AppCompatActivity) : LifecycleObserver {
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun onDestroy() {
+    override fun onDestroy(owner: LifecycleOwner) {
         mLoadingView = null
     }
 }

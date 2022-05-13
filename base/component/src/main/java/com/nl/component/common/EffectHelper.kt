@@ -7,4 +7,6 @@ package com.nl.component.common
  * @author June
  */
 class EffectHelper {
+
+
 }

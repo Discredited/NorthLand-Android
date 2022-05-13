@@ -16,7 +16,7 @@ data class EffectEntity(
     val desc: String,                   // 效果描述
     val activeLevel: Int = 0,           // 激活等级
     val isActive: Boolean = false,      // 是否激活
-    val effectTiming: Int = 0,          // 效果触发时机
+    val effectTiming: Int = EffectEnum.EFFECT_TIMING_IMMEDIATE, // 效果触发时机
     val priority: Int = EffectEnum.EFFECT_PRIORITY_MIDDLE,      // 效果优先级：0-high,5-middle,10-low
     val effectFrom: Int = PropertyEnum.PRO_NULL,                // 效果来源：攻防血速爆抗命闪护盾
     val effectTarget: Int = PropertyEnum.PRO_NULL,              // 效果目标：攻防血速爆抗命闪护盾
