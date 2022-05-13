@@ -5,12 +5,12 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.nl.component.ext.loadAvatar
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
-import com.nl.module.equipment.databinding.ItemEquipmentBinding
+import com.nl.module.equipment.databinding.ItemEquipmentBackpackBinding
 
 class EquipmentAdapter :
-    BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBinding>>(R.layout.item_equipment) {
+    BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBackpackBinding>>(R.layout.item_equipment_backpack) {
 
-    override fun convert(holder: BaseDataBindingHolder<ItemEquipmentBinding>, item: EquipmentVo) {
+    override fun convert(holder: BaseDataBindingHolder<ItemEquipmentBackpackBinding>, item: EquipmentVo) {
         holder.dataBinding?.apply {
             ivCover.loadAvatar(item.icon)
             tvName.text = item.name

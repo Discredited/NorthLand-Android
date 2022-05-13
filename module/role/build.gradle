@@ -8,7 +8,9 @@ android {
 }
 
 dependencies {
-    rootProject.androidxBasicDependencies(dependencies)
+    implementation Dependencies.appcompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintLayout
 
     implementation project(path: ':base:component')
     implementation project(path: ':lib:element')

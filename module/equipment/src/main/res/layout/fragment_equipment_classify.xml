@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/str_equipment"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btNormal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:text="@string/equipment_normal"
+            android:textColor="@color/color_equipment_normal"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btRefine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_refine"
+            android:textColor="@color/color_equipment_refine"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btFlawless"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_flawless"
+            android:textColor="@color/color_equipment_flawless"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btExtraordinary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_extraordinary"
+            android:textColor="@color/color_equipment_extraordinary"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btExtreme"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_extreme"
+            android:textColor="@color/color_equipment_extreme"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btPeerless"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_peerless"
+            android:textColor="@color/color_equipment_peerless"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btNameLess"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/equipment_name_less"
+            android:textColor="@color/color_equipment_name_less"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/i_close"
+        layout="@layout/view_close_image" />
+</FrameLayout>

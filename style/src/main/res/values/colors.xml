@@ -89,4 +89,6 @@
     <color name="color_equipment_extreme">@color/color_quality_legend</color>
     <!-- 绝世 -->
     <color name="color_equipment_peerless">@color/color_quality_epic</color>
+    <!-- 無名 -->
+    <color name="color_equipment_name_less">#99000000</color>
 </resources>

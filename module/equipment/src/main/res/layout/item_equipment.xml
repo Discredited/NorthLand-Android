@@ -1,75 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_120">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_equipment_icon_bg"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_90"
+        android:layout_marginStart="@dimen/dp_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/color_equipment_name_less"
+        tools:src="@drawable/shape_rect_realm_radius_2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_equipment_icon"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_attack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:viewBindingIgnore="true">
+        android:layout_marginStart="@dimen/dp_10"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_equipment_attr"
+        app:layout_constraintStart_toEndOf="@id/iv_equipment_icon"
+        app:layout_constraintTop_toTopOf="@id/iv_equipment_icon"
+        tools:text="武器名称 [强化0] [锻造0]" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCover"
-            android:layout_width="@dimen/dp_80"
-            android:layout_height="@dimen/dp_80"
-            android:padding="@dimen/dp_5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_avatar_hai_ji" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_attr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_attack"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@id/tv_equipment_attr_extra"
+        app:layout_constraintStart_toStartOf="@id/tv_equipment_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_name"
+        tools:text="攻击力增加3200" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWearStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:textColor="@color/color_red"
-            android:textSize="@dimen/sp_14"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="(甘柠真)已装备" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_10"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:textColor="@color/color_text_33"
-            android:textSize="@dimen/sp_16"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tvLevel"
-            app:layout_constraintEnd_toStartOf="@id/tvWearStatus"
-            app:layout_constraintStart_toEndOf="@id/ivCover"
-            app:layout_constraintTop_toTopOf="@id/ivCover"
-            tools:text="一点黛眉刀" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_10"
-            android:shadowColor="@color/color_text_33"
-            android:textColor="@color/color_text_33"
-            android:textSize="@dimen/sp_14"
-            app:layout_constraintBottom_toTopOf="@+id/tvAttribute"
-            app:layout_constraintStart_toEndOf="@+id/ivCover"
-            app:layout_constraintTop_toBottomOf="@+id/tvName"
-            tools:text="Lv.100" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvAttribute"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_10"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:textColor="@color/color_text_33"
-            android:textSize="@dimen/sp_14"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivCover"
-            app:layout_constraintTop_toBottomOf="@+id/tvLevel"
-            tools:text="攻击力+10800" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_attr_extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_critical"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_equipment_icon"
+        app:layout_constraintStart_toStartOf="@id/tv_equipment_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_attr"
+        tools:text="暴击增加3200" />
+</androidx.constraintlayout.widget.ConstraintLayout>
