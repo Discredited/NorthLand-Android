@@ -20,6 +20,24 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        // Java代码的配置声明
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "AROUTER_MODULE_NAME": project.getName(),
+                        "room.schemaLocation": "$projectDir/schemas".toString()
+                ]
+
+            }
+        }
+        // Kotlin代码的配置声明
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
     }
 
     buildTypes {
