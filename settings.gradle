@@ -1,7 +1,10 @@
 rootProject.name = "NorthLand"
 include ':app'
 include ':style'
+
 include ':base:component'
+
+include ':lib:playercenter'
 include ':lib:element'
 
 include ':module:equipment'

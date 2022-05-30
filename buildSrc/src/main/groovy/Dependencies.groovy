@@ -101,15 +101,16 @@ interface Dependencies {
     def glideCompiler = "com.github.bumptech.glide:compiler:4.11.0"
     def glideIntegration = "com.github.bumptech.glide:okhttp3-integration:4.11.0"
 
-    // RxJava2
-    def rxJava = "io.reactivex.rxjava2:rxjava:2.2.14"
-    def rxJavaAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
-
     // BaseRecyclerViewAdapterHelper
     def quickAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
 
     // ARouter
     def aRouter = "com.alibaba:arouter-api:1.5.2"
     def aRouterCompiler = "com.alibaba:arouter-compiler:1.5.2"
+
+    def tencent = [
+            "mmkv" : "com.tencent:mmkv:1.2.13",
+            "bugly": "com.tencent.bugly:crashreport:4.0.4"
+    ]
     ////////////////////  第三方类库  End  ////////////////////
 }

@@ -1,7 +1,6 @@
 apply from: rootDir.absolutePath + '/default-library.gradle'
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(":style")
 
     implementation Dependencies.roomKtx

@@ -6,6 +6,8 @@ import com.nl.lib.element.effect.EffectDao
 import com.nl.lib.element.effect.EffectEntity
 import com.nl.lib.element.equipment.EquipmentDao
 import com.nl.lib.element.equipment.EquipmentEntity
+import com.nl.lib.element.player.PlayerDao
+import com.nl.lib.element.player.PlayerEntity
 import com.nl.lib.element.role.RoleDao
 import com.nl.lib.element.role.RoleEntity
 import com.nl.lib.element.skill.SkillDao
@@ -16,11 +18,14 @@ import com.nl.lib.element.skill.SkillEntity
         RoleEntity::class,
         EquipmentEntity::class,
         SkillEntity::class,
-        EffectEntity::class
+        EffectEntity::class,
+        PlayerEntity::class
     ],
     version = 1
 )
 abstract class NorthLandDatabase : RoomDatabase() {
+
+    abstract fun playerDao(): PlayerDao
 
     abstract fun roleDao(): RoleDao
 

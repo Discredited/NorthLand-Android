@@ -1,0 +1,6 @@
+apply from: rootDir.absolutePath + '/default-library.gradle'
+apply plugin: 'kotlin-parcelize'
+
+dependencies {
+    implementation Dependencies.tencent.mmkv
+}
