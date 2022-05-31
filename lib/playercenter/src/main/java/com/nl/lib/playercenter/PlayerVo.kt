@@ -12,6 +12,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class PlayerVo(
     val id: String,
+    val playerId: String,
+    val account: String,
+    val password: String,
     val nickname: String,
     val gender: Int,
     val realName: String?,

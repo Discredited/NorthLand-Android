@@ -13,7 +13,7 @@ import com.blankj.utilcode.util.SpanUtils
 import com.june.base.basic.ext.click
 import com.june.northland.R
 import com.june.northland.databinding.FragmentStartEntranceBinding
-import com.june.northland.feature.login.LoginActivity
+import com.june.northland.feature.login.signup.LoginActivity
 import com.june.northland.feature.login.start.announcement.AnnouncementFragment
 import com.june.northland.feature.main.MainActivity
 import com.june.northland.utils.cache.UserDataCache

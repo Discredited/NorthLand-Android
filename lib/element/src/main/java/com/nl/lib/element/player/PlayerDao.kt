@@ -19,4 +19,7 @@ interface PlayerDao {
 
     @Query("SELECT * FROM players")
     suspend fun loadPlayers(): MutableList<PlayerEntity>
+
+    @Query("SELECT * FROM players WHERE account=:account")
+    suspend fun findPlayersByAccount(account: String): PlayerEntity?
 }

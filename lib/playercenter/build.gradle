@@ -3,4 +3,7 @@ apply plugin: 'kotlin-parcelize'
 
 dependencies {
     implementation Dependencies.tencent.mmkv
+
+    implementation project(path: ':lib:element')
+    implementation project(path: ':module:room')
 }

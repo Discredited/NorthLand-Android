@@ -62,7 +62,7 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.nl.module.equipment.choose.EquipmentChooseActivity" />
         <activity
-            android:name=".feature.login.LoginActivity"
+            android:name=".feature.login.signup.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".feature.store.RecruitResultActivity"

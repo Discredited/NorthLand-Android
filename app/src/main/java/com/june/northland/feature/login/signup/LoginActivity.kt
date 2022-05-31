@@ -1,4 +1,4 @@
-package com.june.northland.feature.login
+package com.june.northland.feature.login.signup
 
 import android.app.Activity
 import android.content.Intent

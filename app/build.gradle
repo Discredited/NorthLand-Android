@@ -95,6 +95,8 @@ dependencies {
 
     implementation project(path: ':base:component')
     //implementation Dependencies.nlComponent
+    implementation project(path: ':lib:playercenter')
+
 
     implementation project(path: ':style')
     implementation project(path: ':module:characters')

@@ -9,6 +9,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "players")
 data class PlayerEntity(
     @PrimaryKey val id: String,
+    val playerId: String,
+    val account: String,
+    val password: String,
     val nickname: String,
     val gender: Int,
     // 玩家实名信息
