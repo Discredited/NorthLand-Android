@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_bg_alpha_black"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSkillIcon"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        tools:src="@color/color_blue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSkillName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_90"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        tools:text="弱水三千 · 25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSkillDesc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_90"
+        android:layout_marginTop="@dimen/dp_36"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_12"
+        tools:text="三千弱水剑化作三千弱水，攻击伤害值增加10%" />
+</merge>

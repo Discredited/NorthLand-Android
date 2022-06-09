@@ -1,19 +1,13 @@
 package com.nl.lib.element.role
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
 /**
- * POJO  简单的Java对象，其中有一些属性及其getter、setter方法的类，没有业务逻辑，不允许有业务方法
- * Bean  是一种JAVA语言写成的可重用组件，所有属性为private，提供无参数的构造器，属性使用getter和setter来访问，可序列化，可以封装一些简单逻辑
- * Entity  就是属性类，通常定义在model层里面，一般的实体类对应一个数据表，其中的属性对应数据表中的字段
- * 三者的区别
+ * 角色查询结果
  *
- * 角色实体
+ * 2022/6/8
+ * @author June
  */
-@Entity(tableName = "roles")
-data class RoleEntity(
-    @PrimaryKey val id: String,
+data class RoleResult(
+    val id: String,
     val name: String,              // 名称
     val avatar: String,            // 头像
     val image: String,             // 形象
@@ -48,5 +42,5 @@ data class RoleEntity(
     val critGrowth: Int = 0,          // 暴击成长
     val resistGrowth: Int = 0,        // 抵抗成长
     val hitGrowth: Int = 0,           // 命中成长
-    val dodgeGrowth: Int = 0          // 闪避成长
+    val dodgeGrowth: Int = 0,          // 闪避成长
 )

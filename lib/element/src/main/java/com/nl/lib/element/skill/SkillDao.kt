@@ -29,7 +29,7 @@ interface SkillDao {
     @Query("SELECT * FROM skills WHERE id = :id")
     suspend fun findSkillById(id: String): SkillEntity?
 
-    @Query("SELECT * FROM skills WHERE id = :roleId")
+    @Query("SELECT * FROM skills WHERE roleId = :roleId")
     suspend fun findSkillByRoleId(roleId: String): MutableList<SkillEntity>?
 
 //    @Query("SELECT skills.id,skills.name FROM skills,effects WHERE id = :id AND effects.relationId = :id")

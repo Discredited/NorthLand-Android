@@ -28,6 +28,12 @@ class RoleDetailFragment : NLBaseFragment<FragmentRoleDetailBinding>() {
             role?.let {
                 mBinding.vRoleDetail.setRole(it)
                 mBinding.vRoleAttr.setAttrs(it)
+                if (it.skills.size > 0) {
+                    mBinding.vSkillPassive.setSkill(it.skills[0])
+                }
+                if (it.skills.size > 1) {
+                    mBinding.vSkillInitiative.setSkill(it.skills[1])
+                }
             }
         }
     }
