@@ -12,16 +12,16 @@ import androidx.room.*
 interface EffectDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEffect(vararg skill: EffectEntity)
+    suspend fun insertEffect(vararg effects: EffectEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEffects(skills: MutableList<EffectEntity>)
+    suspend fun insertEffects(effects: MutableList<EffectEntity>)
 
     @Delete
-    suspend fun deleteEffects(vararg skills: EffectEntity)
+    suspend fun deleteEffects(vararg effects: EffectEntity)
 
     @Update
-    suspend fun updateEffects(vararg skills: EffectEntity)
+    suspend fun updateEffects(vararg effects: EffectEntity)
 
     @Query("SELECT * FROM effects")
     suspend fun loadEffects(): List<EffectEntity>
