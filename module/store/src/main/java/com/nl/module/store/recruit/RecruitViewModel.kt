@@ -4,8 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.june.network.api.ApiResponse
 import com.nl.lib.element.role.PlayerRoleEntity
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * 招募ViewModel
@@ -25,7 +27,9 @@ class RecruitViewModel : ViewModel() {
      */
     fun recruitRole(playerId: String) {
         viewModelScope.launch {
-            val response = mRecruitRep.recruitRole(playerId)
+            val response = withContext(Dispatchers.IO) {
+                mRecruitRep.recruitRole(playerId)
+            }
             if (response is ApiResponse.Success) {
                 mRecruitRoleFlow.emit(response.data)
             } else {

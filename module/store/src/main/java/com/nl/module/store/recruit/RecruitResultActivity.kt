@@ -12,6 +12,7 @@ import com.nl.lib.element.role.PlayerRoleEntity
 import com.nl.module.store.databinding.ActivityRecruitResultBinding
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import com.nl.component.common.FilePathHelper
 
 class RecruitResultActivity : NLBaseActivity<ActivityRecruitResultBinding>() {
 
@@ -37,7 +38,7 @@ class RecruitResultActivity : NLBaseActivity<ActivityRecruitResultBinding>() {
     }
 
     private fun setRecruitResult(playerRole: PlayerRoleEntity) {
-        mBinding.ivRecruitAvatar.loadImage(playerRole.avatar)
+        mBinding.ivRecruitAvatar.loadImage(FilePathHelper.getCharacterAvatar(playerRole.avatar))
         mBinding.tvRecruitName.text = playerRole.name
         boom()
     }

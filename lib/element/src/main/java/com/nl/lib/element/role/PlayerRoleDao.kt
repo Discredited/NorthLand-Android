@@ -8,7 +8,7 @@ import com.nl.lib.element.base.BaseDao
 interface PlayerRoleDao : BaseDao<PlayerRoleEntity> {
 
     @Query("SELECT * FROM player_roles WHERE id = :id")
-    fun findPlayerRoleById(id: String): List<PlayerRoleEntity>?
+    fun findPlayerRoleById(id: String): PlayerRoleEntity?
 
     @Query("SELECT * FROM player_roles")
     suspend fun loadPlayerRoles(): List<PlayerRoleEntity>

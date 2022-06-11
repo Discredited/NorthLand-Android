@@ -33,19 +33,22 @@ class RecruitRepository {
         // 从角色列表中随机抽出一个角色
         val random = ((roleList.size - 1) * Math.random()).toInt()
         val recruitRole = roleList[random]
-        Timber.i("招募到的角色:${GsonUtils.toJson(recruitRole)}")
+        Timber.i("recruit 招募到的角色:${GsonUtils.toJson(recruitRole)}")
         // 根据招募角色的技能属性生成对应的玩家角色属性
         val playerRoleId = playerRoleDao.randomIdByDao { randomId ->
-            null == playerRoleDao.findPlayerRoleById(randomId)
+            null != playerRoleDao.findPlayerRoleById(randomId)
         }
+        Timber.i("recruit 生成的角色ID:${playerRoleId}")
 
         val playerRolePassiveSkillId = playerRoleSkillDao.randomIdByDao { randomId ->
-            null == playerRoleSkillDao.findPlayerRoleSkillById(randomId)
+            null != playerRoleSkillDao.findPlayerRoleSkillById(randomId)
         }
+        Timber.i("recruit 生成的被动技能ID:${playerRolePassiveSkillId}")
 
         val playerRoleInitiativeSkillId = playerRoleSkillDao.randomIdByDao { randomId ->
-            null == playerRoleSkillDao.findPlayerRoleSkillById(randomId)
+            null != playerRoleSkillDao.findPlayerRoleSkillById(randomId)
         }
+        Timber.i("recruit 生成的主动技能ID:${playerRoleInitiativeSkillId}")
 
         // 根据招募角色的技能生成对应的玩家技能
         val skillList = skillDao.findSkillByRoleId(roleId = recruitRole.id)
@@ -65,12 +68,14 @@ class RecruitRepository {
                     triggerProbability = 0F
                 )
             )
+            Timber.i("recruit 技能已插入数据库:${skillId} ${skill.name}")
 
             val effectList = effectDao.findEffectByRelation(skill.id, CommonEnum.OBJECT_SKILL)
             effectList?.forEach { effect ->
                 val playerEffectId = playerEffectDao.randomIdByDao { randomId ->
-                    null == playerEffectDao.findPlayerEffectById(randomId)
+                    null != playerEffectDao.findPlayerEffectById(randomId)
                 }
+                Timber.i("recruit 生成的属性ID:${playerEffectId}")
 
                 playerEffectDao.insertEntity(
                     PlayerEffectEntity(
@@ -85,6 +90,7 @@ class RecruitRepository {
                         triggerProbability = effect.triggerProbability
                     )
                 )
+                Timber.i("recruit 属性已插入数据库:${playerEffectId} ${effect.desc}")
             }
         }
 
@@ -113,6 +119,7 @@ class RecruitRepository {
             skillInitiative = playerRoleInitiativeSkillId,
         )
         playerRoleDao.insertEntity(playerRole)
+        Timber.i("recruit 角色已插入数据库:${playerRoleId} ${recruitRole.name}")
 
         return ApiResponse.Success(playerRole)
     }

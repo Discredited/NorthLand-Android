@@ -30,23 +30,23 @@
             tools:text="楚度"
             tools:textColor="@color/color_quality_epic" />
 
-        <com.nl.module.characters.widget.RealmDisplayView
-            android:id="@+id/vPower"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            app:realm_count="9"
-            app:realm_text="阿赖耶"
-            app:realm_text_size="@dimen/sp_16" />
+<!--        <com.nl.module.characters.widget.RealmDisplayView-->
+<!--            android:id="@+id/vPower"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_20"-->
+<!--            app:realm_count="9"-->
+<!--            app:realm_text="阿赖耶"-->
+<!--            app:realm_text_size="@dimen/sp_16" />-->
 
-        <com.nl.module.characters.widget.RealmDisplayView
-            android:id="@+id/vReal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            app:realm_count="9"
-            app:realm_text="知微"
-            app:realm_text_size="@dimen/sp_16" />
+<!--        <com.nl.module.characters.widget.RealmDisplayView-->
+<!--            android:id="@+id/vReal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_20"-->
+<!--            app:realm_count="9"-->
+<!--            app:realm_text="知微"-->
+<!--            app:realm_text_size="@dimen/sp_16" />-->
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <FrameLayout
