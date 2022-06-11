@@ -30,7 +30,7 @@ data class PlayerRoleEntity(
     val potential: Int = 0,
     // 额外attr
     val critical: Int = 0,
-    val resister: Int = 0,
+    val resist: Int = 0,
     val hit: Int = 0,
     val dodge: Int = 0,
     // 技能
@@ -50,7 +50,7 @@ data class PlayerRoleEntity(
     val healthPercent: Float = 0.0F,
     val speedPercent: Float = 0.0F,
     val criticalPercent: Float = 0.0F,
-    val resisterPercent: Float = 0.0F,
+    val resistPercent: Float = 0.0F,
     val hitPercent: Float = 0.0F,
     val dodgePercent: Float = 0.0F,
     val damageIncreasePercent: Float = 0.0F,

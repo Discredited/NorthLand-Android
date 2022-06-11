@@ -66,4 +66,7 @@ dependencies {
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.junitExt
     androidTestImplementation Dependencies.espressoCore
+
+    implementation Dependencies.timber
+    implementation Dependencies.androidUtils
 }

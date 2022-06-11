@@ -1,6 +1,8 @@
 package com.nl.lib.element.effect
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
+import com.nl.lib.element.base.BaseDao
 
 /**
  *
@@ -9,19 +11,11 @@ import androidx.room.*
  * @author June
  */
 @Dao
-interface PlayerEffectDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEffect(vararg effectEntities: PlayerEffectEntity)
+interface PlayerEffectDao : BaseDao<PlayerEffectEntity> {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEffects(effects: MutableList<PlayerEffectEntity>)
-
-    @Delete
-    suspend fun deleteEffects(vararg effects: PlayerEffectEntity)
-
-    @Update
-    suspend fun updateEffects(vararg effects: PlayerEffectEntity)
+    @Query("SELECT * FROM player_effects WHERE id=:id")
+    fun findPlayerEffectById(id: String): PlayerEffectEntity?
 
     @Query("SELECT * FROM player_effects")
-    suspend fun loadEffects(): List<PlayerEffectEntity>
+    suspend fun loadPlayerEffects(): List<PlayerEffectEntity>
 }

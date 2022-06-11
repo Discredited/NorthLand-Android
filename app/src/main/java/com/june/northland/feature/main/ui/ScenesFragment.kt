@@ -3,8 +3,6 @@ package com.june.northland.feature.main.ui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -23,7 +21,6 @@ import com.june.northland.feature.main.email.EmailListActivity
 import com.june.northland.feature.main.user.UserInfoDialogFragment
 import com.june.northland.feature.main.vo.MenuVo
 import com.june.northland.feature.practice.PracticeActivity
-import com.june.northland.feature.store.StoreActivity
 import com.june.northland.feature.taoism.TaoismActivity
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
@@ -31,6 +28,7 @@ import com.nl.component.ext.simpleName
 import com.nl.module.characters.CharacterViewModel
 import com.nl.module.characters.detail.CharacterDetailActivity
 import com.nl.module.characters.list.CharacterListActivity
+import com.nl.module.store.StoreActivity
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 

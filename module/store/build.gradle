@@ -23,6 +23,11 @@ dependencies {
     implementation Dependencies.lifecycleRuntimeKtx
     implementation Dependencies.lifecycleViewModelKtx
     implementation Dependencies.quickAdapter
+
+    implementation Dependencies.juneNetwork
+
+    // 粒子爆炸特效
+    implementation Dependencies.juneExplosion
 }
 
 apply from: rootDir.absolutePath + '/maven-push.gradle'

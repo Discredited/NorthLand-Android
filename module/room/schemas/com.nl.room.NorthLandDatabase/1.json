@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "8b8421046026a51ab3867833f0c138dc",
+    "identityHash": "8297e6080b0b9b1f121d764ddaedde80",
     "entities": [
       {
         "tableName": "roles",
@@ -211,6 +211,248 @@
         "foreignKeys": []
       },
       {
+        "tableName": "player_roles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `playerId` TEXT NOT NULL, `roleId` TEXT NOT NULL, `name` TEXT NOT NULL, `nick` TEXT NOT NULL, `avatar` TEXT NOT NULL, `image` TEXT NOT NULL, `level` INTEGER NOT NULL, `experience` INTEGER NOT NULL, `expNextLevel` INTEGER NOT NULL, `attack` INTEGER NOT NULL, `defense` INTEGER NOT NULL, `health` INTEGER NOT NULL, `speed` INTEGER NOT NULL, `potential` INTEGER NOT NULL, `critical` INTEGER NOT NULL, `resist` INTEGER NOT NULL, `hit` INTEGER NOT NULL, `dodge` INTEGER NOT NULL, `skillPassive` TEXT, `skillInitiative` TEXT, `weapon` TEXT, `clothing` TEXT, `armor` TEXT, `shoes` TEXT, `ring` TEXT, `necklace` TEXT, `aid` TEXT, `attackPercent` REAL NOT NULL, `defensePercent` REAL NOT NULL, `healthPercent` REAL NOT NULL, `speedPercent` REAL NOT NULL, `criticalPercent` REAL NOT NULL, `resistPercent` REAL NOT NULL, `hitPercent` REAL NOT NULL, `dodgePercent` REAL NOT NULL, `damageIncreasePercent` REAL NOT NULL, `damageReducePercent` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "playerId",
+            "columnName": "playerId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "roleId",
+            "columnName": "roleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nick",
+            "columnName": "nick",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "experience",
+            "columnName": "experience",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "expNextLevel",
+            "columnName": "expNextLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attack",
+            "columnName": "attack",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defense",
+            "columnName": "defense",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "health",
+            "columnName": "health",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "speed",
+            "columnName": "speed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "potential",
+            "columnName": "potential",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "critical",
+            "columnName": "critical",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resist",
+            "columnName": "resist",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hit",
+            "columnName": "hit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dodge",
+            "columnName": "dodge",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skillPassive",
+            "columnName": "skillPassive",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skillInitiative",
+            "columnName": "skillInitiative",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weapon",
+            "columnName": "weapon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "clothing",
+            "columnName": "clothing",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "armor",
+            "columnName": "armor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "shoes",
+            "columnName": "shoes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ring",
+            "columnName": "ring",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "necklace",
+            "columnName": "necklace",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "aid",
+            "columnName": "aid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "attackPercent",
+            "columnName": "attackPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defensePercent",
+            "columnName": "defensePercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "healthPercent",
+            "columnName": "healthPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "speedPercent",
+            "columnName": "speedPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "criticalPercent",
+            "columnName": "criticalPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resistPercent",
+            "columnName": "resistPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hitPercent",
+            "columnName": "hitPercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dodgePercent",
+            "columnName": "dodgePercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "damageIncreasePercent",
+            "columnName": "damageIncreasePercent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "damageReducePercent",
+            "columnName": "damageReducePercent",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "equipments",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `icon` TEXT NOT NULL, `part` INTEGER NOT NULL, `quality` INTEGER NOT NULL, `property` INTEGER NOT NULL, `basicDesc` TEXT NOT NULL, `extraDesc` TEXT NOT NULL, `value` INTEGER NOT NULL, `valueGrowth` INTEGER NOT NULL, `strength` INTEGER NOT NULL, `strengthMax` INTEGER NOT NULL, `strengthValue` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
@@ -377,6 +619,50 @@
         "foreignKeys": []
       },
       {
+        "tableName": "player_role_skills",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `skillId` TEXT NOT NULL, `playerRoleId` TEXT NOT NULL, `level` INTEGER NOT NULL, `triggerProbability` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skillId",
+            "columnName": "skillId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "playerRoleId",
+            "columnName": "playerRoleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerProbability",
+            "columnName": "triggerProbability",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "effects",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `relationType` INTEGER NOT NULL, `relationId` TEXT NOT NULL, `relationName` TEXT NOT NULL, `desc` TEXT NOT NULL, `activeLevel` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `effectTiming` INTEGER NOT NULL, `priority` INTEGER NOT NULL, `effectFrom` INTEGER NOT NULL, `effectTarget` INTEGER NOT NULL, `effectMode` INTEGER NOT NULL, `effectAction` INTEGER NOT NULL, `effectObject` INTEGER NOT NULL, `effectScope` INTEGER NOT NULL, `effectType` INTEGER NOT NULL, `percentage` REAL NOT NULL, `percentageGrowth` REAL NOT NULL, `value` INTEGER NOT NULL, `valueGrowth` INTEGER NOT NULL, `triggerProbability` REAL NOT NULL, `triggerProbabilityGrowth` REAL NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
@@ -523,6 +809,74 @@
         "foreignKeys": []
       },
       {
+        "tableName": "player_effects",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `effectId` TEXT NOT NULL, `relationType` INTEGER NOT NULL, `relationId` TEXT NOT NULL, `relationName` TEXT NOT NULL, `isActive` INTEGER NOT NULL, `percentage` REAL NOT NULL, `value` INTEGER NOT NULL, `triggerProbability` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "effectId",
+            "columnName": "effectId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relationType",
+            "columnName": "relationType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relationId",
+            "columnName": "relationId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relationName",
+            "columnName": "relationName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "percentage",
+            "columnName": "percentage",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerProbability",
+            "columnName": "triggerProbability",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "players",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `playerId` TEXT NOT NULL, `account` TEXT NOT NULL, `password` TEXT NOT NULL, `nickname` TEXT NOT NULL, `gender` INTEGER NOT NULL, `realName` TEXT, `realID` TEXT, `token` TEXT, PRIMARY KEY(`id`))",
         "fields": [
@@ -594,7 +948,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8b8421046026a51ab3867833f0c138dc')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8297e6080b0b9b1f121d764ddaedde80')"
     ]
   }
 }

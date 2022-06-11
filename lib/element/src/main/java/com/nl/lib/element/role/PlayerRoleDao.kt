@@ -1,21 +1,14 @@
 package com.nl.lib.element.role
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
+import com.nl.lib.element.base.BaseDao
 
 @Dao
-interface PlayerRoleDao {
+interface PlayerRoleDao : BaseDao<PlayerRoleEntity> {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlayerRoles(vararg playerRoles: PlayerRoleEntity)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlayerRoles(playerRoles: MutableList<PlayerRoleEntity>)
-
-    @Delete
-    suspend fun deletePlayerRoles(vararg playerRoles: PlayerRoleEntity)
-
-    @Update
-    suspend fun updatePlayerRole(vararg playerRoles: PlayerRoleEntity)
+    @Query("SELECT * FROM player_roles WHERE id = :id")
+    fun findPlayerRoleById(id: String): List<PlayerRoleEntity>?
 
     @Query("SELECT * FROM player_roles")
     suspend fun loadPlayerRoles(): List<PlayerRoleEntity>

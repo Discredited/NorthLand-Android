@@ -1,6 +1,8 @@
 package com.nl.lib.element.skill
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
+import com.nl.lib.element.base.BaseDao
 
 /**
  * 玩家角色技能增删查改
@@ -9,25 +11,13 @@ import androidx.room.*
  * @author June
  */
 @Dao
-interface PlayerRoleSkillDao {
+interface PlayerRoleSkillDao : BaseDao<PlayerRoleSkillEntity> {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlayerRoleSkills(vararg skill: PlayerRoleSkillEntity)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlayerRoleSkills(skills: MutableList<PlayerRoleSkillEntity>)
-
-    @Delete
-    suspend fun deletePlayerRoleSkills(vararg skills: PlayerRoleSkillEntity)
-
-    @Update
-    suspend fun updatePlayerRoleSkills(vararg skills: PlayerRoleSkillEntity)
+    @Query("SELECT * FROM player_role_skills WHERE id = :id")
+    fun findPlayerRoleSkillById(id: String): PlayerRoleSkillEntity?
 
     @Query("SELECT * FROM player_role_skills")
     suspend fun loadPlayerRoleSkills(): List<PlayerRoleSkillEntity>
-
-    @Query("SELECT * FROM player_role_skills WHERE id = :id")
-    suspend fun findPlayerRoleSkillById(id: String): PlayerRoleSkillEntity?
 
     @Query("SELECT * FROM player_role_skills WHERE playerRoleId = :roleId")
     suspend fun findPlayerRoleSkillByRoleId(roleId: String): MutableList<PlayerRoleSkillEntity>?

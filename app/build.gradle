@@ -99,6 +99,8 @@ dependencies {
 
 
     implementation project(path: ':style')
+
+    implementation project(path: ':module:room')
     implementation project(path: ':module:characters')
     implementation project(path: ':module:equipment')
     implementation project(path: ':module:relationship')
@@ -106,13 +108,11 @@ dependencies {
     implementation project(path: ':module:soul')
     implementation project(path: ':module:skill')
     implementation project(path: ':module:role')
-
-    implementation project(path: ':module:room')
+    implementation project(path: ':module:store')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
     implementation Dependencies.juneLoading
-    implementation Dependencies.juneExplosion
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler

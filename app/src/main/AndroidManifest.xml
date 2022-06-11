@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.june.northland">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +16,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity">
 
         <activity
             android:name=".feature.login.SplashActivity"
@@ -49,9 +51,6 @@
             android:name=".feature.practice.PracticeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".feature.store.StoreActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".feature.dungeon.DungeonBattleActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -63,9 +62,6 @@
         <activity android:name="com.nl.module.equipment.choose.EquipmentChooseActivity" />
         <activity
             android:name=".feature.login.signup.LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".feature.store.RecruitResultActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".feature.dungeon.plot.PlotDisplayActivity"

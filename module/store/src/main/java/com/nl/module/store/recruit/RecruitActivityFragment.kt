@@ -1,7 +1,7 @@
-package com.june.northland.feature.store
+package com.nl.module.store.recruit
 
-import com.june.northland.databinding.FragmentRecruitNormalBinding
 import com.nl.component.NLBaseFragment
+import com.nl.module.store.databinding.FragmentRecruitNormalBinding
 
 class RecruitActivityFragment : NLBaseFragment<FragmentRecruitNormalBinding>() {
 

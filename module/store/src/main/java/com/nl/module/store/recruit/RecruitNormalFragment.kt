@@ -1,12 +1,12 @@
-package com.june.northland.feature.store
+package com.nl.module.store.recruit
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.view.View
-import com.june.northland.databinding.FragmentRecruitNormalBinding
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.click
+import com.nl.module.store.databinding.FragmentRecruitNormalBinding
 
 class RecruitNormalFragment : NLBaseFragment<FragmentRecruitNormalBinding>() {
 
