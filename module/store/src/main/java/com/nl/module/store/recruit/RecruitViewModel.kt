@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
  */
 class RecruitViewModel : ViewModel() {
 
-    val mRecruitRoleFlow: MutableSharedFlow<PlayerRoleEntity?> = MutableSharedFlow()
+    val mRecruitRoleFlow: MutableSharedFlow<RecruitRoleVo?> = MutableSharedFlow()
     val mErrorFlow: MutableSharedFlow<String> = MutableSharedFlow()
 
     private val mRecruitRep = RecruitRepository()

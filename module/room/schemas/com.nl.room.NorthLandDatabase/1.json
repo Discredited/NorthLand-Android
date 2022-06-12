@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "8297e6080b0b9b1f121d764ddaedde80",
+    "identityHash": "f6a6e2235e44b831bba0dbe807155650",
     "entities": [
       {
         "tableName": "roles",
@@ -198,6 +198,38 @@
             "fieldPath": "dodgeGrowth",
             "columnName": "dodgeGrowth",
             "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "role_slogans",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `roleId` TEXT NOT NULL, `slogan` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "roleId",
+            "columnName": "roleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "slogan",
+            "columnName": "slogan",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
@@ -948,7 +980,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8297e6080b0b9b1f121d764ddaedde80')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f6a6e2235e44b831bba0dbe807155650')"
     ]
   }
 }

@@ -19,6 +19,7 @@ import timber.log.Timber
 class RecruitRepository {
 
     private val roleDao by lazy { RoomHelper.getInstance().database().roleDao() }
+    private val roleSloganDao by lazy { RoomHelper.getInstance().database().roleSloganDao() }
     private val playerRoleDao by lazy { RoomHelper.getInstance().database().playerRoleDao() }
 
     private val skillDao by lazy { RoomHelper.getInstance().database().skillDao() }
@@ -27,13 +28,12 @@ class RecruitRepository {
     private val effectDao by lazy { RoomHelper.getInstance().database().effectDao() }
     private val playerEffectDao by lazy { RoomHelper.getInstance().database().playerEffectDao() }
 
-    suspend fun recruitRole(playerId: String): ApiResponse<PlayerRoleEntity> {
+    suspend fun recruitRole(playerId: String): ApiResponse<RecruitRoleVo> {
         // 首先从角色库中查找对应的角色列表
         val roleList = roleDao.loadRoles()
         // 从角色列表中随机抽出一个角色
         // val random = ((roleList.size - 1) * Math.random()).toInt()
-        val recruitRole = roleList.find { it.id == "30001" }
-        recruitRole ?: return ApiResponse.Error(500, "没有找到对应角色")
+        val recruitRole = roleList.find { it.id == "30001" } ?: return ApiResponse.Error(500, "没有找到对应角色")
         // 指定招募林飞用于数据测试
         Timber.i("recruit 招募到的角色:${GsonUtils.toJson(recruitRole)}")
         // 根据招募角色的技能属性生成对应的玩家角色属性
@@ -96,6 +96,9 @@ class RecruitRepository {
             }
         }
 
+        // 查找角色对应的Slogan
+        val slogans = roleSloganDao.findRoleSloganByRoleId(recruitRole.id)
+
         // 生成对应的招募角色
         val playerRole = PlayerRoleEntity(
             id = playerRoleId,
@@ -123,6 +126,17 @@ class RecruitRepository {
         playerRoleDao.insertEntity(playerRole)
         Timber.i("recruit 角色已插入数据库:${playerRoleId} ${recruitRole.name}")
 
-        return ApiResponse.Success(playerRole)
+        return ApiResponse.Success(
+            RecruitRoleVo(
+                roleId = playerRoleId,
+                name = recruitRole.name,
+                avatar = recruitRole.avatar,
+                image = recruitRole.image,
+                quality = recruitRole.quality,
+                power = recruitRole.power,
+                realm = recruitRole.realm,
+                slogans = slogans ?: mutableListOf()
+            )
+        )
     }
 }
