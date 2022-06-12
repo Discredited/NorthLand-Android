@@ -1,6 +1,6 @@
 package com.june.northland.feature.battle.vo
 
-class BattleVo(
+data class BattleVo(
     val id: String,
     val avatar: String,
     val name: String,

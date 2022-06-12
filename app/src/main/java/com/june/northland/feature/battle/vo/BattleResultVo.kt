@@ -1,6 +1,9 @@
 package com.june.northland.feature.battle.vo
 
-class BattleResultVo(
+/**
+ * 战斗结果
+ */
+data class BattleResultVo(
     val ownSideList: MutableList<BattleVo>,
     val opponentList: MutableList<BattleVo>,
     val rounds: MutableList<RoundVo>,
