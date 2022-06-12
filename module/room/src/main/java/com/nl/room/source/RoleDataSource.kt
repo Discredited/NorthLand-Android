@@ -8,6 +8,24 @@ object RoleDataSource {
     fun mockRoles(): MutableList<RoleEntity> {
         return mutableListOf(
             RoleEntity(
+                id = "00001",
+                name = "机器人",
+                avatar = "ji_qi_ren.png",
+                image = "ji_qi_ren.png",
+                desc = "输出测试机器人",
+                faction = FactionEnum.SKY_UN_KNOW,
+                race = RaceEnum.UN_KNOW,
+                quality = QualityEnum.QUALITY_R,
+                realm = RealmEnum.REALM_0,
+                power = PowerEnum.POWER_0,
+                intellect = 1,
+                level = 999,
+                attackInit = 1,
+                defenseInit = -1,
+                healthInit = -1,
+                speedInit = 0
+            ),
+            RoleEntity(
                 id = "10001",
                 name = "楚度",
                 avatar = "chu_du.png",
