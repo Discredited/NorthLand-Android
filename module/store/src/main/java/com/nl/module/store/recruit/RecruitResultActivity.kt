@@ -40,11 +40,11 @@ class RecruitResultActivity : NLBaseActivity<ActivityRecruitResultBinding>() {
     private fun setRecruitResult(playerRole: PlayerRoleEntity) {
         mBinding.ivRecruitAvatar.loadImage(FilePathHelper.getCharacterAvatar(playerRole.avatar))
         mBinding.tvRecruitName.text = playerRole.name
-        boom()
+        boom(playerRole.name)
     }
 
-    private fun boom() {
-        mBinding.tvRecruitSlogan.text = "沙罗铁树，只为自己盛开"
+    private fun boom(slogan:String) {
+        mBinding.tvRecruitSlogan.text = slogan
         mBinding.tvRecruitSlogan.visibility = View.VISIBLE
 
         mBinding.flRecruitSlogan.click {

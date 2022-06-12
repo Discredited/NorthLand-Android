@@ -31,8 +31,10 @@ class RecruitRepository {
         // 首先从角色库中查找对应的角色列表
         val roleList = roleDao.loadRoles()
         // 从角色列表中随机抽出一个角色
-        val random = ((roleList.size - 1) * Math.random()).toInt()
-        val recruitRole = roleList[random]
+        // val random = ((roleList.size - 1) * Math.random()).toInt()
+        val recruitRole = roleList.find { it.id == "30001" }
+        recruitRole ?: return ApiResponse.Error(500, "没有找到对应角色")
+        // 指定招募林飞用于数据测试
         Timber.i("recruit 招募到的角色:${GsonUtils.toJson(recruitRole)}")
         // 根据招募角色的技能属性生成对应的玩家角色属性
         val playerRoleId = playerRoleDao.randomIdByDao { randomId ->
