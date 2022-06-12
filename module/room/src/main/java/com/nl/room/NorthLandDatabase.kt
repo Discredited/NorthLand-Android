@@ -10,10 +10,7 @@ import com.nl.lib.element.equipment.EquipmentDao
 import com.nl.lib.element.equipment.EquipmentEntity
 import com.nl.lib.element.player.PlayerDao
 import com.nl.lib.element.player.PlayerEntity
-import com.nl.lib.element.role.PlayerRoleDao
-import com.nl.lib.element.role.PlayerRoleEntity
-import com.nl.lib.element.role.RoleDao
-import com.nl.lib.element.role.RoleEntity
+import com.nl.lib.element.role.*
 import com.nl.lib.element.skill.PlayerRoleSkillDao
 import com.nl.lib.element.skill.PlayerRoleSkillEntity
 import com.nl.lib.element.skill.SkillDao
@@ -22,6 +19,7 @@ import com.nl.lib.element.skill.SkillEntity
 @Database(
     entities = [
         RoleEntity::class,
+        RoleSloganEntity::class,
         PlayerRoleEntity::class,
         EquipmentEntity::class,
         SkillEntity::class,
@@ -47,6 +45,8 @@ abstract class NorthLandDatabase : RoomDatabase() {
     abstract fun effectDao(): EffectDao
 
     abstract fun playerEffectDao(): PlayerEffectDao
+
+    abstract fun roleSloganDao(): RoleSloganDao
 
     abstract fun equipmentDao(): EquipmentDao
 }

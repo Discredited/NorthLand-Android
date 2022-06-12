@@ -11,7 +11,7 @@ interface RoleSloganDao : BaseDao<RoleSloganEntity> {
     fun findRoleSloganById(id: String): RoleSloganEntity?
 
     @Query("SELECT * FROM role_slogans")
-    suspend fun loadRoles(): List<RoleSloganEntity>
+    suspend fun loadRoleSlogans(): List<RoleSloganEntity>
 
     @Query("SELECT * FROM role_slogans WHERE roleId = :roleId")
     suspend fun findRoleSloganByRoleId(roleId: String): RoleSloganEntity?
