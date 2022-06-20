@@ -1,4 +1,4 @@
-package com.june.northland.feature.battle.vo
+package com.nl.module.battle.vo
 
 data class BattleVo(
     val id: String,

@@ -1,15 +1,13 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
-import com.june.base.basic.part.BaseDialogFragment
-import com.june.northland.databinding.FragmentDialogBattleResultSuccessBinding
+import com.nl.component.NLBaseDialogFragment
+import com.nl.module.battle.databinding.FragmentDialogBattleResultSuccessBinding
 
-class BattleResultSuccessFragment : BaseDialogFragment<FragmentDialogBattleResultSuccessBinding>() {
+class BattleResultSuccessFragment : NLBaseDialogFragment<FragmentDialogBattleResultSuccessBinding>() {
 
     override fun initView() {
     }

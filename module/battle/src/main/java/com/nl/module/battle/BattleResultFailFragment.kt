@@ -1,14 +1,14 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.view.WindowManager
-import com.june.base.basic.part.BaseDialogFragment
-import com.june.northland.databinding.FragmentDialogBattleResultFailBinding
+import com.nl.component.NLBaseDialogFragment
 import com.nl.component.ext.click
+import com.nl.module.battle.databinding.FragmentDialogBattleResultFailBinding
 
-class BattleResultFailFragment : BaseDialogFragment<FragmentDialogBattleResultFailBinding>() {
+class BattleResultFailFragment : NLBaseDialogFragment<FragmentDialogBattleResultFailBinding>() {
 
     override fun initView() {
         mBinding.btSure.click { dismiss() }

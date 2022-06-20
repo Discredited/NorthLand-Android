@@ -1,5 +1,6 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
+import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Context
@@ -8,11 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.animation.addListener
 import androidx.core.view.children
-import com.june.northland.feature.battle.vo.BattleResultVo
-import com.june.northland.feature.battle.vo.BattleVo
-import com.june.northland.feature.battle.vo.RoundVo
+import com.nl.module.battle.vo.BattleResultVo
+import com.nl.module.battle.vo.BattleVo
+import com.nl.module.battle.vo.RoundVo
 import timber.log.Timber
 import java.util.*
 
@@ -166,10 +166,22 @@ class BattlegroundLayout @JvmOverloads constructor(
         } else {
             attackNormal(moverPosition)
         }
-        mAttackAnimator?.addListener(onEnd = {
-            mAttackAnimator?.removeAllListeners()
-            mAttackAnimator = null
-            roundStart()
+        mAttackAnimator?.addListener(object :Animator.AnimatorListener{
+            override fun onAnimationStart(p0: Animator?) {
+            }
+
+            override fun onAnimationEnd(p0: Animator?) {
+                mAttackAnimator?.removeAllListeners()
+                mAttackAnimator = null
+                roundStart()
+            }
+
+            override fun onAnimationCancel(p0: Animator?) {
+            }
+
+            override fun onAnimationRepeat(p0: Animator?) {
+            }
+
         })
         mAttackAnimator?.start()
 

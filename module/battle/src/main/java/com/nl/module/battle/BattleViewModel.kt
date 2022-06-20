@@ -1,15 +1,14 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.app.Application
 import com.nl.component.AppViewModel
-import com.june.northland.common.ConstantUtils
-import com.june.northland.feature.battle.vo.BattleDataVo
-import com.june.northland.feature.battle.vo.BattleResultVo
-import com.june.northland.feature.battle.vo.BattleVo
-import com.june.northland.feature.battle.vo.RoundVo
+import com.nl.module.battle.vo.BattleDataVo
+import com.nl.module.battle.vo.BattleResultVo
+import com.nl.module.battle.vo.BattleVo
+import com.nl.module.battle.vo.RoundVo
 import timber.log.Timber
 
-class BattleViewModel(application: Application) : com.nl.component.AppViewModel(application) {
+class BattleViewModel(application: Application) : AppViewModel(application) {
 
     fun battleResult(): BattleResultVo {
         val battleList = mutableListOf<Int>()
@@ -17,7 +16,7 @@ class BattleViewModel(application: Application) : com.nl.component.AppViewModel(
         val opponentSize = (Math.random() * 7).toInt() + 1
         val opponentList = mutableListOf<BattleVo>()
         for (index in 0 until opponentSize) {
-            opponentList.add(ConstantUtils.randomBattleVo(index))
+            //opponentList.add(ConstantUtils.randomBattleVo(index))
             battleList.add(index)
         }
 
@@ -25,7 +24,7 @@ class BattleViewModel(application: Application) : com.nl.component.AppViewModel(
         val ownSize = (Math.random() * 7).toInt() + 1
         val ownList = mutableListOf<BattleVo>()
         for (index in 0 until ownSize) {
-            ownList.add(ConstantUtils.randomBattleVo(index))
+            //ownList.add(ConstantUtils.randomBattleVo(index))
             battleList.add(opponentSize + index)
         }
 

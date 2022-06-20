@@ -1,6 +1,6 @@
 package com.june.northland.common
 
-import com.june.northland.feature.battle.vo.BattleVo
+import com.nl.module.battle.vo.BattleVo
 import com.nl.component.common.FilePathHelper
 
 object ConstantUtils {
@@ -21,10 +21,10 @@ object ConstantUtils {
         "丁香愁"
     )
 
-    fun randomBattleVo(position: Int = 0): BattleVo {
+    fun randomBattleVo(position: Int = 0): com.nl.module.battle.vo.BattleVo {
         val random = (Math.random() * 100).toInt() % AVATAR_SET.size
         val name = NAME_SET[random]
         val avatar = FilePathHelper.getCharacterAvatar(AVATAR_SET[random])
-        return BattleVo("$position", avatar, name, position, 250, 100, position)
+        return com.nl.module.battle.vo.BattleVo("$position", avatar, name, position, 250, 100, position)
     }
 }

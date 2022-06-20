@@ -1,4 +1,4 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
-import com.june.northland.R
 import com.nl.component.ext.loadImage
 import com.nl.component.ext.setDrawableWithStroke
-import com.june.northland.databinding.WidgetBattleViewBinding
-import com.june.northland.feature.battle.vo.BattleVo
+import com.nl.module.battle.databinding.WidgetBattleViewBinding
+import com.nl.module.battle.vo.BattleVo
 
 class BattleView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

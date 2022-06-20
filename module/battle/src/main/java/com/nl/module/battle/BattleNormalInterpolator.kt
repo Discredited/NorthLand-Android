@@ -1,14 +1,15 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.view.animation.Interpolator
+import timber.log.Timber
 
-class BattleSkillInterpolator : Interpolator {
+class BattleNormalInterpolator : Interpolator {
 
     override fun getInterpolation(input: Float): Float {
         //0.4F之前超速
         //0.4F-0.6F缓慢
         //0.6F之后加速
-        return when {
+        val result = when {
             input <= 0.2F -> {
                 input * 2.5F
             }
@@ -19,5 +20,8 @@ class BattleSkillInterpolator : Interpolator {
                 0.5F
             }
         }
+
+        Timber.e("input:$result")
+        return result
     }
 }

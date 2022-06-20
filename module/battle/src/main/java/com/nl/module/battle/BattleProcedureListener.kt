@@ -1,4 +1,4 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 interface BattleProcedureListener {
 

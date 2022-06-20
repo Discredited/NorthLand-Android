@@ -1,4 +1,4 @@
-package com.june.northland.feature.battle.vo
+package com.nl.module.battle.vo
 
 /**
  * 对战列表

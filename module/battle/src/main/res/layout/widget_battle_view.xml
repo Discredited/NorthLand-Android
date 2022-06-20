@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:padding="@dimen/dp_2"/>
 
-    <com.june.northland.feature.battle.BattleHealthView
+    <com.nl.module.battle.BattleHealthView
         android:id="@+id/vHealthView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

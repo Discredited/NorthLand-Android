@@ -3,11 +3,11 @@ package com.june.northland.feature.dungeon
 import androidx.activity.viewModels
 import com.june.base.basic.ext.click
 import com.june.northland.databinding.ActivityPlotBattleBinding
-import com.june.northland.feature.battle.BattleProcedureListener
-import com.june.northland.feature.battle.BattleResultFailFragment
-import com.june.northland.feature.battle.BattleResultSuccessFragment
-import com.june.northland.feature.battle.BattleViewModel
-import com.june.northland.feature.battle.vo.RoundVo
+import com.nl.module.battle.BattleProcedureListener
+import com.nl.module.battle.BattleResultFailFragment
+import com.nl.module.battle.BattleResultSuccessFragment
+import com.nl.module.battle.BattleViewModel
+import com.nl.module.battle.vo.RoundVo
 import com.june.northland.utils.Toast
 import com.nl.component.NLBaseActivity
 
@@ -19,23 +19,23 @@ import com.nl.component.NLBaseActivity
  */
 class DungeonBattleActivity : NLBaseActivity<ActivityPlotBattleBinding>() {
 
-    private val mBattleViewModel by viewModels<BattleViewModel>()
+    private val mBattleViewModel by viewModels<com.nl.module.battle.BattleViewModel>()
 
     override fun initView() {
         mBinding.vBattleground.bindSkillEffectView(mBinding.tvSkillEffect)
-        mBinding.vBattleground.bindBattleProcedureListener(object : BattleProcedureListener {
+        mBinding.vBattleground.bindBattleProcedureListener(object : com.nl.module.battle.BattleProcedureListener {
             override fun onBattleBegin() {
                 Toast.toastShort("对战开始")
             }
 
             override fun onBattleFinish() {
                 if (Math.random() > 0.5) {
-                    BattleResultSuccessFragment().show(
+                    com.nl.module.battle.BattleResultSuccessFragment().show(
                         supportFragmentManager,
                         "BattleResultSuccessFragment"
                     )
                 } else {
-                    BattleResultFailFragment().show(
+                    com.nl.module.battle.BattleResultFailFragment().show(
                         supportFragmentManager,
                         "BattleResultFailFragment"
                     )
@@ -71,7 +71,7 @@ class DungeonBattleActivity : NLBaseActivity<ActivityPlotBattleBinding>() {
     private fun simulationAttack(attackMode: Int = 0) {
         val damageType = (Math.random() * 10 % 3).toInt()
         mBinding.vBattleground.roundStart(
-            RoundVo(
+            com.nl.module.battle.vo.RoundVo(
                 1,
                 mOwnSidePosition,
                 intArrayOf(0),

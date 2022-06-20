@@ -1,4 +1,4 @@
-package com.june.northland.feature.battle
+package com.nl.module.battle
 
 import android.animation.ObjectAnimator
 import android.content.Context
@@ -6,7 +6,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.june.northland.R
 
 class BattleHealthView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
