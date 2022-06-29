@@ -1,6 +1,5 @@
 package com.june.northland.feature.login.start
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
