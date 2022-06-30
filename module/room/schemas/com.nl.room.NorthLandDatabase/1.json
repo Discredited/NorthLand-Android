@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f6a6e2235e44b831bba0dbe807155650",
+    "identityHash": "556012745aa4a75b24e50b73d7503f36",
     "entities": [
       {
         "tableName": "roles",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `avatar` TEXT NOT NULL, `image` TEXT NOT NULL, `desc` TEXT NOT NULL, `faction` INTEGER NOT NULL, `race` INTEGER NOT NULL, `quality` INTEGER NOT NULL, `realm` INTEGER NOT NULL, `power` INTEGER NOT NULL, `intellect` INTEGER NOT NULL, `level` INTEGER NOT NULL, `experience` INTEGER NOT NULL, `expNextLevel` INTEGER NOT NULL, `expFactor` INTEGER NOT NULL, `attackInit` INTEGER NOT NULL, `defenseInit` INTEGER NOT NULL, `healthInit` INTEGER NOT NULL, `speedInit` INTEGER NOT NULL, `potential` INTEGER NOT NULL, `attackGrowth` INTEGER NOT NULL, `defenseGrowth` INTEGER NOT NULL, `healthGrowth` INTEGER NOT NULL, `potentialGrowth` INTEGER NOT NULL, `critInit` INTEGER NOT NULL, `resistInit` INTEGER NOT NULL, `hitInit` INTEGER NOT NULL, `dodgeInit` INTEGER NOT NULL, `critGrowth` INTEGER NOT NULL, `resistGrowth` INTEGER NOT NULL, `hitGrowth` INTEGER NOT NULL, `dodgeGrowth` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `avatar` TEXT NOT NULL, `image` TEXT NOT NULL, `desc` TEXT NOT NULL, `faction` INTEGER NOT NULL, `race` INTEGER NOT NULL, `quality` INTEGER NOT NULL, `realm` INTEGER NOT NULL, `power` INTEGER NOT NULL, `intellect` INTEGER NOT NULL, `level` INTEGER NOT NULL, `experience` INTEGER NOT NULL, `expNextLevel` INTEGER NOT NULL, `expFactor` INTEGER NOT NULL, `attackInit` INTEGER NOT NULL, `defenseInit` INTEGER NOT NULL, `healthInit` INTEGER NOT NULL, `speedInit` INTEGER NOT NULL, `potential` INTEGER NOT NULL, `basicTotal` INTEGER NOT NULL, `attackGrowth` INTEGER NOT NULL, `defenseGrowth` INTEGER NOT NULL, `healthGrowth` INTEGER NOT NULL, `potentialGrowth` INTEGER NOT NULL, `basicGrowthTotal` INTEGER NOT NULL, `critInit` INTEGER NOT NULL, `resistInit` INTEGER NOT NULL, `hitInit` INTEGER NOT NULL, `dodgeInit` INTEGER NOT NULL, `extraTotal` INTEGER NOT NULL, `critGrowth` INTEGER NOT NULL, `resistGrowth` INTEGER NOT NULL, `hitGrowth` INTEGER NOT NULL, `dodgeGrowth` INTEGER NOT NULL, `extraGrowthTotal` INTEGER NOT NULL, `attrsTotal` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -129,6 +129,12 @@
             "notNull": true
           },
           {
+            "fieldPath": "basicTotal",
+            "columnName": "basicTotal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
             "fieldPath": "attackGrowth",
             "columnName": "attackGrowth",
             "affinity": "INTEGER",
@@ -149,6 +155,12 @@
           {
             "fieldPath": "potentialGrowth",
             "columnName": "potentialGrowth",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "basicGrowthTotal",
+            "columnName": "basicGrowthTotal",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -177,6 +189,12 @@
             "notNull": true
           },
           {
+            "fieldPath": "extraTotal",
+            "columnName": "extraTotal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
             "fieldPath": "critGrowth",
             "columnName": "critGrowth",
             "affinity": "INTEGER",
@@ -197,6 +215,18 @@
           {
             "fieldPath": "dodgeGrowth",
             "columnName": "dodgeGrowth",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "extraGrowthTotal",
+            "columnName": "extraGrowthTotal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attrsTotal",
+            "columnName": "attrsTotal",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -980,7 +1010,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f6a6e2235e44b831bba0dbe807155650')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '556012745aa4a75b24e50b73d7503f36')"
     ]
   }
 }
