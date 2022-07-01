@@ -6,6 +6,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import timber.log.Timber
 import java.io.IOException
 import java.io.InputStream
+import kotlin.math.ceil
 
 /**
  * Excel解析
@@ -63,12 +64,12 @@ object ExcelAnalyze {
         val fieldName = fieldValue ?: ""
         return when (cell.cellType) {
             Cell.CELL_TYPE_NUMERIC -> {
-                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cell.numericCellValue.toInt()}")
-                cell.numericCellValue.toInt()
+                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cellNumber(cell.numericCellValue)}")
+                cellNumber(cell.numericCellValue)
             }
             Cell.CELL_TYPE_FORMULA -> {
-                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cell.numericCellValue.toInt()}")
-                cell.numericCellValue.toInt()
+                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cellNumber(cell.numericCellValue)}")
+                cellNumber(cell.numericCellValue)
             }
             Cell.CELL_TYPE_STRING -> {
                 Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cell.richStringCellValue.string}")
@@ -91,4 +92,12 @@ object ExcelAnalyze {
         else -> "UN-KNOW"
     }
 
+    private fun cellNumber(double: Double): Any {
+        // 判断当前double是整数还是小数
+        return if ((double - ceil(double)) == 0.0) {
+            double.toInt()
+        } else {
+            double
+        }
+    }
 }

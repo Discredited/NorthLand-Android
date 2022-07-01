@@ -282,6 +282,7 @@ object SkillDataSource {
                 "每损失5%生命值提升自身5%攻击力",
                 1,
             ),
+
             SkillEntity(
                 "300012",
                 "30001",
