@@ -9,6 +9,7 @@ import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.databinding.FragmentDialogDebugListBinding
 import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
+import com.nl.lib.element.role.RoleEntity
 import com.nl.module.characters.list.CharacterListActivity
 import com.nl.module.role.RoleActivity
 import com.nl.module.skill.list.SkillListActivity
@@ -86,9 +87,8 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
             withContext(Dispatchers.IO) {
                 val inputStream = resources.assets.open("RoleTable.xlsx")
                 // 获取对应的excel
-                ExcelAnalyze.analyzeExcel(inputStream) {
-                    Timber.e("获取到了最后的列表")
-                }
+                val roleList = ExcelAnalyze.analyzeExcel<RoleEntity>(inputStream)
+                Timber.e("获取到了最后的列表 $roleList")
             }
         }
     }

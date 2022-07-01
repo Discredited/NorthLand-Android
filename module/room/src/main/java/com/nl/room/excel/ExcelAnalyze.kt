@@ -1,6 +1,6 @@
 package com.nl.room.excel
 
-import com.nl.lib.element.role.RoleEntity
+import com.blankj.utilcode.util.GsonUtils
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import timber.log.Timber
@@ -15,11 +15,12 @@ import java.io.InputStream
  */
 object ExcelAnalyze {
 
-    fun analyzeExcel(inputStream: InputStream, callback: (list: MutableList<RoleEntity>) -> Unit) {
+    /**
+     * 解析Excel文件
+     */
+    inline fun <reified T> analyzeExcel(inputStream: InputStream): MutableList<T> {
         Timber.e("文件读取开始")
-        val headerList = mutableListOf<String>()
-        val fieldList = mutableListOf<String>()
-        val valueList = mutableListOf<Any>()
+        val valueList = mutableListOf<T>()
         try {
             val excelWorkBook = XSSFWorkbook(inputStream)
             val sheet = excelWorkBook.getSheetAt(0)
@@ -31,41 +32,33 @@ object ExcelAnalyze {
             val rowField = sheet.getRow(1)
             // 获取最大列数
             val columns = rowHeader.physicalNumberOfCells
-            for (rowNum in 0 until rows) {
+            for (rowNum in 2 until rows) {
+                val map = LinkedHashMap<String, Any>()
                 sheet.getRow(rowNum)?.let { rowCell ->
                     for (column in 0 until columns) {
                         rowCell.getCell(column)?.let { columnCell ->
-                            when (rowNum) {
-                                0 -> {
-                                    val columnValue = getCellValue(columnCell)
-                                    headerList.add(columnValue.toString())
-                                }
-                                1 -> {
-                                    val columnValue = getCellValue(columnCell)
-                                    fieldList.add(columnValue.toString())
-                                }
-                                else -> {
-                                    val headerValue = rowHeader.getCell(column).richStringCellValue.string
-                                    val fieldName = rowField.getCell(column).richStringCellValue.string
-                                    val columnValue = getCellValue(columnCell, headerValue, fieldName)
-                                    valueList.add(columnValue)
-                                }
-                            }
+                            val headerValue = rowHeader.getCell(column).richStringCellValue.string
+                            val fieldName = rowField.getCell(column).richStringCellValue.string
+                            val columnValue = getCellValue(columnCell, headerValue, fieldName)
+                            map.put(fieldName, columnValue)
                         }
                     }
                 }
+                if (map.isNotEmpty()) {
+                    val json = GsonUtils.toJson(map)
+                    valueList.add(GsonUtils.fromJson(json, T::class.java))
+                }
             }
+            excelWorkBook.close()
         } catch (e: IOException) {
             Timber.e("excel读取失败:${e}")
         } catch (e: Exception) {
             Timber.e("excel解析异常： $e")
         }
-        Timber.e("头部：${headerList}")
-        Timber.e("值值：${valueList}")
-        callback(mutableListOf())
+        return valueList
     }
 
-    private fun getCellValue(cell: Cell, headerValue: Any? = null, fieldValue: String? = null): Any {
+    fun getCellValue(cell: Cell, headerValue: Any? = null, fieldValue: String? = null): Any {
         val headerName = headerValue ?: "当前Cell值"
         val fieldName = fieldValue ?: ""
         return when (cell.cellType) {

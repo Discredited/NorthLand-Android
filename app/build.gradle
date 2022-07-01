@@ -110,6 +110,7 @@ dependencies {
     implementation project(path: ':module:role')
     implementation project(path: ':module:store')
     implementation project(path: ':module:battle')
+    implementation project(path: ':lib:element')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork
