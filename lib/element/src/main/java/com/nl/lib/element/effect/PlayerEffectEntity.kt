@@ -17,7 +17,7 @@ data class PlayerEffectEntity(
     val relationId: String,
     val relationName: String,
     val isActive: Boolean = false,
-    val percentage: Float = 0F,
+    val percentage: Double = 0.0,
     val value: Int = 0,
-    val triggerProbability: Float = 1F
+    val triggerProbability: Double = 1.0
 )

@@ -15,5 +15,5 @@ data class PlayerRoleSkillEntity(
     val skillId: String,
     val playerRoleId: String,
     val level: Int,
-    val triggerProbability: Float
+    val triggerProbability: Double
 )

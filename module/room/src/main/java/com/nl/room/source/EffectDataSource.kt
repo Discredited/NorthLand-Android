@@ -27,12 +27,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.15F,
-                percentageGrowth = 0.05F,
+                percentage = 0.15,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
             EffectEntity(
                 id = "1000112",
@@ -51,12 +51,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.15F,
-                percentageGrowth = 0.05F,
+                percentage = 0.15,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 镜花水月
@@ -77,12 +77,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.45F,
-                percentageGrowth = 0.03F,
+                percentage = 0.45,
+                percentageGrowth = 0.03,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 共时交点
@@ -103,12 +103,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.02
             ),
             EffectEntity(
                 id = "1000212",
@@ -127,12 +127,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.2F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.2,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 超脱物外
@@ -153,12 +153,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.03F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.03
             ),
             EffectEntity(
                 id = "1000222",
@@ -177,12 +177,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 天地意志
@@ -203,12 +203,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.2F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.2,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 寂灭剑雨
@@ -229,12 +229,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.4F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.4,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 绕
@@ -255,12 +255,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.03F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.03
             ),
             EffectEntity(
                 id = "2000112",
@@ -279,12 +279,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.1F,
-                percentageGrowth = 0.05F,
+                percentage = 1.1,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 刀光
@@ -305,12 +305,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.95F,
-                percentageGrowth = 0.05F,
+                percentage = 0.95,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 豪放不羁
@@ -331,12 +331,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.02F,
-                percentageGrowth = 0F,
+                percentage = 0.02,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 破坏真诀
@@ -357,12 +357,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.5F,
-                percentageGrowth = 0.02F,
+                percentage = 0.5,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 星卜
@@ -383,12 +383,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
             EffectEntity(
                 id = "2000312",
@@ -407,12 +407,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.4F,
-                percentageGrowth = 0.2F,
+                percentage = 0.4,
+                percentageGrowth = 0.2,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 0F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 0.0
             ),
 
             // 星罗棋布
@@ -433,12 +433,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.6F,
-                percentageGrowth = 0.02F,
+                percentage = 1.6,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 宿命
@@ -459,12 +459,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 会心一击
@@ -485,12 +485,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.2F,
-                percentageGrowth = 0.1F,
+                percentage = 1.2,
+                percentageGrowth = 0.1,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 元力
@@ -511,12 +511,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.15F,
-                percentageGrowth = 0.02F,
+                percentage = 0.15,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
             EffectEntity(
                 id = "2000512",
@@ -535,12 +535,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.15F,
-                percentageGrowth = 0.02F,
+                percentage = 0.15,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 孤注一掷
@@ -561,12 +561,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.01F,
+                percentage = 0.1,
+                percentageGrowth = 0.01,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
             EffectEntity(
                 id = "2000522",
@@ -585,12 +585,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 2F,
-                percentageGrowth = 0.1F,
+                percentage = 2.0,
+                percentageGrowth = 0.1,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 孤傲龙王
@@ -611,12 +611,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.3F,
-                percentageGrowth = 0.02F,
+                percentage = 0.3,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 刀气
@@ -637,12 +637,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.15F,
-                percentageGrowth = 0.05F,
+                percentage = 1.15,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 浮光掠影
@@ -663,12 +663,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 璀璨光华
@@ -689,12 +689,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_DODGE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 2F,
-                percentageGrowth = 0.2F,
+                percentage = 2.0,
+                percentageGrowth = 0.2,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 沙脉
@@ -715,12 +715,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.6F,
-                percentageGrowth = 0.02F,
+                percentage = 0.6,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.02F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.02
             ),
 
             // 沙咒
@@ -741,12 +741,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.2F,
-                percentageGrowth = 0.1F,
+                percentage = 1.2,
+                percentageGrowth = 0.1,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
             EffectEntity(
                 id = "2000822",
@@ -765,12 +765,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1F,
-                percentageGrowth = 0F,
+                percentage = 1.0,
+                percentageGrowth = 0.0,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.2F,
-                triggerProbabilityGrowth = 0.01F
+                triggerProbability = 0.2,
+                triggerProbabilityGrowth = 0.01
             ),
 
             // 脉经
@@ -791,12 +791,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
             EffectEntity(
                 id = "2000912",
@@ -815,12 +815,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 海上明月
@@ -841,12 +841,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.2F,
-                percentageGrowth = 0.1F,
+                percentage = 1.2,
+                percentageGrowth = 0.1,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 易形残玄
@@ -867,12 +867,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 龙象般若
@@ -893,12 +893,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.5F,
-                percentageGrowth = 0.05F,
+                percentage = 1.5,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 时光之咒
@@ -919,12 +919,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
             EffectEntity(
                 id = "2001112",
@@ -943,12 +943,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
             EffectEntity(
                 id = "2001113",
@@ -967,12 +967,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.1F,
-                percentageGrowth = 0.02F,
+                percentage = 0.1,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 天道刑法
@@ -993,12 +993,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_HEALTH_LOW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.35F,
-                percentageGrowth = 0.05F,
+                percentage = 1.35,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 执念
@@ -1019,12 +1019,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.05F,
-                percentageGrowth = 0.01F,
+                percentage = 0.05,
+                percentageGrowth = 0.01,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 弦线
@@ -1045,12 +1045,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.5F,
-                percentageGrowth = 0.05F,
+                percentage = 1.5,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 莲心眼
@@ -1071,12 +1071,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 2F,
-                percentageGrowth = 0.02F,
+                percentage = 2.0,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 弱水出鞘
@@ -1097,12 +1097,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 1.05F,
-                percentageGrowth = 0.05F,
+                percentage = 1.05,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 流光金甲
@@ -1123,12 +1123,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 2F,
-                percentageGrowth = 0.02F,
+                percentage = 2.0,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
             EffectEntity(
                 id = "3000312",
@@ -1147,12 +1147,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 脉经盾
@@ -1173,12 +1173,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_SELF,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 天命蝎尾
@@ -1199,12 +1199,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 丹蝎九尾
@@ -1225,12 +1225,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_SINGLE,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 2F,
-                percentageGrowth = 0.2F,
+                percentage = 2.0,
+                percentageGrowth = 0.2,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 天生沙脉
@@ -1251,12 +1251,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 时光之沙
@@ -1277,12 +1277,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ALL,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.7F,
-                percentageGrowth = 0.05F,
+                percentage = 0.7,
+                percentageGrowth = 0.05,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
 
             // 诡诈
@@ -1303,12 +1303,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_AROUND,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.2F,
-                percentageGrowth = 0.02F,
+                percentage = 0.2,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 1F,
-                triggerProbabilityGrowth = 1F
+                triggerProbability = 1.0,
+                triggerProbabilityGrowth = 1.0
             ),
 
             // 垂死坚持
@@ -1329,12 +1329,12 @@ object EffectDataSource {
                 effectObject = EffectEnum.EFFECT_OBJECT_OTHERS,
                 effectScope = EffectEnum.EFFECT_SCOPE_ROW,
                 effectType = EffectEnum.EFFECT_TYPE_PERCENTAGE,
-                percentage = 0.3F,
-                percentageGrowth = 0.02F,
+                percentage = 0.3,
+                percentageGrowth = 0.02,
                 value = 0,
                 valueGrowth = 0,
-                triggerProbability = 0.3F,
-                triggerProbabilityGrowth = 0.2F
+                triggerProbability = 0.3,
+                triggerProbabilityGrowth = 0.2
             ),
         )
     }

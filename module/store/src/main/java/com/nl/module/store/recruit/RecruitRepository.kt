@@ -67,7 +67,7 @@ class RecruitRepository {
                     skillId = skill.id,
                     playerRoleId = playerRoleId,
                     level = 1,
-                    triggerProbability = 0F
+                    triggerProbability = skill.triggerProbability
                 )
             )
             Timber.i("recruit 技能已插入数据库:${skillId} ${skill.name}")
