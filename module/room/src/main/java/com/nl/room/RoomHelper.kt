@@ -30,12 +30,11 @@ class RoomHelper {
         val equipments = mDatabase.equipmentDao().loadEquipments()
         val skills = mDatabase.skillDao().loadSkills()
         val effects = mDatabase.effectDao().loadEffects()
-        Timber.e("当前已有角色数据:${roles.size}")
-        Timber.e("当前已有角色数据:${slogans.size}")
-        Timber.e("当前已有角色数据:${roles.size}")
-        Timber.e("当前已有装备数据:${equipments.size}")
-        Timber.e("当前已有技能数据:${skills.size}")
-        Timber.e("当前已有效果数据:${effects.size}")
+        Timber.i("当前已有角色数据:${roles.size}")
+        Timber.i("当前已有角色Slogan数据:${slogans.size}")
+        Timber.i("当前已有装备数据:${equipments.size}")
+        Timber.i("当前已有技能数据:${skills.size}")
+        Timber.i("当前已有效果数据:${effects.size}")
         return roles.isNotEmpty() && slogans.isNotEmpty() && equipments.isNotEmpty()
                 && skills.isNotEmpty() && effects.isNotEmpty() && null == playerRobot
     }

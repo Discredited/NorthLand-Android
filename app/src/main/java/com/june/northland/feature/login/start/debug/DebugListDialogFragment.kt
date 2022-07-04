@@ -15,6 +15,7 @@ import com.nl.module.role.RoleActivity
 import com.nl.module.skill.list.SkillListActivity
 import com.nl.module.store.StoreActivity
 import com.nl.room.excel.ExcelAnalyze
+import com.nl.room.excel.ExcelManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -85,9 +86,9 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
         viewLifecycleOwner.lifecycleScope.launch {
 
             withContext(Dispatchers.IO) {
-                val inputStream = resources.assets.open("RoleTable.xlsx")
+                val inputStream = ExcelManager.getRoleExcel()
                 // 获取对应的excel
-                val roleList = ExcelAnalyze.analyzeExcel<RoleEntity>(inputStream)
+                val roleList = inputStream?.let { ExcelAnalyze.analyzeExcel<RoleEntity>(it) }
                 Timber.e("获取到了最后的列表 $roleList")
             }
         }
