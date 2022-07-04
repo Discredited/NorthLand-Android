@@ -27,10 +27,10 @@ data class EffectEntity(
     val effectObject: Int = EffectEnum.EFFECT_OBJECT_OTHERS,    // 效果作用对象
     val effectScope: Int = EffectEnum.EFFECT_SCOPE_SINGLE,      // 效果作用范围
     val effectType: Int = EffectEnum.EFFECT_TYPE_PERCENTAGE,    // 效果类型：0-百分比 / 1-固定值
-    val percentage: Float = 0F,                  // 百分比
-    val percentageGrowth: Float = 0F,            // 百分比成长
+    val percentage: Double = 0.0,                  // 百分比
+    val percentageGrowth: Double = 0.0,            // 百分比成长
     val value: Int = 0,                          // 固定值
     val valueGrowth: Int = 0,                    // 固定值成长
-    val triggerProbability: Float = 1F,          // 效果触发概率
-    val triggerProbabilityGrowth: Float = 0F     // 效果触发概率成长
+    val triggerProbability: Double = 1.0,          // 效果触发概率
+    val triggerProbabilityGrowth: Double = 0.0     // 效果触发概率成长
 )
