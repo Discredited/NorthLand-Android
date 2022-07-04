@@ -12,7 +12,7 @@ apply {
 
 android {
     compileSdkVersion Versions.compileSDK
-    buildToolsVersion Versions.buildTools
+    //buildToolsVersion Versions.buildTools
 
     defaultConfig {
         minSdkVersion Versions.minSDK

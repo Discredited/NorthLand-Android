@@ -6,7 +6,7 @@ plugins {
 
 android {
     compileSdkVersion Versions.compileSDK
-    buildToolsVersion Versions.buildTools
+    //buildToolsVersion Versions.buildTools
 
     defaultConfig {
         applicationId "com.june.northland"
