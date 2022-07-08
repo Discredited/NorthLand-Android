@@ -28,19 +28,23 @@ object EffectEnum {
     /**
      * ## 效果触发时机
      */
-    const val EFFECT_TIMING_IMMEDIATE = 0       // 立即触发
-    const val EFFECT_TIMING_ATTACK = 1          // 进攻时触发
-    const val EFFECT_TIMING_DEFENSE = 1         // 防守时触发
-    const val EFFECT_TIMING_INJURED = 1         // 受到伤害时触发
-    const val EFFECT_TIMING_ROUND_START = 1     // 回合开始时触发
-    const val EFFECT_TIMING_ROUND_END = 1       // 回合结束时触发
-    const val EFFECT_TIMING_KILL = 1            // 击杀时触发
-    const val EFFECT_TIMING_DEATH = 1           // 死亡时触发
-    const val EFFECT_TIMING_IMMUNITY = 1        // 免疫伤害时触发
-    const val EFFECT_TIMING_ACTION_OTHER = 1    // 敌方行动时触发
-    const val EFFECT_TIMING_ACTION_SELF = 1     // 己方行动时触发
-    const val EFFECT_TIMING_CRITICAL = 1        // 暴击时触发
-    const val EFFECT_TIMING_DODGE = 1           // 闪避时触发
+    const val EFFECT_TIMING_IMMEDIATE = 0          // 立即触发
+    const val EFFECT_TIMING_ATTACK = 1             // 进攻时触发
+    const val EFFECT_TIMING_DEFENSE = 2            // 防守时触发
+    const val EFFECT_TIMING_INJURED = 3            // 受到伤害时触发
+    const val EFFECT_TIMING_CRITICAL = 4           // 暴击时触发
+    const val EFFECT_TIMING_HIT = 5                // 命中时触发
+    const val EFFECT_TIMING_DODGE = 6              // 闪避时触发
+    const val EFFECT_TIMING_IMMUNITY = 7           // 免疫伤害时触发
+    const val EFFECT_TIMING_KILL = 11              // 击杀(自身)时触发
+    const val EFFECT_TIMING_KILL_OWN_SIDE = 12     // 击杀(队友)时触发
+    const val EFFECT_TIMING_DEATH = 13             // 死亡(自身)时触发
+    const val EFFECT_TIMING_DEATH_OWN_SIDE = 14    // 死亡(自身)时触发
+    const val EFFECT_TIMING_DEATH_ENEMY = 15       // 死亡(自身)时触发
+    const val EFFECT_TIMING_ACTION_OTHER = 21       // 敌方行动时触发
+    const val EFFECT_TIMING_ACTION_SELF = 22        // 己方行动时触发
+    const val EFFECT_TIMING_ROUND_START = 100      // 回合开始时触发
+    const val EFFECT_TIMING_ROUND_END = 101        // 回合结束时触发
 
     /**
      * ## 效果作用
