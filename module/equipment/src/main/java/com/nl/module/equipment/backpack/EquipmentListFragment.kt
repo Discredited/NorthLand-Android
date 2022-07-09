@@ -1,30 +1,23 @@
 package com.nl.module.equipment.backpack
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.click
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseFragment
 import com.nl.component.ext.itemClick
-import com.nl.module.equipment.EquipmentHelper
-import com.nl.module.equipment.EquipmentInfoFragment
-import com.nl.module.equipment.EquipmentVo
-import com.nl.module.equipment.R
+import com.nl.module.equipment.*
 import com.nl.module.equipment.databinding.FragmentEquipmentListBinding
 
 class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
 
-    private val mEquipmentViewModel by activityViewModels<com.nl.module.equipment.EquipmentViewModel>()
+    private val mEquipmentViewModel by activityViewModels<EquipmentViewModel>()
 
-    private val mAdapter = EquipmentAdapter()
+    private val mAdapter = EquipmentListAdapter()
     private val mEquipmentList = mutableListOf<EquipmentVo>()
 
     private var mPart = EquipmentHelper.PART_ALL
@@ -60,119 +53,16 @@ class EquipmentListFragment : NLBaseFragment<FragmentEquipmentListBinding>() {
         }
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner) {
             mAdapter.addData(0, it)
-        })
+        }
 
         requestEquipment(mPart, mQuality)
     }
 
     private fun requestEquipment(part: Int = EquipmentHelper.PART_ALL, quality: Int = 0) {
-        if (mEquipmentList.isEmpty()) {
-            mEquipmentList.addAll(
-                mutableListOf(
-                    EquipmentVo(
-                        "一点黛眉刀",
-                        "1_normal/weapon.png",
-                        500,
-                        EquipmentHelper.PART_WEAPON
-                    ),
-                    EquipmentVo(
-                        "无量刀",
-                        "1_normal/weapon.png",
-                        300,
-                        EquipmentHelper.PART_WEAPON
-                    ),
-                    EquipmentVo(
-                        "劫灰剑",
-                        "1_normal/weapon.png",
-                        200,
-                        EquipmentHelper.PART_WEAPON
-                    ),
-                    EquipmentVo(
-                        "射日弓",
-                        "1_normal/weapon.png",
-                        100,
-                        EquipmentHelper.PART_WEAPON
-                    ),
-                    EquipmentVo(
-                        "恒河沙数盾",
-                        "1_normal/weapon.png",
-                        300,
-                        EquipmentHelper.PART_CLOTHING
-                    ),
-                    EquipmentVo(
-                        "锁子甲",
-                        "1_normal/weapon.png",
-                        200,
-                        EquipmentHelper.PART_CLOTHING
-                    ),
-                    EquipmentVo(
-                        "荆棘甲",
-                        "1_normal/weapon.png",
-                        150,
-                        EquipmentHelper.PART_CLOTHING
-                    ),
-                    EquipmentVo(
-                        "碧落道袍",
-                        "1_normal/weapon.png",
-                        100,
-                        EquipmentHelper.PART_CLOTHING
-                    ),
-                    EquipmentVo(
-                        "闪电靴",
-                        "1_normal/weapon.png",
-                        200,
-                        EquipmentHelper.PART_SHOES
-                    ),
-                    EquipmentVo(
-                        "潮生海落",
-                        "1_normal/weapon.png",
-                        300,
-                        EquipmentHelper.PART_SHOES
-                    ),
-                    EquipmentVo(
-                        "屠戮战靴",
-                        "1_normal/weapon.png",
-                        10,
-                        EquipmentHelper.PART_SHOES
-                    ),
-                    EquipmentVo(
-                        "浮光掠影",
-                        "1_normal/weapon.png",
-                        500,
-                        EquipmentHelper.PART_SHOES
-                    ),
-                    EquipmentVo(
-                        "麻痹戒指",
-                        "1_normal/weapon.png",
-                        200,
-                        EquipmentHelper.PART_RING
-                    ),
-                    EquipmentVo(
-                        "永恒项链",
-                        "1_normal/weapon.png",
-                        300,
-                        EquipmentHelper.PART_RING
-                    ),
-                    EquipmentVo(
-                        "海上明月吊坠",
-                        "1_normal/weapon.png",
-                        10,
-                        EquipmentHelper.PART_RING
-                    ),
-                    EquipmentVo(
-                        "勇者徽章",
-                        "1_normal/weapon.png",
-                        500,
-                        EquipmentHelper.PART_RING
-                    )
-                )
-            )
-        }
         if (part == EquipmentHelper.PART_ALL) {
             mAdapter.setNewInstance(mEquipmentList)
         } else {

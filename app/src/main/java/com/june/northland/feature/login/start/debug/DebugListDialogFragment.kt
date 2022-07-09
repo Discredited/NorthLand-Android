@@ -3,23 +3,16 @@ package com.june.northland.feature.login.start.debug
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.lifecycleScope
 import com.june.base.basic.ext.setLinearManager
 import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.databinding.FragmentDialogDebugListBinding
 import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
-import com.nl.lib.element.role.RoleEntity
 import com.nl.module.characters.list.CharacterListActivity
+import com.nl.module.equipment.list.EquipmentDisplayActivity
 import com.nl.module.role.RoleActivity
 import com.nl.module.skill.list.SkillListActivity
 import com.nl.module.store.StoreActivity
-import com.nl.room.excel.ExcelAnalyze
-import com.nl.room.excel.ExcelManager
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 /**
  * 调试功能列表
@@ -35,10 +28,10 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
 
         mAdapter.itemClick { _, _, position ->
             when (position) {
-                0 -> analyzeExcel()
                 1 -> startActivity(Intent(requireActivity(), RoleActivity::class.java))
-                2 -> startActivity(Intent(requireActivity(), SkillListActivity::class.java))
-                3 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
+                2 -> startActivity(Intent(requireActivity(), EquipmentDisplayActivity::class.java))
+                3 -> startActivity(Intent(requireActivity(), SkillListActivity::class.java))
+                4 -> startActivity(Intent(requireActivity(), StoreActivity::class.java))
                 else -> startActivity(Intent(requireActivity(), CharacterListActivity::class.java))
             }
         }
@@ -59,15 +52,15 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
         mAdapter.setNewInstance(
             mutableListOf(
                 DebugVo(
-                    name = "xlsx解析",
-                    url = "//////"
-                ),
-                DebugVo(
                     name = "人物列表",
                     url = "/////"
                 ),
                 DebugVo(
                     name = "角色列表",
+                    url = "/////"
+                ),
+                DebugVo(
+                    name = "装备列表",
                     url = "/////"
                 ),
                 DebugVo(
@@ -80,18 +73,6 @@ class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBindin
                 )
             )
         )
-    }
-
-    private fun analyzeExcel() {
-        viewLifecycleOwner.lifecycleScope.launch {
-
-            withContext(Dispatchers.IO) {
-                val inputStream = ExcelManager.getRoleExcel()
-                // 获取对应的excel
-                val roleList = inputStream?.let { ExcelAnalyze.analyzeExcel<RoleEntity>(it) }
-                Timber.e("获取到了最后的列表 $roleList")
-            }
-        }
     }
 
     companion object {

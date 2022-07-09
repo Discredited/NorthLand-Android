@@ -12,6 +12,7 @@ object EquipmentHelper {
      * 鞋子：固定属性速度
      * 戒指：固定属性攻击、生命、防御、暴击、抵抗、命中、闪避
      * 项链：固定属性攻击、生命、防御、暴击、抵抗、命中、闪避
+     * 辅助：固定属性暴击、抵抗、命中、闪避
      */
     const val PART_ALL = 0  // 所有部位
     const val PART_WEAPON = 1  // 武器
@@ -93,17 +94,17 @@ object EquipmentHelper {
         val icon = equipmentIcon(quality)
 
         return EquipmentVo(
+            id = equipment.id,
             name = name,
             icon = icon,
             value = equipment.value,
             part = equipment.part,
-            id = equipment.id,
             quality = quality,
-            valueUpgrade = equipment.valueUpgrade,
+            valueGrowth = equipment.valueGrowth,
             property = equipment.property,
             basicDesc = equipment.basicDesc,
             extraDesc = equipment.extraDesc,
-            strengthenMax = equipment.strengthenMax,
+            strengthenGrowth = equipment.strengthenGrowth,
             strengthen = equipment.strengthen,
             strengthenAdditions = equipment.strengthenAdditions
         )

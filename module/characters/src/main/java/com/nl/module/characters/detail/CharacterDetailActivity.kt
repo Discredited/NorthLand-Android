@@ -14,7 +14,6 @@ import com.nl.module.characters.AttributeExplanationFragment
 import com.nl.module.characters.CharacterPotentialFragment
 import com.nl.module.characters.CharacterVo
 import com.nl.module.characters.databinding.ActivityCharacterDetailBinding
-import com.nl.module.equipment.ConstantUtils
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.choose.EquipmentChooseActivity
@@ -96,8 +95,8 @@ class CharacterDetailActivity : NLBaseActivity<ActivityCharacterDetailBinding>()
         mBinding.vCharacterDisplay.setCharacterAndEquipment(
             powerColor,
             character,
-            ConstantUtils.randomEquipment(1),
-            ConstantUtils.randomEquipment(2)
+//            ConstantUtils.randomEquipment(1),
+//            ConstantUtils.randomEquipment(2)
         )
     }
 

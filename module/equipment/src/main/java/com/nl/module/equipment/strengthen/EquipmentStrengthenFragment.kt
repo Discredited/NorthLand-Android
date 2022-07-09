@@ -47,8 +47,8 @@ class EquipmentStrengthenFragment : NLBaseFragment<FragmentEquipmentStrengthenBi
         mEquipmentVo = equipment
 
         mBinding.tvStrengthenLevel.text = "当前强化等级:${equipment.strengthen}"
-        mBinding.tvStrengthenValue.text = "当前强化属性:攻击力+${equipment.strengthen * equipment.valueUpgrade}"
-        mBinding.tvStrengthenNextValue.text = "下次强化属性:攻击力+${equipment.valueUpgrade}"
+        mBinding.tvStrengthenValue.text = "当前强化属性:攻击力+${equipment.strengthen * equipment.valueGrowth}"
+        mBinding.tvStrengthenNextValue.text = "下次强化属性:攻击力+${equipment.valueGrowth}"
 
         equipment.strengthenAdditions?.let {
             mBinding.vStrengthenAddition.initAddition(it)
@@ -60,18 +60,18 @@ class EquipmentStrengthenFragment : NLBaseFragment<FragmentEquipmentStrengthenBi
         mEquipmentViewModel.equipmentStrengthen("", level)
         mEquipmentVo?.let {
             val levelStep = if (level == -1) {
-                it.strengthenMax - it.strengthen
+                it.strengthenGrowth - it.strengthen
             } else {
                 1
             }
 
             if (level == -1) {
-                it.strengthen = it.strengthenMax
+                it.strengthen = it.strengthenGrowth
             } else {
                 it.strengthen = it.strengthen + 1
             }
 
-            it.value = it.value + it.valueUpgrade * levelStep
+            it.value = it.value + it.valueGrowth * levelStep
 
             if (!it.enableStrength()) {
                 mBinding.btStrengthenMin.isEnabled = false

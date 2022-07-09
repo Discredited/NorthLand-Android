@@ -17,9 +17,10 @@ dependencies {
     implementation Dependencies.lifecycleRuntimeKtx
 
     //implementation Dependencies.nlComponent
-    implementation project(path: ':base:component')
-
     implementation project(path: ':style')
+    implementation project(path: ':base:component')
+    implementation project(path: ':lib:element')
+    implementation project(path: ':module:room')
 
     implementation Dependencies.juneComponent
     implementation Dependencies.juneNetwork

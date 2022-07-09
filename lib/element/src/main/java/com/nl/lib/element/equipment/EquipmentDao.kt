@@ -17,6 +17,15 @@ interface EquipmentDao {
     @Update
     suspend fun updateEquipments(vararg equipments: EquipmentEntity)
 
+    /**
+     * 查找装备列表
+     */
     @Query("SELECT * FROM equipments")
     suspend fun loadEquipments(): MutableList<EquipmentEntity>
+
+    /**
+     * 根据部位查找装备列表
+     */
+    @Query("SELECT * FROM equipments WHERE part = :part")
+    suspend fun loadEquipmentsByPart(part: Int): MutableList<EquipmentEntity>
 }

@@ -3,6 +3,7 @@ package com.nl.module.equipment.choose
 import android.app.Activity
 import android.content.Intent
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.june.base.basic.ext.addLinearItemDecoration
 import com.june.base.basic.ext.setLinearManager
 import com.nl.component.NLBaseActivity
@@ -10,11 +11,15 @@ import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.databinding.ActivityEquipmentChooseBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
+/**
+ * 装备选择页面
+ */
 class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>() {
 
     private val mEquipmentViewModel by viewModels<EquipmentViewModel>()
-
     private val mAdapter = EquipmentChooseAdapter()
 
     override fun initView() {
@@ -37,13 +42,19 @@ class EquipmentChooseActivity : NLBaseActivity<ActivityEquipmentChooseBinding>()
     }
 
     override fun loadData() {
+        lifecycleScope.launch {
+            mEquipmentViewModel.mEquipmentsFlow.collect {
+                mAdapter.setNewInstance(it)
+            }
+        }
+
         //equipment 部位 1-武器 2-服饰 3-防具 4-鞋子 4-戒指 5-项链
         val part = intent?.getIntExtra("PART", 0) ?: 0
         requestWeaponList(part)
     }
 
     private fun requestWeaponList(part: Int) {
-        mAdapter.setNewInstance(mEquipmentViewModel.equipmentList(part))
+        mEquipmentViewModel.equipmentList(part)
     }
 
     companion object {

@@ -59,7 +59,9 @@
         <activity
             android:name="com.nl.module.characters.detail.CharacterDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.nl.module.equipment.choose.EquipmentChooseActivity" />
+        <activity
+            android:name="com.nl.module.equipment.choose.EquipmentChooseActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".feature.login.signup.LoginActivity"
             android:screenOrientation="portrait" />

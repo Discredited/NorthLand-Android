@@ -3,16 +3,28 @@ package com.nl.module.equipment
 import android.app.Application
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.blankj.utilcode.util.SpanUtils
 import com.nl.component.AppViewModel
 import com.nl.module.equipment.strengthen.StrengthAdditionVo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
+    private val mEquipmentRepository = EquipmentRepository()
     val mEquipmentLive: MutableLiveData<EquipmentVo> = MutableLiveData()
 
-    fun equipmentList(part: Int): MutableList<EquipmentVo> {
-        return ConstantUtils.randomEquipmentList(part)
+    val mEquipmentsFlow: MutableSharedFlow<MutableList<EquipmentVo>> = MutableStateFlow(mutableListOf())
+
+    fun equipmentList(part: Int = EquipmentHelper.PART_ALL) {
+        viewModelScope.launch {
+            val list = withContext(Dispatchers.IO) { mEquipmentRepository.equipmentList(part) }
+            mEquipmentsFlow.emit(list)
+        }
     }
 
     fun equipmentDetail(id: String): EquipmentVo {
@@ -50,12 +62,12 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
 
     //打造装备信息
     fun equipmentBuildInfo(part: Int): EquipmentVo {
-        return ConstantUtils.randomEquipment(part)
+        return EquipmentVo()
     }
 
     //打造装备
     fun equipmentBuild(part: Int): EquipmentVo {
-        return ConstantUtils.randomEquipment(part)
+        return EquipmentVo()
     }
 
     //强化装备
@@ -77,10 +89,10 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
             part = equipment?.part ?: 0,
             id = equipment?.id ?: "",
             quality = forgingQuality,
-            valueUpgrade = equipment?.valueUpgrade ?: 0,
+            valueGrowth = equipment?.valueGrowth ?: 0,
             property = equipment?.property ?: 0,
             extraDesc = equipment?.extraDesc ?: "",
-            strengthenMax = equipment?.strengthenMax ?: 0,
+            strengthenGrowth = equipment?.strengthenGrowth ?: 0,
             strengthen = equipment?.strengthen ?: 0,
             strengthenAdditions = equipment?.strengthenAdditions ?: mutableListOf()
         )

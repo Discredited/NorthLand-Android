@@ -7,14 +7,15 @@ import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ItemEquipmentBackpackBinding
 
-class EquipmentAdapter :
-    BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBackpackBinding>>(R.layout.item_equipment_backpack) {
+class EquipmentListAdapter : BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBackpackBinding>>(
+    R.layout.item_equipment_backpack
+) {
 
     override fun convert(holder: BaseDataBindingHolder<ItemEquipmentBackpackBinding>, item: EquipmentVo) {
         holder.dataBinding?.apply {
             ivCover.loadAvatar(item.icon)
             tvName.text = item.name
-            tvLevel.text = "${holder.adapterPosition * 3}"
+            tvLevel.text = "${holder.layoutPosition * 3}"
             tvAttribute.text = "攻击力+${item.value}"
         }
     }
