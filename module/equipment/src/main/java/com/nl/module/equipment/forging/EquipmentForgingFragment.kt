@@ -1,7 +1,7 @@
 package com.nl.module.equipment.forging
 
-import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.june.base.basic.ext.click
 import com.nl.component.NLBaseFragment
@@ -21,12 +21,11 @@ class EquipmentForgingFragment : NLBaseFragment<FragmentEquipmentForgingBinding>
         mBinding.btForging.click { forgingEquipment("") }
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner, {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mEquipmentViewModel.mEquipmentLive.observe(viewLifecycleOwner) {
             requestForgingInfo(it)
-        })
+        }
     }
 
     private fun requestForgingInfo(equipment: EquipmentVo) {

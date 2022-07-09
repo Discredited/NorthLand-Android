@@ -11,8 +11,8 @@ import java.io.InputStream
 object ExcelManager {
 
     private const val EXCEL_ROLE = "excel/RoleTable.xlsx"
+    private const val EXCEL_EQUIPMENT = "excel/EquipmentTable.xlsx"
     private const val EXCEL_SKILL = "excel/SkillTable.xlsx"
-
     private const val EXCEL_EFFECT = "excel/EffectTable.xlsx"
 
     private fun assetsOpen(fileName: String): InputStream? {
@@ -26,6 +26,10 @@ object ExcelManager {
 
     fun getRoleExcel(): InputStream? {
         return assetsOpen(EXCEL_ROLE)
+    }
+
+    fun getEquipmentExcel(): InputStream? {
+        return assetsOpen(EXCEL_EQUIPMENT)
     }
 
     fun getSkillExcel(): InputStream? {

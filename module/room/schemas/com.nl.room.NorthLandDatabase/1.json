@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "556012745aa4a75b24e50b73d7503f36",
+    "identityHash": "72a4d78a51db15241427dc322c59cfc4",
     "entities": [
       {
         "tableName": "roles",
@@ -516,7 +516,7 @@
       },
       {
         "tableName": "equipments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `icon` TEXT NOT NULL, `part` INTEGER NOT NULL, `quality` INTEGER NOT NULL, `property` INTEGER NOT NULL, `basicDesc` TEXT NOT NULL, `extraDesc` TEXT NOT NULL, `value` INTEGER NOT NULL, `valueGrowth` INTEGER NOT NULL, `strength` INTEGER NOT NULL, `strengthMax` INTEGER NOT NULL, `strengthValue` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `icon` TEXT NOT NULL, `basicDesc` TEXT NOT NULL, `extraDesc` TEXT NOT NULL, `part` INTEGER NOT NULL, `quality` INTEGER NOT NULL, `property` INTEGER NOT NULL, `value` INTEGER NOT NULL, `valueGrowth` INTEGER NOT NULL, `strength` INTEGER NOT NULL, `strengthGrowth` INTEGER NOT NULL, `forging` INTEGER NOT NULL, `forgingGrowth` REAL NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -533,6 +533,18 @@
           {
             "fieldPath": "icon",
             "columnName": "icon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "basicDesc",
+            "columnName": "basicDesc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "extraDesc",
+            "columnName": "extraDesc",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -555,18 +567,6 @@
             "notNull": true
           },
           {
-            "fieldPath": "basicDesc",
-            "columnName": "basicDesc",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "extraDesc",
-            "columnName": "extraDesc",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
             "fieldPath": "value",
             "columnName": "value",
             "affinity": "INTEGER",
@@ -585,15 +585,21 @@
             "notNull": true
           },
           {
-            "fieldPath": "strengthMax",
-            "columnName": "strengthMax",
+            "fieldPath": "strengthGrowth",
+            "columnName": "strengthGrowth",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "strengthValue",
-            "columnName": "strengthValue",
+            "fieldPath": "forging",
+            "columnName": "forging",
             "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "forgingGrowth",
+            "columnName": "forgingGrowth",
+            "affinity": "REAL",
             "notNull": true
           }
         ],
@@ -1010,7 +1016,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '556012745aa4a75b24e50b73d7503f36')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '72a4d78a51db15241427dc322c59cfc4')"
     ]
   }
 }
