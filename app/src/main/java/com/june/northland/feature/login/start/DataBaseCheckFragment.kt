@@ -30,16 +30,14 @@ class DataBaseCheckFragment : NLBaseFragment<FragmentDatabaseCheckBinding>() {
     }
 
     private fun checkDatabase() {
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.Main) {
             val dataExist = withContext(Dispatchers.IO) { RoomHelper.getInstance().checkDataBase() }
             if (dataExist) {
                 mBinding.pbLoading.progress = 100
                 mStartUpViewModel.mEntranceLive.value = StartUpViewModel.GRAPH_START_ENTRANCE
             } else {
                 mBinding.pbLoading.progress = 50
-                withContext(Dispatchers.IO) {
-                    RoomHelper.getInstance().mockDataBase()
-                }
+                withContext(Dispatchers.IO) { RoomHelper.getInstance().mockDataBase() }
                 mBinding.pbLoading.progress = 100
                 mStartUpViewModel.mEntranceLive.value = StartUpViewModel.GRAPH_START_ENTRANCE
             }

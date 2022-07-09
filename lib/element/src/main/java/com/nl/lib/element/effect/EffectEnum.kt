@@ -43,8 +43,8 @@ object EffectEnum {
     const val EFFECT_TIMING_DEATH_ENEMY = 15       // 死亡(自身)时触发
     const val EFFECT_TIMING_ACTION_OTHER = 21       // 敌方行动时触发
     const val EFFECT_TIMING_ACTION_SELF = 22        // 己方行动时触发
-    const val EFFECT_TIMING_ROUND_START = 100      // 回合开始时触发
-    const val EFFECT_TIMING_ROUND_END = 101        // 回合结束时触发
+    const val EFFECT_TIMING_ROUND_START = 101      // 回合开始时触发
+    const val EFFECT_TIMING_ROUND_END = 102        // 回合结束时触发
 
     /**
      * ## 效果作用
@@ -88,6 +88,6 @@ object EffectEnum {
     /**
      * 效果类型
      */
-    const val EFFECT_TYPE_PERCENTAGE = 0        // 百分比类型
-    const val EFFECT_TYPE_VALUE = 1             // 固定值类型
+    const val EFFECT_TYPE_PERCENTAGE = 1        // 百分比类型
+    const val EFFECT_TYPE_VALUE = 2             // 固定值类型
 }

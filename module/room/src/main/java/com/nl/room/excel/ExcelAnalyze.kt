@@ -64,12 +64,28 @@ object ExcelAnalyze {
         val fieldName = fieldValue ?: ""
         return when (cell.cellType) {
             Cell.CELL_TYPE_NUMERIC -> {
-                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cellNumber(cell.numericCellValue)}")
+                Timber.i(
+                    "当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${
+                        cellNumber(
+                            cell.numericCellValue
+                        )
+                    }"
+                )
                 cellNumber(cell.numericCellValue)
             }
             Cell.CELL_TYPE_FORMULA -> {
-                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cellNumber(cell.numericCellValue)}")
+                Timber.i(
+                    "当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${
+                        cellNumber(
+                            cell.numericCellValue
+                        )
+                    }"
+                )
                 cellNumber(cell.numericCellValue)
+            }
+            Cell.CELL_TYPE_BOOLEAN -> {
+                Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cell.booleanCellValue}")
+                cell.booleanCellValue
             }
             Cell.CELL_TYPE_STRING -> {
                 Timber.i("当前Cell类型:${cell.cellType}-${getCellTypeStr(cell.cellType)}  $headerName  ${fieldName}:${cell.richStringCellValue.string}")
