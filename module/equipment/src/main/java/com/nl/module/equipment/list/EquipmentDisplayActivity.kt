@@ -2,7 +2,7 @@ package com.nl.module.equipment.list
 
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.june.base.basic.ext.setLinearManager
+import com.june.base.basic.ext.setGridManager
 import com.nl.component.NLBaseActivity
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.databinding.ActivityEquipmentDisplayBinding
@@ -22,7 +22,7 @@ class EquipmentDisplayActivity : NLBaseActivity<ActivityEquipmentDisplayBinding>
 
     override fun initView() {
         mBinding.rvEquipment.apply {
-            setLinearManager()
+            setGridManager(spanCount = 4)
             adapter = mAdapter
         }
     }

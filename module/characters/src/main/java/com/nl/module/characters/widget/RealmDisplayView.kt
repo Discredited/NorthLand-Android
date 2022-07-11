@@ -19,8 +19,8 @@ class RealmDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var mActiveIconRes = R.drawable.ic_rating_yellow
-    private var mNegativeIconRes = R.drawable.ic_rating_gray
+    private var mActiveIconRes = R.drawable.svg_ordinary
+    private var mNegativeIconRes = R.drawable.svg_primary
     private var mActiveBitmap: Bitmap? = null
     private var mNegativeBitmap: Bitmap? = null
 

@@ -9,6 +9,7 @@ import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ItemEquipmentBinding
+import timber.log.Timber
 
 class EquipmentAdapter :
     BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBinding>>(R.layout.item_equipment) {
@@ -16,11 +17,13 @@ class EquipmentAdapter :
     override fun convert(holder: BaseDataBindingHolder<ItemEquipmentBinding>, item: EquipmentVo) {
         holder.dataBinding?.apply {
             val qualityColor = EquipmentHelper.equipmentQualityColor(item.quality)
-            ivEquipmentIconBg.setDrawableWithStroke(strokeColor = qualityColor,)
+            Timber.e("${item.name}  装备品质:${item.quality}  颜色:${qualityColor}")
+            if (holder.layoutPosition % 2 == 0) {
+                ivEquipmentIconBg.setDrawableWithStroke(strokeColor = qualityColor, strokeWidth = 20)
+            }
+            //ivEquipmentIconBg.setBackgroundColor(qualityColor)
             ivEquipmentIcon.loadImage(FilePathHelper.getEquipmentIcon(item.icon))
-            tvEquipmentName.text = item.name
-            tvEquipmentAttr.text = "${holder.layoutPosition * 3}"
-            tvEquipmentAttrExtra.text = "攻击力+${item.value}"
+            vEquipmentStart.setEquipmentStar(item)
         }
     }
 }

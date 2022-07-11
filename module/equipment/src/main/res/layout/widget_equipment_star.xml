@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:parentTag="androidx.appcompat.widget.LinearLayoutCompat">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star_1"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/svg_ordinary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star_2"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/svg_primary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star_3"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/svg_intermediate" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star_4"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/svg_advanced" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star_5"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/svg_rare" />
+</merge>
