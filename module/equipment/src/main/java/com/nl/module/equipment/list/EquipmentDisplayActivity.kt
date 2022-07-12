@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 class EquipmentDisplayActivity : NLBaseActivity<ActivityEquipmentDisplayBinding>() {
 
     private val mViewModel by viewModels<EquipmentViewModel>()
-    private val mAdapter = EquipmentAdapter()
+    private val mAdapter = EquipmentDisplayAdapter()
 
     override fun initView() {
         mBinding.rvEquipment.apply {

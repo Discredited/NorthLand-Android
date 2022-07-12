@@ -12,7 +12,7 @@ import com.nl.module.equipment.R
 import com.nl.module.equipment.databinding.ItemEquipmentBinding
 import timber.log.Timber
 
-class EquipmentAdapter :
+class EquipmentDisplayAdapter :
     BaseQuickAdapter<EquipmentVo, BaseDataBindingHolder<ItemEquipmentBinding>>(R.layout.item_equipment) {
 
     override fun convert(holder: BaseDataBindingHolder<ItemEquipmentBinding>, item: EquipmentVo) {
