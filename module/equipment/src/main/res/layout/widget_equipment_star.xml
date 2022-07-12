@@ -8,31 +8,31 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_star_1"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
         android:src="@drawable/svg_ordinary" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_star_2"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
         android:src="@drawable/svg_primary" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_star_3"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
         android:src="@drawable/svg_intermediate" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_star_4"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
         android:src="@drawable/svg_advanced" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_star_5"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
         android:src="@drawable/svg_rare" />
 </merge>

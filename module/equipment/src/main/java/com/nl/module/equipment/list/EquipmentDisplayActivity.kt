@@ -2,6 +2,7 @@ package com.nl.module.equipment.list
 
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.june.base.basic.decoration.GridItemDecoration
 import com.june.base.basic.ext.setGridManager
 import com.nl.component.NLBaseActivity
 import com.nl.module.equipment.EquipmentViewModel
@@ -24,6 +25,7 @@ class EquipmentDisplayActivity : NLBaseActivity<ActivityEquipmentDisplayBinding>
         mBinding.rvEquipment.apply {
             setGridManager(spanCount = 4)
             adapter = mAdapter
+            addItemDecoration(GridItemDecoration(column = 4, space = 20))
         }
     }
 
