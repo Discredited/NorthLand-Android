@@ -2,14 +2,15 @@
 
     <string name="str_level">等级</string>
 
-    <string name="str_basic_attributes">基本属性</string>
+    <string name="str_property_random">随机获得一种属性</string>
+    <string name="str_property_basic">基本属性</string>
+    <string name="str_property_basic_random">随机获得一种基本属性</string>
     <string name="str_attack">攻击</string>
     <string name="str_defense">防御</string>
     <string name="str_health">生命</string>
     <string name="str_speed">速度</string>
-
-
-    <string name="str_extra_attributes">额外属性</string>
+    <string name="str_property_extra">额外属性</string>
+    <string name="str_property_extra_random">随机获得一种额外属性</string>
     <string name="str_critical">暴击</string>
     <string name="str_resister">抵抗</string>
     <string name="str_hit">命中</string>
@@ -17,7 +18,6 @@
 
     <string name="str_logout">退出登录</string>
     <string name="str_talent_skill">天赋技能</string>
-
 
     <string name="str_skill_name_and_level">%1$s - Lv.%2$s</string>
     <string name="title_attribute_explanation">属性说明</string>
@@ -33,8 +33,11 @@
     <string name="equipment_extreme">至臻</string>
     <string name="equipment_peerless">绝世</string>
     <string name="equipment_name_less">無名</string>
+    <string name="equipment_property_origin">原始属性</string>
+    <string name="equipment_property_strengthen">强化属性</string>
+    <string name="equipment_property_forging">锻造属性</string>
 
-    <string name="str_attribute">属性</string>
+    <string name="str_property">属性</string>
     <string name="str_quality">品质</string>
     <string name="str_reset">重置</string>
 
@@ -104,4 +107,6 @@
     <string name="str_activation">激活</string>
     <string name="str_activated">已激活</string>
     <string name="str_inactivated">未激活</string>
+
+    <string name="str_name_add_value">%s +%d</string>
 </resources>

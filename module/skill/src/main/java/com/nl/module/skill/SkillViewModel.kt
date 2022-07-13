@@ -6,7 +6,7 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nl.component.common.PropertyHelper
+import com.nl.lib.element.base.PropertyHelper
 import com.nl.lib.element.effect.EffectEntity
 import com.nl.lib.element.effect.EffectEnum
 import com.nl.lib.element.enum.CommonEnum

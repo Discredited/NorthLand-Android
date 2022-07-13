@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/common_margin"
         android:background="@drawable/selector_pressed_bg_changed"
         android:gravity="center"
-        android:text="@string/str_attribute"
+        android:text="@string/str_property"
         android:textColor="@color/color_text_33"
         android:textSize="@dimen/sp_16"
         app:layout_constraintStart_toStartOf="parent"

@@ -50,7 +50,7 @@ class EquipmentInfoFragment : BaseDialogFragment<FragmentDialogEquipmentInfoBind
     }
 
     private fun requestEquipment() {
-        val equipment = mEquipmentViewModel.equipmentDetail("")
+        val equipment = mEquipmentViewModel.equipmentDetail2("")
         val qualityColor = ContextCompat.getColor(
             requireContext(),
             ColorUtils.equipmentQualityColor(equipment.quality)

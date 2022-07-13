@@ -10,10 +10,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.nl.component.NLBaseActivity
 import com.nl.component.common.ColorUtils
 import com.nl.component.common.FilePathHelper
-import com.nl.component.common.PropertyHelper
 import com.nl.component.ext.loadAvatar
 import com.nl.component.ext.setDrawableWithStroke
 import com.nl.component.widget.res.ResourceVo
+import com.nl.lib.element.base.PropertyHelper
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.EquipmentVo
@@ -40,9 +40,9 @@ class EquipmentDetailActivity : NLBaseActivity<ActivityEquipmentDetailBinding>()
     }
 
     override fun loadData() {
-        mEquipmentViewModel.mEquipmentLive.observe(this, {
+        mEquipmentViewModel.mEquipmentLive.observe(this) {
             initEquipment(it)
-        })
+        }
 
         mPagerTitleList.add(getString(R.string.str_strengthen))
         mPagerTitleList.add(getString(R.string.str_forging))
@@ -65,7 +65,7 @@ class EquipmentDetailActivity : NLBaseActivity<ActivityEquipmentDetailBinding>()
     }
 
     private fun requestEquipment() {
-        mEquipmentViewModel.equipmentDetail("")
+        mEquipmentViewModel.equipmentDetail2("")
     }
 
     private fun initEquipment(equipment: EquipmentVo) {

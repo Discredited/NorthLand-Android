@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_320"
+    android:layout_height="@dimen/dp_400">
+
+    <View
+        android:layout_width="@dimen/dp_320"
+        android:layout_height="@dimen/dp_400"
+        android:background="#D9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:background="#D9BB66FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nl.module.equipment.widget.EquipmentIconView
+        android:id="@+id/v_equipment_icon"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/v_equipment_icon"
+        app:layout_constraintTop_toTopOf="@id/v_equipment_icon"
+        tools:text="裂创心灵之刃"
+        tools:textColor="@color/color_equipment_normal" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_combat_power"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintStart_toEndOf="@id/v_equipment_icon"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_name"
+        tools:text="战力:364" />
+
+    <com.nl.module.equipment.widget.EquipmentStarView
+        android:id="@+id/equipment_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@id/v_equipment_icon"
+        app:layout_constraintStart_toEndOf="@id/v_equipment_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_origin_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_text_33"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_3"
+        android:text="@string/equipment_property_origin"
+        android:textColor="@color/color_text_99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_equipment_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_origin_property"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_origin_title"
+        tools:text="攻击力+1920" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_strength_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_text_33"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_3"
+        android:text="@string/equipment_property_strengthen"
+        android:textColor="@color/color_text_99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_origin_property" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_strength_property"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_strength_title"
+        tools:text="强化可随机获得一条额外属性" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_forging_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_text_33"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_3"
+        android:text="@string/equipment_property_forging"
+        android:textColor="@color/color_text_99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_strength_property" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_equipment_forging_property"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equipment_forging_title"
+        tools:text="锻造可随机获得一条额外属性" />
+</androidx.constraintlayout.widget.ConstraintLayout>

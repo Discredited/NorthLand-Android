@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_margin"
             android:layout_marginTop="@dimen/dp_20"
-            android:text="@string/str_basic_attributes"
+            android:text="@string/str_property_basic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivEquipmentIcon" />
 
@@ -69,7 +69,7 @@
             android:layout_marginStart="@dimen/common_margin"
             android:layout_marginTop="@dimen/dp_20"
             android:layout_marginEnd="@dimen/common_margin"
-            android:text="@string/str_extra_attributes"
+            android:text="@string/str_property_extra"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBasic" />
 

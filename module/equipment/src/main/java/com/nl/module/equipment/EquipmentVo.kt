@@ -2,16 +2,17 @@ package com.nl.module.equipment
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.nl.component.common.PropertyHelper
+import com.nl.lib.element.enum.PropertyEnum
+import com.nl.lib.element.equipment.EquipmentEnum
 import com.nl.module.equipment.strengthen.StrengthAdditionVo
 
 data class EquipmentVo(
     val id: String = "111111",
     val name: String = "一点黛眉刀",
     val icon: String = "",
-    val part: Int = EquipmentHelper.PART_ALL,  // 部位
+    val part: Int = EquipmentEnum.PART_ALL,  // 部位
     val quality: Int = 0,  // 品质
-    val property: Int = PropertyHelper.PRO_ATTACK,  // 属性
+    val property: Int = PropertyEnum.PRO_ATTACK,  // 属性
     val basicDesc: String = "",
     val extraDesc: CharSequence = "",
     var value: Int = 100,
@@ -25,7 +26,7 @@ data class EquipmentVo(
 
     fun enableStrength(): Boolean = strengthen < 100
 
-    fun isQualityMax() = quality >= EquipmentHelper.QUALITY_PEERLESS
+    fun isQualityMax() = quality >= EquipmentEnum.QUALITY_PEERLESS
 
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",

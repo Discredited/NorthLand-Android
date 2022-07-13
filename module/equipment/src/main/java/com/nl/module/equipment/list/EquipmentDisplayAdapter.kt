@@ -3,9 +3,6 @@ package com.nl.module.equipment.list
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.nl.component.common.FilePathHelper
-import com.nl.component.ext.loadImage
-import com.nl.component.ext.setDrawableWithStroke
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentVo
 import com.nl.module.equipment.R
@@ -24,9 +21,8 @@ class EquipmentDisplayAdapter :
             Timber.e("${item.name}  装备品质:${item.quality}  颜色:${qualityColor}")
             tvEquipmentName.setBackgroundColor(qualityColor)
             tvEquipmentName.text = item.name
-            ivEquipmentIconBg.setDrawableWithStroke(strokeColor = qualityColor, strokeWidth = 20)
-            ivEquipmentIcon.loadImage(FilePathHelper.getEquipmentIcon(item.icon))
-            vEquipmentStart.setEquipmentStar(item)
+            vEquipmentIcon.setEquipmentIcon(item, qualityColor)
+            vEquipmentStar.setEquipmentStar(item)
         }
     }
 }

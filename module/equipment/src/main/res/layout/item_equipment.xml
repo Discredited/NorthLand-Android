@@ -20,34 +20,24 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="裂创心灵之刃" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_equipment_icon_bg"
-            android:layout_width="@dimen/dp_70"
-            android:layout_height="@dimen/dp_70"
-            android:layout_marginTop="@dimen/dp_5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_equipment_name"
-            tools:src="@drawable/shape_rect_realm_radius_2" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_equipment_icon"
+        <com.nl.module.equipment.widget.EquipmentIconView
+            android:id="@+id/v_equipment_icon"
             android:layout_width="@dimen/dp_90"
             android:layout_height="@dimen/dp_90"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_equipment_name"
-            tools:src="@drawable/ic_attack" />
+            app:layout_constraintTop_toBottomOf="@id/tv_equipment_name" />
+
 
         <com.nl.module.equipment.widget.EquipmentStarView
-            android:id="@+id/v_equipment_start"
+            android:id="@+id/v_equipment_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_8"
             android:layout_marginEnd="@dimen/dp_4"
             android:layout_marginBottom="@dimen/dp_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_equipment_icon_bg" />
+            app:layout_constraintTop_toBottomOf="@id/v_equipment_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

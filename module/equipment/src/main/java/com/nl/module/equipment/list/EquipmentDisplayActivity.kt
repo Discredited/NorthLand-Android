@@ -5,6 +5,7 @@ import androidx.lifecycle.lifecycleScope
 import com.june.base.basic.decoration.GridItemDecoration
 import com.june.base.basic.ext.setGridManager
 import com.nl.component.NLBaseActivity
+import com.nl.component.ext.itemClick
 import com.nl.module.equipment.EquipmentViewModel
 import com.nl.module.equipment.databinding.ActivityEquipmentDisplayBinding
 import kotlinx.coroutines.flow.collect
@@ -22,6 +23,13 @@ class EquipmentDisplayActivity : NLBaseActivity<ActivityEquipmentDisplayBinding>
     private val mAdapter = EquipmentDisplayAdapter()
 
     override fun initView() {
+        mAdapter.itemClick { _, _, position ->
+            val equipmentId = mAdapter.getItem(position).id
+            EquipmentDisplayDetailDialogFragment.newInstance(equipmentId).show(
+                supportFragmentManager,
+                EquipmentDisplayDetailDialogFragment::class.java.simpleName
+            )
+        }
         mBinding.rvEquipment.apply {
             setGridManager(spanCount = 4)
             adapter = mAdapter

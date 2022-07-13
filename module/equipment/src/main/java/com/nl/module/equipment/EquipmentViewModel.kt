@@ -27,7 +27,7 @@ class EquipmentViewModel(application: Application) : AppViewModel(application) {
         }
     }
 
-    fun equipmentDetail(id: String): EquipmentVo {
+    fun equipmentDetail2(id: String): EquipmentVo {
         val quality = (Math.random() * 10 % 6).toInt()
         val qualityString = EquipmentHelper.equipmentQuality(quality)
 

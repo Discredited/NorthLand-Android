@@ -18,7 +18,7 @@ class CharacterInfoFragment : NLBaseFragment<FragmentCharacterInfoBinding>() {
             R.drawable.ic_speed,
             R.drawable.ic_attack,
             R.drawable.ic_defense,
-            getString(R.string.str_basic_attributes)
+            "基本属性"
         )
 
         mBinding.vExtraAttribute.initAttributeIcon(
@@ -26,7 +26,7 @@ class CharacterInfoFragment : NLBaseFragment<FragmentCharacterInfoBinding>() {
             R.drawable.ic_resister,
             R.drawable.ic_hit,
             R.drawable.ic_dodge,
-            getString(R.string.str_extra_attributes)
+            "额外属性"
         )
     }
 
