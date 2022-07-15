@@ -44,8 +44,8 @@
     <style name="OutlineButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:paddingLeft">@dimen/dp_10</item>
         <item name="android:paddingRight">@dimen/dp_10</item>
-        <item name="strokeColor">@color/color_text_logo</item>
-        <item name="strokeWidth">@dimen/dp_2</item>
+        <item name="android:strokeColor">@color/color_text_logo</item>
+        <item name="android:strokeWidth">@dimen/dp_2</item>
         <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:minHeight">@dimen/dp_36</item>
         <item name="android:minWidth">@dimen/dp_100</item>

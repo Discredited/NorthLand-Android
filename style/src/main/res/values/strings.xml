@@ -109,4 +109,5 @@
     <string name="str_inactivated">未激活</string>
 
     <string name="str_name_add_value">%s +%d</string>
+    <string name="str_combo_power">战力:%d</string>
 </resources>

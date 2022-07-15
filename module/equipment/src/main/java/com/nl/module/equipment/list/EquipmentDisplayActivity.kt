@@ -38,9 +38,11 @@ class EquipmentDisplayActivity : NLBaseActivity<ActivityEquipmentDisplayBinding>
     }
 
     override fun loadData() {
+        showLoading()
         lifecycleScope.launch {
             mViewModel.mEquipmentsFlow.collect {
                 mAdapter.setNewInstance(it)
+                hideLoading()
             }
         }
 

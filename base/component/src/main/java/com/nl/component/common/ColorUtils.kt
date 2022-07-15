@@ -35,4 +35,10 @@ object ColorUtils {
             else -> R.color.color_equipment_normal
         }
     }
+
+    fun getColorWithAlpha(alpha: Float, baseColor: Int): Int {
+        val a = (255.coerceAtMost(0.coerceAtLeast((alpha * 255).toInt()))) shl 24
+        val rgb = 0x00ffffff and baseColor
+        return a + rgb
+    }
 }

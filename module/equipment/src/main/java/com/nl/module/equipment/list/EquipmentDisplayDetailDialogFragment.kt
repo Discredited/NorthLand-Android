@@ -8,6 +8,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.ToastUtils
 import com.nl.component.NLBaseDialogFragment
+import com.nl.component.common.ColorUtils
+import com.nl.component.ext.setDrawableWithStroke
 import com.nl.lib.element.base.PropertyHelper
 import com.nl.module.equipment.EquipmentHelper
 import com.nl.module.equipment.EquipmentViewModel
@@ -48,15 +50,25 @@ class EquipmentDisplayDetailDialogFragment : NLBaseDialogFragment<DialogFragment
 
     private fun setEquipment(equipment: EquipmentVo) {
         val qualityColor = ContextCompat.getColor(requireContext(), EquipmentHelper.equipmentQualityColor(equipment.quality))
+        val strokeColor = ContextCompat.getColor(requireContext(), R.color.color_gray)
+        val strokeWidth = resources.getDimensionPixelSize(R.dimen.dp_10)
+        val topColor = ColorUtils.getColorWithAlpha(0.75F, qualityColor)
+        mBinding.vBgRoot.setDrawableWithStroke(strokeColor = strokeColor, strokeWidth = strokeWidth)
+        mBinding.vBgBottom.setBackgroundColor(topColor)
         mBinding.vEquipmentIcon.setEquipmentIcon(equipment, qualityColor)
         mBinding.tvEquipmentName.setTextColor(qualityColor)
         mBinding.tvEquipmentName.text = equipment.name
+        mBinding.tvEquipmentCombatPower.text = getString(R.string.str_combo_power, equipment.value * 3)
+        mBinding.vEquipmentStar.setEquipmentStar(equipment)
+        mBinding.tvEquipmentOriginTitle.setBackgroundColor(qualityColor)
         mBinding.tvEquipmentOriginProperty.text = getString(
             R.string.str_name_add_value,
             PropertyHelper.getPropertyName(equipment.property),
             equipment.value
         )
+        mBinding.tvEquipmentStrengthTitle.setBackgroundColor(qualityColor)
         mBinding.tvEquipmentStrengthProperty.text = getString(R.string.str_property_basic_random)
+        mBinding.tvEquipmentForgingTitle.setBackgroundColor(qualityColor)
         mBinding.tvEquipmentForgingProperty.text = getString(R.string.str_property_extra_random)
     }
 
