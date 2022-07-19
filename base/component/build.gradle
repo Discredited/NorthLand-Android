@@ -23,10 +23,13 @@ dependencies {
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
 
-    implementation Dependencies.glide
-    kapt Dependencies.glideCompiler
+    implementation Dependencies.glide.glide
+    kapt Dependencies.glide.glideCompiler
 
     implementation Dependencies.quickAdapter
+    // 状态栏
+    implementation Dependencies.immersionBar.immersionbar
+    implementation Dependencies.immersionBar.immersionbarKtx
 }
 
 apply from: rootDir.absolutePath + '/maven-push.gradle'

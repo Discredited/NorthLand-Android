@@ -25,6 +25,7 @@
         <!-- actionMode  true-弹出时覆盖部分布局 false-不符盖将原有布局下移 -->
         <item name="windowActionModeOverlay">false</item>
 
+        <!-- 默认字体 -->
 <!--        <item name="android:fontFamily">@font/custom_font</item>-->
     </style>
 

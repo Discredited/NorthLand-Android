@@ -97,9 +97,11 @@ interface Dependencies {
     def retrofitAdapterRxJava = "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
 
     // Glide
-    def glide = "com.github.bumptech.glide:glide:4.11.0"
-    def glideCompiler = "com.github.bumptech.glide:compiler:4.11.0"
-    def glideIntegration = "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    def glide = [
+            "glide"           : "com.github.bumptech.glide:glide:4.11.0",
+            "glideCompiler"   : "com.github.bumptech.glide:compiler:4.11.0",
+            "glideIntegration": "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    ]
 
     // BaseRecyclerViewAdapterHelper
     def quickAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
@@ -108,6 +110,13 @@ interface Dependencies {
     def aRouter = "com.alibaba:arouter-api:1.5.2"
     def aRouterCompiler = "com.alibaba:arouter-compiler:1.5.2"
 
+    // 状态栏
+    def immersionBar = [
+            "immersionbar"   : "com.geyifeng.immersionbar:immersionbar:3.2.2",
+            "immersionbarKtx": "com.geyifeng.immersionbar:immersionbar-ktx:3.2.2"
+    ]
+
+    // 腾讯
     def tencent = [
             "mmkv" : "com.tencent:mmkv:1.2.13",
             "bugly": "com.tencent.bugly:crashreport:4.0.4"
