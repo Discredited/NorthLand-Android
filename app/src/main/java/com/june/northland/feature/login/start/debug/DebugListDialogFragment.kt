@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.june.base.basic.ext.setLinearManager
-import com.june.base.basic.part.BaseDialogFragment
 import com.june.northland.databinding.FragmentDialogDebugListBinding
+import com.nl.component.NLBaseDialogFragment
 import com.nl.component.ext.click
 import com.nl.component.ext.itemClick
 import com.nl.module.characters.list.CharacterListActivity
@@ -20,7 +20,7 @@ import com.nl.module.store.StoreActivity
  * 2022/4/3
  * @author June
  */
-class DebugListDialogFragment : BaseDialogFragment<FragmentDialogDebugListBinding>() {
+class DebugListDialogFragment : NLBaseDialogFragment<FragmentDialogDebugListBinding>() {
 
     private val mAdapter by lazy { DebugListAdapter() }
 
