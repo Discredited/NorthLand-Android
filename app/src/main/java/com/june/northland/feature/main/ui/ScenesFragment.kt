@@ -1,8 +1,8 @@
 package com.june.northland.feature.main.ui
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -89,9 +89,8 @@ class ScenesFragment : NLBaseFragment<FragmentMainSceneBinding>() {
         }
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mBinding.vPlayerSection.setPlayerInfo()
         requestCharacter()
         requestPlot()

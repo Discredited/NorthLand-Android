@@ -18,7 +18,7 @@
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
 
         <!-- 设置window全屏显示 没有状态栏 -->
-        <item name="android:windowFullscreen">true</item>
+<!--        <item name="android:windowFullscreen">true</item>-->
 
         <!-- 窗口背景颜色 -->
         <item name="android:windowBackground">@color/color_white</item>
