@@ -1,0 +1,6 @@
+apply from: rootDir.absolutePath + '/default-library.gradle'
+
+dependencies {
+    implementation Dependencies.kotlinStdlib
+    implementation Dependencies.coreKtx
+}
