@@ -33,8 +33,8 @@ dependencies {
     implementation project(path: ':module:soul')
     implementation project(path: ':module:skill')
 
-    implementation Dependencies.glide.glide
-    kapt Dependencies.glide.glideCompiler
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
 
     implementation Dependencies.quickAdapter
 }

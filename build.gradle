@@ -9,8 +9,8 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath Dependencies.androidGradle
-        classpath Dependencies.kotlinGradlePlugin
+        classpath Plugins.androidGradle
+        classpath Plugins.kotlinGradlePlugin
     }
 }
 

@@ -29,8 +29,8 @@ dependencies {
     implementation Dependencies.timber
     implementation Dependencies.androidUtils
 
-    implementation Dependencies.glide.glide
-    kapt Dependencies.glide.glideCompiler
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
 
     implementation Dependencies.quickAdapter
 

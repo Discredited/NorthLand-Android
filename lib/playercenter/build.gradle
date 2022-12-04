@@ -2,7 +2,7 @@ apply from: rootDir.absolutePath + '/default-library.gradle'
 apply plugin: 'kotlin-parcelize'
 
 dependencies {
-    implementation Dependencies.tencent.mmkv
+    implementation Dependencies.mmkv
 
     implementation project(path: ':lib:element')
     implementation project(path: ':module:room')
