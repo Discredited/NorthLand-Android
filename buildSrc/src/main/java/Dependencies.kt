@@ -6,7 +6,7 @@ object Versions {
     const val minSDK = 21 // 最低兼容Android版本
     const val targetSDK = 31 // 最高兼容Android版本
 
-    const val kotlin_version = "1.5.20"
+    const val kotlin_version = "1.7.22"
 }
 
 // 插件 ClassPath
@@ -33,9 +33,9 @@ object Dependencies {
 
     ////////////////////  Kotlin  Begin  ////////////////////
     // Coroutines 协程
-    const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    const val kotlinCoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
-    const val kotlinCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7"
+    const val kotlinCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    const val kotlinCoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    const val kotlinCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
     ////////////////////  Kotlin  End  ////////////////////
 
     ////////////////////  Android ktx  Begin  ////////////////////
