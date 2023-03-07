@@ -2,13 +2,31 @@ package com.nl.module.battle
 
 import android.app.Application
 import com.nl.component.AppViewModel
+import com.nl.component.common.FilePathHelper
 import com.nl.module.battle.vo.BattleDataVo
 import com.nl.module.battle.vo.BattleResultVo
 import com.nl.module.battle.vo.BattleVo
 import com.nl.module.battle.vo.RoundVo
+import com.nl.module.characters.ConstantUtils
 import timber.log.Timber
 
 class BattleViewModel(application: Application) : AppViewModel(application) {
+
+    private fun randomBattleVo(index: Int): BattleVo {
+        val characterList = ConstantUtils.characterList()
+        val characterSize = characterList.size
+        val position = ((characterSize - 1) * Math.random()).toInt()
+        val character = characterList.get(index = position)
+        return BattleVo(
+            id = character.id,
+            avatar = FilePathHelper.getCharacterAvatar(character.avatar),
+            name = character.name,
+            power = character.power,
+            health = character.health,
+            speed = 100,
+            lineupPosition = index
+        )
+    }
 
     fun battleResult(): BattleResultVo {
         val battleList = mutableListOf<Int>()
@@ -16,7 +34,7 @@ class BattleViewModel(application: Application) : AppViewModel(application) {
         val opponentSize = (Math.random() * 7).toInt() + 1
         val opponentList = mutableListOf<BattleVo>()
         for (index in 0 until opponentSize) {
-            //opponentList.add(ConstantUtils.randomBattleVo(index))
+            opponentList.add(randomBattleVo(index))
             battleList.add(index)
         }
 
@@ -24,10 +42,11 @@ class BattleViewModel(application: Application) : AppViewModel(application) {
         val ownSize = (Math.random() * 7).toInt() + 1
         val ownList = mutableListOf<BattleVo>()
         for (index in 0 until ownSize) {
-            //ownList.add(ConstantUtils.randomBattleVo(index))
+            ownList.add(randomBattleVo(index))
             battleList.add(opponentSize + index)
         }
 
+        // 随机打乱元素
         battleList.shuffle()
 
         //val roundSize = (Math.random() * 9).toInt() + 1

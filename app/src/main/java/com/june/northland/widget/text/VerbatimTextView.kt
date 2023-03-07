@@ -36,8 +36,6 @@ class VerbatimTextView @JvmOverloads constructor(
             if (position != mCurrentPosition) {
                 mCurrentPosition = position
                 val newContent = mContent.substring(0, position)
-                Timber.e("newContent:$newContent")
-                Timber.e("position:$position    contentLength:$mContentLength")
                 text = newContent
                 if (position == mContentLength) {
                     mVerbatimFinished = true

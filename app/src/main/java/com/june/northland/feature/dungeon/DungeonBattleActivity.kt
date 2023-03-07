@@ -19,7 +19,7 @@ import com.nl.component.NLBaseActivity
  */
 class DungeonBattleActivity : NLBaseActivity<ActivityPlotBattleBinding>() {
 
-    private val mBattleViewModel by viewModels<com.nl.module.battle.BattleViewModel>()
+    private val mBattleViewModel by viewModels<BattleViewModel>()
 
     override fun initView() {
         mBinding.vBattleground.bindSkillEffectView(mBinding.tvSkillEffect)
@@ -71,7 +71,7 @@ class DungeonBattleActivity : NLBaseActivity<ActivityPlotBattleBinding>() {
     private fun simulationAttack(attackMode: Int = 0) {
         val damageType = (Math.random() * 10 % 3).toInt()
         mBinding.vBattleground.roundStart(
-            com.nl.module.battle.vo.RoundVo(
+            RoundVo(
                 1,
                 mOwnSidePosition,
                 intArrayOf(0),

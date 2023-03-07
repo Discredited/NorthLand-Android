@@ -42,4 +42,6 @@ abstract class NLBaseFragment<V : ViewBinding> : BaseFragment<V>() {
     fun hideLoading() {
         mDelegate?.hideLoading()
     }
+
+    override fun fitsSystemWindows(): Boolean = false
 }
